@@ -1,0 +1,145 @@
+
+
+/* المتغيرات */
+:root {
+    /* الاوان   */
+    --main-color:#ffffff;
+    --secandry-color:#ffffff;
+    --third-color:#ffffff;
+
+
+    --main-bgcolor: #ffffff;
+    --header-bgcolor: #ffffff;
+    --footer-bgcolor:#ffffff;
+
+    --font-color: #ffffff;
+    --font-hover-color: #ffffff;
+
+    --card-bgcolor: #ffffff;
+    --card-hover-bgcolor: #ffffff;
+
+    --button-bgcolor: #ffffff;
+    --button-hover-bgcolor: #ffffff;
+  
+    --link-color: #ffffff;
+    --link-hover-color:#ffffff;
+   
+
+    /* المسافات الخارجية  */
+    --padding-xs: 0.25em;
+    --padding-s: 0.5em;
+    --padding-m: 1em;
+    --padding-l: 1.5em;
+    --padding-xl: 2em;
+
+
+    /* المسافت الداخليه  */
+    --margin-xs: 0.25em;
+    --margin-s: 0.5em;
+    --margin-m: 1em;
+    --margin-l: 1.5em;
+    --margin-xl: 2em;
+  
+
+    /* الخطوط  */
+    --font-family-main: 'Roboto', sans-serif;
+    --font-family-secandry: 'Open Sans', sans-serif;
+
+    --font-size-xs: 0.5em;
+    --font-size-s: 0.75em;
+    --font-size-m: 1em;
+    --font-size-l: 1.25em;
+    --font-size-xl: 1.5em;
+
+
+
+  
+    /*البطاقات  */
+
+    --card-height: auto;
+    --card-width: auto;
+    --card-radius: 0.5em;
+    --card-shadow: 0 0 0.5em rgba(0, 0, 0, 0.1);
+    --card-border: 1px solid #ffffff;
+    --card-hover-shadow: 0 0 1em rgba(0, 0, 0, 0.1);
+    --card-hover-border: 1px solid #ffffff;
+
+    /* الازرار  */
+    --button-height: auto;
+    --button-width: auto;
+    --button-radius: 0.5em;
+    --button-shadow: 0 0 0.5em rgba(0, 0, 0, 0.1);
+    --button-border: 1px solid #ffffff;
+    --button-hover-shadow: 0 0 1em rgba(0, 0, 0, 0.1);
+    --button-hover-border: 1px solid #ffffff;
+    
+  }
+
+/* الشكل العام للموقع */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  body{
+    height: 100vh;
+  }
+
+nav{
+ background-color: royalblue ;   
+ height: 10vh;
+}
+header{
+    background-color: aquamarine;
+    height: 10vh;
+}
+
+main{
+    background-color: lime;
+    height: 70vh;
+}
+
+footer{
+    background-color: rebeccapurple;
+    height: 10vh;
+}
+
+
+/* المكونات الرئيسة للموقع  */
+
+.main_card{
+    background-color: var(--card-bgcolor);
+    height: 30%;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+
+
+    & img{
+        top:15px;
+        height:60%;
+        width:auto;
+        display: block;
+      
+     
+      }
+
+
+    & a{
+        display: flex;
+        align-items: center;
+        color: red;
+      }
+
+    & p{
+      color: red;  
+    }
+
+
+    &:hover{
+        background-color: var(--card-hover-bgcolor);
+    }
+}
