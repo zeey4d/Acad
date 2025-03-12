@@ -11,6 +11,7 @@ Gamal Sadek Saeed Qaid(@gamal729) .
 
 
 
-please add your name for the delevloping this project  . 
+please add your name for the delevloping this project 
+after fixing the bugs . 
  
 #![]()
