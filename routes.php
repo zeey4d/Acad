@@ -32,7 +32,7 @@ $router->get('/','controllers/index.php');
 $router->get('/items','controllers/items/index.php');
 
 
-$router->get('/nonos','controllers/nonos/index.php');
+
 
 
 
