@@ -3,7 +3,12 @@
   <?php require('parts/navgtion.php') ?>
   <?php require('parts/header.php') ?>
   <!-- الصفحه الرئيسه -->
-  <main>
+
+ <?php  
+ // $config = require('config.php'); 
+ // dd($config);  
+ ?>
+ <main>
     <h1>main</h1>
     <div class="main_card">
   
