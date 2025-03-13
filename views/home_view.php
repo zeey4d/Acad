@@ -6,6 +6,7 @@
   <main>
     <h1>main</h1>
     <div class="main_card">
+  
       <img src="views/media/images/badir_logo.jpg" alt="">
       <a href="#">click</a>
       <p>page name</p>
