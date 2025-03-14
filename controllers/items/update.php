@@ -36,7 +36,7 @@ if (!(Validator::string($_POST['anme'], 1, 255))) {
 
 if (! empty($errors)) {
   
-    require "views/items/edit_view.php";
+    require "views/pages/items/edit_view.php";
     die();
 }
  
@@ -48,7 +48,7 @@ $db->query("UPDATE items set name = :name  " , [
 
 
 
-header("Location: /items");
+header("Location: /pages/items");
 die();
 
 

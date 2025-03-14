@@ -19,4 +19,4 @@ $note = $db->query("SELECT * from items where id = :id ", [
 
 
 
-require "views/items/show_view.php";
+require "views/pages/items/show_view.php";

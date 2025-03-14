@@ -10,7 +10,7 @@ $heading = "All My tests";
 $items = $db->query("SELECT * from items ;")->fetchAll();
 
 
-require "views/items/index_view.php";
+require "views/pages/items/index_view.php";
 
 
 ?>

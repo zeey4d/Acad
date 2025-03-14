@@ -23,4 +23,4 @@ $item = $db->query("SELECT * from items where id = :id ", [
 
 
 
-require "views/items/edit_view.php";
+require "views/pages/items/edit_view.php";

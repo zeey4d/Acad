@@ -17,7 +17,7 @@ $note = $db->query("SELECT * from items where id = :id ", [
 $db->query("DELETE FROM items where id = :id", [
   'id' => $_POST['id'],
 ]);
-header("Location: /items");
+header("Location: /pages/items");
 exit();
 
 

@@ -22,7 +22,7 @@ if (!(Validator::string($_POST['name'], 1, 255))) {
 
 if (! empty($errors)) {
 
-    require "views/items/create_view.php";
+    require "views/pages/items/create_view.php";
     die();
 }
 
@@ -31,7 +31,7 @@ $db->query("INSERT INTO items (name) VALUES (:name)", [
     'name' => $_POST['name'],
 ]);
 
-header("Location: /items");
+header("Location: /pages/items");
 die();
 
 
