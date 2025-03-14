@@ -7,8 +7,8 @@
 
   <?php  
 
-  $config = require('config.php'); 
-  dd($config);  
+  //$config = require('config.php'); 
+  //dd($config);  
   ?>
     <h1>main</h1>
     <div class="main_card">
