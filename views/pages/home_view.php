@@ -1,7 +1,7 @@
-  <?php require('parts/head.php') ?>
-  <?php require('parts/adminbar.php') ?>
-  <?php require('parts/navgtion.php') ?>
-  <?php require('parts/header.php') ?>
+<?php require('views//parts/head.php') ?>
+<?php require('views/parts/adminbar.php') ?>
+<?php require('views/parts/navgtion.php') ?>
+<?php require('views/parts/header.php') ?>
   <!-- الصفحه الرئيسه -->
 
  <?php  
@@ -21,4 +21,4 @@
 
 
 
-  <?php require('parts/footer.php') ?>
+  <?php require('views/parts/footer.php') ?>

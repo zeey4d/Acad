@@ -2,8 +2,10 @@
 <?php require('views/parts/adminbar.php') ?>
 <?php require('views/parts/navgtion.php') ?>
 <?php require('views/parts/header.php') ?>
- 
-  <main>
 
+  <main>
+    <div >
+      <h1>hello contact</h1>
+    </div>
   </main>
   <?php require('views/parts/footer.php') ?>
