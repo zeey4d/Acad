@@ -8,7 +8,7 @@ return [
         "dbname" => "badir",
         "charset" => "utf8mb4",
         "username"=>"root",
-        "password"=>""
+        "password"=>"33334444qq"
     ],
     
 

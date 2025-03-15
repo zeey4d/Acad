@@ -1,10 +1,10 @@
 <!-- تذيلة الصفحه -->
 </body>
 <footer class="item">
-<h1>footer</h1>>
+<!-- <h1>footer</h1> -->
      <div class="main_foter">
-        <div class="photo_padir">
-            <img src="views/media/images/badir_logo.jpg" alt="">
+        <div class="photo_padir_div">
+            <img class="photo_padir" src="views/media/images/bader.png" alt="">
         </div>
         <div class="who_are_we">
             <h1>من نحن؟</h1><hr>
@@ -14,7 +14,6 @@
                  آمنة وفعالة لأدارة التبرعات وتوجيهها الي مكانها الصحيح
             </p><br><br><hr>
             <div class="icon_foter">
-                
                 <a id="whats_icon" class="whats_icon" href=""><img src="views/media/images/whatsapp.png" alt=""></a>
                 <a id="email_icon" class="email_icon" href=""><img src="views/media/images/email.png" alt=""></a>
                 <a id="insta_icon" class="insta_icon" href=""><img src="views/media/images/instagram.png" alt=""></a>
@@ -23,10 +22,10 @@
 
             </div>
                 <div class="service_and_privacy_policy_agreement">
-                <h1>.اتفاقية الخدمة وسياسات الخصوصية</h1><hr>
-                <a id="service_agreement" class="service_agreement" href="">.اتفاقية الخدمة</a><hr>
-                <a id="privacy_policy" class="privacy_policy" href="">.سياسة الخصوصية</a><hr>
-                <a id="terms_and_conditions" class="terms_and_conditions" href="">.الشروط والأحكام</a><hr>
+                <h1> .اتفاقية الخدمة وسياسات الخصوصية</h1><hr>
+                <a id="service_agreement" class="service_agreement" href="">.اتفاقية الخدمة</a><br>
+                <a id="privacy_policy" class="privacy_policy" href="">.سياسة الخصوصية</a><br>
+                <a id="terms_and_conditions" class="terms_and_conditions" href="">.الشروط والأحكام</a><br>
             </div>
         <div class="contact_us">
             <h1>تواصل معنا</h1><hr>
@@ -44,7 +43,7 @@
         <div class="certificates_and_ratings">
             <h1>الشهادات والتقييمات</h1><hr>
             <a class="said_about_us" id="said_about_us" href=""></a><br>
-            <h3>:نشر الخبر</h3>
+            <h3>:نشر الخبر</h3><hr>
             <div class="spread_the_word">
                 <form form action="" method="" enctype="multipart/form-data">
                     <input id="news_title" class="news_title" type="text" placeholder="عنوان الخبر"><br>
@@ -53,12 +52,11 @@
                     <button id="button_send_news" class="button_send_news" type="submit"> تأكيد</button>
                 </form>
             </div>
+            <p class="end_foter">جميع الحقوق محفوظة لمنصة بادر الخيرية &#169; 2025</p>
+
         </div>
        
-        <p class="end_foter">جميع الحقوق محفوظة لمنصة بادر الخيرية &#169; 2025</p>
     </div>
-    
-
 </footer>
 
 </html>
