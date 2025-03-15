@@ -8,7 +8,7 @@ return [
         "dbname" => "badir",
         "charset" => "utf8mb4",
         "username"=>"root",
-        "password"=>"730673145"
+        "password"=>"aliabd739252434"
     ],
     "phpmailer" => [
         "host" => "smtp.mailtrap.io",
