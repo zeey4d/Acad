@@ -12,7 +12,7 @@
   ?>
     <h1>main</h1>
     <div class="main_card">
-      <img src="views/media/images/badir_logo.jpg" alt="">
+      <img src="views/media/images/badir_logo.jpg" alt="there is no image">
       <a href="#">click</a>
       <p>page name</p>
     </div>
