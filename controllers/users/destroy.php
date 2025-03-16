@@ -8,16 +8,16 @@ $db = App::resolve(Database::class);
 $userID = 1;
  
 
-// $note = $db->query("SELECT * from charity_projects where id = :id ", [
+// $note = $db->query("SELECT * from users where id = :id ", [
 //   'id' => $_POST['id'],
 // ])->findOrFail();
 
 //authorize($note['other_id'] == $userID);
 
-// $db->query("DELETE FROM charity_projects where id = :id", [
+// $db->query("DELETE FROM users where id = :id", [
 //   'id' => $_POST['id'],
 // ]);
-header("Location: /pages/charity_projects");
+header("Location: /pages/users");
 exit();
 
 

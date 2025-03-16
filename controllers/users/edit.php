@@ -12,9 +12,9 @@ $userID = 1;
 
 
 
-$item = $db->query("SELECT * from items where id = :id ", [
-  'id' => $_GET['id'],
-])->findOrFail();
+// $item = $db->query("SELECT * from users where id = :id ", [
+//   'id' => $_GET['id'],
+// ])->findOrFail();
 
 //authorize($item['other_id'] == $userID);
 
@@ -23,4 +23,4 @@ $item = $db->query("SELECT * from items where id = :id ", [
 
 
 
-require "views/pages/items/edit_view.php";
+require "views/pages/users/edit_view.php";

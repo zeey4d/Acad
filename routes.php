@@ -28,8 +28,24 @@
 // $router->post('/login','controlers/sessions/store.php');
 
 
-$router->get('/','controllers/index.php');
 $router->get('/items','controllers/items/index.php');
+$router->get('/','controllers/home.php');
+$router->get('/home','controllers/home.php');
+$router->get('/about','controllers/about.php');
+$router->get('/contact','controllers/contact.php');
+$router->get('/policies_privacy','controllers/policies_privacy.php');
+
+
+$router->get('/cards/create','controllers/cards/create.php');
+$router->get('/cards/destroy','controllers/cards/destroy.php');
+$router->get('/cards/edit','controllers/cards/edit.php');
+$router->get('/cards/index','controllers/cards/index.php');
+$router->get('/cards/show','controllers/cards/show.php');
+$router->get('/cards/store','controllers/cards/store.php');
+$router->get('/cards/update','controllers/cards/update.php');
+
+
+
 
 
 

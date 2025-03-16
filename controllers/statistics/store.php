@@ -27,9 +27,9 @@ if (! empty($errors)) {
 }
 
 
-$db->query("INSERT INTO statistics (name) VALUES (:name)", [
-    'name' => $_POST['name'],
-]);
+// $db->query("INSERT INTO statistics (name) VALUES (:name)", [
+//     'name' => $_POST['name'],
+// ]);
 
 header("Location: /pages/statistics");
 die();
