@@ -11,9 +11,9 @@ $userID = 1;
 
 
 
-$note = $db->query("SELECT * from islamic_endowments where id = :id ", [
-  'id' => $_GET['id'],
-])->findOrFail();
+// $note = $db->query("SELECT * from islamic_endowments where id = :id ", [
+//   'id' => $_GET['id'],
+// ])->findOrFail();
 
 //authorize($note['other_id'] == $userID);
 

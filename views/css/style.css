@@ -73,17 +73,17 @@ nav {
 }
 
 header {
-    background-color: aquamarine;
+    background-color: rgb(255, 255, 255);
     height: 10vh;
 }
 
 main {
-    background-color: lime;
+    background-color: rgb(255, 255, 255);
     height: 70vh;
 }
 
 footer {
-    background-color: rebeccapurple;
+    background-color: rgb(255, 255, 255);
     height: 10vh;
 }
 
@@ -261,3 +261,12 @@ display: flex;
 
 
 
+/* صفحة الشكاوي والاقتارحات */
+
+.form_contact{
+
+    background-color: #fff;
+}
+h1{
+    font-size: 500px;
+}
