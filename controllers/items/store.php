@@ -27,9 +27,9 @@ if (! empty($errors)) {
 }
 
 
-$db->query("INSERT INTO items (name) VALUES (:name)", [
-    'name' => $_POST['name'],
-]);
+// $db->query("INSERT INTO items (name) VALUES (:name)", [
+//     'name' => $_POST['name'],
+// ]);
 
 header("Location: /pages/items");
 die();

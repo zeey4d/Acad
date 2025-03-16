@@ -5,7 +5,7 @@ namespace models;
 
 //
 //تعريف الكلاس 
-class item{
+class Item{
 //المتغيرات
 private $x;
 

@@ -15,9 +15,9 @@ $userID = 1;
 
 
 
-$note = $db->query("SELECT * from charity_campaigns where id = :id ", [
-  'id' => $_POST['id'],
-])->findOrFail();
+// $note = $db->query("SELECT * from charity_campaigns where id = :id ", [
+//   'id' => $_POST['id'],
+// ])->findOrFail();
 
 authorize($note['other_id'] == $userID);
 
@@ -41,10 +41,10 @@ if (! empty($errors)) {
 }
  
 
-$db->query("UPDATE charity_campaigns set name = :name  " , [
-    'name' => $_POST['name'],
+// $db->query("UPDATE charity_campaigns set name = :name  " , [
+//     'name' => $_POST['name'],
 
-]);
+// ]);
 
 
 
