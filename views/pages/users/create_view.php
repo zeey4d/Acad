@@ -4,7 +4,8 @@
 <?php require('views/parts/header.php') ?>
 
 <main>
-  <section>
+  <!-- انشاء حساب جديد -->
+  <section class="form_signup">
     
     <div class="create">
       <h1>إنشاءحساب</h1>
