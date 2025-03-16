@@ -10,11 +10,6 @@ return [
         "username" => "root",
         "password" => "771287729"
     ],
-    "phpmailer" => [
-        "host" => "smtp.mailtrap.io",
-        "port" => "2525",
-        "username" => "b1b1b1b1b1b1b1",
-        "password" => "a1a1a1a1a1a1a1"
-    ]
+    
 
 ];
