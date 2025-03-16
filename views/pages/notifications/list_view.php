@@ -4,8 +4,16 @@
 <?php require('views/parts/header.php') ?>
 
 <main>
-  <section>
+  <section class="notifications">
+    <!-- العمود الي تحت اعمله اول شي  -->
+     <!-- شريط البحث -->
+    <section class="bar_search">
 
+    </section>
+<!-- كرت الاشعارات -->
+    <div class="card_notifications">
+
+    </div>
   </section>
 </main>
 <?php require('views/parts/footer.php') ?>

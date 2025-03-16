@@ -4,8 +4,25 @@
 <?php require('views/parts/header.php') ?>
 
 <main>
-  <section>
-  
+  <section class="statistics">
+    <article class="card_statistics">
+
+    </article>
+    <article class="card_statistics">
+
+    </article>
+    <article class="card_statistics">
+
+    </article>
+    <article class="card_statistics">
+
+    </article>
+    <article class="card_statistics">
+
+    </article>
+    <article class="card_statistics">
+
+    </article>
   </section>
 </main>
 <?php require('views/parts/footer.php') ?>
