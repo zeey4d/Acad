@@ -15,7 +15,7 @@ $userID = 1;
 
 
 
-// $note = $db->query("SELECT * from reports where id = :id ", [
+// $note = $db->query("SELECT * from notifications where id = :id ", [
 //   'id' => $_POST['id'],
 // ])->findOrFail();
 
@@ -36,19 +36,19 @@ if (!(Validator::string($_POST['anme'], 1, 255))) {
 
 if (! empty($errors)) {
   
-    require "views/pages/reports/edit_view.php";
+    require "views/pages/notifications/edit_view.php";
     die();
 }
  
 
-// $db->query("UPDATE reports set name = :name  " , [
+// $db->query("UPDATE notifications set name = :name  " , [
 //     'name' => $_POST['name'],
 
 // ]);
 
 
 
-header("Location: /pages/reports");
+header("Location: /pages/notifications");
 die();
 
 

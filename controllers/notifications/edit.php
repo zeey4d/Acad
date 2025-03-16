@@ -12,7 +12,7 @@ $userID = 1;
 
 
 
-// $item = $db->query("SELECT * from reports where id = :id ", [
+// $item = $db->query("SELECT * from notifications where id = :id ", [
 //   'id' => $_GET['id'],
 // ])->findOrFail();
 
@@ -23,4 +23,4 @@ $userID = 1;
 
 
 
-require "views/pages/reports/edit_view.php";
+require "views/pages/notifications/edit_view.php";
