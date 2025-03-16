@@ -4,8 +4,8 @@
 <?php require('views/parts/header.php') ?>
 
 <main>
-  <!-- تعديل على الحسابات  -->
-  <section>
+  <!-- تعديل على الحسابات -->
+  <section class="form_edit_accounts">
 
   </section>
 </main>

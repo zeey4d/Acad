@@ -5,7 +5,7 @@
 
 <main>
   <!-- انشاء حساب جديد -->
-  <section>
+  <section class="form_signup">
     
   </section>
 </main>

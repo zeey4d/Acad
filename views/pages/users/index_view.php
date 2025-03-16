@@ -5,7 +5,7 @@
 
 <main>
   <!-- تسجيل الدخول  -->
-  <section>
+  <section class="form_login">
   
   </section>
 </main>
