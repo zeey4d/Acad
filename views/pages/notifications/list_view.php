@@ -4,13 +4,13 @@
 <?php require('views/parts/header.php') ?>
 
 <main>
-  <section class="notifications">
-    <!-- العمود الي تحت اعمله اول شي  -->
-     <!-- شريط البحث -->
-    <section class="bar_search">
+  <!-- العمود الي تحت اعمله اول شي  -->
+  <!-- شريط البحث -->
+  <section class="bar_search">
 
-    </section>
-<!-- كرت الاشعارات -->
+  </section>
+  <!-- كرت الاشعارات -->
+  <section class="container">
     <div class="card_notifications">
 
     </div>

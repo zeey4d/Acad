@@ -4,7 +4,7 @@
 <?php require('views/parts/header.php') ?>
 
 <main>
-  <section class="islamic_payments">\
+  <section class="container">\
     <!-- الصدقه -->
     <div class="crad_islamic_payments">
 

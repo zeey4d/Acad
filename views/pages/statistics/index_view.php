@@ -4,7 +4,7 @@
 <?php require('views/parts/header.php') ?>
 
 <main>
-  <section class="statistics">
+  <section class="container">
     <article class="card_statistics">
 
     </article>
