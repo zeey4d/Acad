@@ -179,19 +179,21 @@ display: flex;
 
 /* صحفة footer  */
 
+
 .photo_padir{
-    width: 85%;
-    height: 180px;
-    background-color: #00646E;
-    border-radius: 20px;
-    opacity: 0.5;
-    
-}
-.photo_padir_div{
     height: auto;
     background-color: #003337;
     display: flex;
     align-items: center;
+    justify-content: center;
+    & img {
+        width: 150px;
+        height: 180px;
+        background-color: #00646E;
+        border-radius: 20px;
+        opacity: 0.5;
+
+    }
 
 }
 
@@ -204,6 +206,9 @@ display: flex;
     & div {
         width: 20%;
         margin: 20px 10px 0 10px;
+    }
+    & .photo_padi{
+        width: 10%;
     }
     & input{
         background-color: white;
@@ -225,7 +230,7 @@ display: flex;
         margin-bottom: 10px;
 
     }
-    &p{
+    & p{
         font-size: 12px;
         font-weight:100;
         margin-top: 10px;
@@ -240,6 +245,18 @@ display: flex;
     width: 25px;
     height: 25px;
 }
+}
+
+.service_and_privacy_policy_agreement{
+    & a {
+    color: #fff;
+    }
+}
+
+.end_foter{
+    background-color: #003337;
+    text-align: center;
+    color: white;
 }
 
 

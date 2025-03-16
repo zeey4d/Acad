@@ -3,8 +3,8 @@
 <footer class="item">
 <!-- <h1>footer</h1> -->
      <div class="main_foter">
-        <div class="photo_padir_div">
-            <img class="photo_padir" src="views/media/images/bader.png" alt="">
+        <div class="photo_padir">
+            <img src="views/media/images/bader.png" alt="">
         </div>
         <div class="who_are_we">
             <h1>من نحن؟</h1><hr>
@@ -52,11 +52,12 @@
                     <button id="button_send_news" class="button_send_news" type="submit"> تأكيد</button>
                 </form>
             </div>
-            <p class="end_foter">جميع الحقوق محفوظة لمنصة بادر الخيرية &#169; 2025</p>
 
         </div>
        
     </div>
+    <p class="end_foter">جميع الحقوق محفوظة لمنصة بادر الخيرية &#169; 2025</p>
+
 </footer>
 
 </html>
