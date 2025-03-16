@@ -34,6 +34,8 @@ $router->get('/home','controllers/home.php');
 $router->get('/about','controllers/about.php');
 $router->get('/contact','controllers/contact.php');
 $router->get('/policies_privacy','controllers/policies_privacy.php');
+$router->get('/cart','controllers/cart.php');
+
 
 
 $router->get('/cards_create','controllers/cards/create.php');
