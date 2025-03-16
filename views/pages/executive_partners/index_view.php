@@ -4,8 +4,16 @@
 <?php require('views/parts/header.php') ?>
 
 <main>
-  <section>
-    
+  <!-- شريط الافعال -->
+  <section class="bar_action">
+
   </section>
+
+  <!-- بطاقات الشركا التنفيذيين -->
+  <section class="container">
+<div class="card_executive_partners">
+
+</div>
+</section>
 </main>
 <?php require('views/parts/footer.php') ?>
