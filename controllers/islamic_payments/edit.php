@@ -12,9 +12,9 @@ $userID = 1;
 
 
 
-$item = $db->query("SELECT * from islamic_payments where id = :id ", [
-  'id' => $_GET['id'],
-])->findOrFail();
+// $item = $db->query("SELECT * from islamic_payments where id = :id ", [
+//   'id' => $_GET['id'],
+// ])->findOrFail();
 
 //authorize($item['other_id'] == $userID);
 
