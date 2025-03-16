@@ -11,7 +11,7 @@ $userID = 1;
 
 
 
-// $note = $db->query("SELECT * from reports where id = :id ", [
+// $note = $db->query("SELECT * from notifications where id = :id ", [
 //   'id' => $_GET['id'],
 // ])->findOrFail();
 
@@ -19,4 +19,4 @@ $userID = 1;
 
 
 
-require "views/pages/reports/show_view.php";
+require "views/pages/notifications/show_view.php";

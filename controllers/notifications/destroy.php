@@ -8,16 +8,16 @@ $db = App::resolve(Database::class);
 $userID = 1;
  
 
-// $note = $db->query("SELECT * from reports where id = :id ", [
+// $note = $db->query("SELECT * from notifications where id = :id ", [
 //   'id' => $_POST['id'],
 // ])->findOrFail();
 
 //authorize($note['other_id'] == $userID);
 
-// $db->query("DELETE FROM reports where id = :id", [
+// $db->query("DELETE FROM notifications where id = :id", [
 //   'id' => $_POST['id'],
 // ]);
-header("Location: /pages/reports");
+header("Location: /pages/notifications");
 exit();
 
 

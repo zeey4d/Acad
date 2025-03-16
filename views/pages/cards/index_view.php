@@ -4,6 +4,6 @@
 <?php require('views/parts/header.php') ?>
 
 <main>
-  <h1>cards</h1>
+  <h1>card</h1>
 </main>
 <?php require('views/parts/footer.php') ?>
