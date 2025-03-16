@@ -4,8 +4,15 @@
 <?php require('views/parts/header.php') ?>
 
 <main>
-  <section>
+  <section class="bar_search">
   
+  </section>
+
+  <section class="container">
+    <div class="card_charity_campaigns">
+      
+    </div>
+
   </section>
 </main>
 <?php require('views/parts/footer.php') ?>

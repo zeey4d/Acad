@@ -4,8 +4,8 @@
 <?php require('views/parts/header.php') ?>
 
 <main>
-  <section>
-    
+  <section class="form_charity_projects">
+
   </section>
 </main>
 <?php require('views/parts/footer.php') ?>
