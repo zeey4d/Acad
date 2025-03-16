@@ -4,6 +4,7 @@
 <?php require('views/parts/header.php') ?>
 
 <main>
+  <!-- انشاء حساب جديد -->
   <section>
     
   </section>

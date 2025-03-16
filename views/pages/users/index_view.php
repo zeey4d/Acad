@@ -4,6 +4,7 @@
 <?php require('views/parts/header.php') ?>
 
 <main>
+  <!-- تسجيل الدخول  -->
   <section>
   
   </section>
