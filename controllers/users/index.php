@@ -7,10 +7,10 @@ $db = App::resolve(Database::class);
 $heading = "All My tests";
 
 
-$reports = $db->query("SELECT * from reports ;")->fetchAll();
+// $users = $db->query("SELECT * from users ;")->fetchAll();
 
 
-require "views/pages/reports/index_view.php";
+require "views/pages/users/index_view.php";
 
 
 ?>

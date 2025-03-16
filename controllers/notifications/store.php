@@ -22,16 +22,16 @@ if (!(Validator::string($_POST['name'], 1, 255))) {
 
 if (! empty($errors)) {
 
-    require "views/pages/reports/create_view.php";
+    require "views/pages/notifications/create_view.php";
     die();
 }
 
 
-$db->query("INSERT INTO reports (name) VALUES (:name)", [
-    'name' => $_POST['name'],
-]);
+// $db->query("INSERT INTO notifications (name) VALUES (:name)", [
+//     'name' => $_POST['name'],
+// ]);
 
-header("Location: /pages/reports");
+header("Location: /pages/notifications");
 die();
 
 

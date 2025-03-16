@@ -27,9 +27,9 @@ if (! empty($errors)) {
 }
 
 
-$db->query("INSERT INTO islamic_endowments (name) VALUES (:name)", [
-    'name' => $_POST['name'],
-]);
+// $db->query("INSERT INTO islamic_endowments (name) VALUES (:name)", [
+//     'name' => $_POST['name'],
+// ]);
 
 header("Location: /pages/islamic_endowments");
 die();

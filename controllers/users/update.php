@@ -15,9 +15,9 @@ $userID = 1;
 
 
 
-$note = $db->query("SELECT * from items where id = :id ", [
-  'id' => $_POST['id'],
-])->findOrFail();
+// $note = $db->query("SELECT * from users where id = :id ", [
+//   'id' => $_POST['id'],
+// ])->findOrFail();
 
 authorize($note['other_id'] == $userID);
 
@@ -36,19 +36,19 @@ if (!(Validator::string($_POST['anme'], 1, 255))) {
 
 if (! empty($errors)) {
   
-    require "views/pages/items/edit_view.php";
+    require "views/pages/users/edit_view.php";
     die();
 }
  
 
-$db->query("UPDATE items set name = :name  " , [
-    'name' => $_POST['name'],
+// $db->query("UPDATE users set name = :name  " , [
+//     'name' => $_POST['name'],
 
-]);
+// ]);
 
 
 
-header("Location: /pages/items");
+header("Location: /pages/users");
 die();
 
 
