@@ -50,6 +50,7 @@
         </div>
 
         <!-- سلة التبرعات -->
+         <div class="center-cart">
         <section class="donation-cart">
             <div id="cart-items">
                 <!-- العناصر المضافة إلى السلة تظهر هنا -->
@@ -63,6 +64,7 @@
                 <button id="clear-cart">إفراغ السلة</button>
             </div>
         </section>
+        </div>
     </main>
 
 

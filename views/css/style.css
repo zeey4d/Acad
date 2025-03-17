@@ -619,6 +619,9 @@ display: flex;
 .main_cart_view{
     text-align: right;
     direction: rtl;
+    & h2 {
+        text-align: center;
+    }
 
 }
 .div_cart_view{
@@ -706,10 +709,16 @@ h2 {
     }
 }
 
+.center-cart{
+    display: flex;
+    justify-content: center;
+
+}
 .donation-cart {
     position: sticky;
     top: 20px;
     height: fit-content;
+    width: 80%;
 }
 
 #cart-items {
@@ -785,9 +794,12 @@ h2 {
 }
 
 .cart-actions button {
+    background-color: var(--button-color);
+    color: white;
+    border-radius: var(--button-radius);
     padding: 10px 20px;
     font-size: 16px;
-    border
+    border: none;
 }
 
 
@@ -796,7 +808,8 @@ h2 {
 /* create */
 /* تنسيق عام */
 
-.main_create_chatity{
+.main_create_chatity {
+    
     & h1 {
     text-align: center;
     margin: 40px;
