@@ -10,7 +10,7 @@
           
             <h1>الشكاوي والاقتراحات</h1>
             <div>
-              <form action="" method="">
+              <form action="/services/phpmailer/send-email" method="post">
                 <label for="type">:النوع</label><br>
                 <div class="group_type">
                   <select name="" id=""></select>
