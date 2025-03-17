@@ -11,9 +11,9 @@ $userID = 1;
 
 
 
-// $note = $db->query("SELECT * from charity_campaigns where id = :id ", [
-//   'id' => $_GET['id'],
-// ])->findOrFail();
+$campaigns = $db->query("SELECT * from campaigns where campaign_id = :campaign_id ", [
+  'campaign_id' => $_GET['campaign_id'],
+])->findOrFail();
 
 //authorize($note['other_id'] == $userID);
 
