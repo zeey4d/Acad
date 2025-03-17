@@ -16,6 +16,22 @@ $userID = 1;
 //   'id' => $_GET['id'],
 // ])->findOrFail();
 
+$campaigns = $db->query("SELECT 
+C.category_id, 
+C.partner_id, 
+C.campaign_request_id, 
+C.name, 
+C.short_description, 
+C.full_description, 
+C.cost, 
+C.state, 
+C.start_at, 
+C.end_at
+FROM CAMPAIGNS C JOIN USERS_DONATE_CAMPAIGNS UDC ON(C.CAMPAIGN_ID = UDC.CAMPAIGN_ID) WHERE UDC.USER_ID = :USER_ID;
+",[
+    'USER_ID' => $userID
+])->fetchAll();
+
 //authorize($note['other_id'] == $userID);
 
 
