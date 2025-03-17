@@ -4,7 +4,7 @@
 <?php require('views/parts/header.php') ?>
 
 <main>
-  <section>
+  <section class="form_notifications">
     
   </section>
 </main>

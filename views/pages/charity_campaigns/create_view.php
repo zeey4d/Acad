@@ -4,7 +4,7 @@
 <?php require('views/parts/header.php') ?>
 
 <main>
-  <section>
+  <section form_charity_campaigns>
     
   </section>
 </main>
