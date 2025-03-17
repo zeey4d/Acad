@@ -3,7 +3,7 @@
 <?php require('views/parts/navgtion.php') ?>
 <?php require('views/parts/header.php') ?>
 
-<main class="main_cart">
+<!-- <main class="main_cart">
  <section class="container">
     <div class="donation-card">
         <img src="views/media/images/P251.png" alt="مشروع نور السعودية">
@@ -33,5 +33,6 @@
  <section class="bar_action">
 
  </section>
-</main>
+</main> -->
+
 <?php require('views/parts/footer.php') ?>
