@@ -9,6 +9,8 @@
     --header-bgcolor: #ffffff;
     --footer-bgcolor: #ffffff;
     --font-color: #ffffff;
+    --font-color-bl: #00A7B5;
+    --font-color-bh: #00575F;
     --font-hover-color: #ffffff;
     --card-bgcolor: #ffffff;
     --card-hover-bgcolor: #ffffff;
@@ -45,11 +47,12 @@
     --card-hover-shadow: 0 0 1em rgba(0, 0, 0, 0.1);
     --card-hover-border: 1px solid #ffffff;
     /* الازرار  */
+    --button-color: #00575F;
     --button-height: auto;
     --button-width: auto;
     --button-radius: 0.5em;
     --button-shadow: 0 0 0.5em rgba(0, 0, 0, 0.1);
-    --button-border: 1px solid #ffffff;
+    --button-border: 0px solid ;
     --button-hover-shadow: 0 0 1em rgba(0, 0, 0, 0.1);
     --button-hover-border: 1px solid #ffffff;
 }
@@ -611,3 +614,288 @@ display: flex;
     }
 
 }
+
+/* cart_view */
+.main_cart_view{
+    text-align: right;
+    direction: rtl;
+
+}
+.div_cart_view{
+    background-color: #ffffff;
+    gap: 20px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+
+}
+
+
+.projects-list, .donation-cart {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.project {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+    border: 1px solid rgb(190, 190, 190);
+    border-radius: 10px;
+    & img {
+        width: 100px;
+        height: 100px;
+        border-radius: 8px;
+        margin-left: 15px;
+    }
+
+    & .input_delet{
+        display: flex;
+        justify-content: left;
+        margin-left: 10px;
+    }
+}
+
+.project-details {
+    flex: 1;
+
+    & h3 {
+        margin: 10px 0 10px 0;
+        font-size: 18px;
+
+    }
+
+    & p {
+        margin: 5px 0;
+        color: #555;
+    }
+ 
+    & input {
+        width: 100px;
+        padding: 5px;
+        margin-top: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    & button {
+        background-color: #ab1313;
+        color: #fff;
+        border: none;
+        padding: 8px 12px;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-top: 10px;
+        margin-right: 5px;
+
+    }
+    & button:hover {
+        background-color: #ffffff;
+        color: red;
+        border: 1px solid red;
+    }
+}
+
+.donation-cart {
+    position: sticky;
+    top: 20px;
+    height: fit-content;
+}
+
+#cart-items {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.cart-item img {
+    width: 50px;
+    height: 50px;
+    border-radius: 4px;
+}
+
+.cart-item-details {
+    flex: 1;
+    margin-right: 10px;
+
+    & h4 {
+        margin: 0;
+        font-size: 16px;
+    }
+    & p {
+        margin: 5px 0;
+        color: #555;
+    }
+
+}
+
+
+.remove-item {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.remove-item:hover {
+    background-color: #c82333;
+}
+
+.total-amount {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.total-amount label {
+    font-weight: bold;
+}
+
+.total-amount input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.cart-actions {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.cart-actions button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border
+}
+
+
+/* charity_projects */
+
+/* create */
+/* تنسيق عام */
+
+.main_create_chatity{
+    & h1 {
+    text-align: center;
+    margin: 40px;
+    color: var(--font-color-bh);
+}
+
+    &  .request-status {
+        display: flex;
+        justify-self: center;
+        direction: rtl;
+
+    }
+
+}
+.div_tbr3{
+
+    text-align: right;
+    direction: rtl;
+    display: flex;
+    justify-content: center;
+    direction: rtl;
+}
+
+.donation-form, .request-status {
+    width: 70%;
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    border: 0.5px solid rgb(173, 173, 173);
+
+
+    & h2 {
+        color: #333;
+        margin-bottom: 20px;
+        color: var(--font-color-bh);
+
+    }
+
+    & .form-group {
+        margin-bottom: 15px;
+    }
+
+    & label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+        color: var(--font-color-bl);
+
+
+    }
+
+    & input[type="text"],
+    input[type="number"],
+    textarea,
+    select,
+    input[type="file"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        font-size: 16px;
+    }
+
+    & button {
+        background-color: var(--button-color);
+        color: #fff;
+        padding: 10px 40px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    & button:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+    }
+
+    &.error-message {
+        color: red;
+        font-size: 14px;
+        margin-top: 5px;
+    }
+    
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* رسائل الخطأ */
