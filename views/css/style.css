@@ -150,6 +150,8 @@ footer {
     width: 100%;
     top: 0;
     z-index: 1000;
+    direction: rtl;
+
 
 }
 
@@ -160,16 +162,28 @@ footer {
 
 }
 
-.page_links_in_nav a{
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: right;
+    gap: 20px;
+}
+.nav-links li {
+    display: inline;
+    height: 30px;
+    /* background-color: #003337; */
+}
+.nav-links a {
     text-decoration: none;
-    color: #333;
+    color: var(--font-color-bh);
     font-size: 16px;
     transition: color 0.3s ease;
-    margin-left: 15px;
+
 }
-.page_links_in_nav a :hover{
-    color: var(--button-hover-bgcolor);
-    background-color: var(--border-color);
+.nav-links a:hover {
+    color: #ffffff;
+    background-color: var(--bgcolor-H);
+    
 }
 
 .all_icon_nav{

@@ -40,11 +40,12 @@ class Database
         if (! $result) {
             abort(404);
         }
-
-
         return $result;
     }
-
+    public function getGeneratedKey($id_name){
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $result[$id_name];
+    }
 
     public function fetchAll()
     {
