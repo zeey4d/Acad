@@ -36,6 +36,8 @@ $router->get('/contact','controllers/contact.php');
 $router->post('/services/phpmailer/send-email', 'services/phpmailer/send-email.php');
 
 $router->get('/policies_privacy','controllers/policies_privacy.php');
+$router->get('/cart','controllers/cart.php');
+
 
 
 $router->get('/cards/create','controllers/cards/create.php');
@@ -126,8 +128,6 @@ $router->get('/users/index','controllers/users/index.php');
 $router->get('/users/show','controllers/users/show.php');
 $router->get('/users/store','controllers/users/store.php');
 $router->get('/users/update','controllers/users/update.php');
-
-
 
 
 
