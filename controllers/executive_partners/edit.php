@@ -65,7 +65,7 @@ foreach($_POST['phones'] as $phone){
             'partner_id' => $_POST['partner_id'],
             'phone' => $phone['phone'],
             'type' => $phone['type'],
-            'L_type' => $partners[]
+            'L_type' => $partners['']
         ]
     );
 }
