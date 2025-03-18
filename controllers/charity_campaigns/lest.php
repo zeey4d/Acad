@@ -11,23 +11,34 @@ $userID = 1;
 
 
 // يعرض الحملات التي قد تبرعت له
-// يعني ششجمع العناصر بي النسبه لي علاقت المستخدم بهم 
+// يعني ششجمع العناصر بي النسبه لي علاقت المستخدم بهم
 // $note = $db->query("SELECT * from charity_campaigns where id = :id ", [
 //   'id' => $_GET['id'],
 // ])->findOrFail();
 
-$campaigns = $db->query("SELECT 
-C.category_id, 
-C.partner_id, 
-C.campaign_request_id, 
-C.name, 
-C.short_description, 
-C.full_description, 
-C.cost, 
-C.state, 
-C.start_at, 
-C.end_at
-FROM CAMPAIGNS C JOIN USERS_DONATE_CAMPAIGNS UDC ON(C.CAMPAIGN_ID = UDC.CAMPAIGN_ID) WHERE UDC.USER_ID = :USER_ID;
+$campaigns = $db->query("SELECT
+A.campaign_id,
+A.category_id,
+SUM(B.COST) AS collected_money,
+A.partner_id,
+A.campaign_request_id,
+A.name,
+A.short_description,
+A.full_description,
+A.cost,
+A.state,
+A.start_at,
+max(B.donate_date) as donate_date
+FROM campaigns A join users_donate_campaigns B ON (A.campaign_id = B.campaign_id)
+group by A.campaign_id
+
+having A.campaign_id IN
+		(
+			select campaign_id
+			FROM USERS_DONATE_CAMPAIGNS
+			where USER_ID = :USER_ID
+        )
+order by donate_date desc;
 ",[
     'USER_ID' => $userID
 ])->fetchAll();

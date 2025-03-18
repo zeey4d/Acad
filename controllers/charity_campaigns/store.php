@@ -26,9 +26,9 @@ if (! empty($errors)) {
 }
 
 
-$db->query
-  ("INSERT INTO campaigns (category_id, partner_id, campaign_request_id, name, short_description, full_description, cost, state, start_at, end_at) 
-  VALUES (':category_id', ':partner_id', ':campaign_request_id', ':name', ':short_description', ':full_description', ':cost', ':state', ':start_at', ':end_at')", 
+$campaign_id = $db->query
+  ("INSERT INTO campaigns (category_id, partner_id, campaign_request_id, name, short_description, full_description, cost, state, start_at, end_at)
+  VALUES (:category_id, :partner_id, :campaign_request_id, :name, :short_description, :full_description, :cost, :state ,now(), :end_at) RETURNING campaign_id",
   [
       'category_id' => $_POST['category_id'],
       'partner_id' => $_POST['partner_id'],
@@ -38,10 +38,8 @@ $db->query
       'full_description' => $_POST['full_description'],
       'cost' => $_POST['cost'],
       'state' => $_POST['state'],
-      'start_at' => $_POST['start_at'],
       'end_at' => $_POST['end_at'],
-  ]);
-  
+  ])->getGeneratedKey('campaign_id');
 
 header("Location: /pages/charity_campaigns");
 die();
