@@ -1033,7 +1033,7 @@ button[type="submit"]:hover {
     border-collapse: collapse;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    borderr: var(--button-radius);
+    border: var(--button-radius);
 
     & th {
         background-color:var(--bgcolor-H);
