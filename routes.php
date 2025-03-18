@@ -33,6 +33,8 @@ $router->get('/','controllers/home.php');
 $router->get('/home','controllers/home.php');
 $router->get('/about','controllers/about.php');
 $router->get('/contact','controllers/contact.php');
+$router->post('/services/phpmailer/send-email', 'services/phpmailer/send-email.php');
+
 $router->get('/policies_privacy','controllers/policies_privacy.php');
 
 

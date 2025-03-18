@@ -16,7 +16,7 @@
             <a class="link_news" id="link_news" href="">الأخبار</a>
             <a class="link_ratings" id="link_ratings" href="">التقييمات</a>
             <a class="notifications" href="">الاشعارات</a>
-            <a href="contact_us">اتصل بنا</a>
+            <a href="contact">اتصل بنا</a>
             <a href="technical_support">الدعم الفني</a>
         </div>
         <div>
