@@ -19,10 +19,12 @@
 
         </ul>
         <div class="all_icon_nav">
-            <button class="but_login">تسجيل الدخول</button>
-            <a class="icon_nav_search" id="icon_nav_search" href=""><img class="icon_img" src="views/media/images/search.png" alt=""></a>
             <a href=""><img src="" alt=""></a>
             <a class="icon_nav_profile" id="icon_nav_profile" href=""><img class="icon_img" src="views/media/images/email.png" alt=""></a>
+            <a class="icon_nav_search" id="icon_nav_search" href=""><img class="icon_img" src="views/media/images/search.png" alt=""></a>
+
+            <button class="but_login">تسجيل الدخول</button>
+
         </div>
        
     </div>
