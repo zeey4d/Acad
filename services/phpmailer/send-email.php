@@ -1,4 +1,5 @@
 <?php
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
@@ -16,11 +17,11 @@ try {
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Username   = $config['phpmailer']['mail_username'];
     $mail->Password   = $config['phpmailer']['mail_password'];
-    $fromemail=$config['phpmailer']['mail_from'];
+    $fromemail = $config['phpmailer']['mail_from'];
     // Email headers
     $mail->setFrom($fromemail, "mohammedmogeab");
-    $mail->addAddress('mohammedmogeab@gmail.com'); // Recipient email
-    
+    $mail->addAddress('ahmedgazy375@gmail.com'); // Recipient email
+
 
     // Use HTML for a better formatted message
     $mail->isHTML(true);
@@ -58,7 +59,7 @@ try {
         </body>
         </html>
     ";
-    
+
 
 
 
@@ -71,4 +72,3 @@ try {
 } catch (Exception $e) {
     echo "Mailer Error: {$mail->ErrorInfo}";
 }
-?>
