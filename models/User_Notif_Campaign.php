@@ -11,6 +11,7 @@ class User_Notif_Campaign {
 
     private User $user;
     private Campaign $campaign;
+    private bool $isRead = false;
     private int $userID;
     private int $campaignID;
 
@@ -23,7 +24,7 @@ class User_Notif_Campaign {
     return "User {$this->userID} notified about Campaign {$this->campaignID}";
     } 
     public function markAsRead(): void {
-    // Mark as read logic
+        $this->isRead = true;
     }
 
 }

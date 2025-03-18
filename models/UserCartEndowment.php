@@ -12,6 +12,7 @@ class UserCartEndowment {
 
     private User $user;
     private Endowment $endowment;
+    private static $endowmentCarts = [];
     private int $costID;
     private int $endowmentID;
     private int $userID;
@@ -28,10 +29,14 @@ class UserCartEndowment {
     return "Cart Item: Endowment ID {$this->endowmentID}, User ID {$this->userID}";
     } 
     
+    // public function removeFromCart(): void {
+    // // Logic to remove from cart
+    // }
     public function removeFromCart(): void {
-    // Logic to remove from cart
+        self::$endowmentCarts = array_filter(self::$endowmentCarts, fn($item) => 
+            $item->userID !== $this->userID || $item->endowmentID !== $this->endowmentID
+        );
     }
-
 
 
     

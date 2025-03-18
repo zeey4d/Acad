@@ -8,8 +8,10 @@ namespace models;
 
 //تعريف الكلاس 
 class User_Cart_Campaign {
+    
     private User $user;
     private Campaign $campaign;
+   private static $campaignCarts = [];
     private int $campaignID;
     private float $cost;
     private int $userID;
@@ -22,10 +24,13 @@ class User_Cart_Campaign {
     public function getCartDetails(): string {
     return "Campaign {$this->campaignID} in Cart, Cost: {$this->cost}";
     } 
-    public function removeFromCart(): void {
-    // Remove logic
-    }
 
+
+    public function removeFromCart(): void {
+        self::$campaignCarts = array_filter(self::$campaignCarts, fn($item) => 
+            $item->userID !== $this->userID || $item->campaignID !== $this->campaignID
+        );
+    }
 
    
 

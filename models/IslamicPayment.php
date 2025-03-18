@@ -47,7 +47,7 @@ public function updatePaymentCost(float $newCost): void {
 $this->cost = $newCost;} 
 
 public function processPayment(): void {
-// Process payment logic here
+    $this->paymentDate = new DateTime();
 }
    
    

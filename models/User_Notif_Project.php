@@ -10,6 +10,7 @@ namespace models;
 class User_Notif_Project {
     private User $user;
     private Project $project;
+    private bool $isRead = false;
     private int $userID;
     private int $projectID;
 
@@ -22,7 +23,7 @@ class User_Notif_Project {
     } 
 
     public function markAsRead(): void {
-    // Mark as read logic
+        $this->isRead = true;
     }
 
 
