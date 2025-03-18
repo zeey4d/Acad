@@ -14,7 +14,7 @@
     --font-hover-color: #ffffff;
     --card-bgcolor: #ffffff;
     --card-hover-bgcolor: #ffffff;
-    --button-bgcolor: #00a7b5;
+    --button-bgcolor: #00575F;
     --button-hover-bgcolor: #ffffff;
     --link-color: #ffffff;
     --link-hover-color: #ffffff;
@@ -169,6 +169,7 @@ footer {
 }
 .page_links_in_nav a :hover{
     color: var(--button-hover-bgcolor);
+    background-color: var(--border-color);
 }
 
 .all_icon_nav{
