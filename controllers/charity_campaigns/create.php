@@ -22,4 +22,14 @@ $campaign_id = $db->query
       'end_at' => $_POST['end_at'],
   ])->getGeneratedKey('campaign_id');
 
+
+
+
+
+
+
+
+
+
+  
 require "views/pages/charity_campaigns/create_view.php";
