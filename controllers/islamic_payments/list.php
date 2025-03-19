@@ -20,4 +20,4 @@ $userID = 1;
 
 
 
-require "views/pages/charity_campaigns/show_view.php";
+require "views/pages/charity_campaigns/list_view.php";
