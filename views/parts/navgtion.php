@@ -8,13 +8,15 @@
    
         <ul class="nav-links">
             <li><a href="/">الرئيسية</a></li>
-            <li><a href="#">وقف بادر</a></li>
-            <li><a href="#">المساهمات</a></li>
-            <li><a href="#">الأخبار</a></li>
-            <li><a href="#">التقييمات</a></li>
-            <li><a href="#">الاشعارات</a></li>
-            <li><a href="#">اتصل بن</a></li>
-            <li><a href="#">الدعم الفني</a></li>
+            <li><a href="/islamic_endowments_index">الاوقاف</a></li>
+            <li><a href="/charity_projects_index">المشاريع</a></li>
+            <li><a href="/charity_campaigns_index">الحملات الخيريه</a></li>
+            <!-- <li><a href="#">الماهمات</a></li> -->
+            <!-- <li><a href="#">الاخبار</a></li> -->
+            <!-- <li><a href="#">التقييمات</a></li> -->
+            <li><a href="/notifications_index">الاشعارات</a></li>
+            <li><a href="/contact">اتصل بن</a></li>
+            <!-- <li><a href="/contact">الدعم الفني</a></li> -->
 
 
         </ul>
