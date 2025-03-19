@@ -294,7 +294,29 @@ display: flex;
     color: white;
 }
 
+/* users */
 
+/* users_create */
+
+
+.main_user {
+    display: flex;
+    justify-content: center;
+    direction: rtl;
+   
+
+
+}
+.form_signup{
+    padding: var(--padding-xl);
+    margin: var(--margin-xl);
+    background-color: #00a7b5;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+   
+
+}
 
 /* صفحة الشكاوي والاقتارحات */
 .main_contact{
