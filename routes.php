@@ -52,6 +52,7 @@ $router->get('/cards_update', 'controllers/cards/update.php');
 $router->get('/charity_campaigns_create', 'controllers/charity_campaigns/create.php');
 $router->get('/charity_campaigns_destroy', 'controllers/charity_campaigns/destroy.php');
 $router->get('/charity_campaigns_edit', 'controllers/charity_campaigns/edit.php');
+$router->get('/charity_campaigns_manage', 'controllers/charity_campaigns/manage.php');
 $router->get('/charity_campaigns_index', 'controllers/charity_campaigns/index.php');
 $router->get('/charity_campaigns_show', 'controllers/charity_campaigns/show.php');
 $router->get('/charity_campaigns_list', 'controllers/charity_campaigns/list.php');
@@ -62,6 +63,7 @@ $router->get('/charity_campaigns_update', 'controllers/charity_campaigns/update.
 $router->get('/charity_projects_create', 'controllers/charity_projects/create.php');
 $router->get('/charity_projects_destroy', 'controllers/charity_projects/destroy.php');
 $router->get('/charity_projects_edit', 'controllers/charity_projects/edit.php');
+$router->get('/charity_projects_manage', 'controllers/charity_projects/manage.php');
 $router->get('/charity_projects_index', 'controllers/charity_projects/index.php');
 $router->get('/charity_projects_show', 'controllers/charity_projects/show.php');
 $router->get('/charity_projects_list', 'controllers/charity_projects/list.php');
@@ -93,6 +95,7 @@ $router->get('/islamic_payments_destroy', 'controllers/islamic_payments/destroy.
 $router->get('/islamic_payments_edit', 'controllers/islamic_payments/edit.php');
 $router->get('/islamic_payments_index', 'controllers/islamic_payments/index.php');
 $router->get('/islamic_payments_show', 'controllers/islamic_payments/show.php');
+$router->get('/islamic_payments_zakat', 'controllers/islamic_payments/zakat.php');
 $router->get('/islamic_payments_list', 'controllers/islamic_payments/list.php');
 $router->get('/islamic_payments_store', 'controllers/islamic_payments/store.php');
 $router->get('/islamic_payments_update', 'controllers/islamic_payments/update.php');
@@ -121,6 +124,7 @@ $router->get('/notifications_destroy', 'controllers/notifications/destroy.php');
 $router->get('/notifications_edit', 'controllers/notifications/edit.php');
 $router->get('/notifications_index', 'controllers/notifications/index.php');
 $router->get('/notifications_show', 'controllers/notifications/show.php');
+$router->get('/notifications_list', 'controllers/notifications/list.php');
 $router->get('/notifications_store', 'controllers/notifications/store.php');
 $router->get('/notifications_update', 'controllers/notifications/update.php');
 
@@ -174,6 +178,7 @@ $router->get('/cards_update_view', 'views/pages/cards/update_view.php');
 $router->get('/charity_campaigns_create_view', 'views/pages/charity_campaigns/create_view.php');
 $router->get('/charity_campaigns_destroy_view', 'views/pages/charity_campaigns/destroy_view.php');
 $router->get('/charity_campaigns_edit_view', 'views/pages/charity_campaigns/edit_view.php');
+$router->get('/charity_campaigns_manage_view', 'views/pages/charity_campaigns/manage_view.php');
 $router->get('/charity_campaigns_index_view', 'views/pages/charity_campaigns/index_view.php');
 $router->get('/charity_campaigns_show_view', 'views/pages/charity_campaigns/show_view.php');
 $router->get('/charity_campaigns_list_view', 'views/pages/charity_campaigns/list_view.php');
@@ -184,6 +189,7 @@ $router->get('/charity_campaigns_update_view', 'views/pages/charity_campaigns/up
 $router->get('/charity_projects_create_view', 'views/pages/charity_projects/create_view.php');
 $router->get('/charity_projects_destroy_view', 'views/pages/charity_projects/destroy_view.php');
 $router->get('/charity_projects_edit_view', 'views/pages/charity_projects/edit_view.php');
+$router->get('/charity_projects_manage_view', 'views/pages/charity_projects/manage_view.php');
 $router->get('/charity_projects_index_view', 'views/pages/charity_projects/index_view.php');
 $router->get('/charity_projects_show_view', 'views/pages/charity_projects/show_view.php');
 $router->get('/charity_projects_list_view', 'views/pages/charity_projects/list_view.php');
@@ -215,6 +221,7 @@ $router->get('/islamic_payments_destroy_view', 'views/pages/islamic_payments/des
 $router->get('/islamic_payments_edit_view', 'views/pages/islamic_payments/edit_view.php');
 $router->get('/islamic_payments_index_view', 'views/pages/islamic_payments/index_view.php');
 $router->get('/islamic_payments_show_view', 'views/pages/islamic_payments/show_view.php');
+$router->get('/islamic_payments_zakat_view', 'views/pages/islamic_payments/zakat_view.php');
 $router->get('/islamic_payments_list_view', 'views/pages/islamic_payments/list_view.php');
 $router->get('/islamic_payments_store_view', 'views/pages/islamic_payments/store_view.php');
 $router->get('/islamic_payments_update_view', 'views/pages/islamic_payments/update_view.php');
@@ -243,6 +250,7 @@ $router->get('/notifications_destroy_view', 'views/pages/notifications/destroy_v
 $router->get('/notifications_edit_view', 'views/pages/notifications/edit_view.php');
 $router->get('/notifications_index_view', 'views/pages/notifications/index_view.php');
 $router->get('/notifications_show_view', 'views/pages/notifications/show_view.php');
+$router->get('/notifications_list_view', 'views/pages/notifications/list_view.php');
 $router->get('/notifications_store_view', 'views/pages/notifications/store_view.php');
 $router->get('/notifications_update_view', 'views/pages/notifications/update_view.php');
 
