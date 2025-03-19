@@ -22,8 +22,7 @@ $campaign_id = $db->query
       'end_at' => $_POST['end_at'],
   ])->getGeneratedKey('campaign_id');
 
-
-
+  
 
   function validateInput($data) {
     $errors = [];
