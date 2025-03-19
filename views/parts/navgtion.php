@@ -7,7 +7,7 @@
         </div>
    
         <ul class="nav-links">
-            <li><a href="#">الرئيسية</a></li>
+            <li><a href="/">الرئيسية</a></li>
             <li><a href="#">وقف بادر</a></li>
             <li><a href="#">المساهمات</a></li>
             <li><a href="#">الأخبار</a></li>

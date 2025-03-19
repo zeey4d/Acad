@@ -1,7 +1,8 @@
 <?php
 $heading = "one test";
-use core\App ;
-use core\Database ;
+
+use core\App;
+use core\Database;
 
 
 $db = App::resolve(Database::class);
@@ -39,12 +40,12 @@ having A.campaign_id IN
 			where USER_ID = :USER_ID
         )
 order by donate_date desc;
-",[
-    'USER_ID' => $userID
+", [
+	'USER_ID' => $userID
 ])->fetchAll();
 
 //authorize($note['other_id'] == $userID);
 
 
 
-require "views/pages/charity_campaigns/show_view.php";
+require "views/pages/charity_campaigns/list_view.php";

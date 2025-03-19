@@ -31,4 +31,4 @@ order by (donate_date) desc;",[
     'USER_ID' => $userID
 ])->fetchAll();
 
-require "views/pages/charity_campaigns/show_view.php";
+require "views/pages/charity_campaigns/list_view.php";
