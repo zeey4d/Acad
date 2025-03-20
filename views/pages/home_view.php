@@ -14,9 +14,9 @@
     <img src="views/media/images/andrewSmall.jpg" alt="">
 
   </section>
-  <!-- حاوية البطاقات -->
   <section class="Carousel_card">
     <h1>الصَّدَقَةُ لَا تَنْقُصُ الْمَالَ، بَلْ تَزِيدُهُ بَرَكَةً وَطُهْرًا</h1>
+  <!-- حاوية البطاقات -->
 
     <main class="main_cart">
       <section class="container">

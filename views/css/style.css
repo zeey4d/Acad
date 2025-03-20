@@ -22,6 +22,11 @@
     --bgcolor-Hh:#003337;
     --bgcolor-H:#00646E;
     --bgcolor-N:#00A7B5;
+    --bgcolor-light:#f0f0f0;
+
+    --bg-border: 1px solid #dddddd ;
+    --bg-border-l: 1px solid #dddddd;
+    --border-radius: 1em;
 
 
 
@@ -56,12 +61,15 @@
     --card-hover-shadow: 0 0 1em rgba(0, 0, 0, 0.1);
     --card-hover-border: 1px solid #ffffff;
     /* الازرار  */
-    --button-color: #00575F;
-    --button-height: auto;
-    --button-width: auto;
+    --button-color: #ffffff;
+    --button-bg-h: #00575F;
+    --button-bg-l: #00A7B5;
+
+    --button-height: 4em;
+    --button-width: 10em;
     --button-radius: 0.5em;
     --button-shadow: 0 0 0.5em rgba(0, 0, 0, 0.1);
-    --button-border: 0px solid ;
+    --button-border: 1px solid #dddddd ;
     --button-hover-shadow: 0 0 1em rgba(0, 0, 0, 0.1);
     --button-hover-border: 1px solid #ffffff;
 }
@@ -286,7 +294,29 @@ display: flex;
     color: white;
 }
 
+/* users */
 
+/* users_create */
+
+
+.main_user {
+    display: flex;
+    justify-content: center;
+    direction: rtl;
+   
+
+
+}
+.form_signup{
+    padding: var(--padding-xl);
+    margin: var(--margin-xl);
+    background-color: #00a7b5;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+   
+
+}
 
 /* صفحة الشكاوي والاقتارحات */
 .main_contact{
@@ -295,14 +325,17 @@ display: flex;
  
 }
 .contact{
-    margin: 20px 0 20px 0 ;
-    width: 40%;
+    padding: var(--padding-xl);
+    margin: var(--margin-xl);
+
+    width: 60%;
     background-color: #ffffff;
     border-radius: 20px;
     border: 1px solid rgb(199, 199, 199) ;
     & h1{
     text-align: center;
     margin-top: 20px;
+    color: var(--font-color-bh);
     }
     & select{
         height: 30px;
@@ -312,11 +345,12 @@ display: flex;
     }
     & label{
         display: block;
-        width: 300px;
+        width: 100%;
         background-color: #ffffff;
         text-align: right;
         margin: 10px 0 0 0;
         padding: 10px 0 5px 0;
+        
         
     }
     & input {
@@ -328,19 +362,20 @@ display: flex;
     }
     & textarea {
         width: 100%;
+        height: 100px;
         border-radius: 5px;
-        background-color: rgb(240, 240, 240) ;
+        background-color: rgb(255, 255, 255) ;
         border-color: rgb(205, 205, 205);
         
     }
     & button {
         margin-top: 10px;
         width: 100%;
-        background-color: #00a7b5;
+        background-color: var(--button-bgcolor);
         height: 35px;
         color: #fff;
         border: none;
-        border-radius: 10px;
+        border-radius:  var(--button-radius);
 
     }
 
@@ -358,6 +393,14 @@ display: flex;
         text-align: right;
         background-color: #ffffff;
         margin-top: 10px;
+        color: var(--font-color-bl);
+    }
+    & .no3{
+        width: 100%;
+    }
+    & .questu_ions{
+        width: 100%;
+
     }
 }
 
@@ -1111,7 +1154,136 @@ button[type="submit"]:hover {
 }
 
 
+/* charity_campaigns */
 
+/* show */
+
+.div_show_ch{
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    width: 100%;
+    direction: rtl;
+}
+
+.card_islamic_endowments{
+    background-color: #ffffff;
+    margin: 30px;
+    padding: 40px;
+    border: var(--bg-border);
+    border-radius: var(--border-radius);
+    width: 100%;
+
+    & h5 {
+        padding-bottom: var(--padding-m);
+        color: var(--font-color-bh);
+    }
+
+    & h6 {
+        font-size: 15px;
+        color: var(--font-color-bh);
+
+    }
+
+    & p {
+        width: 100%;
+        margin-bottom: var(--margin-m);
+        background-color: var(--bgcolor-light);
+        border-radius: var(--border-radius);
+        padding: var(--padding-m);
+        color: var(--font-color-bl);
+    }
+
+    & .details_show_ch{
+        background-color: var(--bgcolor-light);
+        padding: 20px;
+        border-radius: var(--border-radius);
+
+        & p{
+            padding: 0;
+
+        }
+    }
+    & img {
+        padding: var(--padding-m) 0 var(--padding-m) 0;
+        border-radius: var(--border-radius);
+        width: 100%;
+        height: auto;
+
+    }
+
+
+
+}
+
+.card_insid{
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--bgcolor-light);
+    padding: var(--padding-xl);
+    width: 100%;
+    border-radius: var(--border-radius);
+    border: var(--bg-border-l);
+
+
+    & h6{
+        width: 100%;
+        padding: var(--padding-m);
+
+    }
+    & p {
+        width: 100%;
+    }
+
+}
+#card_insid{
+    margin-bottom: var(--margin-xl);
+}
+#card_insid2{
+    margin-bottom: var(--margin-xl);
+}
+.bar_actions{
+    justify-content: center;
+    direction: rtl;
+    padding: var(--padding-xl);
+    margin: var(--margin-xl);
+    border-radius: var(--border-radius);
+    border: var(--bg-border);
+    
+    & p {
+        text-align: center;
+    }
+
+    & button{
+        background-color: var(--button-bg-h);
+        width: var(--button-width);
+        height: var(--button-height);
+        border-radius:var(--button-radius) ;
+        color: white;
+        margin: var(--margin-m);
+        font-weight: bold;
+        border: none;
+
+    }
+
+    & .donate{
+        display: flex;
+        justify-content: center;
+    }
+
+    & .add_to_cart{
+        background-color: yellow;
+      
+        color: black;
+    }
+
+    & .donate_now{
+        background-color: var(--bgcolor-N);
+        
+    }
+
+    
+}
 
 
 
