@@ -59,7 +59,7 @@ foreach($_POST['projects'] as $project){
         $db->query(
             "INSERT into users_notification (notification_id,user_id) values (:notification_id,:user_id)",[
                 'notification_id' => $notification_id,
-                'user_id' => $user;
+                'user_id' => $user['user_id']
             ]
         );
     }
@@ -78,7 +78,7 @@ foreach($_POST['endowments'] as $endowment){
         $db->query(
             "INSERT into users_notification (notification_id,user_id) values (:notification_id,:user_id)",[
                 'notification_id' => $notification_id,
-                'user_id' => $user;
+                'user_id' => $user['user_id']
             ]
         );
     }
@@ -97,9 +97,9 @@ foreach($_POST['campaigns'] as $campaign){
         $db->query(
             "INSERT into users_notification (notification_id,user_id) values (:notification_id,:user_id)",[
                 'notification_id' => $notification_id,
-                'user_id' => $user;
+                'user_id' => $user['user_id']
             ]
-        );// ارسال الاشعارات لهم
+        );// ارسال الاشعارات
     }
 }
 header("Location: /pages/notifications");

@@ -45,7 +45,7 @@ VALUES
     :end_at,
     :state,
     :directorate
-    ) RETURNING project_id",
+    )",
     [
         'partner_id' => $_POST['partner_id'],
         'category_id'=> $_POST['category_id'],
@@ -59,7 +59,7 @@ VALUES
         'end_at' => $_POST['end_at'],
         'state' => $_POST['state'],
         'directorate' => $_POST['directorate']
-    ])->getGeneratedKey('project_id');
+    ])->getGeneratedKey();
 header("Location: /pages/charity_projects");
 die();
 

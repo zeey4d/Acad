@@ -11,6 +11,6 @@ $heading = "All My tests";
 
 
 require "views/pages/users/index_view.php";
-
+$users = $db->query("SELECT * from users ;")->fetchAll();
 
 ?>
