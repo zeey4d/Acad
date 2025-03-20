@@ -16,6 +16,10 @@ $userID = 1;
 //   'id' => $_GET['id'],
 // ])->findOrFail();
 
+$IslamicPayments = $db->query("SELECT * FROM islamic_payments WHERE user_id = :user_id",[
+    'user_id'=> $userID
+]);
+
 //authorize($note['other_id'] == $userID);
 
 

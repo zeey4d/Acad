@@ -1,13 +1,23 @@
 <?php
+$heading = "one test";
 use core\App ;
 use core\Database ;
+
+
 $db = App::resolve(Database::class);
 
 
-$heading = "All My tests";
-$notifications = $db->query(
-    "SELECT * from notifications;"
-)->findOrFail();
+$userID = 1;
+
+
+// يعرض الحملات التي قد تبرعت له
+// يعني ششجمع العناصر بي النسبه لي علاقت المستخدم بهم 
+// $note = $db->query("SELECT * from charity_campaigns where id = :id ", [
+//   'id' => $_GET['id'],
+// ])->findOrFail();
+
+//authorize($note['other_id'] == $userID);
+
 $notifications = $db->query(
     "SELECT 
         A.notification_id,
@@ -49,10 +59,4 @@ foreach($notifications as $notification){
     ])->fetchAll();
 }
 
-// $notifications = $db->query("SELECT * from notifications ;")->fetchAll();
-
-
-require "views/pages/notifications/index_view.php";
-
-
-?>
+require "views/pages/charity_campaigns/list_view.php";

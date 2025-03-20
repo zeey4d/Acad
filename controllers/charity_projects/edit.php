@@ -28,7 +28,7 @@ $projects = $db->query("SELECT
     directorate
     )FROM PROJECTS WHERE project_id = :project_id
 ",[
-    'project_id' => $_POST['project_id']
+    'project_id' => $_GET['project_id']
 ])->findOrFail();
 
 // $item = $db->query("SELECT * from charity_projects where id = :id ", [

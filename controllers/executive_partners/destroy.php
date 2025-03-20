@@ -18,9 +18,6 @@ $partners = $db->query("SELECT * from partners where partner_id = :partner_id",[
 $db->query("DELETE from partners where partner_id = :partner_id ",[
     'partner_id' => $_POST['partner_id']
 ]);
-// $db->query("DELETE FROM executive_partners where id = :id", [
-//   'id' => $_POST['id'],
-// ]);
 header("Location: /pages/executive_partners");
 exit();
 

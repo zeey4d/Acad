@@ -28,7 +28,7 @@ having A.project_id in
             where user_id =  :USER_ID
 		)
 order by (donate_date) desc;",[
-    'USER_ID' => $userID
+    'USER_ID' => $_GET['user_id']
 ])->fetchAll();
 
 require "views/pages/charity_campaigns/list_view.php";

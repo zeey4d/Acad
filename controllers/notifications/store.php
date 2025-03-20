@@ -30,7 +30,48 @@ if (! empty($errors)) {
 // $db->query("INSERT INTO notifications (name) VALUES (:name)", [
 //     'name' => $_POST['name'],
 // ]);
-
+$notification_id = $db->query(
+    "INSERT INTO notifications (title, content, send_at) VALUES (:title, :content, :send_at)",[
+        'title' => $_POST['title'],
+        'content' => $_POST['content'],
+        'send_at' => $_POST['send_at'],
+    ]
+)->getGeneratedKey();
+foreach($_POST['photoes'] as $photo){
+    $db->query(
+        "INSERT INTO notifications_photos (notification_id, photo) VALUES (:notification_id, :photo)",[
+            'notification_id' => $notification_id,
+            'photo' => $photo,
+        ]
+    );
+}
+foreach($_POST['projects'] as $project){
+    $db->query(
+        "INSERT INTO L_projects_notifications (notification_id, project_id) VALUES (:notification_id, :project_id)",[
+            'notification_id' => $notification_id,
+            'project_id' => $project,
+        ]
+    );
+}
+foreach($_POST['endowments'] as $endowment){
+    $db->query(
+        "INSERT INTO L_endowments_notifications (notification_id, endowment_id) VALUES (:notification_id, :endowment_id)",[
+            'notification_id' => $notification_id,
+            'endowment_id' => $endowment,
+        ]
+    );
+}
+foreach($_POST['campaigns'] as $campaign){
+    $db->query(
+        "INSERT INTO L_campaigns_notifications (notification_id, campaign_id) VALUES (:notification_id, :campaign_id)",[
+            'notification_id' => $notification_id,
+            'campaign_id' => $campaign,
+        ]
+    );
+}
+$users = $db->query(
+    "SELECT A.user_id FROM users_noti_campaigns "
+)
 header("Location: /pages/notifications");
 die();
 
