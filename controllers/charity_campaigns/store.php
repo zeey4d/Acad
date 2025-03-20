@@ -66,10 +66,36 @@ $documents = $_POST['documents'];
 $idFont = $_POST['idFont']; 
 $idback = $_POST['idback']; 
 
+// التحقق من الحقول المطلوبة
 
-if (!Validator::string($_POST['name'] ?? '',1 ,255)){
-    $errors["name"] = "الاسم يجب ان يكون بين  1 او 255 حرفا";
+if (!isset($_POST['caseType']) || !Validator::string($_POST['caseType'] ?? '',1 ,255)){
+    $errors["caseType"] = "نوع الحالة غير صالحة";
  }
+ 
+ if (!isset($_POST['name']) || !Validator::string($_POST['name'] ?? '',1 ,255)){
+ $errors["name"] = "الاسم يجب ان يكون بين  1 او 255 حرفا";
+ }
+
+ if (!isset($_POST['age']) || !(Validator::number($_POST['age']?? '', -1, 100 ))){
+    $errors["age"] = "العمر غير صالح ";
+ }
+  
+if (!isset($_POST['circumstances']) || !Validator::string($_POST['circumstances'] ?? '',1 ,1000)){
+    $errors["circumstances"] = "الظروف غير صالح";
+}  
+if (!isset($_POST['accountNumber']) || !Validator::string($_POST['accountNumber'] ?? '',1 ,225)){
+  $errors["accountNumber "] = "االحساب غير صالح ";
+}
+if (!isset($_POST['bankName']) || !Validator::string($_POST['bankName'] ?? '',1 ,1000)){
+  $errors["bankName"] = "  اسم البنك غير صالح";
+} 
+if (!isset($_POST['accountType']) || !Validator::string($_POST['accountType'] ?? '',1 ,1000)){
+    $errors["ciraccountTypecumstances"] = "  نوع الحساب غير صالح";
+ }
+ if (!Validator::number($_POST['cost'] ?? 0, 1 , 10000000)){
+    $errors["name"] = " المبلغ غير صالح ";
+ }
+
 
  if (!Validator::number($_POST['cost'] ?? 0, 1 , 10000000)){
     $errors["name"] = " المبلغ غير صالح ";
