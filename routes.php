@@ -49,7 +49,7 @@ $router->get('/cards_store', 'controllers/cards/store.php');
 $router->get('/cards_update', 'controllers/cards/update.php');
 
 
-$router->get('/charity_campaigns_create', 'controllers/charity_campaigns/create.php');
+$router->get('/charity_campaigns_create_view', 'controllers/charity_campaigns/create.php');
 $router->get('/charity_campaigns_destroy', 'controllers/charity_campaigns/destroy.php');
 $router->get('/charity_campaigns_edit', 'controllers/charity_campaigns/edit.php');
 $router->get('/charity_campaigns_index', 'controllers/charity_campaigns/index.php');

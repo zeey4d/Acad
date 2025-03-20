@@ -23,11 +23,23 @@
     --bgcolor-H:#00646E;
     --bgcolor-N:#00A7B5;
     --bgcolor-light:#f0f0f0;
+    --bgcolor-white:#ffffff;
 
-    --bg-border: 1px solid #dddddd ;
-    --bg-border-l: 1px solid #dddddd;
+
+    --bg-border: 1px solid #b1b1b1 ;
+    --bg-border-l: 1px solid #dedede;
     --border-radius: 1em;
 
+/* input */
+--input-height: 4em;
+--input-width: 10em;
+--input-radius: 0.5em;
+--input-shadow: 0 0 0.5em rgba(0, 0, 0, 0.1);
+--input-border: 1px solid #dddddd ;
+--input-hover-shadow: 0 0 1em rgba(0, 0, 0, 0.1);
+--input-hover-border: 1px solid #cccccc;
+--input-hover-color: #ffffff;
+--input-hover-bg: white;
 
 
 
@@ -71,7 +83,10 @@
     --button-shadow: 0 0 0.5em rgba(0, 0, 0, 0.1);
     --button-border: 1px solid #dddddd ;
     --button-hover-shadow: 0 0 1em rgba(0, 0, 0, 0.1);
-    --button-hover-border: 1px solid #ffffff;
+    --button-hover-border: 1px solid #00575F;
+    --button-hover-color: #00575F;
+    --button-hover-bg: white;
+
 }
 
 
@@ -303,20 +318,150 @@ display: flex;
     display: flex;
     justify-content: center;
     direction: rtl;
-   
-
+    background-color: var(--bgcolor-light);
 
 }
 .form_signup{
     padding: var(--padding-xl);
     margin: var(--margin-xl);
-    background-color: #00a7b5;
-    width: 80%;
-    display: flex;
-    justify-content: center;
-   
+    width: 60%;
+    border-radius: var(--border-radius);
+    background-color: var(--bgcolor-white);
+
+    border: var(--bg-border);
+
+    & h1 {
+        text-align: center;
+        color: var(--font-color-bh);
+        padding: var(--padding-m);
+
+    }
+    & label {
+        display: block;
+        color: var(--font-color-bl);
+        padding: var(--padding-m) 0 var(--padding-m) 0;
+    }
+
+ 
+
+    & input{
+        display: inline;
+        height: 35px;
+        border-radius: 5px;
+        width: 300px;
+        background-color: var(--bgcolor-light);
+        padding: var(--padding-s);
+        border: var(--input-border);
+
+    }
+
+    & input:hover{
+        color: var(--input-hover-color);
+        border-radius:var(--input-radius) ;
+        background-color: var(--input-hover-bg);
+        margin-top: var(--margin-m);
+        border: var(--button-hover-border);
+        transition: none;
+
+    }
+    
+
+    & button{
+        background-color: var(--button-bg-h);
+        width: var(--button-width);
+        height: var(--button-height);
+        border-radius:var(--button-radius) ;
+        color: white;
+        margin-top: var(--margin-m);
+        font-weight: bold;
+        border: none;
+
+    }
+    & button:hover{
+        color: var(--button-hover-color);
+        border-radius:var(--button-radius) ;
+        background-color: var(--button-hover-bg);
+        margin-top: var(--margin-m);
+        font-weight: bold;
+        border: var(--button-hover-border);
+    }
+    
+
+    & .create {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      
+
+
+    }
+
 
 }
+/* index user */
+.log_in {
+    display: flex;
+    justify-content: center;
+
+    & label {
+        margin: 0;
+        transition: none;
+    }
+
+
+    & div {
+        display: flex;
+        justify-content: center;
+        padding: var(--padding-m);
+
+        & .link_forgot_password{
+            padding: var(--padding-m);
+            
+        }
+       & .link_log_in{
+        padding: var(--padding-m);
+
+
+       } 
+    }
+
+
+}
+
+/* show user */
+.personal_data{
+    display: flex;
+    justify-content: center;
+
+    & .btn_image {
+        
+    }
+
+}
+
+.image{
+    display: flex;
+    justify-content: center;
+}
+.links {
+    display: flex;
+    justify-content: center;
+    padding: var(--padding-m);
+    & .donations{
+        padding: var(--padding-m);
+    }
+    & .notifications{
+        padding: var(--padding-m);
+
+    }
+    & .basket{
+        padding: var(--padding-m);
+
+    }
+}
+
+
+
 
 /* صفحة الشكاوي والاقتارحات */
 .main_contact{
@@ -1285,7 +1430,29 @@ button[type="submit"]:hover {
     
 }
 
+/* islamic_paymente  */
 
+/* show */
+
+.main_show_islamic_endowments{
+    display: flex;
+    justify-content: center;
+    direction: rtl;
+
+    
+}
+
+.card_islamic_endowments_news {
+    & p {
+        width: 80%;
+        height: 30%;
+    }
+    & img {
+        width: 40%;
+        height: 40%;
+
+    }
+}
 
 
 

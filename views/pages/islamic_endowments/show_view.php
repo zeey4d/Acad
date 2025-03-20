@@ -3,6 +3,7 @@
 <?php require('views/parts/navgtion.php') ?>
 <?php require('views/parts/header.php') ?>
 <main>
+  <div class="main_show_islamic_endowments">
   <button> تبرع الان <img src="views/media/images/2.png" alt="" length="10" width="10"> </button>
   <!-- التفاصيل الاسايسيه -->
   <section class="card_islamic_endowments">
@@ -16,6 +17,7 @@
        قطع الطريق حيث يبعد اقرب جامع كيلو متر</p>
     
   </section>
+ 
   <!-- باقي البينات -->
   <section class="card_islamic_endowments">
     <div>
@@ -40,8 +42,9 @@
     </div>
 
   </section>
+  </div>
   <!-- الاخبار -->
-  <section class="card_islamic_endowments">
+  <section class="card_islamic_endowments" id="card_islamic_endowments_news">
  <div class="card_notifications">
   <p>
     <span>30%</span> تم جمع 30% من التبرعات
