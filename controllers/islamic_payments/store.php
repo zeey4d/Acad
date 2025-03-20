@@ -29,7 +29,7 @@ if (! empty($errors)) {
 $islamicPayment_id = $db->query(
     "
     INSERT INTO islamic_payments (type, count, cost, paid_cost, paid_for, payment_date, user_id)
-    VALUES (:type, :count, :cost, :paid_cost, :paid_for, :payment_date, :user_id) RETURNING islamic_payment_id;
+    VALUES (:type, :count, :cost, :paid_cost, :paid_for, :payment_date, :user_id)";
     ",
     [
         'type' => $_POST['type'],

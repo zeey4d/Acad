@@ -92,7 +92,7 @@ $db->query(
         'notification_id' => $_POST['notification_id']
     ]
 );
-for($i = 0; $i < count($_POST['photoes']); $i++){
+for($i = 0; $i < count($_POST['photoes']); $i++){// to edit notification photoes
     $db->query(
         "UPDATE notifications_photos SET
         photo = :photo
@@ -103,7 +103,7 @@ for($i = 0; $i < count($_POST['photoes']); $i++){
         ]
     );
 }
-for($i =count($_POST['projects']);$i < count($notifications['projects']); $i++){
+for($i =count($_POST['projects']);$i < count($notifications['projects']); $i++){// to delete linking projects with notification withowt deleting notification
     $db->query(
         "DELETE FROM notifications_photos WHERE notification_id = :notification_id and photo = :photo",[
             'notification_id' => $_POST['notification_id'],
@@ -111,7 +111,7 @@ for($i =count($_POST['projects']);$i < count($notifications['projects']); $i++){
         ]
         );
 }
-for($i = 0; $i < count($_POST['projects']); $i++){
+for($i = 0; $i < count($_POST['projects']); $i++){// to edit linking projects with notification withowt deleting notification
     $db->query(
         "UPDATE L_projects_notifications SET
         project_id = :project_id
@@ -122,7 +122,7 @@ for($i = 0; $i < count($_POST['projects']); $i++){
         ]
     );
 }
-for($i =count($_POST['projects']);$i < count($notifications['projects']); $i++){
+for($i =count($_POST['projects']);$i < count($notifications['projects']); $i++){// to delete linking project with notification withowt deleting notification
     $db->query(
         "DELETE FROM L_projects_notifications WHERE notification_id = :notification_id and project_id = :project_id",[
             'notification_id' => $_POST['notification_id'],
@@ -130,7 +130,7 @@ for($i =count($_POST['projects']);$i < count($notifications['projects']); $i++){
         ]
         );
 }
-for($i = 0; $i < count($_POST['campaigns']); $i++){
+for($i = 0; $i < count($_POST['campaigns']); $i++){// to edit linking campaigns with notification withowt deleting notification
     $db->query(
         "UPDATE L_campaigns_notifications SET
         campaign_id = :campaign_id
@@ -141,7 +141,7 @@ for($i = 0; $i < count($_POST['campaigns']); $i++){
         ]
     );
 }
-for($i =count($_POST['campaigns']);$i < count($notifications['campaigns']); $i++){
+for($i =count($_POST['campaigns']);$i < count($notifications['campaigns']); $i++){// to delete linking campaign with notification withowt deleting notification
     $db->query(
         "DELETE FROM L_campaigns_notifications WHERE notification_id = :notification_id and campaign_id = :campaign_id",[
             'notification_id' => $_POST['notification_id'],
@@ -149,7 +149,7 @@ for($i =count($_POST['campaigns']);$i < count($notifications['campaigns']); $i++
         ]
         );
 }
-for($i = 0; $i < count($_POST['endowments']); $i++){
+for($i = 0; $i < count($_POST['endowments']); $i++){// to edit linking endowment with notification withowt deleting notification
     $db->query(
         "UPDATE L_endowments_notifications SET
         endowment_id = :endowment_id
@@ -160,7 +160,7 @@ for($i = 0; $i < count($_POST['endowments']); $i++){
         ]
     );
 }
-for($i =count($_POST['endowments']);$i < count($notifications['endowments']); $i++){
+for($i =count($_POST['endowments']);$i < count($notifications['endowments']); $i++){// to delete linking endowment with notification withowt deleting notification
     $db->query(
         "DELETE FROM L_endowments_notifications WHERE notification_id = :notification_id and endowment_id = :endowment_id",[
             'notification_id' => $_POST['notification_id'],
@@ -168,7 +168,7 @@ for($i =count($_POST['endowments']);$i < count($notifications['endowments']); $i
         ]
         );
 }
-for($i = 0; $i < count($_POST['partners']); $i++){
+for($i = 0; $i < count($_POST['partners']); $i++){// to edit partner linking with notification withowt deleting notification
     $db->query(
         "UPDATE L_partners_notifications SET
         partner_id = :partner_id
@@ -179,7 +179,7 @@ for($i = 0; $i < count($_POST['partners']); $i++){
         ]
     );
 }
-for($i =count($_POST['partners']);$i < count($notifications['partners']); $i++){
+for($i =count($_POST['partners']);$i < count($notifications['partners']); $i++){// to delete partner linking with notification withowt deleting notification
     $db->query(
         "DELETE FROM L_partners_notifications WHERE notification_id = :notification_id and partner_id = :partner_id",[
             'notification_id' => $_POST['notification_id'],
