@@ -3,6 +3,8 @@
 <?php require('views/parts/navgtion.php') ?>
 <?php require('views/parts/header.php') ?>
 
+<?php dd($compaings) ?>
+
 <main>
   <section class="bar_search">
   
@@ -10,6 +12,7 @@
 
   <section class="container">
     <div class="card_charity_campaigns">
+
       
     </div>
 
