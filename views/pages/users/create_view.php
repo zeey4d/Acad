@@ -3,7 +3,8 @@
 <?php require('views/parts/navgtion.php') ?>
 <?php require('views/parts/header.php') ?>
 
-<main>
+<main class="main_user">
+  
   <!-- انشاء حساب جديد -->
   <section class="form_signup">
     
