@@ -12,9 +12,9 @@ $db = App::resolve(Database::class);
 
 $errors = [];
 
-if (!(Validator::string($_POST['name'], 1, 255))) {
-    $errors["name"] = "Titel  is too short or too long";
-}
+//if (!(Validator::string($_POST['name'], 1, 255))) {
+//    $errors["name"] = "Titel  is too short or too long";
+//}
 // if (!(Validator::string($_POST['body'], 1, 1000))) {
 //     $errors["titel"] = " body is too short or long";
 // }
@@ -59,7 +59,7 @@ foreach($_POST['projects'] as $project){
         $db->query(
             "INSERT into users_notification (notification_id,user_id) values (:notification_id,:user_id)",[
                 'notification_id' => $notification_id,
-                'user_id' => $user;
+                'user_id' => $user
             ]
         );
     }
@@ -78,7 +78,7 @@ foreach($_POST['endowments'] as $endowment){
         $db->query(
             "INSERT into users_notification (notification_id,user_id) values (:notification_id,:user_id)",[
                 'notification_id' => $notification_id,
-                'user_id' => $user;
+                'user_id' => $user
             ]
         );
     }
@@ -97,7 +97,7 @@ foreach($_POST['campaigns'] as $campaign){
         $db->query(
             "INSERT into users_notification (notification_id,user_id) values (:notification_id,:user_id)",[
                 'notification_id' => $notification_id,
-                'user_id' => $user;
+                'user_id' => $user
             ]
         );// ارسال الاشعارات لهم
     }
