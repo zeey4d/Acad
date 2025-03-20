@@ -71,8 +71,8 @@ foreach($_POST['campaigns'] as $campaign){
 }
 $users = $db->query(
     "SELECT A.user_id FROM users_noti_campaigns "
-)
-header("Location: /pages/notifications");
+);
+header ("Location:/pages/notifications");
 die();
 
 
