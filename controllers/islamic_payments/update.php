@@ -45,7 +45,29 @@ if (! empty($errors)) {
 //     'name' => $_POST['name'],
 
 // ]);
+$IslamicPayments = $db->query("SELECT * FROM islamic_payments where islamic_payment_id = :islamic_payment_id",[
+    'islamic_payment_id' => $_POST['islamic_payment_id']
+])->findOrFail();
 
+$db->query("UPDATE islamic_payments SET
+(
+    type = :type, 
+    count = :count, 
+    cost = :cost, 
+    paid_cost = :paid_cost, 
+    paid_for = :paid_for, 
+    payment_date = :payment_date, 
+    user_id = :user_id
+)WHERE islamic_payment_id = :islamic_payment_id",[
+    'type' => $_POST['type'],
+    'count' => $_POST['count'],
+    'cost' => $_POST['cost'],
+    'paid_cost' => $_POST['paid_cost'],
+    'paid_for' => $_POST['paid_for'],
+    'payment_date' => $_POST['payment_date'],
+    'user_id' => $_POST['user_id'],
+    'islamic_payment_id' => $_POST['islamic_payment_id']
+]);
 
 
 header("Location: /pages/islamic_payments");
