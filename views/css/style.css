@@ -168,12 +168,12 @@ footer {
     align-items: center;
     background: white;
     padding: 15px 30px;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
     direction: rtl;
+    border-bottom: 1px solid #dadada;
 
 
 }
@@ -622,22 +622,25 @@ align-items: center;
 }
 
 /* البطاقة  */
-.Carousel_card{
-    & h1{
+
+.main_home{
+     & h1{
         text-align: center;
         margin: 40px 0 40px 0;
+        color: var(--font-color-bh);
     }
-
 }
-.main_cart{
+.Carousel_card{
     display: flex;
     justify-content: center;
     direction: rtl;
+   
 
 }
+
 .aghtha {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 .donation-card {
     width: 80%;
@@ -1199,6 +1202,65 @@ h2 {
 
 }
 
+/* index */
+.bar_navigation {
+    margin: 60px;
+
+    & a{
+        text-decoration: none;
+        padding: var(--padding-m) var(--padding-l);
+        width: 150px;
+        height: 35px ;
+        background-color:var(--button-bgcolor) ;
+        border-radius: var(--button-radius);
+        border: none;
+        color: #ffffff;
+        font-weight: bold;
+    
+     }
+     & a:hover{
+        background-color:var(--bgcolor-white) ;
+        border-radius: var(--button-radius);
+        color: var(--font-color-bh);
+        border: var(--bg-border);
+    
+     }
+
+     & form {
+        width: 100%;
+        margin: var(--margin-xl);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+     }
+
+     & input {
+        width: 60%;
+        height: 40px;
+        border-radius: 5px;
+        border: var(--bg-border-l);
+
+     }
+
+     & button{
+        width: 20px;
+        height: 40px;
+        background-color: white;
+
+        & img {
+            width: 20px;
+            height: 20px;
+        }
+     }
+
+     & p {
+        text-align: right;
+        font-size: var(--font-size-l);
+        font-weight: bold;
+        padding: var(--padding-l);
+     }
+}
+
 /* executive_partners */
 
 /* create */
@@ -1533,3 +1595,297 @@ button[type="submit"]:hover {
 
 
 
+/* statistics  index*/
+
+
+.card_statistics_grup{
+    display: flex;
+    direction: rtl;
+
+}
+.card_statistics {
+    background-color: rgba(0, 167, 181, 0.2);
+    width: 80%;
+    padding: var(--padding-xl);
+    border-radius:var(--border-radius) ;
+
+    margin: var(--margin-xl);
+
+    & p{
+        font-size: var(--font-size-l);
+        font-weight: bold;
+        color: var(--font-color-bh);
+        padding: var(--padding-m);
+        text-align: center;
+    }
+}
+
+
+/* notifications */
+
+/* تنسيق عام للصفحة */
+.main_form_notifications {
+    font-family: Arial, sans-serif;
+    padding: var(--padding-m);
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: var(--bgcolor-light);
+}
+
+.form_notifications {
+    background-color: var(--bgcolor-white);
+    padding: 20px;
+    border-radius: 8px;
+    direction: rtl;
+    width: 80%;
+    display: flex;
+    margin: var(--margin-xl);
+    border: var(--bg-border);
+}
+
+.image {
+    text-align: center;
+    margin-bottom: 20px;
+    direction: rtl;
+    width: 80%;
+    height: 60%;
+    padding: var(--padding-xl);
+    margin: var(--margin-l);
+    display: block;
+
+    & .btn_image_notifi{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: var(--padding-m);
+        
+    }
+
+    & button{
+        background-color: var(--button-bg-l);
+        width: var(--button-width);
+        height: var(--button-height);
+        border-radius:var(--button-radius) ;
+        color: white;
+        margin-top: var(--margin-m);
+        font-weight: bold;
+        border: none;
+        padding: var(--padding-m);
+
+    }
+    & button:hover{
+        color: var(--button-hover-color);
+        border-radius:var(--button-radius) ;
+        background-color: var(--button-hover-bg);
+        margin-top: var(--margin-m);
+        font-weight: bold;
+        border: var(--button-hover-border);
+    }
+
+    & .image_notifi_create{
+        width: 100%;
+        height: 100%;
+        border-radius: 8px;
+        max-width: 100%;
+
+
+    }
+  
+}
+
+.camera, .folder {
+    width: 40px;
+    height: 40px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.data {
+    margin-bottom: 20px;
+    width: 80%;
+    padding: var(--padding-m);
+}
+
+.data label {
+    display: block;
+    margin-bottom: var(--margin-m);
+    font-weight: bold;
+    font-size: var(--font-size-l);
+    color: var(--font-color-bh);
+
+
+}
+
+.data input[type="text"],
+.data input[type="number"],
+.data textarea,
+.data select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.data textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+.button {
+    text-align: center;
+}
+
+.confirmation, .cancel {
+    padding: var(--padding-s) var(--padding-xl);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 20px 10px;
+}
+
+.confirmation {
+    background-color: var(--button-bg-h);
+    color: #fff;
+}
+
+.confirmation:hover {
+    background-color: var(--button-bg-l);
+}
+
+.cancel {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.cancel:hover {
+    background-color: #c82333;
+}
+
+#reporting {
+    background-color: #ffc107;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+#reporting:hover {
+    background-color: #e0a800;
+}
+
+
+/* islamic payments */
+/* zalat */
+/* تنسيق عام للصفحة */
+.main_islamic_payments_zakat {
+    background-color: var(--bgcolor-light);
+    padding: 20px;
+    text-align: center;
+    direction: rtl;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.form_zakat {
+    background-color: #fff;
+    border: var(--bg-border);
+    margin: var(--margin-xl);
+    width: 100%;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    & h1 {
+        color: var(--font-color-bh);
+        font-size: var(--font-size-xl);
+        margin-bottom: 20px;
+    }
+
+    & img {
+        max-width: 100%;
+        width: 100%;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        width: 100%;
+        height: 300px;
+        max-width: none; /* يسمح للصورة بالزيادة إذا لزم الأمر */
+        object-fit: cover;
+    }
+
+    &  p {
+        font-size: var(--font-size-l);
+        color: var(--font-color-bl);
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+
+    & span {
+        color: black;
+        font-weight: bold;
+
+    }
+
+}
+
+.container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table th, table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+table th {
+    background-color: var(--bgcolor-H);
+    color: #fff;
+    font-weight: bold;
+}
+
+table td {
+    background-color: #f9f9f9;
+    color: black;
+}
+
+table input[type="text"], table select {
+    width: 90%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+table input[type="text"]:focus, table select:focus {
+    border-color: #c9c9c9;
+    outline: none;
+}
+
+.calc-button {
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.calc-button:hover {
+    background-color: #218838;
+}

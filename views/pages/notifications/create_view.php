@@ -3,16 +3,9 @@
 <?php require('views/parts/navgtion.php') ?>
 <?php require('views/parts/header.php') ?>
 
-<main>
+<main class="main_form_notifications">
   <section class="form_notifications">
-    <div class="image">
-      <img class="image" src="" alt="">
-      <div>
-        <button class="btn_image" id="btn_image" name="btn_image">إضافةصورة</button>
-        <img class="camera" id="camera" src="" alt="">
-        <img class="folder" id="folder" src="" alt="">
-      </div>
-    </div>
+  
     <div class="data">
       <form action="" method="">
         <label for="project_name">إسم المشروع</label>
@@ -51,12 +44,22 @@
           </datalist>
           <button id="reporting" name="reporting">رفع التقارير</button>
       </form>
-    </div>
-    <div class="button">
+      <div class="button">
       <button class="confirmation" id="confirmation" name="confirmation">تأكيد</button>
       <button class="cancel" id="cancel" name="cancel">إلغاء</button>
     </div>
-    
+    </div>
+   
+    <div class="image">
+      <div>
+      <img class="image_notifi_create" src="views/media/images/P251.png" alt="">
+      </div>
+      <div class="btn_image_notifi">
+        <button class="btn_image" id="btn_image" name="btn_image">إضافة صورة</button>
+        <img class="camera" id="camera" src="views/media/images/camerab.png" alt="">
+        <img class="folder" id="folder" src="views/media/images/folder.png" alt="">
+      </div>
+    </div>
   </section>
 </main>
 <?php require('views/parts/footer.php') ?>
