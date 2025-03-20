@@ -28,16 +28,16 @@
     <div class="card_islamic_endowments">
       <img src="" alt="">
       <h2>وقف بناء مسجد</h2>
-      <p>بناء مسجد في منطقه لا يوجد فيها مسجد</p>
+      <p>بناء مسجد في منطقة لا يوجد فيها مسجد</p>
       <form action="" method="">
         <label for="donation"><h3>مبلغ التبرع</h3></label><br>
         <input id="donation" type="number" name="donation" placeholder="ريال">
         <button class="donation" type="submit" name="donation">تبرع</button>
-        <button class="add" name="add">اضافه الى السلة <img src="" alt=""></button>
+        <button class="add" name="add">إضافة الى السلة <img src="" alt=""></button>
         <button class="share" name="share">مشاركة المشروع <img src="" alt=""></button>
       </form>
       <p>ينتهي في 30 ديسمبر 2025</p><br>
-      <a class="more_details" href="">تفاصيل اكثر</a>
+      <a class="more_details" href="">تفاصيل أكثر</a>
 
     </div>
   </section>

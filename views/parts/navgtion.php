@@ -14,7 +14,11 @@
             <!-- <li><a href="#">الماهمات</a></li> -->
             <!-- <li><a href="#">الاخبار</a></li> -->
             <!-- <li><a href="#">التقييمات</a></li> -->
+<<<<<<< HEAD
             <li><a href="/notifications_index">الاشعارات</a></li>
+=======
+            <li><a href="/notifications_index">الإشعارات</a></li>
+>>>>>>> 00042a3c0e2c1266140f58306333905c10aaf355
             <li><a href="/contact">اتصل بنا</a></li>
             <!-- <li><a href="/contact">الدعم الفني</a></li> -->
 
@@ -25,7 +29,7 @@
             <a class="icon_nav_profile" id="icon_nav_profile" href="/users_show"><img class="icon_img" src="views/media/images/email.png" alt=""></a>
             <!-- <a class="icon_nav_search" id="icon_nav_search" href=""><img class="icon_img" src="views/media/images/search.png" alt=""></a> -->
 
-            <a class="but_login" href="/users_create"> تسجيل الدخول    </a> 
+            <a class="but_login" href="/users_create"> تسجيل الدخول </a> 
 
         </div>
 

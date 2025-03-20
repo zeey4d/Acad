@@ -85,9 +85,9 @@
             <td><button class="show_color_green" name="show_color_green">عرض</button></td>
             <td><button class="show_color_black" name="show_color_black">عرض</button></td>
             <td>
-              <button class="btn_accept_campaign" name="btn_accept_campaign">قبول الحلمة</button>
+              <button class="btn_accept_campaign" name="btn_accept_campaign">قبول الحملة</button>
               <button class="btn_post_notifications" name="btn_post_notifications">نشر إشعار</button>
-              <button class="btn_refusal_campaign" name="btn_refusal_campaign">رفض الحلمة</button>
+              <button class="btn_refusal_campaign" name="btn_refusal_campaign">رفض الحملة</button>
             </td>
           </tr>
         </table>

@@ -15,7 +15,7 @@
       <input id="search" type="text" name="search">
       <button id="btn_search" type="submit" name="btn_search"><img src="views/media/images/search.png" alt=""></button>
     </form>
-    <p>انضموا الينا في تقديم فرص تبرع تؤثر بشكل واسع وتدعم المجتمعات المحتاجة مع ضمان تحقيق نتائج طويلة الامد</p>
+    <p>انضموا الينا في تقديم فرص تبرع تؤثر بشكل واسع وتدعم المجتمعات المحتاجة مع ضمان تحقيق نتائج طويلة الأمد</p>
   
   </section>
 
