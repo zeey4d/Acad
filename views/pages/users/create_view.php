@@ -6,11 +6,11 @@
 <main class="main_user">
   
   <!-- انشاء حساب جديد -->
-  <section class="form_signup">
+  <section class="form_signup" a>
     
-    <div class="create">
+    <div class="create" >
       <h1>إنشاءحساب</h1>
-      <form action="" method="">
+      <form action="/uders_store" method="post">
         <label for="name">:الإسم</label><br>
         <input id="name" type="text" name="name" placeholder="الإسم"><br>
         <label for="email">:البريدالإلكتروني</label><br>
