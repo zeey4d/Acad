@@ -31,7 +31,7 @@
       </section>
       <!-- الاسئله الشائعه -->
 
-      <h1>:الأسيٌله الشايٌعة</h1>
+      <h1>:الأسئلة الشائعة</h1>
       <section class="form_contact">
 
       <section calss="form_contact">

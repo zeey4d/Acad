@@ -12,7 +12,7 @@
       <h3>التفاصيل</h3>
       <img src="" alt="">
       <span>50% مكتمل</span>
-      <p>يسعى المشروع الى علاج ذوي الحاجه المصابين بالمياه الزرقاء</p>
+      <p>يسعى المشروع الى علاج ذوي الحاجة - المصابين بالمياه الزرقاء</p>
       <p>
         <h4>تفاصيل تكاليف العمليات</h4>
         <strong>الفحوصات الطبية</strong>
@@ -26,7 +26,7 @@
       <p><img src="" alt=""> المبلغ المستهدف<span>100000ر.س</span></p>
       <p><img src="" alt=""> عدد المتبرعين<span>8000</span></p>
       <p><img src="" alt=""> عدد المستفيدين<span>100 محتاج</span></p>
-      <p><img src="" alt=""> المبلغ الذي تم جمعة<span>50000ر.س</span></p>
+      <p><img src="" alt="">المبلغ الذي تم جمعه<span>50000ر.س</span></p>
       <p><img src="" alt=""> الوقت المتبقي<span>60 يوم</span></p>
       <p>
         <h4>مراحل المشروع</h4>
@@ -39,7 +39,7 @@
         <span>تاريخ الانتهاء :</span> <strong>1 \ 3 \ 2025</strong>
       </p>
       <p><span>30%</span>تم جمع 30% من التبرعات</p>
-      <p><img src="" alt="">تم الانتهاء من المرحله الاولى</p>
+      <p><img src="" alt="">تم الانتهاء من المرحلة الاولى</p>
 
     </div>
 
@@ -50,7 +50,7 @@
     <p><img src="" alt=""> ساهم في المشروع</p>
     <form action="" method="">
       <button class="donate_now" name="donate_now" ><img src="" alt=""> تبرع الان</button>
-      <button class="add_to_cart" name="add_to_cart"><img src="" alt=""> اضافه الى السلة</button>
+      <button class="add_to_cart" name="add_to_cart"><img src="" alt=""> إضافة الى السلة</button>
       <button class="share_project" name="share_project"><img src="" alt=""> مشاركة المشروع</button>
     </form>
 

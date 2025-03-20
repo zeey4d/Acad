@@ -8,15 +8,15 @@
     <article class="card_statistics">
       <img src="" alt="">
       <p>
-        إجمالي المبالغ المجمعة <br><br>
-        ريال سعودي2556525563 
+        إجمالي المبالغ التي تم تجميعها <br><br>
+        ريال سعودي 2556525563  
       </p>
 
     </article>
     <article class="card_statistics">
       <img src="" alt="">
       <p>
-        عدد المستفيدين الكلي <br>
+        العدد الكلي للمستفيدين <br>
         5265566 مستفيد
       </p>
 

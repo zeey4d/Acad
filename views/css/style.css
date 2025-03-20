@@ -199,7 +199,7 @@ footer {
 .nav-links a {
     text-decoration: none;
     color: var(--font-color-bh);
-    font-size: 16px;
+    font-size: var(--font-size-l);
     transition: color 0.3s ease;
 
 }
@@ -211,21 +211,39 @@ footer {
 
 .all_icon_nav{
 display: flex;
-    
-}
-.icon_img{
-    width: 40px;
-    height: 40px;
-    background-color: #ffffff;
+justify-content: center;
+align-items: center;
 
-}
-.but_login{
-    width: 100px;
+ & .but_login{
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 35px ;
     background-color:var(--button-bgcolor) ;
-    color: #ffffff;
-    border: none;
     border-radius: var(--button-radius);
+    border: none;
+    color: #ffffff;
+    font-weight: bold;
+
+ }
+ & .but_login:hover{
+    background-color:var(--bgcolor-white) ;
+    border-radius: var(--button-radius);
+    color: var(--font-color-bh);
+    border: var(--bg-border);
+
+ }
+
+ & img {
+    width: 26px;
+    height: 26px;
+    margin-left:15px ;
+
+ }
 }
+
 
 /* صحفة footer  */
 
@@ -253,6 +271,7 @@ display: flex;
     direction: rtl;
     background-color: #003337;
     color: #ffffff;
+    height: 350px;
     & div {
         width: 20%;
         margin: 20px 10px 0 10px;
@@ -688,6 +707,7 @@ display: flex;
         width: 100%;
         text-align: left;
     }
+
 }
 
 .donate-section {
@@ -696,6 +716,19 @@ display: flex;
     justify-content: center;
     gap: 10px;
     margin-top: 15px;
+    & .donate_cart{
+        height: auto;
+        width: auto;
+        background-color: #ffffff;
+        border: var(--bg-border);
+        border-radius: var(--border-radius);
+        padding: var(--padding-m);
+
+        & img {
+            width: 20px;
+            height: 20px;
+        }
+    }
 }
 .donate-section input {
     padding: 8px;
@@ -744,8 +777,11 @@ display: flex;
 
 
 .hero{
-    & h1 {
-        background-color: #003337;
+    position: relative;
+
+    & .h1 {
+        text-align: right;
+        color: white;
     }
 
     & img {
@@ -757,17 +793,28 @@ display: flex;
 
     }
 }
+.Carousel_card{
+    & h1 {
+        color: var(--font-color-bh);
+        font-size: var(--font-size-xl);
+        padding: var(--padding-xl);
+    }
 
+}
 .tbr3 {    
-
+    background-color: rgba(0, 167, 181, 0.3);
     & h1 {
         background-color: white;
+        color: var(--font-color-bh);
         text-align: center;
-        padding: 40px 0 40px 0;
+        padding: var(--padding-xl);
+
     }
     & p {
         color:#00575F;
-        padding: 20px 20px;
+        padding: var(--padding-xl);
+        font-size: var(--font-size-l);
+        font-weight: bold;
     }
 
     & hr{
@@ -789,9 +836,11 @@ display: flex;
         border-radius: 20px;
         margin: 20px;
     }
-    & br {
-        color:#00a7b5;
+    & span{
+        color: var(--font-color-bl);
+        
     }
+ 
 
 
 }
@@ -800,16 +849,23 @@ display: flex;
     background-color: #ffffff;
     & h1 {
         text-align: center;
-        padding-top: 40px;
+        padding-top: var(--padding-xl);
+        font-size: var(--font-size-xl);
+        font-weight: bold;
+        color: var(--font-color-bh);
     }
     & #plogin {
         text-align: center;
-        padding-bottom: 40px;
+        padding-top: var(--padding-s);
+        padding-bottom: var(--padding-xl);
+        font-size: var(--font-size-l);
+        color: var(--font-color-bl);
     }
     & .login_tbr3{
         display: flex;
-        justify-content: space-around;
+        justify-content: space-evenly;
         direction: rtl;
+        width: 100%;
     }
 
     & .login_for_home_and_tbr3 {
@@ -818,11 +874,31 @@ display: flex;
         margin: 20px;
         border-radius: 20px;
         border: 1px solid #c3c3c3;
+        width: 60%;
+
+        & p {
+            font-size: var(--font-size-l);
+        }
     }
 
-    & button {
-        width: 200px;
-        height: 40px;
+    & button{
+        background-color: var(--button-bg-h);
+        width: var(--button-width);
+        height: var(--button-height);
+        border-radius:var(--button-radius) ;
+        color: white;
+        margin-top: var(--margin-m);
+        font-weight: bold;
+        border: none;
+
+    }
+    & button:hover{
+        color: var(--button-hover-color);
+        border-radius:var(--button-radius) ;
+        background-color: var(--button-hover-bg);
+        margin-top: var(--margin-m);
+        font-weight: bold;
+        border: var(--button-hover-border);
     }
 
 }
@@ -831,6 +907,7 @@ display: flex;
 .main_cart_view{
     text-align: right;
     direction: rtl;
+    margin: var(--margin-xl);
     & h2 {
         text-align: center;
         margin: 20px;

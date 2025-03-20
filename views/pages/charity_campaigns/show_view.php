@@ -71,7 +71,7 @@
 <div class="donate">
     <form action="" method="">
       <button class="donate_now" name="donate_now" ><img src="" alt=""> تبرع الان</button>
-      <button class="add_to_cart" name="add_to_cart"><img src="" alt=""> اضافه الى السلة</button>
+      <button class="add_to_cart" name="add_to_cart"><img src="" alt=""> إضافة الى السلة</button>
       <button class="share_project" name="share_project"><img src="" alt=""> مشاركة المشروع</button>
       </div>
     </form>
