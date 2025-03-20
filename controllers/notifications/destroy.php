@@ -24,7 +24,7 @@ $notifications = $db->query(
 // ]);
 $db->query(
     "DELETE FROM notifications WHERE notification_id = :notification_id",[
-        'notification_id'=>$_GET['notification_id']
+        'notification_id'=>$_POST['notification_id']
     ]
 );
 
