@@ -42,11 +42,10 @@ class Database
         }
         return $result;
     }
-    public function getGeneratedKey($id_name){
-        $result = $stmt->fetch(PDO::FETCH_ASSOC);
-        return $result[$id_name];
+    public function getGeneratedKey(){
+        return $this->conection->lastInsertId();
     }
-
+    
     public function fetchAll()
     {
         return $this->statement->fetchAll();

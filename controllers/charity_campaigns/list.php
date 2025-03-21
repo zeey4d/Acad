@@ -29,6 +29,7 @@ A.full_description,
 A.cost,
 A.state,
 A.start_at,
+A.photo,
 max(B.donate_date) as donate_date
 FROM campaigns A join users_donate_campaigns B ON (A.campaign_id = B.campaign_id)
 group by A.campaign_id

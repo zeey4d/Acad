@@ -3,16 +3,16 @@
 <?php require('views/parts/navgtion.php') ?>
 <?php require('views/parts/header.php') ?>
 
-<main>
+<main class="main_islamic_payments_zakat">
   <section class="form_zakat">
     <h1>حاسبة الزكاة</h1>
-    <img src="" alt="">
+    <img src="views/media/images/zkat.png" alt="">
     <p>"تجب الزكاة على المال إذا حال عليه الحول، 
       أي مر عليه عامٌ كامل وفق التقويم الهجري،
        وذلك في الأموال النقدية والذهب والفضة
        وعروض التجارة. أما الزروع والثمار،
        فتجب زكاتها عند الحصاد، لقوله تعالى:
-       (وَآتُوا حَقَّهُ يَوْمَ حَصَادِهِ) [الأنعام: 141].
+      <span> (وَآتُوا حَقَّهُ يَوْمَ حَصَادِهِ) [الأنعام: 141].</span>
        لذا، احرص على متابعة أموالك ومحاصيلك
        لتؤدي حق الله فيها في الوقت المحدد."</p>
     <div class="container">

@@ -76,7 +76,7 @@ $router->get('/executive_partners_destroy', 'controllers/executive_partners/dest
 $router->get('/executive_partners_edit', 'controllers/executive_partners/edit.php');
 $router->get('/executive_partners_index', 'controllers/executive_partners/index.php');
 $router->get('/executive_partners_show', 'controllers/executive_partners/show.php');
-$router->get('/executive_partners_store', 'controllers/executive_partners/store.php');
+$router->post('/executive_partners_store', 'controllers/executive_partners/store.php');
 $router->get('/executive_partners_update', 'controllers/executive_partners/update.php');
 
 

@@ -3,8 +3,9 @@
 <?php require('views/parts/navgtion.php') ?>
 <?php require('views/parts/header.php') ?>
 
-<main>
-<div class="div_tbr3"> 
+<main class="main_create_chatity">
+  <h1>تقديم حملة تبرع</h1>
+    <div class="div_tbr3"> 
         <section class="donation-form">
             <h2>نموذج تقديم طلب التبرع</h2>
             <form id="donationForm" action="/charity_projects_store" method="POST" enctype="multipart/form-data">
@@ -97,5 +98,5 @@
             <button id="editButton" disabled>تعديل البيانات (الوقت المتبقي: <span id="timer">24:00:00</span>)</button>
         </section>
         </div>
-</main>
+        </main>
 <?php require('views/parts/footer.php') ?>

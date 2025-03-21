@@ -25,8 +25,8 @@ if (! empty($errors)) {
 
 
 $campaign_id = $db->query
-  ("INSERT INTO campaigns (category_id, partner_id, campaign_request_id, name, short_description, full_description, cost, state, start_at, end_at)
-  VALUES (:category_id, :partner_id, :campaign_request_id, :name, :short_description, :full_description, :cost, :state ,now(), :end_at) RETURNING campaign_id",
+  ("INSERT INTO campaigns (category_id, partner_id, campaign_request_id, name, short_description, full_description, cost, state, start_at, end_at, photo)
+  VALUES (:category_id, :partner_id, :campaign_request_id, :name, :short_description, :full_description, :cost, :state ,now(), :end_at, :photo)",
   [
       'category_id' => $_POST['category_id'],
       'partner_id' => $_POST['partner_id'],
@@ -37,7 +37,8 @@ $campaign_id = $db->query
       'cost' => $_POST['cost'],
       'state' => $_POST['state'],
       'end_at' => $_POST['end_at'],
-  ])->getGeneratedKey('campaign_id');
+      'photo' => $_POST['photo']
+  ])->getGeneratedKey();
 
   // استقبال البيانات المطابقة لقاعدة البيانات 
 

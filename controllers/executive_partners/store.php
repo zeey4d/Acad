@@ -1,6 +1,7 @@
 <?php
 $heading = "Create test";
 
+<<<<<<< HEAD
 use core\App;
 use core\Database;
 
@@ -12,12 +13,76 @@ $errors = [];
 //}
 // if (!(Validator::string($_POST['body'], 1, 1000))) {
 //     $errors["titel"] = " body is too short or long";
+=======
+if(isset($_POST["submit"])){
+   
+    $file = $_FILES['partner-logo']['name'];
+    $tmp = $_FILES['partner-logo']['tmp_name'];
+    $size = $_FILES['partner-logo']['size'];
+    $type = $_FILES['partner-logo']['type'];
+    $error = $_FILES['partner-logo']['error'];
+    $fileExt = explode('.', $file);
+    $fileActual=strtolower(end($fileExt));
+    $allow=array('jpg','jpeg','png','pdf');
+    // echo$fileActual;
+    // echo"great";
+    if(in_array($fileActual, $allow)){
+        if($error === 0){
+          if($size < 10000000){
+            $filenamenew=uniqid('',true).".".$fileActual;
+            $fileDestination = __DIR__ . '/../../views/media/uploads/' . $filenamenew;
+
+            echo $fileDestination;
+            move_uploaded_file($tmp,$fileDestination);
+          }else{
+            echo "your file is too big";
+          }
+        }else{  
+            echo "there was an error uploading your file";
+        }
+    } else{
+       echo "you are not allow to uplaod file";
+    }
+} else{
+    echo "error";
+}
+
+
+
+
+// use core\App ;
+// use core\Database;
+
+// $db = App::resolve(Database::class);
+
+
+
+// $errors = [];
+
+// if (!(Validator::string($_POST['name'], 1, 255))) {
+//     $errors["name"] = "Titel  is too short or too long";
+>>>>>>> ff1748cd1b6b7255a5985a99354128cee49096ca
+// }
+// // if (!(Validator::string($_POST['body'], 1, 1000))) {
+// //     $errors["titel"] = " body is too short or long";
+// // }
+
+<<<<<<< HEAD
+=======
+
+// if (! empty($errors)) {
+
+//     require "views/pages/executive_partners/create_view.php";
+//     die();
 // }
 
+
+>>>>>>> ff1748cd1b6b7255a5985a99354128cee49096ca
 // $db->query("INSERT INTO executive_partners (name) VALUES (:name)", [
 //     'name' => $_POST['name'],
 // ]);
 
+<<<<<<< HEAD
 $partner_id = $db->query("INSERT into partners(name, logo, description, more_information, email, directorate, county, city, street)
 values
 (
@@ -79,6 +144,10 @@ if (!isset($_POST['description']) || !Validator::string($_POST['description'] ??
  if ( !isset($_POST['directorate']) ||!Validator::string($_POST['directorate'], 1, 255)) {
     $errors["directorate"] = "المديرية يجب أن تكون بين 1 و 255 حرفًا";
 }
+=======
+
+
+>>>>>>> ff1748cd1b6b7255a5985a99354128cee49096ca
 
 if ( !isset($_POST['street']) || !Validator::string($_POST['street'], 1, 255)) {
     $errors["street"] = "الشارع يجب أن يكون بين 1 و 255 حرفًا";
@@ -145,5 +214,10 @@ if (isset($_POST['accounts']) && is_array($_POST['accounts'])) {
     }
 }
 
-header("Location: /pages/executive_partners");
+
+
+
+header("Location: /executive_partners_index");
 die();
+
+
