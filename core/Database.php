@@ -56,6 +56,7 @@
 namespace core;
 
 use PDO;
+use PDOException;
 
 //يغلف اتصال قاعدة البينات بحيث يوفر مزايا جديده 
 
@@ -75,12 +76,15 @@ class Database
 
     public function query($query, $params = [])
     {
-
-        $this->statement = $this->conection->prepare($query);
-        $this->statement->execute($params);
-        return  $this;
+        try {
+            $this->statement = $this->conection->prepare($query);
+            $this->statement->execute($params);
+            return $this;
+        } catch (PDOException $e) {
+            die("Query failed: " . $e->getMessage());
+        }
     }
-
+    
     public function fetch()
     {
         return $this->statement->fetch();

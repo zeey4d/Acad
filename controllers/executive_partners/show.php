@@ -23,7 +23,7 @@ $partners['accounts'] = $db->query(
     WHERE partner_id = :partner_id",[
         'partner_id' => $_POST['partner_id']
     ])->fetchAll();
-    
+
 // $note = $db->query("SELECT * from executive_partners where id = :id ", [
 //   'id' => $_GET['id'],
 // ])->findOrFail();

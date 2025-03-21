@@ -53,13 +53,18 @@ $partners['phones'] = $db->query(
     "SELECT phone, type from partners_phones
     WHERE partner_id = :partner_id",[
         'partner_id' => $_POST['partner_id']
-    ])->fetchAll();
+    ]
+)->fetchAll();
 
 $partners['accounts'] = $db->query(
     "SELECT account, account_type from partners_accounts
     WHERE partner_id = :partner_id",[
         'partner_id' => $_POST['partner_id']
-    ])->fetchAll();
+    ]
+)->fetchAll();
+
+
+// add validation code here ------------------------------------------------------------------------------------------
 
 $db->query("UPDATE partners
 SET

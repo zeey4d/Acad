@@ -76,32 +76,6 @@ if(isset($_POST["submit"])){
 //     'name' => $_POST['name'],
 // ]);
 
-$partner_id = $db->query("INSERT into partners(name, logo, description, more_information, email, directorate, county, city, street)
-values
-(
-    :name,
-    :logo,
-    :description,
-    :more_information,
-    :email,
-    :directorate,
-    :county,
-    :city,
-    :street
-) RETURNING partner_id", [
-    'name' => $_POST['name'],
-    'logo' => $_POST['logo'],
-    'description' => $_POST['description'],
-    'more_information' => $_POST['more_information'],
-    'email' => $_POST['email'],
-    'directorate' => $_POST['directorate'],
-    'county' => $_POST['county'],
-    'city' => $_POST['city'],
-    'street' => $_POST['street']
-])->getGeneratedKey('partner_id');
-
-
-
 $name = $_POST['name'];
 $logo = $_POST['logo'];
 $description = $_POST['description'];
@@ -150,7 +124,7 @@ if ( !isset($_POST['street']) || !Validator::string($_POST['street'], 1, 255)) {
 if (!isset($_FILES['logo']) || $_FILES['logo']['error'] !== UPLOAD_ERR_OK) {
     $errors["logo"] = "يجب تحميل شعار صالح";
 }
- 
+
 //  معالجة رفع الشعار
 $logo = $_FILES['logo']['name'];
 $logo_tmp = $_FILES['logo']['tmp_name'];
@@ -167,6 +141,30 @@ if (! empty($errors)) {
     require "views/pages/executive_partners/create_view.php";
     die();
 }
+
+$partner_id = $db->query("INSERT into partners(name, logo, description, more_information, email, directorate, county, city, street)
+values
+(
+    :name,
+    :logo,
+    :description,
+    :more_information,
+    :email,
+    :directorate,
+    :county,
+    :city,
+    :street
+) RETURNING partner_id", [
+    'name' => $_POST['name'],
+    'logo' => $_POST['logo'],
+    'description' => $_POST['description'],
+    'more_information' => $_POST['more_information'],
+    'email' => $_POST['email'],
+    'directorate' => $_POST['directorate'],
+    'county' => $_POST['county'],
+    'city' => $_POST['city'],
+    'street' => $_POST['street']
+])->getGeneratedKey('partner_id');
 
 // إدخال أرقام الهواتف
 if (isset($_POST['phones']) && is_array($_POST['phones'])) {
