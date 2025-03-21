@@ -1,7 +1,6 @@
 <?php
 $heading = "Create test";
 
-<<<<<<< HEAD
 use core\App;
 use core\Database;
 
@@ -13,7 +12,6 @@ $errors = [];
 //}
 // if (!(Validator::string($_POST['body'], 1, 1000))) {
 //     $errors["titel"] = " body is too short or long";
-=======
 if(isset($_POST["submit"])){
    
     $file = $_FILES['partner-logo']['name'];
@@ -61,14 +59,11 @@ if(isset($_POST["submit"])){
 
 // if (!(Validator::string($_POST['name'], 1, 255))) {
 //     $errors["name"] = "Titel  is too short or too long";
->>>>>>> ff1748cd1b6b7255a5985a99354128cee49096ca
 // }
 // // if (!(Validator::string($_POST['body'], 1, 1000))) {
 // //     $errors["titel"] = " body is too short or long";
 // // }
 
-<<<<<<< HEAD
-=======
 
 // if (! empty($errors)) {
 
@@ -77,12 +72,10 @@ if(isset($_POST["submit"])){
 // }
 
 
->>>>>>> ff1748cd1b6b7255a5985a99354128cee49096ca
 // $db->query("INSERT INTO executive_partners (name) VALUES (:name)", [
 //     'name' => $_POST['name'],
 // ]);
 
-<<<<<<< HEAD
 $partner_id = $db->query("INSERT into partners(name, logo, description, more_information, email, directorate, county, city, street)
 values
 (
@@ -144,10 +137,8 @@ if (!isset($_POST['description']) || !Validator::string($_POST['description'] ??
  if ( !isset($_POST['directorate']) ||!Validator::string($_POST['directorate'], 1, 255)) {
     $errors["directorate"] = "المديرية يجب أن تكون بين 1 و 255 حرفًا";
 }
-=======
 
 
->>>>>>> ff1748cd1b6b7255a5985a99354128cee49096ca
 
 if ( !isset($_POST['street']) || !Validator::string($_POST['street'], 1, 255)) {
     $errors["street"] = "الشارع يجب أن يكون بين 1 و 255 حرفًا";

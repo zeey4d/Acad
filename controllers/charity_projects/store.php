@@ -55,7 +55,6 @@ VALUES
         'end_at' => $_POST['end_at'],
         'state' => $_POST['state'],
         'directorate' => $_POST['directorate']
-<<<<<<< HEAD
     ])->getGeneratedKey('project_id');
 
 
@@ -81,9 +80,6 @@ $end_at = $_POST['end_at'];
  $idFont = $_POST['idFont']; 
  $idback = $_POST['idback']; 
 
-=======
-    ])->getGeneratedKey();
->>>>>>> ff1748cd1b6b7255a5985a99354128cee49096ca
 header("Location: /pages/charity_projects");
 die();
 
