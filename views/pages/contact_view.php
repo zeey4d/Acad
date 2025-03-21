@@ -10,13 +10,8 @@
       <section class="form_contact">
          
             <div>
-<<<<<<< HEAD
-              <form action="" method="">
-                <label for="type">:النوع</label>
-=======
               <form action="/services/phpmailer/send-email" method="post">
                 <label for="type">:النوع</label><br>
->>>>>>> e0f964fe3085b0babb8c60a12f690061cc1d5287
                 <div class="group_type">
                   <select name="" id=""></select>
                 </div>
@@ -33,13 +28,10 @@
 
       </section>
       <!-- الاسئله الشائعه -->
-<<<<<<< HEAD
-      <h1>:الأسيٌله الشايٌعة</h1>
-      <section class="form_contact">
-=======
+
       <section calss="form_contact">
         <h1>:الأسئلة الشائعة</h1>
->>>>>>> ac3436063aeb7d1d974c223e9554cfda3abff8e4
+
           <div class="questu=ions">
             <h3>كيف يمكنني تعديل مساهمتي؟</h3>
             <p>يمكنك تعديل مساهمتك من خلال صفحة التبرعات</p>
