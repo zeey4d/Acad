@@ -3,6 +3,8 @@
 <?php require('views/parts/navgtion.php') ?>
 <?php require('views/parts/header.php') ?>
 
+<?php //dd($campaigns) ?>
+
 <main>
   <section class="bar_search">
     <form action="" method="">
@@ -21,19 +23,21 @@
     </form>
   
   </section>
+  <h1>حملات التبرع المتاحة</h1>
 
   <section class="container">
-    <h1>حملات الترع المتاحة</h1>
-    <div class="card_charity_campaigns">
-      <img src="" alt="">
+  <?php foreach($campaigns as $campaign): ?>
+
+    <div class="donation-card">
+      <img src="views/media/images/<?= htmlspecialchars($campaign['photo'] ?? "11.png") ?>" alt=" " loading="lazy">
       <strong>بادر</strong>
-      <p><img src="" alt=""> <strong>رقم الحملة : 51</strong></p>
+      <p><img src="" alt=""> <strong>رقم الحملة : <?= htmlspecialchars($campaign['campaign_id']) ?></strong></p>
       <p><img src="" alt=""> <strong>المنطقة تعز</strong></p>
       <h3>مشروع مساعدة المحتاجين</h3>
       <p>
-        <span>55%</span>
+        <span><?= htmlspecialchars(($campaign['collected_money']/$campaign['cost'])*100) ?>%</span>
         <strong></strong>
-        500000/125000 ريال
+        <?= htmlspecialchars($campaign['cost']) ?>/<?= htmlspecialchars($campaign['collected_money']) ?> ريال
       </p>
 
       <form action="" method="">
@@ -46,7 +50,7 @@
       <a class="view_details" href="">عرض التفاصيل</a>
       
     </div>
-
-  </section>
+    <?php endforeach; ?>
+    </section>
 </main>
 <?php require('views/parts/footer.php') ?>
