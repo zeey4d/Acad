@@ -14,7 +14,7 @@
     <div class="div_tbr3"> 
         <section class="donation-form">
             <h2>نموذج تقديم طلب التبرع</h2>
-            <form id="donationForm">
+            <form id="donationForm" action="/charity_campaigns_store" method="POST" enctype="multipart/form-data" >
                 <!-- نوع الحالة -->
                 <div class="form-group">
                     <label for="caseType">نوع الحالة:</label>
@@ -27,6 +27,12 @@
                         <option value="مشرد">مشرد</option>
                     </select>
                 </div>
+
+                    <!--  اضافة حقول مخفيه كي تظابق قاعدة البيانات  -->
+                      <input type="hidden" name="category_id" value="0">
+                      <input type="hidden" name="partner_id" value="0">
+                      <input type="hidden" name="state" value="0">
+                     
 
                 <!-- الاسم الكامل -->
                 <div class="form-group">
