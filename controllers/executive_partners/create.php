@@ -19,7 +19,7 @@ $heading = "Create test";
 //     :county,
 //     :city,
 //     :street
-// ) RETURNING partner_id",[
+// ) ",[
 //     'name' => $_POST['name'],
 //     'logo' => $_POST['logo'],
 //     'description' => $_POST['description'],
@@ -29,7 +29,7 @@ $heading = "Create test";
 //     'county' => $_POST['county'],
 //     'city' => $_POST['city'],
 //     'street' => $_POST['street']
-// ])->getGeneratedKey('partner_id');
+// ])->getGeneratedKey();
 
 // foreach($_POST['phones'] as $phone){
 //     $db->query(

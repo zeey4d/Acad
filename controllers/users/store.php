@@ -28,11 +28,27 @@ if (! empty($erorrs)) {
 
 
 
-// $user =  $db->query(
-//     'select * from users where email = :email',
-//     ['email' => $email]
-// )->fetch();
+$user =  $db->query(
+    'select * from users where email = :email',
+    ['email' => $email]
+)->findOrFail();
 
+$user_id = $db->query(
+    "INSERT INTO USERS (username, password, photo, email, type, directorate, county, city, street, phone)
+     VALUES (:username, :password, :photo, :email, :type, :directorate, :county, :city, :street, :phone)",
+    [
+    'username' => $_POST['username'],
+    'password' => $_POST['password'],
+    'photo' => $_POST['photo'],
+    'email' => $_POST['email'],
+    'type' => $_POST['type'],
+    'directorate' => $_POST['directorate'],
+    'county' => $_POST['county'],
+    'city' => $_POST['city'],
+    'street' => $_POST['street'],
+    'phone' => $_POST['phone']
+    ]
+)->getGeneratedKey();
 
 if ($user) {
     header("Location: /");

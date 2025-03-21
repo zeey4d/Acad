@@ -3,6 +3,7 @@
 <?php require('views/parts/navgtion.php') ?>
 <?php require('views/parts/header.php') ?>
 
+<?php //dd($campaigns) ?>
 
 <main class="main_show_ch">
         <div class="div_show_ch">  

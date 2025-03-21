@@ -29,7 +29,7 @@
   <?php foreach($campaigns as $campaign): ?>
 
     <div class="donation-card">
-      <img src="views/media/images/<?= htmlspecialchars($campaign['photo'] ?? "11.png") ?>" alt=" ">
+      <img src="views/media/images/<?= htmlspecialchars($campaign['photo'] ?? "11.png") ?>" alt=" " loading="lazy">
       <strong>بادر</strong>
       <p><img src="" alt=""> <strong>رقم الحملة : <?= htmlspecialchars($campaign['campaign_id']) ?></strong></p>
       <p><img src="" alt=""> <strong>المنطقة تعز</strong></p>
