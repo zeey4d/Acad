@@ -1262,6 +1262,159 @@ h2 {
      }
 }
 
+/* manage */
+
+  
+  .main_manage {
+    padding: 20px;
+    direction: rtl;
+    background-color: var(--bgcolor-light);
+    
+
+    & h1, h2 {
+        margin: var(--margin-l);
+        color: var(--font-color-bh);
+        text-align: center;
+      }
+  }
+  .section_manage{
+    border: var(--bg-border);
+    padding: var(--padding-xl);
+    border-radius: var(--border-radius);
+    background-color: var(--bgcolor-white);
+    width: 80%;
+    margin: 0 auto ;
+
+  }
+  
+  
+  .management-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: var(--margin-l) 0;
+
+    & button {
+        background-color: #000000;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      & button:hover {
+        background-color: #fdfdfd;
+      }
+  }  
+  
+  #delete-selected {
+    background-color: #f44336;
+  }
+  
+  #delete-selected:hover {
+    background-color: #e53935;
+  }
+  
+  .bar_action_manage {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .bar_action_manage button {
+    background-color: var(--button-bg-h);
+    color: white;
+    padding: 10px var(--padding-xl);
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .bar_action_manage button:hover {
+    background-color: var(--button-bg-l);
+  }
+  
+  .campaigns-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+
+    & .campaigns-table td {
+        padding: 12px;
+        background-color: white;
+        text-align: center;
+        border-bottom: 1px solid #ddd;
+      }
+
+      & .show_color_green{
+        background-color: var(--button-bg-h);
+        color: white;
+        padding: 10px var(--padding-l);
+        border-radius: 5px;
+        border: none;
+      }
+
+
+  }
+  
+  
+  .campaigns-table th {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    background-color: var(--bgcolor-H);
+    font-weight: bold;
+  }
+  
+  .campaigns-table img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-btn {
+    background-color: var(--button-bg-h);
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+
+
 /* executive_partners */
 
 /* create */
@@ -1611,31 +1764,6 @@ button[type="submit"]:hover {
 
 
 
-/* islamic_paymente  */
-
-/* show */
-
-.main_show_islamic_endowments{
-    display: flex;
-    justify-content: center;
-    direction: rtl;
-
-    
-}
-
-.card_islamic_endowments_news {
-    & p {
-        width: 80%;
-        height: 30%;
-    }
-    & img {
-        width: 40%;
-        height: 40%;
-
-    }
-}
-
-
 
 /* statistics  index*/
 
@@ -1665,7 +1793,6 @@ button[type="submit"]:hover {
 
 /* notifications */
 
-/* تنسيق عام للصفحة */
 .main_form_notifications {
     font-family: Arial, sans-serif;
     padding: var(--padding-m);
@@ -1822,6 +1949,148 @@ button[type="submit"]:hover {
     background-color: #e0a800;
 }
 
+/* list */
+.main_list_notifications {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    padding: 20px;
+    direction: rtl;
+  }
+  
+  .bar_search_notifications {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--margin-l);
+    padding: var(--padding-l);
+    background-color: #fff;
+    border: var(--bg-border);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    & form {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      & button {
+        padding: 8px var(--padding-xl);
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      & .delete {
+        background-color: #f44336;
+        color: white;
+      }
+
+      & .delete:hover {
+        background-color: #e53935;
+      }
+
+      & .read {
+        background-color: #4CAF50;
+        color: white;
+      }
+
+      & .read:hover {
+        background-color: #45a049;
+      }
+      & .obstruction {
+        background-color: #ff9800;
+        color: white;
+      }
+
+      & .obstruction:hover {
+        background-color: #fb8c00;
+      }
+
+      & .white-button {
+        background-color: #fff;
+        color: #333;
+        border: 1px solid #ddd;
+      }
+
+      & .white-button:hover {
+        background-color: #f1f1f1;
+      }
+
+      &  .search {
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 14px;
+        flex-grow: 1;
+      }
+      
+  }  
+  .container_notifications {
+    display: flex;
+    height: 40%;
+  
+  }
+  
+  .card_notifications {
+    background-color: var(--bgcolor-N);
+    padding: var(--padding-l);
+    border-radius: var(--border-radius);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 25%;
+    text-align: center;
+  }
+  
+  .card_notifications img {
+    width: 150px;
+    height: 150px;
+    background-color: white;
+    border-radius: 50%;
+    margin-bottom: 15px;
+  }
+  
+  .card_notifications h2 {
+    font-size: 20px;
+    color: white;
+    margin-bottom: 10px;
+  }
+  
+  .card_notifications .time {
+    font-size: 14px;
+    color: rgb(186, 186, 186);
+    margin-bottom: 15px;
+  }
+  
+  .card_notifications .hello {
+    padding: var(--padding-l);
+    text-align: right;
+    border-radius: var(--border-radius);
+    background-color: white;
+    font-size: 16px;
+    color: black;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  .card_notifications button.show {
+    background-color: white ;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .card_notifications button.show:hover {
+    background-color: var(--button-bg-l);
+    border: var(--bg-border);
+  }
+
 
 /* islamic payments */
 /* zalat */
@@ -1930,4 +2199,104 @@ table input[type="text"]:focus, table select:focus {
 
 .calc-button:hover {
     background-color: #218838;
+}
+
+/* show */
+
+.main_show_islamic_endowments{
+    display: flex;
+    justify-content: center;
+    direction: rtl;
+
+    
+}
+
+.card_islamic_endowments_news {
+    & p {
+        width: 80%;
+        height: 30%;
+    }
+    & img {
+        width: 40%;
+        height: 40%;
+
+    }
+}
+
+/* index */
+
+.nav_links_islamic_payments{
+    margin: var(--margin-xl);
+    display: flex;
+    justify-content: center;
+    direction: rtl;
+
+    & a {
+        text-decoration: none;
+        margin: var(--margin-m);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 150px;
+        height: 35px ;
+        background-color:var(--button-bgcolor) ;
+        border-radius: 30px;
+        border: none;
+        color: #ffffff;
+        font-weight: bold;
+
+    }
+    & a:hover{
+            background-color:var(--bgcolor-white) ;
+            border-radius: var(--button-radius);
+            color: var(--font-color-bh);
+            border: var(--bg-border);
+            border-radius: 30px;
+
+        
+    }
+    
+}
+
+
+/* islamic_edowments */
+
+/* index */
+
+.main_islamic_edowments_index{
+    
+}
+
+.bar_felter{
+    display: block;
+
+    direction: rtl;
+    margin: var(--margin-l);
+    padding: var(--padding-l);
+    background-color: #fff;
+    border: var(--bg-border);
+    border-radius: 5px;
+    width: 100%;
+    & label{
+        font-size: var(--font-size-l);
+    }
+    & form {
+        width: 100%;
+        display: flex;
+        justify-content: right;
+    }
+
+      & select {
+        height: 50px;
+        padding: 8px var(--padding-xl);
+        width: 80%;
+        border-radius: 50px;
+        border: var(--bg-border-l);
+        cursor: pointer;
+        font-size: 14px;
+        align-items: center;
+        gap: 5px;
+      }
+
+
 }

@@ -45,7 +45,7 @@ class Database
     public function getGeneratedKey(){
         return $this->conection->lastInsertId();
     }
-
+    
     public function fetchAll()
     {
         return $this->statement->fetchAll();
