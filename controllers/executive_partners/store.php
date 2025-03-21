@@ -30,9 +30,11 @@ if(isset($_POST["submit"])){
     } else{
        echo "you are not allow to uplaod file";
     }
-}else{
+} else{
     echo "error";
 }
+
+
 
 
 // use core\App ;
@@ -70,7 +72,7 @@ if(isset($_POST["submit"])){
 
 
 
-// header("Location: /executive_partners_index");
-// die();
+header("Location: /executive_partners_index");
+die();
 
 
