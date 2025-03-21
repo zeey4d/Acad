@@ -13,20 +13,24 @@ $userID = 1;
 $partners = $db->query("SELECT * from partners where partner_id = :partner_id",[
     'partner_id' => $_POST['partner_id']
 ])->findOrFail();
+
 $partners['phones'] = $db->query(
     "SELECT phone, type from partners_phones
     WHERE partner_id = :partner_id",[
         'partner_id' => $_POST['partner_id']
     ])->fetchAll();
+
 $partners['accounts'] = $db->query(
     "SELECT account, account_type from partners_accounts
     WHERE partner_id = :partner_id",[
         'partner_id' => $_POST['partner_id']
     ])->fetchAll();
+
 // $item = $db->query("SELECT * from executive_partners where id = :id ", [
 //   'id' => $_GET['id'],
 // ])->findOrFail();
 //authorize($item['other_id'] == $userID);
+
 $db->query("UPDATE partners
 SET
 (
@@ -88,40 +92,40 @@ for($i = 0; $i < count($_POST['accounts']); $i++){
             'L_account_type' => $partners['accounts'][$i]['account_type']
         ]
     );
-
+}
 
     
- // استقبال البيانات المطابقة لقاعدة البيانات 
- $category_id = $_POST['category_id'];
- $partner_id = $_POST['partner_id'];
- $level = $_POST['level'];
- $photo =$_POST['photo'];
- $name = $_POST['name'];
- $short_description = $_POST['short_description'];
- $full_description = $_POST['full_description'];
- $type = ['type'];
- $cost = $_POST['cost'];
- $state = $_POST['state'];
- $directorate  = ['directorate'];
- $end_at = $_POST['end_at'];
-$project_id = $_POST['project_id'];
+//  // استقبال البيانات المطابقة لقاعدة البيانات 
+//  $category_id = $_POST['category_id'];
+//  $partner_id = $_POST['partner_id'];
+//  $level = $_POST['level'];
+//  $photo =$_POST['photo'];
+//  $name = $_POST['name'];
+//  $short_description = $_POST['short_description'];
+//  $full_description = $_POST['full_description'];
+//  $type = ['type'];
+//  $cost = $_POST['cost'];
+//  $state = $_POST['state'];
+//  $directorate  = ['directorate'];
+//  $end_at = $_POST['end_at'];
+// $project_id = $_POST['project_id'];
 
-   // استقبال البيانات من النموذج
-  $caseType = $_POST['caseType'];
-  $age = $_POST ['age']; 
-  $circumstances = $_POST['circumstances'];
-  $amount = $_POST['amount'];
-  $accountNumber = $_POST['accountNumber']; 
-  $bankName = $_POST['bankName']; 
-  $accountType = $_POST['accountType']; 
-  $documents = $_POST['documents']; 
-  $idFont = $_POST['idFont']; 
-  $idback = $_POST['idback']; 
- 
- header("Location: /pages/charity_projects");
- die();
+//    // استقبال البيانات من النموذج
+//   $caseType = $_POST['caseType'];
+//   $age = $_POST ['age']; 
+//   $circumstances = $_POST['circumstances'];
+//   $amount = $_POST['amount'];
+//   $accountNumber = $_POST['accountNumber']; 
+//   $bankName = $_POST['bankName']; 
+//   $accountType = $_POST['accountType']; 
+//   $documents = $_POST['documents']; 
+//   $idFont = $_POST['idFont']; 
+//   $idback = $_POST['idback'];
 
-}
+//  header("Location: /pages/charity_projects");
+//  die();
+
+// }
 
 
 

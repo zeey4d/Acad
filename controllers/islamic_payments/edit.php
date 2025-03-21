@@ -38,7 +38,7 @@ $db->query("UPDATE islamic_payments SET
     'user_id' => $_POST['user_id'],
     'islamic_payment_id' => $_POST['islamic_payment_id']
 ]);
-//EXAMPLE: (type:'Zakat', COUNT: 1, COST: 1500.00,PAID_COST 1500.00,PAID_FOR: 'Water project - Receipt: ZK2024-001 AT: 2024-03-17',PAYMENT_DATE: '2024-03-15', USER_ID: 3),
+//EXAMPLE: (type:'Zakat', COUNT: 1, COST: 1500.00,PAID_COST: 1500.00, PAID_FOR: 'Water project - Receipt: ZK2024-001 AT: 2024-03-17',PAYMENT_DATE: '2024-03-15', USER_ID: 3),
 
 
 
