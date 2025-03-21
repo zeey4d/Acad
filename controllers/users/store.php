@@ -1,45 +1,139 @@
-
 <?php
 
 use core\App;
 use core\Database;
+use core\Authenticator;
 
 
-$db  = App::resolve(Database::class);
+$db = App::resolve(Database::class);
 
 
+
+// مبارك يكتب حق الاستعلامات حق قاعدة البيانات هنا 
+
+
+
+
+
+// استقبال البيانات من النموذج
+$name = $_POST['name'];
 $email = $_POST['email'];
 $password = $_POST['password'];
+$confirm_password = $_POST['confirm_password'];
+$phone_number = $_POST['phone_number'];
+$place = $_POST['place'];
 
-$erorrs = [];
+// التحقق من البيانات
 
-if (! Validator::email($email)) {
-    $erorrs['email'] = "not a valid email ";
-}
-if (! Validator::string($password, 8, 255)) {
-    $erorrs['password'] = "password is too short password ";
-}
+$errors = [];
 
-if (! empty($erorrs)) {
-    require 'views/registertion/create_view.php';
+if (!Validator::string($name, 2, 255)) {
+    $errors['name'] = 'الاسم يجب أن يكون بين 2 و 255 حرفًا.';
 }
 
+if (!Validator::email($email)) {
+    $errors['email'] = 'يرجى تقديم عنوان بريد إلكتروني صالح.';
+}
+
+if (!Validator::string($password, 8, 255)) {
+    $errors['password'] = 'كلمة المرور يجب أن تكون على الأقل 8 أحرف.';
+}
+
+if ($password !== $confirm_password) {
+    $errors['confirm_password'] = 'كلمتا المرور غير متطابقتين.';
+}
+
+if (!Validator::string($phone_number, 8, 15)) {
+    $errors['phone_number'] = 'رقم الهاتف يجب أن يكون بين 8 و 15 رقمًا.';
+}
+
+if (!Validator::string($place, 2, 255)) {
+    $errors['place'] = 'المنطقة يجب أن تكون بين 2 و 255 حرفًا.';
+}
 
 
+// إذا كانت هناك أخطاء، قم بإعادة توجيه المستخدم إلى صفحة التسجيل مع عرض الأخطا
+ if (! empty($errors)) {
+       require 'views/registertion/create_view.php';
+    
+ }
 
 
-// $user =  $db->query(
-//     'select * from users where email = :email',
-//     ['email' => $email]
-// )->fetch();
-
+// التحقق مما إذا كان البريد الإلكتروني موجودًا مسبقًا
+$user = $db->query('SELECT * FROM users WHERE email = :email', [
+    'email' => $email
+])->find();
 
 if ($user) {
-    header("Location: /");
+    $errors['email'] = 'البريد الإلكتروني موجود مسبقًا.';
+    require 'views/registertion/create_view.php';
+    die();
+}
+
+if ($user) {
+    header('location: /');
+    exit();
 } else {
+    $user = $db->query('INSERT INTO users(email, password) VALUES(:email, :password)', [
+        'email' => $email,
+        'password' => password_hash($password, PASSWORD_BCRYPT)
+    ]);
+     
+    
+     // تسجيل دخول المستخدم بعد إنشاء الحساب
+  //   $authenticator = new Authenticator();
+  //   $authenticator->login($email);
+     
+    (new Authenticator)->login(['email' => $email]);
+
+
+    header('location: /');
+    exit();
+}
+
+
+
+// إدخال البيانات إلى قاعدة البيانات
+$db->query('INSERT INTO users (name, email, password, phone_number, place) VALUES (:name, :email, :password, :phone_number, :place)', [
+    'name' => $name,
+    'email' => $email,
+    'password' => password_hash($password, PASSWORD_BCRYPT),
+    'phone_number' => $phone_number,
+    'place' => $place
+]);
+
+//logIn($user);
+// توجيه المستخدم إلى الصفحة الرئيسية بعد التسجيل الناجح
+header("Location: /");
+die();
+
+
+
+
+$user =  $db->query(
+    'select * from users where email = :email',
+    ['email' => $email]
+)->findOrFail();
+
+$user_id = $db->query(
+    "INSERT INTO USERS (username, password, photo, email, type, directorate, county, city, street, phone)
+     VALUES (:username, :password, :photo, :email, :type, :directorate, :county, :city, :street, :phone)",
+    [
+    'username' => $_POST['username'],
+    'password' => $_POST['password'],
+    'photo' => $_POST['photo'],
+    'email' => $_POST['email'],
+    'type' => $_POST['type'],
+    'directorate' => $_POST['directorate'],
+    'county' => $_POST['county'],
+    'city' => $_POST['city'],
+    'street' => $_POST['street'],
+    'phone' => $_POST['phone']
+    ]
+)->getGeneratedKey();
 
     // $db->query(
-    //     'INSERT INTO users (username , email , password ,admin ) VALUES (:username ,:email , :password , :admin);',
+    //     'INSERT INTO users (username , email , password ,admin )(:username ,:email , :password , :admin);',
     //     [
     //         'username' => 'guo',
     //         'email' => $email,
@@ -47,12 +141,3 @@ if ($user) {
     //         'admin' => 0
     //     ]
     // );
-
-
-    logIn($user);
-
-
-
-    header("Location: /");
-    die();
-}

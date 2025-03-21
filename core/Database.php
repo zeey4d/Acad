@@ -40,12 +40,12 @@ class Database
         if (! $result) {
             abort(404);
         }
-
-
         return $result;
     }
-
-
+    public function getGeneratedKey(){
+        return $this->conection->lastInsertId();
+    }
+    
     public function fetchAll()
     {
         return $this->statement->fetchAll();
