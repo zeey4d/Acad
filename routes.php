@@ -49,22 +49,22 @@ $router->get('/cards_store', 'controllers/cards/store.php');
 $router->get('/cards_update', 'controllers/cards/update.php');
 
 
-$router->get('/charity_campaigns_create_view', 'controllers/charity_campaigns/create.php');
-$router->get('/charity_campaigns_destroy_view', 'controllers/charity_campaigns/destroy.php');
-$router->get('/charity_campaigns_edit_view', 'controllers/charity_campaigns/edit.php');
-$router->get('/charity_campaigns_manage_view', 'controllers/charity_campaigns/manage.php');
-$router->get('/charity_campaigns_index_view', 'controllers/charity_campaigns/index.php');
-$router->get('/charity_campaigns_show_view', 'controllers/charity_campaigns/show.php');
-$router->get('/charity_campaigns_list_view', 'controllers/charity_campaigns/list.php');
-$router->get('/charity_campaigns_store_view', 'controllers/charity_campaigns/store.php');
-$router->get('/charity_campaigns_update_view', 'controllers/charity_campaigns/update.php');
+$router->get('/charity_campaigns_create', 'controllers/charity_campaigns/create.php');
+$router->get('/charity_campaigns_destroy', 'controllers/charity_campaigns/destroy.php');
+$router->get('/charity_campaigns_edit', 'controllers/charity_campaigns/edit.php');
+$router->get('/charity_campaigns_manage', 'controllers/charity_campaigns/manage.php');
+$router->get('/charity_campaigns_index', 'controllers/charity_campaigns/index.php');
+$router->get('/charity_campaigns_show', 'controllers/charity_campaigns/show.php');
+$router->get('/charity_campaigns_list', 'controllers/charity_campaigns/list.php');
+$router->get('/charity_campaigns_store', 'controllers/charity_campaigns/store.php');
+$router->get('/charity_campaigns_update', 'controllers/charity_campaigns/update.php');
 
 
 $router->get('/charity_projects_create', 'controllers/charity_projects/create.php');
 $router->get('/charity_projects_destroy', 'controllers/charity_projects/destroy.php');
 $router->get('/charity_projects_edit', 'controllers/charity_projects/edit.php');
 $router->get('/charity_projects_manage', 'controllers/charity_projects/manage.php');
-$router->get('/charity_projects_index_view', 'controllers/charity_projects/index.php');
+$router->get('/charity_projects_index', 'controllers/charity_projects/index.php');
 $router->get('/charity_projects_show', 'controllers/charity_projects/show.php');
 $router->get('/charity_projects_list', 'controllers/charity_projects/list.php');
 $router->get('/charity_projects_store', 'controllers/charity_projects/store.php');
@@ -76,7 +76,7 @@ $router->get('/executive_partners_destroy', 'controllers/executive_partners/dest
 $router->get('/executive_partners_edit', 'controllers/executive_partners/edit.php');
 $router->get('/executive_partners_index', 'controllers/executive_partners/index.php');
 $router->get('/executive_partners_show', 'controllers/executive_partners/show.php');
-$router->get('/executive_partners_store', 'controllers/executive_partners/store.php');
+$router->post('/executive_partners_store', 'controllers/executive_partners/store.php');
 $router->get('/executive_partners_update', 'controllers/executive_partners/update.php');
 
 
@@ -124,7 +124,7 @@ $router->get('/notifications_destroy', 'controllers/notifications/destroy.php');
 $router->get('/notifications_edit', 'controllers/notifications/edit.php');
 $router->get('/notifications_index', 'controllers/notifications/index.php');
 $router->get('/notifications_show', 'controllers/notifications/show.php');
-$router->get('/notifications_list_view', 'controllers/notifications/list.php');
+$router->get('/notifications_list', 'controllers/notifications/list.php');
 $router->get('/notifications_store', 'controllers/notifications/store.php');
 $router->get('/notifications_update', 'controllers/notifications/update.php');
 

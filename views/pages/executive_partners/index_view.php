@@ -13,11 +13,18 @@
 
     <main class="main_executive_partners_index">
     <h1>إدارة الشراكات</h1>
-
+           
         <!-- أزرار الإدارة -->
         <div class="management-buttons">
+
+        <form action="" method="get">
+
+        </form>
             <button id="delete-selected">حذف المحددين</button>
-            <button id="add-partner">إضافة شريك</button>
+            <a href="/executive_partners_create">
+                  <button id="add-partner">إضافة شريك</button>
+            </a>
+          
         </div>
 
         <!-- جدول الشركاء -->
