@@ -22,7 +22,8 @@ $db->query("update campaigns set
     full_description = :full_description, 
     cost = :cost, 
     state = :state, 
-    end_at = :end_at
+    end_at = :end_at,
+    photo = :photo
 )where
     campaign_id = :campaign_id
 ",[
@@ -33,6 +34,7 @@ $db->query("update campaigns set
     'cost' =>  $_POST['cost'], 
     'state' =>  $_POST['state'], 
     'end_at' =>  $_POST['end_at'],
+    'photo' =>  $_POST['photo'],
     'campaign_id' => $_POST['campaign_id']
 ]);
 

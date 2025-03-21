@@ -8,15 +8,20 @@
 // $config = require('config.php'); 
 // dd($config);  
 ?>
-<main>
+<main class="main_home">
   <!-- الصوره الكبير الي بل البدايه -->
   <section class="hero">
     <img src="views/media/images/andrewSmall.jpg" alt="">
+    <h1>بِفَضْلِ تَبَرُّعاتِكُمْ، نَصْنَعُ فَرْقًا حَقِيقِيًّا فِي حَياةِ الْمُحْتاجِين.</h1>
+
 
   </section>
-  <!-- حاوية البطاقات -->
+
+  <h1>الصَّدَقَةُ لَا تَنْقُصُ الْمَالَ، بَلْ تَزِيدُهُ بَرَكَةً وَطُهْرًا</h1>
+
   <section class="Carousel_card">
-    <h1>الصَّدَقَةُ لَا تَنْقُصُ الْمَالَ، بَلْ تَزِيدُهُ بَرَكَةً وَطُهْرًا</h1>
+  <!-- حاوية البطاقات -->
+
 
     <main class="main_cart">
       <section class="container">
@@ -24,7 +29,7 @@
           <img src="views/media/images/P251.png" alt="مشروع نور السعودية">
           <div class="donation-info">
             <div class="aghtha">
-              <h6>اغاثة</h6>
+              <h6>إغاثة</h6>
               <h5>رقم الحملة :</h5>
               <a href=""><img src="" alt=""></a>
             </div>
@@ -38,9 +43,41 @@
               </div>
             </div>
             <div class="donate-section">
-              <input class="inp" type="text" placeholder=" بلغ التبرع                   ر.س">
-              <button class="donate-btn">تبرع الآن</button>
-              <button><img src="" alt=""></button>
+              <input class="inp" type="text" placeholder=" مبلغ التبرع                   ر.س">
+              <button class="donate-btn">تبرع الأن</button>
+              <button class="donate_cart"><img src="views/media/images/cart.png" alt=""></button>
+            </div>
+            <div class="details">عرض التفاصيل</div>
+          </div>
+      </section>
+      <section class="bar_action">
+
+      </section>
+    </main>
+
+    <main class="main_cart">
+      <section class="container">
+        <div class="donation-card">
+          <img src="views/media/images/P251.png" alt="مشروع نور السعودية">
+          <div class="donation-info">
+            <div class="aghtha">
+              <h6>إغاثة</h6>
+              <h5>رقم الحملة :</h5>
+              <a href=""><img src="" alt=""></a>
+            </div>
+            <h3>مشروع نور السعودية</h3>
+            <div class="progress-bar">
+              <div class="progress"></div>
+            </div>
+            <div class="donation-details">
+              <div>
+                <p><strong style="display: inline;">SR 15000/</strong>14000</p>
+              </div>
+            </div>
+            <div class="donate-section">
+              <input class="inp" type="text" placeholder=" مبلغ التبرع                   ر.س">
+              <button class="donate-btn">تبرع الأن</button>
+              <button class="donate_cart"><img src="views/media/images/cart.png" alt=""></button>
             </div>
             <div class="details">عرض التفاصيل</div>
           </div>
@@ -53,29 +90,29 @@
   </section>
   <!-- الاحداث السريعه -->
   <section class="Fast-acting">
-    <div class="tbr3" style="  background-color:#00a7b5;">
-      <h1>بِتَكاتُفِنا، نَسْتَطِيعُ تَحْقِيقَ الْمُسْتَحِيل.</h1>
+    <div class="tbr3" >
+      <h1>بِتَكاتُفِنا، نَسْتَطِيعُ تَحْقِيقَ الْمُسْتَحِيل </h1>
 
       <div class="t3">
-        <p>.بفضل كرمكم. تجاوزنا الكثيرمن البرعات. معاَنصنع الفرق</p>
-        <P class="pt">عدد عمليات التبرع <br> 25,7 ألف<br> عملية تبرع</P>
+        <p>بفضل كرمكم تجاوزنا الكثير من التبرعات. معاً نصنع الفرق.</p>
+        <P class="pt">عدد عمليات التبرع <br><span>25,7 ألف</span> <br> عملية تبرع</P>
       </div>
       <hr>
       <div class="t3">
-        <p>إنجاز جديد يضاف إلى سجلنا توصلنا إلى عددا.
-          من المشاريع مكتمله<br>
-          .وغيرنا به حياةالكثيرين
+        <p>إنجاز جديد يضاف إلى سجلنا. توصلنا إلى عدداً 
+          من المشاريع المكتملة <br>
+          وغيرنا بهم حياة الكثيرين.
         </p>
-        <p class="pt">عددالمشاريع المكتملة<br>
-          25,7 ألف <br> مشروع</p>
+        <p class="pt">عددالمشاريع المكتملة<br><span>
+          25,7 ألف </span><br> مشروع</p>
       </div>
       <hr>
 
       <div class="t3">
-        <p>بفضل الله ثم بدعمكم.وصلنا إلى هذاالعدد
+        <p>بفضل الله ثم بدعمكم السخي، وصلنا إلى هذاالعدد
           من المستفيدين وغيرنا حياتهم للأفضل
         </p>
-        <p class="pt">عدد المستفيدين<br>25,7ألف<br>مستفيد</p>
+        <p class="pt">عدد المستفيدين<br><span>25,7ألف</span><br>مستفيد</p>
       </div>
     </div>
 
@@ -89,16 +126,16 @@
 
       <div class="login_tbr3">
         <div class="login_for_home_and_tbr3">
-          <p>.خطواتك الأولي نحوالعطاء تبدأهنا
-            انشئ حساباَ واستكشف فرص للمساهمةفي الخير<br>
+          <p>خطواتك الأولى نحو العطاء تبدأ من هنا.
+            انشئ حساباَ واستكشف الفرص للمساهمة في الخير.<br>
           </p>
-          <button href="">انشاء حساب</button>
+          <button href="">إنشاء حساب</button>
 
         </div>
         <div class="login_for_home_and_tbr3">
           <p>
-            تبرعك اليوم يصنع فرقاًغداً كن جزءاً من الخير<br>
-            .لا تتردد تبرعك يغير حياة شخص كن سبباً في سعادته
+            تبرعك اليوم يصنع فرقاً، غداً كن جزءاً من الخير.<br>
+            لا تتردد، تبرعك اليوم قد يغير حياة شخصاً، كن سبباً في سعادته.
           </p><button href="">تبرع الان</button>
         </div>
 

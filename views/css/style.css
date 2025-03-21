@@ -22,7 +22,24 @@
     --bgcolor-Hh:#003337;
     --bgcolor-H:#00646E;
     --bgcolor-N:#00A7B5;
+    --bgcolor-light:#f0f0f0;
+    --bgcolor-white:#ffffff;
 
+
+    --bg-border: 1px solid #b1b1b1 ;
+    --bg-border-l: 1px solid #dedede;
+    --border-radius: 1em;
+
+/* input */
+--input-height: 4em;
+--input-width: 10em;
+--input-radius: 0.5em;
+--input-shadow: 0 0 0.5em rgba(0, 0, 0, 0.1);
+--input-border: 1px solid #dddddd ;
+--input-hover-shadow: 0 0 1em rgba(0, 0, 0, 0.1);
+--input-hover-border: 1px solid #cccccc;
+--input-hover-color: #ffffff;
+--input-hover-bg: white;
 
 
 
@@ -56,14 +73,20 @@
     --card-hover-shadow: 0 0 1em rgba(0, 0, 0, 0.1);
     --card-hover-border: 1px solid #ffffff;
     /* الازرار  */
-    --button-color: #00575F;
-    --button-height: auto;
-    --button-width: auto;
+    --button-color: #ffffff;
+    --button-bg-h: #00575F;
+    --button-bg-l: #00A7B5;
+
+    --button-height: 4em;
+    --button-width: 10em;
     --button-radius: 0.5em;
     --button-shadow: 0 0 0.5em rgba(0, 0, 0, 0.1);
-    --button-border: 0px solid ;
+    --button-border: 1px solid #dddddd ;
     --button-hover-shadow: 0 0 1em rgba(0, 0, 0, 0.1);
-    --button-hover-border: 1px solid #ffffff;
+    --button-hover-border: 1px solid #00575F;
+    --button-hover-color: #00575F;
+    --button-hover-bg: white;
+
 }
 
 
@@ -145,12 +168,12 @@ footer {
     align-items: center;
     background: white;
     padding: 15px 30px;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
     direction: rtl;
+    border-bottom: 1px solid #dadada;
 
 
 }
@@ -176,7 +199,7 @@ footer {
 .nav-links a {
     text-decoration: none;
     color: var(--font-color-bh);
-    font-size: 16px;
+    font-size: var(--font-size-l);
     transition: color 0.3s ease;
 
 }
@@ -188,21 +211,39 @@ footer {
 
 .all_icon_nav{
 display: flex;
-    
-}
-.icon_img{
-    width: 40px;
-    height: 40px;
-    background-color: #ffffff;
+justify-content: center;
+align-items: center;
 
-}
-.but_login{
-    width: 100px;
+ & .but_login{
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 35px ;
     background-color:var(--button-bgcolor) ;
-    color: #ffffff;
-    border: none;
     border-radius: var(--button-radius);
+    border: none;
+    color: #ffffff;
+    font-weight: bold;
+
+ }
+ & .but_login:hover{
+    background-color:var(--bgcolor-white) ;
+    border-radius: var(--button-radius);
+    color: var(--font-color-bh);
+    border: var(--bg-border);
+
+ }
+
+ & img {
+    width: 26px;
+    height: 26px;
+    margin-left:15px ;
+
+ }
 }
+
 
 /* صحفة footer  */
 
@@ -230,6 +271,7 @@ display: flex;
     direction: rtl;
     background-color: #003337;
     color: #ffffff;
+    height: 350px;
     & div {
         width: 20%;
         margin: 20px 10px 0 10px;
@@ -286,6 +328,158 @@ display: flex;
     color: white;
 }
 
+/* users */
+
+/* users_create */
+
+
+.main_user {
+    display: flex;
+    justify-content: center;
+    direction: rtl;
+    background-color: var(--bgcolor-light);
+
+}
+.form_signup{
+    padding: var(--padding-xl);
+    margin: var(--margin-xl);
+    width: 60%;
+    border-radius: var(--border-radius);
+    background-color: var(--bgcolor-white);
+
+    border: var(--bg-border);
+
+    & h1 {
+        text-align: center;
+        color: var(--font-color-bh);
+        padding: var(--padding-m);
+
+    }
+    & label {
+        display: block;
+        color: var(--font-color-bl);
+        padding: var(--padding-m) 0 var(--padding-m) 0;
+    }
+
+ 
+
+    & input{
+        display: inline;
+        height: 35px;
+        border-radius: 5px;
+        width: 300px;
+        background-color: var(--bgcolor-light);
+        padding: var(--padding-s);
+        border: var(--input-border);
+
+    }
+
+    & input:hover{
+        color: var(--input-hover-color);
+        border-radius:var(--input-radius) ;
+        background-color: var(--input-hover-bg);
+        margin-top: var(--margin-m);
+        border: var(--button-hover-border);
+        transition: none;
+
+    }
+    
+
+    & button{
+        background-color: var(--button-bg-h);
+        width: var(--button-width);
+        height: var(--button-height);
+        border-radius:var(--button-radius) ;
+        color: white;
+        margin-top: var(--margin-m);
+        font-weight: bold;
+        border: none;
+
+    }
+    & button:hover{
+        color: var(--button-hover-color);
+        border-radius:var(--button-radius) ;
+        background-color: var(--button-hover-bg);
+        margin-top: var(--margin-m);
+        font-weight: bold;
+        border: var(--button-hover-border);
+    }
+    
+
+    & .create {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      
+
+
+    }
+
+
+}
+/* index user */
+.log_in {
+    display: flex;
+    justify-content: center;
+
+    & label {
+        margin: 0;
+        transition: none;
+    }
+
+
+    & div {
+        display: flex;
+        justify-content: center;
+        padding: var(--padding-m);
+
+        & .link_forgot_password{
+            padding: var(--padding-m);
+            
+        }
+       & .link_log_in{
+        padding: var(--padding-m);
+
+
+       } 
+    }
+
+
+}
+
+/* show user */
+.personal_data{
+    display: flex;
+    justify-content: center;
+
+    & .btn_image {
+        
+    }
+
+}
+
+.image{
+    display: flex;
+    justify-content: center;
+}
+.links {
+    display: flex;
+    justify-content: center;
+    padding: var(--padding-m);
+    & .donations{
+        padding: var(--padding-m);
+    }
+    & .notifications{
+        padding: var(--padding-m);
+
+    }
+    & .basket{
+        padding: var(--padding-m);
+
+    }
+}
+
+
 
 
 /* صفحة الشكاوي والاقتارحات */
@@ -295,14 +489,17 @@ display: flex;
  
 }
 .contact{
-    margin: 20px 0 20px 0 ;
-    width: 40%;
+    padding: var(--padding-xl);
+    margin: var(--margin-xl);
+
+    width: 60%;
     background-color: #ffffff;
     border-radius: 20px;
     border: 1px solid rgb(199, 199, 199) ;
     & h1{
     text-align: center;
     margin-top: 20px;
+    color: var(--font-color-bh);
     }
     & select{
         height: 30px;
@@ -312,11 +509,12 @@ display: flex;
     }
     & label{
         display: block;
-        width: 300px;
+        width: 100%;
         background-color: #ffffff;
         text-align: right;
         margin: 10px 0 0 0;
         padding: 10px 0 5px 0;
+        
         
     }
     & input {
@@ -328,19 +526,20 @@ display: flex;
     }
     & textarea {
         width: 100%;
+        height: 100px;
         border-radius: 5px;
-        background-color: rgb(240, 240, 240) ;
+        background-color: rgb(255, 255, 255) ;
         border-color: rgb(205, 205, 205);
         
     }
     & button {
         margin-top: 10px;
         width: 100%;
-        background-color: #00a7b5;
+        background-color: var(--button-bgcolor);
         height: 35px;
         color: #fff;
         border: none;
-        border-radius: 10px;
+        border-radius:  var(--button-radius);
 
     }
 
@@ -358,6 +557,14 @@ display: flex;
         text-align: right;
         background-color: #ffffff;
         margin-top: 10px;
+        color: var(--font-color-bl);
+    }
+    & .no3{
+        width: 100%;
+    }
+    & .questu_ions{
+        width: 100%;
+
     }
 }
 
@@ -415,22 +622,25 @@ display: flex;
 }
 
 /* البطاقة  */
-.Carousel_card{
-    & h1{
+
+.main_home{
+     & h1{
         text-align: center;
         margin: 40px 0 40px 0;
+        color: var(--font-color-bh);
     }
-
 }
-.main_cart{
+.Carousel_card{
     display: flex;
     justify-content: center;
     direction: rtl;
+   
 
 }
+
 .aghtha {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 .donation-card {
     width: 80%;
@@ -500,6 +710,7 @@ display: flex;
         width: 100%;
         text-align: left;
     }
+
 }
 
 .donate-section {
@@ -508,6 +719,19 @@ display: flex;
     justify-content: center;
     gap: 10px;
     margin-top: 15px;
+    & .donate_cart{
+        height: auto;
+        width: auto;
+        background-color: #ffffff;
+        border: var(--bg-border);
+        border-radius: var(--border-radius);
+        padding: var(--padding-m);
+
+        & img {
+            width: 20px;
+            height: 20px;
+        }
+    }
 }
 .donate-section input {
     padding: 8px;
@@ -556,8 +780,11 @@ display: flex;
 
 
 .hero{
-    & h1 {
-        background-color: #003337;
+    position: relative;
+
+    & .h1 {
+        text-align: right;
+        color: white;
     }
 
     & img {
@@ -569,17 +796,28 @@ display: flex;
 
     }
 }
+.Carousel_card{
+    & h1 {
+        color: var(--font-color-bh);
+        font-size: var(--font-size-xl);
+        padding: var(--padding-xl);
+    }
 
+}
 .tbr3 {    
-
+    background-color: rgba(0, 167, 181, 0.3);
     & h1 {
         background-color: white;
+        color: var(--font-color-bh);
         text-align: center;
-        padding: 40px 0 40px 0;
+        padding: var(--padding-xl);
+
     }
     & p {
         color:#00575F;
-        padding: 20px 20px;
+        padding: var(--padding-xl);
+        font-size: var(--font-size-l);
+        font-weight: bold;
     }
 
     & hr{
@@ -601,9 +839,11 @@ display: flex;
         border-radius: 20px;
         margin: 20px;
     }
-    & br {
-        color:#00a7b5;
+    & span{
+        color: var(--font-color-bl);
+        
     }
+ 
 
 
 }
@@ -612,16 +852,23 @@ display: flex;
     background-color: #ffffff;
     & h1 {
         text-align: center;
-        padding-top: 40px;
+        padding-top: var(--padding-xl);
+        font-size: var(--font-size-xl);
+        font-weight: bold;
+        color: var(--font-color-bh);
     }
     & #plogin {
         text-align: center;
-        padding-bottom: 40px;
+        padding-top: var(--padding-s);
+        padding-bottom: var(--padding-xl);
+        font-size: var(--font-size-l);
+        color: var(--font-color-bl);
     }
     & .login_tbr3{
         display: flex;
-        justify-content: space-around;
+        justify-content: space-evenly;
         direction: rtl;
+        width: 100%;
     }
 
     & .login_for_home_and_tbr3 {
@@ -630,11 +877,31 @@ display: flex;
         margin: 20px;
         border-radius: 20px;
         border: 1px solid #c3c3c3;
+        width: 60%;
+
+        & p {
+            font-size: var(--font-size-l);
+        }
     }
 
-    & button {
-        width: 200px;
-        height: 40px;
+    & button{
+        background-color: var(--button-bg-h);
+        width: var(--button-width);
+        height: var(--button-height);
+        border-radius:var(--button-radius) ;
+        color: white;
+        margin-top: var(--margin-m);
+        font-weight: bold;
+        border: none;
+
+    }
+    & button:hover{
+        color: var(--button-hover-color);
+        border-radius:var(--button-radius) ;
+        background-color: var(--button-hover-bg);
+        margin-top: var(--margin-m);
+        font-weight: bold;
+        border: var(--button-hover-border);
     }
 
 }
@@ -643,6 +910,7 @@ display: flex;
 .main_cart_view{
     text-align: right;
     direction: rtl;
+    margin: var(--margin-xl);
     & h2 {
         text-align: center;
         margin: 20px;
@@ -934,6 +1202,65 @@ h2 {
 
 }
 
+/* index */
+.bar_navigation {
+    margin: 60px;
+
+    & a{
+        text-decoration: none;
+        padding: var(--padding-m) var(--padding-l);
+        width: 150px;
+        height: 35px ;
+        background-color:var(--button-bgcolor) ;
+        border-radius: var(--button-radius);
+        border: none;
+        color: #ffffff;
+        font-weight: bold;
+    
+     }
+     & a:hover{
+        background-color:var(--bgcolor-white) ;
+        border-radius: var(--button-radius);
+        color: var(--font-color-bh);
+        border: var(--bg-border);
+    
+     }
+
+     & form {
+        width: 100%;
+        margin: var(--margin-xl);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+     }
+
+     & input {
+        width: 60%;
+        height: 40px;
+        border-radius: 5px;
+        border: var(--bg-border-l);
+
+     }
+
+     & button{
+        width: 20px;
+        height: 40px;
+        background-color: white;
+
+        & img {
+            width: 20px;
+            height: 20px;
+        }
+     }
+
+     & p {
+        text-align: right;
+        font-size: var(--font-size-l);
+        font-weight: bold;
+        padding: var(--padding-l);
+     }
+}
+
 /* executive_partners */
 
 /* create */
@@ -1111,9 +1438,454 @@ button[type="submit"]:hover {
 }
 
 
+/* charity_campaigns */
+
+/* show */
+
+.div_show_ch{
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    width: 100%;
+    direction: rtl;
+}
+
+.card_islamic_endowments{
+    background-color: #ffffff;
+    margin: 30px;
+    padding: 40px;
+    border: var(--bg-border);
+    border-radius: var(--border-radius);
+    width: 100%;
+
+    & h5 {
+        padding-bottom: var(--padding-m);
+        color: var(--font-color-bh);
+    }
+
+    & h6 {
+        font-size: 15px;
+        color: var(--font-color-bh);
+
+    }
+
+    & p {
+        width: 100%;
+        margin-bottom: var(--margin-m);
+        background-color: var(--bgcolor-light);
+        border-radius: var(--border-radius);
+        padding: var(--padding-m);
+        color: var(--font-color-bl);
+    }
+
+    & .details_show_ch{
+        background-color: var(--bgcolor-light);
+        padding: 20px;
+        border-radius: var(--border-radius);
+
+        & p{
+            padding: 0;
+
+        }
+    }
+    & img {
+        padding: var(--padding-m) 0 var(--padding-m) 0;
+        border-radius: var(--border-radius);
+        width: 100%;
+        height: auto;
+
+    }
 
 
 
+}
+
+.card_insid{
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--bgcolor-light);
+    padding: var(--padding-xl);
+    width: 100%;
+    border-radius: var(--border-radius);
+    border: var(--bg-border-l);
+
+
+    & h6{
+        width: 100%;
+        padding: var(--padding-m);
+
+    }
+    & p {
+        width: 100%;
+    }
+
+}
+#card_insid{
+    margin-bottom: var(--margin-xl);
+}
+#card_insid2{
+    margin-bottom: var(--margin-xl);
+}
+.bar_actions{
+    justify-content: center;
+    direction: rtl;
+    padding: var(--padding-xl);
+    margin: var(--margin-xl);
+    border-radius: var(--border-radius);
+    border: var(--bg-border);
+    
+    & p {
+        text-align: center;
+    }
+
+    & button{
+        background-color: var(--button-bg-h);
+        width: var(--button-width);
+        height: var(--button-height);
+        border-radius:var(--button-radius) ;
+        color: white;
+        margin: var(--margin-m);
+        font-weight: bold;
+        border: none;
+
+    }
+
+    & .donate{
+        display: flex;
+        justify-content: center;
+    }
+
+    & .add_to_cart{
+        background-color: yellow;
+      
+        color: black;
+    }
+
+    & .donate_now{
+        background-color: var(--bgcolor-N);
+        
+    }
+
+    
+}
+
+/* islamic_paymente  */
+
+/* show */
+
+.main_show_islamic_endowments{
+    display: flex;
+    justify-content: center;
+    direction: rtl;
+
+    
+}
+
+.card_islamic_endowments_news {
+    & p {
+        width: 80%;
+        height: 30%;
+    }
+    & img {
+        width: 40%;
+        height: 40%;
+
+    }
+}
 
 
 
+/* statistics  index*/
+
+
+.card_statistics_grup{
+    display: flex;
+    direction: rtl;
+
+}
+.card_statistics {
+    background-color: rgba(0, 167, 181, 0.2);
+    width: 80%;
+    padding: var(--padding-xl);
+    border-radius:var(--border-radius) ;
+
+    margin: var(--margin-xl);
+
+    & p{
+        font-size: var(--font-size-l);
+        font-weight: bold;
+        color: var(--font-color-bh);
+        padding: var(--padding-m);
+        text-align: center;
+    }
+}
+
+
+/* notifications */
+
+/* تنسيق عام للصفحة */
+.main_form_notifications {
+    font-family: Arial, sans-serif;
+    padding: var(--padding-m);
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: var(--bgcolor-light);
+}
+
+.form_notifications {
+    background-color: var(--bgcolor-white);
+    padding: 20px;
+    border-radius: 8px;
+    direction: rtl;
+    width: 80%;
+    display: flex;
+    margin: var(--margin-xl);
+    border: var(--bg-border);
+}
+
+.image {
+    text-align: center;
+    margin-bottom: 20px;
+    direction: rtl;
+    width: 80%;
+    height: 60%;
+    padding: var(--padding-xl);
+    margin: var(--margin-l);
+    display: block;
+
+    & .btn_image_notifi{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: var(--padding-m);
+        
+    }
+
+    & button{
+        background-color: var(--button-bg-l);
+        width: var(--button-width);
+        height: var(--button-height);
+        border-radius:var(--button-radius) ;
+        color: white;
+        margin-top: var(--margin-m);
+        font-weight: bold;
+        border: none;
+        padding: var(--padding-m);
+
+    }
+    & button:hover{
+        color: var(--button-hover-color);
+        border-radius:var(--button-radius) ;
+        background-color: var(--button-hover-bg);
+        margin-top: var(--margin-m);
+        font-weight: bold;
+        border: var(--button-hover-border);
+    }
+
+    & .image_notifi_create{
+        width: 100%;
+        height: 100%;
+        border-radius: 8px;
+        max-width: 100%;
+
+
+    }
+  
+}
+
+.camera, .folder {
+    width: 40px;
+    height: 40px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.data {
+    margin-bottom: 20px;
+    width: 80%;
+    padding: var(--padding-m);
+}
+
+.data label {
+    display: block;
+    margin-bottom: var(--margin-m);
+    font-weight: bold;
+    font-size: var(--font-size-l);
+    color: var(--font-color-bh);
+
+
+}
+
+.data input[type="text"],
+.data input[type="number"],
+.data textarea,
+.data select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.data textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+.button {
+    text-align: center;
+}
+
+.confirmation, .cancel {
+    padding: var(--padding-s) var(--padding-xl);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 20px 10px;
+}
+
+.confirmation {
+    background-color: var(--button-bg-h);
+    color: #fff;
+}
+
+.confirmation:hover {
+    background-color: var(--button-bg-l);
+}
+
+.cancel {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.cancel:hover {
+    background-color: #c82333;
+}
+
+#reporting {
+    background-color: #ffc107;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+#reporting:hover {
+    background-color: #e0a800;
+}
+
+
+/* islamic payments */
+/* zalat */
+/* تنسيق عام للصفحة */
+.main_islamic_payments_zakat {
+    background-color: var(--bgcolor-light);
+    padding: 20px;
+    text-align: center;
+    direction: rtl;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.form_zakat {
+    background-color: #fff;
+    border: var(--bg-border);
+    margin: var(--margin-xl);
+    width: 100%;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    & h1 {
+        color: var(--font-color-bh);
+        font-size: var(--font-size-xl);
+        margin-bottom: 20px;
+    }
+
+    & img {
+        max-width: 100%;
+        width: 100%;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        width: 100%;
+        height: 300px;
+        max-width: none; /* يسمح للصورة بالزيادة إذا لزم الأمر */
+        object-fit: cover;
+    }
+
+    &  p {
+        font-size: var(--font-size-l);
+        color: var(--font-color-bl);
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+
+    & span {
+        color: black;
+        font-weight: bold;
+
+    }
+
+}
+
+.container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table th, table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+table th {
+    background-color: var(--bgcolor-H);
+    color: #fff;
+    font-weight: bold;
+}
+
+table td {
+    background-color: #f9f9f9;
+    color: black;
+}
+
+table input[type="text"], table select {
+    width: 90%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+table input[type="text"]:focus, table select:focus {
+    border-color: #c9c9c9;
+    outline: none;
+}
+
+.calc-button {
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.calc-button:hover {
+    background-color: #218838;
+}

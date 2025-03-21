@@ -42,9 +42,8 @@ class Database
         }
         return $result;
     }
-    public function getGeneratedKey()
-    {
-        return $this->conection->lastInsertId(); // Correct for MySQL
+    public function getGeneratedKey(){
+        return $this->conection->lastInsertId();
     }
     
     public function fetchAll()

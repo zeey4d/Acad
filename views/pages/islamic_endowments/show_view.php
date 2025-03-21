@@ -3,6 +3,7 @@
 <?php require('views/parts/navgtion.php') ?>
 <?php require('views/parts/header.php') ?>
 <main>
+  <div class="main_show_islamic_endowments">
   <button> تبرع الان <img src="views/media/images/2.png" alt="" length="10" width="10"> </button>
   <!-- التفاصيل الاسايسيه -->
   <section class="card_islamic_endowments">
@@ -12,10 +13,11 @@
       <span>50% مكتمل</span>
     </div>
     <h4>وقف بناء جامع</h4>
-    <p>يسعى الوقف الى بناء جامع في منطقه سكنيه لتسهيل على السكان
-       قطع الطريق حيث يبعد اقرب جامع كيلو متر</p>
+    <p>يسعى الوقف الى بناء جامع في منطقة سكنية للتسهيل على السكان
+       قطع الطريق؛ حيث يبعد اقرب جامع كيلو متر</p>
     
   </section>
+ 
   <!-- باقي البينات -->
   <section class="card_islamic_endowments">
     <div>
@@ -32,7 +34,7 @@
         <img src="" alt=""> المنطقة <span>تعز</span>
       </p>
       <p>
-        <img src="" alt=""> المبلغ الذي تم جمعة <span>35000 ر.س</span>
+        <img src="" alt="">المبلغ الذي تم جممه <span>35000 ر.س</span>
       </p>
       <p>
         <img src="" alt=""> الشركاء في الوقف <span>مكتب الاوقاف</span>
@@ -40,8 +42,9 @@
     </div>
 
   </section>
+  </div>
   <!-- الاخبار -->
-  <section class="card_islamic_endowments">
+  <section class="card_islamic_endowments" id="card_islamic_endowments_news">
  <div class="card_notifications">
   <p>
     <span>30%</span> تم جمع 30% من التبرعات
@@ -50,7 +53,7 @@
      تم شراء ارض الجامع  <img src="views/media/images/3.jpg" alt="" length="200" width="100"> 
   </p>
   <p>
-     تم الانتهاء من بناء اساس الجامع <img src="views/media/images/4.jpg" alt="" length="200" width="100">
+     تم الانتهاء من بناء أساس الجامع <img src="views/media/images/4.jpg" alt="" length="200" width="100">
   </p>
   <p>
     <span>50%</span> تم جمع 50% من التبرعات

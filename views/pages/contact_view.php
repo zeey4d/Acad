@@ -9,9 +9,11 @@
             <h1>الشكاوي والاقتراحات</h1>
       <section class="form_contact">
          
-            <div>
+            <div class="no3">
+
               <form action="/services/phpmailer/send-email" method="post">
                 <label for="type">:النوع</label><br>
+
                 <div class="group_type">
                   <select name="" id=""></select>
                 </div>
@@ -29,10 +31,13 @@
       </section>
       <!-- الاسئله الشائعه -->
 
+      <h1>:الأسئلة الشائعة</h1>
+      <section class="form_contact">
+
       <section calss="form_contact">
         <h1>:الأسئلة الشائعة</h1>
 
-          <div class="questu=ions">
+          <div class="questu_ions">
             <h3>كيف يمكنني تعديل مساهمتي؟</h3>
             <p>يمكنك تعديل مساهمتك من خلال صفحة التبرعات</p>
           </div>

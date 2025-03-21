@@ -2,9 +2,9 @@
 <?php require('views/parts/adminbar.php') ?>
 <?php require('views/parts/navgtion.php') ?>
 <?php require('views/parts/header.php') ?>
-<main>
+<main class="main_user">
   <!-- عرض حساب المستخدم -->
-  <section  class="form_your_account">
+  <section  class="form_signup" id="form_your_account">
     <h1>البيانات الشخصية</h1>
     <div class="personal_data">
       <form action="" method="">
@@ -14,7 +14,7 @@
         <input id="email" type="email" name="email" placeholder="البريدالإلكتروني"><br>
         <label for="phone_number">:رقم الهاتف</label><br>
         <input id="phone_number" type="text" name="phone_number" placeholder="رقم الهاتف"><br>
-        <button class="btn_chang_password" id="btn_chang_password" type="submit" name="btn_chang_password">تغيركلمةالمرور</button>
+        <button class="btn_chang_password" id="btn_chang_password" name="btn_chang_password">تغيركلمةالمرور</button>
       </form>
     </div>
     <div class="image">

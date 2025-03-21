@@ -26,9 +26,6 @@ $partners['accounts'] = $db->query(
 // $item = $db->query("SELECT * from executive_partners where id = :id ", [
 //   'id' => $_GET['id'],
 // ])->findOrFail();
-$partners = $db->query("SELECT * from partners where partner_id = :partner_id",[
-    'partner_id' => $_POST['partner_id']
-])->findOrFail();
 //authorize($item['other_id'] == $userID);
 $db->query("UPDATE partners
 SET
@@ -54,32 +51,37 @@ SET
     'street' => $_POST['street'],
     'partner_id' => $_POST['partner_id']
 ]);
-foreach($_POST['phones'] as $phone){
+for($i = 0; $i < count($_POST['phones']); $i++){
+    $phone = $_POST['phones'][$i];
     $db->query(
         "UPDATE partner_phones 
         SET
         (
-            :phone,
-            :type
+            phone = :phone,
+            type = :type
         )WHERE partner_id = :partner_id and phone = :L_phone and type = :L_type",[
             'partner_id' => $_POST['partner_id'],
             'phone' => $phone['phone'],
             'type' => $phone['type'],
-            'L_type' => $partners['']
+            'L_type' => $partners['phones'][$i]['type'],
+            'L_phone' => $partners['phones'][$i]['phone']
         ]
     );
 }
-foreach($_POST['accounts'] as $account){
+for($i = 0; $i < count($_POST['accounts']); $i++){
+    $account = $_POST['accounts'][$i];
     $db->query(
         "UPDATE partners_accounts 
         SET
         (
-            :account,
-            :account_type
-        )WHERE partner_id = :partner_id and ",[
+            account = :account,
+            account_type = :account_type
+        )WHERE partner_id = :partner_id and account = :L_account and account_type = :L_account_type",[
             'partner_id' => $_POST['partner_id'],
             'account' => $account['account'],
-            'account_type' => $account['account_type']
+            'account_type' => $account['account_type'],
+            'L_account' => $partners['accounts'][$i]['account'],
+            'L_account_type' => $partners['accounts'][$i]['account_type']
         ]
     );
 }
