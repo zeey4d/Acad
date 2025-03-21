@@ -1,19 +1,6 @@
 <?php
 $heading = "Create test";
 
-<<<<<<< HEAD
-use core\App;
-use core\Database;
-
-$db = App::resolve(Database::class);
-$errors = [];
-
-//if (!(Validator::string($_POST['name'], 1, 255))) {
-//    $errors["name"] = "Titel  is too short or too long";
-//}
-// if (!(Validator::string($_POST['body'], 1, 1000))) {
-//     $errors["titel"] = " body is too short or long";
-=======
 if(isset($_POST["submit"])){
    
     $file = $_FILES['partner-logo']['name'];
@@ -61,14 +48,11 @@ if(isset($_POST["submit"])){
 
 // if (!(Validator::string($_POST['name'], 1, 255))) {
 //     $errors["name"] = "Titel  is too short or too long";
->>>>>>> ff1748cd1b6b7255a5985a99354128cee49096ca
 // }
 // // if (!(Validator::string($_POST['body'], 1, 1000))) {
 // //     $errors["titel"] = " body is too short or long";
 // // }
 
-<<<<<<< HEAD
-=======
 
 // if (! empty($errors)) {
 
@@ -77,77 +61,12 @@ if(isset($_POST["submit"])){
 // }
 
 
->>>>>>> ff1748cd1b6b7255a5985a99354128cee49096ca
 // $db->query("INSERT INTO executive_partners (name) VALUES (:name)", [
 //     'name' => $_POST['name'],
 // ]);
 
-<<<<<<< HEAD
-$partner_id = $db->query("INSERT into partners(name, logo, description, more_information, email, directorate, county, city, street)
-values
-(
-    :name,
-    :logo,
-    :description,
-    :more_information,
-    :email,
-    :directorate,
-    :county,
-    :city,
-    :street
-) RETURNING partner_id", [
-    'name' => $_POST['name'],
-    'logo' => $_POST['logo'],
-    'description' => $_POST['description'],
-    'more_information' => $_POST['more_information'],
-    'email' => $_POST['email'],
-    'directorate' => $_POST['directorate'],
-    'county' => $_POST['county'],
-    'city' => $_POST['city'],
-    'street' => $_POST['street']
-])->getGeneratedKey('partner_id');
 
 
-
-$name = $_POST['name'];
-$logo = $_POST['logo'];
-$description = $_POST['description'];
-$more_information = $_POST['more_information'];
-$email = $_POST['email'];
-$directorate = $_POST['directorate'];
-$county = $_POST['county'];
-$city = $_POST['city'];
-$street = $_POST['street'];
-
-
-// التحقق من الحقول المطلوبة
-if (!isset($_POST['name']) || !Validator::string($_POST['name'] ?? '',1 ,255)){
-    $errors["name"] = "الاسم يجب ان يكون بين  1 او 255 حرفا";
- }
-
-if (!isset($_POST['city']) || !Validator::string($_POST['city'] ?? '',1 ,255)){
-    $errors["city"] = "المدينة يجب ان يكون بين  1 او 255 حرفا";
- }
-
- if (!isset($_POST['email']) || !Validator::email($_POST['email'])){
-    $errors["email"] = "البريد الالكتروني غير صالح ";
- }
-
-if (!isset($_POST['description']) || !Validator::string($_POST['description'] ?? '',1 ,1000)){
-    $errors["description"] = "الوصف يجب ان يكون بين  1 او 1000 حرفا";
- }
-
- if (!isset($_POST['more_information']) || !Validator::string($_POST['more_information'] ?? '',1 ,1000)){
-    $errors["more_information"] = "بيانات التواصل الاضافية  يجب ان يكون بين  1 او 1000 حرفا";
- }
-
- if ( !isset($_POST['directorate']) ||!Validator::string($_POST['directorate'], 1, 255)) {
-    $errors["directorate"] = "المديرية يجب أن تكون بين 1 و 255 حرفًا";
-}
-=======
-
-
->>>>>>> ff1748cd1b6b7255a5985a99354128cee49096ca
 
 if ( !isset($_POST['street']) || !Validator::string($_POST['street'], 1, 255)) {
     $errors["street"] = "الشارع يجب أن يكون بين 1 و 255 حرفًا";
