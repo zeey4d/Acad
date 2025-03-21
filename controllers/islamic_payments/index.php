@@ -8,7 +8,7 @@ $heading = "All My tests";
 
 
 // $islamic_payments = $db->query("SELECT * from islamic_payments ;")->fetchAll();
-
+$IslamicPayments = $db->query("SELECT * FROM islamic_payments")->fetchAll();
 
 require "views/pages/islamic_payments/index_view.php";
 

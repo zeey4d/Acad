@@ -2,7 +2,7 @@
 //يبدا جلسة المستخدم
 session_start();
 
-
+require("vendor/autoload.php");
 spl_autoload_register(function ($class) {
     $class =str_replace('\\', DIRECTORY_SEPARATOR, $class);
     require "{$class}.php";
@@ -38,4 +38,5 @@ $router->route($uri,$methode);
 
 //يطعبع كل خصائص السرفر اسفل الصفحه
 //dd($_SERVER);
+
 
