@@ -27,9 +27,23 @@ if (! empty($errors)) {
 }
 
 
-// $db->query("INSERT INTO islamic_endowments (name) VALUES (:name)", [
-//     'name' => $_POST['name'],
-// ]);
+$db->query(
+    "INSERT INTO endowments (category_id, partner_id, name, short_description, full_description, cost, start_at, end_at, state, directorate, city, street, photo)
+     VALUES (:category_id, :partner_id, :name, :short_description, :full_description, :cost, :start_at, :end_at, :state, :directorate, :city, street, :photo)", [
+        'category_id' => $_POST['category_id'],
+        'partner_id' => $_POST['partner_id'],
+        'name' => $_POST['name'],
+        'short_description' => $_POST['short_description'],
+        'full_description' => $_POST['full_description'],
+        'cost' => $_POST['cost'],
+        'start_at' => $_POST['start_at'],
+        'end_at' => $_POST['end_at'],
+        'state' => $_POST['state'],
+        'directorate' => $_POST['directorate'],
+        'city' => $_POST['city'],
+        'street' => $_POST['street'],
+        'photo' => $_POST['photo']
+]);
 
 header("Location: /pages/islamic_endowments");
 die();

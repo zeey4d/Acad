@@ -29,7 +29,7 @@
         <select name="implementing_agency" id="implementing_agency">
           <option value=""></option>
         </select>
-        <label for="implement_stages">مراخل التنفيذ</label>
+        <label for="implement_stages">مراحل التنفيذ</label>
         <select name="implement_stages" id="implement_stages">
           <option value=""></option>
         </select>
