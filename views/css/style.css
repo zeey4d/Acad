@@ -623,13 +623,6 @@ align-items: center;
 
 /* البطاقة  */
 
-.main_home{
-     & h1{
-        text-align: center;
-        margin: 40px 0 40px 0;
-        color: var(--font-color-bh);
-    }
-}
 .Carousel_card{
     display: flex;
     justify-content: center;
@@ -750,12 +743,13 @@ align-items: center;
 
 }
 .donate-btn {
-    background: #1a676b;
+    background: var(--button-bg-h);
     color: white;
     border: none;
     padding: 10px 22px;
     border-radius: 6px;
     cursor: pointer;
+    width: 140px;
     font-size: 16px;
     font-weight: bold;
     transition: background 0.3s ease-in-out;
@@ -778,7 +772,13 @@ align-items: center;
 
 /* home */
 
-
+.main_home{
+     & h1{
+        text-align: center;
+        margin: 40px 0 40px 0;
+        color: var(--font-color-bh);
+    }
+}
 .hero{
     position: relative;
 
@@ -797,6 +797,7 @@ align-items: center;
     }
 }
 .Carousel_card{
+    
     & h1 {
         color: var(--font-color-bh);
         font-size: var(--font-size-xl);
@@ -823,7 +824,7 @@ align-items: center;
     & hr{
         width: 50%;
         margin: auto; /* توسيط الخط أفقيًا مع إضافة مسافة من الأعلى والأسفل */
-        border: 1px solid #ffffff
+        border: 1px solid #ffffff;
     }
 
     & .t3 {
@@ -1568,6 +1569,47 @@ button[type="submit"]:hover {
 
     
 }
+
+/* index */
+
+
+.bar_search {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: var(--bg-border-l);
+    direction: rtl;
+}
+
+.bar_search form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.bar_search input[type="search"],
+.bar_search select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+.bar_search input{
+    width: 60%;
+}
+.bar_search select {
+    width: 15%;
+}
+
+.bar_search input[type="search"]:focus,
+.bar_search select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+
 
 /* islamic_paymente  */
 

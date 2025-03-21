@@ -87,6 +87,8 @@
       </section>
     </main>
 
+    
+
   </section>
   <!-- الاحداث السريعه -->
   <section class="Fast-acting">

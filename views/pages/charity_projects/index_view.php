@@ -6,7 +6,7 @@
 <main>
   <!-- شريط التنقل -->
   <section class="bar_navigation">
-    <div class="button">
+    <div  class="button">
       <a class="public_projects" id="public_projects" href="">مشاريع عامة</a>
       <a class="sponsoring_orphans" id="sponsoring_orphans" href="">مشاريع عامة</a>
       <a class="mosque_care" id="mosque_care" href="">مشاريع عامة</a>

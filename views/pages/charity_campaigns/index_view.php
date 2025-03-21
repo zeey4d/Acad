@@ -21,31 +21,77 @@
     </form>
   
   </section>
+  <h1 style="    text-align: center;      color: var(--font-color-bh);     margin: var(--margin-xl); ">حملات الترع المتاحة</h1>
 
-  <section class="container">
-    <h1>حملات الترع المتاحة</h1>
-    <div class="card_charity_campaigns">
-      <img src="" alt="">
-      <strong>بادر</strong>
-      <p><img src="" alt=""> <strong>رقم الحملة : 51</strong></p>
-      <p><img src="" alt=""> <strong>المنطقة تعز</strong></p>
-      <h3>مشروع مساعدة المحتاجين</h3>
-      <p>
-        <span>55%</span>
-        <strong></strong>
-        500000/125000 ريال
-      </p>
+  <section class="Carousel_card">
+  <!-- حاوية البطاقات -->
 
-      <form action="" method="">
-        <label for="donation_amount">مبلغ التبرع</label>
-        <input id="donation_amount" type="number" name="donation_amount" placeholder="ريال">
-        <button id="btn_donation" type="submit" name="btn_donation">تبرع</button>
-        <button id="btn_basket" type="submit" name="btn_basket"><img src="" alt=""></button>
 
-      </form>
-      <a class="view_details" href="">عرض التفاصيل</a>
-      
-    </div>
+    <main class="main_cart">
+      <section class="container">
+        <div class="donation-card">
+          <img src="views/media/images/P251.png" alt="مشروع نور السعودية">
+          <div class="donation-info">
+            <div class="aghtha">
+              <h6>إغاثة</h6>
+              <h5>رقم الحملة :</h5>
+              <a href=""><img src="" alt=""></a>
+            </div>
+            <h3>مشروع نور السعودية</h3>
+            <div class="progress-bar">
+              <div class="progress"></div>
+            </div>
+            <div class="donation-details">
+              <div>
+                <p><strong style="display: inline;">SR 15000/</strong>14000</p>
+              </div>
+            </div>
+            <div class="donate-section">
+              <input class="inp" type="text" placeholder=" مبلغ التبرع                   ر.س">
+              <button class="donate-btn">تبرع الأن</button>
+              <button class="donate_cart"><img src="views/media/images/cart.png" alt=""></button>
+            </div>
+            <div class="details">عرض التفاصيل</div>
+          </div>
+      </section>
+      <section class="bar_action">
+
+      </section>
+    </main>
+
+    <main class="main_cart">
+      <section class="container">
+        <div class="donation-card">
+          <img src="views/media/images/P251.png" alt="مشروع نور السعودية">
+          <div class="donation-info">
+            <div class="aghtha">
+              <h6>إغاثة</h6>
+              <h5>رقم الحملة :</h5>
+              <a href=""><img src="" alt=""></a>
+            </div>
+            <h3>مشروع نور السعودية</h3>
+            <div class="progress-bar">
+              <div class="progress"></div>
+            </div>
+            <div class="donation-details">
+              <div>
+                <p><strong style="display: inline;">SR 15000/</strong>14000</p>
+              </div>
+            </div>
+            <div class="donate-section">
+              <input class="inp" type="text" placeholder=" مبلغ التبرع                   ر.س">
+              <button class="donate-btn">تبرع الأن</button>
+              <button class="donate_cart"><img src="views/media/images/cart.png" alt=""></button>
+            </div>
+            <div class="details">عرض التفاصيل</div>
+          </div>
+      </section>
+      <section class="bar_action">
+
+      </section>
+    </main>
+
+    
 
   </section>
 </main>
