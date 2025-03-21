@@ -4,33 +4,33 @@
 <?php require('views/parts/header.php') ?>
 
 <main>
-  <!-- شريط الافعال -->
-  <section class="bar_action">
+    <!-- شريط الافعال -->
+    <section class="bar_action">
 
-  </section>
+    </section>
 
-    
+
 
     <main class="main_executive_partners_index">
-    <h1>إدارة الشراكات</h1>
-           
+        <h1>إدارة الشراكات</h1>
+
         <!-- أزرار الإدارة -->
         <div class="management-buttons">
 
-        <form action="" method="get">
+            <form action="" method="get">
 
-        </form>
+            </form>
             <button id="delete-selected">حذف المحددين</button>
             <a href="/executive_partners_create">
-                  <button id="add-partner">إضافة شريك</button>
+                <button id="add-partner">إضافة شريك</button>
             </a>
-          
+
         </div>
 
         <!-- جدول الشركاء -->
         <table class="partners-table">
             <thead>
-                <tr >
+                <tr>
                     <th><input type="checkbox" id="select-all"></th>
                     <th>الشعار</th>
                     <th>اسم الشريك</th>
@@ -59,7 +59,7 @@
                 </tr>
                 <tr>
                     <td><input type="checkbox" class="select-partner"></td>
-                    <td><img src="logo2.png" alt="شعار الشريك 2" class="partner-logo"></td>
+                    <td><img src="views/media/uploads/67dcbd064e6894.78416477.jpg" alt="شعار الشريك 2" class="partner-logo"></td>
                     <td>شركة التعليم</td>
                     <td>وصف قصير عن الشريك الثاني.</td>
                     <td>
@@ -78,10 +78,10 @@
             </tbody>
         </table>
 
-  <!-- بطاقات الشركا التنفيذيين -->
-  <section class="container">
-<div class="card_executive_partners">
+        <!-- بطاقات الشركا التنفيذيين -->
+        <section class="container">
+            <div class="card_executive_partners">
 
-</div>
-</section>
-</main>
+            </div>
+        </section>
+    </main>
