@@ -3,6 +3,8 @@
 <?php require('views/parts/navgtion.php') ?>
 <?php require('views/parts/header.php') ?>
 
+<?php //dd($campaigns) ?>
+
 <main>
   <section class="bar_search">
     <form action="" method="">
@@ -21,12 +23,32 @@
     </form>
   
   </section>
+<<<<<<< HEAD
   <h1 style="    text-align: center;      color: var(--font-color-bh);     margin: var(--margin-xl); ">حملات الترع المتاحة</h1>
 
   <section class="Carousel_card">
   <!-- حاوية البطاقات -->
+=======
+  <h1>حملات التبرع المتاحة</h1>
+
+  <section class="container">
+  <?php foreach($campaigns as $campaign): ?>
+
+    <div class="donation-card">
+      <img src="views/media/images/<?= htmlspecialchars($campaign['photo'] ?? "11.png") ?>" alt=" " loading="lazy">
+      <strong>بادر</strong>
+      <p><img src="" alt=""> <strong>رقم الحملة : <?= htmlspecialchars($campaign['campaign_id']) ?></strong></p>
+      <p><img src="" alt=""> <strong>المنطقة تعز</strong></p>
+      <h3>مشروع مساعدة المحتاجين</h3>
+      <p>
+        <span><?= htmlspecialchars(($campaign['collected_money']/$campaign['cost'])*100) ?>%</span>
+        <strong></strong>
+        <?= htmlspecialchars($campaign['cost']) ?>/<?= htmlspecialchars($campaign['collected_money']) ?> ريال
+      </p>
+>>>>>>> 1847603dee89ef1f6a21bd4565994f8499f83a98
 
 
+<<<<<<< HEAD
     <main class="main_cart">
       <section class="container">
         <div class="donation-card">
@@ -94,5 +116,13 @@
     
 
   </section>
+=======
+      </form>
+      <a class="view_details" href="">عرض التفاصيل</a>
+      
+    </div>
+    <?php endforeach; ?>
+    </section>
+>>>>>>> 1847603dee89ef1f6a21bd4565994f8499f83a98
 </main>
 <?php require('views/parts/footer.php') ?>
