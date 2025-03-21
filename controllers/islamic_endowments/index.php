@@ -7,9 +7,7 @@ $db = App::resolve(Database::class);
 $heading = "All My tests";
 
 
-<<<<<<< HEAD
 // $islamic_endowments = $db->query("SELECT * from endowments;")->fetchAll();
-=======
 $endowments = $db->query(
     "SELECT 
         A.category_id,
@@ -36,7 +34,6 @@ $endowments = $db->query(
     ORDER BY donate_date DESC
     "
 );
->>>>>>> 1847603dee89ef1f6a21bd4565994f8499f83a98
 
 
 require "views/pages/islamic_endowments/index_view.php";
