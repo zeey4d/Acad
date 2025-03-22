@@ -6,7 +6,7 @@
 
 <?php
 // $config = require('config.php');
-echo"<br><br><br>" ;
+//echo"<br><br><br>" ;
 //dd($campaigns);  
 ?>
 <main>
@@ -15,18 +15,18 @@ echo"<br><br><br>" ;
   <!-- الصوره الكبير الي بل البدايه -->
   <section class="hero">
     <img src="views/media/images/andrewSmall.jpg" alt="">
-    <h1>بِفَضْلِ تَبَرُّعاتِكُمْ، نَصْنَعُ فَرْقًا حَقِيقِيًّا فِي حَياةِ الْمُحْتاجِين.</h1>
+    <h1 style=" color : white;  margin: -80px 10px 0 0; text-align: right;">بِفَضْلِ تَبَرُّعاتِكُمْ، نَصْنَعُ فَرْقًا حَقِيقِيًّا فِي حَياةِ الْمُحْتاجِين</h1>
 
 
   </section>
 
-  <h1>الصَّدَقَةُ لَا تَنْقُصُ الْمَالَ، بَلْ تَزِيدُهُ بَرَكَةً وَطُهْرًا</h1>
+  <h1 style="     margin: 100px;    text-align: center;    color: var(--font-color-bh); ">الصَّدَقَةُ لَا تَنْقُصُ الْمَالَ، بَلْ تَزِيدُهُ بَرَكَةً وَطُهْرًا</h1>
 
   <section class="Carousel_card">
   <!-- حاوية البطاقات -->
 
     <main class="main_cart">
-      <section class="container">
+      <section class="container_card">
         <?php foreach($campaigns as $campaign): ?>
         <div class="donation-card">
           <img src="views/media/images/<?= htmlspecialchars($campaign['photo'] ?? "11.png") ?>" alt="مشروع نور السعودية" loading="lazy">

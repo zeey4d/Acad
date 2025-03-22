@@ -10,9 +10,9 @@
   <section class="card_islamic_endowments">
     <div class="main_image">
       <h3>التفاصيل</h3>
-      <img src="" alt="">
-      <span>50% مكتمل</span>
-      <p>يسعى المشروع الى علاج ذوي الحاجة - المصابين بالمياه الزرقاء</p>
+      <img src="views/media/images/<?php  echo $projects['photo'] ?? "11.png" ?>" alt=" " loading="lazy">
+      <span><?php echo ($projects['collected_money']/$projects['cost'])*100 ?>% مكتمل</span>
+      <p>يسعى المشروع الى <?php echo $projects['name']?> </p>
       <p>
         <h4>تفاصيل تكاليف العمليات</h4>
         <strong>الفحوصات الطبية</strong>
@@ -22,11 +22,11 @@
       
     </div>
     <div class="data">
-      <p><img src="" alt=""> نوع المشروع <span>علاجي</span></p>
-      <p><img src="" alt=""> المبلغ المستهدف<span>100000ر.س</span></p>
+      <p><img src="" alt=""> نوع المشروع <span><?php echo $projects['type']?></span></p>
+      <p><img src="" alt=""> المبلغ المستهدف<span><?php echo $projects['cost']?>ر.س</span></p>
       <p><img src="" alt=""> عدد المتبرعين<span>8000</span></p>
       <p><img src="" alt=""> عدد المستفيدين<span>100 محتاج</span></p>
-      <p><img src="" alt="">المبلغ الذي تم جمعه<span>50000ر.س</span></p>
+      <p><img src="" alt="">المبلغ الذي تم جمعه<span><?php echo $projects['collected_money']?>ر.س</span></p>
       <p><img src="" alt=""> الوقت المتبقي<span>60 يوم</span></p>
       <p>
         <h4>مراحل المشروع</h4>
@@ -35,10 +35,10 @@
         <span>المرحلة الثالثة</span>
       </p>
       <p>
-        <span>تاريخ البدء :</span> <strong>1 \ 1 \ 2025</strong>
-        <span>تاريخ الانتهاء :</span> <strong>1 \ 3 \ 2025</strong>
+        <span>تاريخ البدء :</span> <strong><?php echo $projects['start_at']?></strong>
+        <span>تاريخ الانتهاء :</span> <strong><?php echo $projects['end_at']?></strong>
       </p>
-      <p><span>30%</span>تم جمع 30% من التبرعات</p>
+      <p><span><?php echo ($projects['collected_money']/$projects['cost'])*100 ?>%</span>تم جمع <?php echo ($projects['collected_money']/$projects['cost'])*100 ?>% من التبرعات</p>
       <p><img src="" alt="">تم الانتهاء من المرحلة الاولى</p>
 
     </div>
