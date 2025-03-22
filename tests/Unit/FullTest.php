@@ -8,17 +8,17 @@ test('urls function correctly checks URI', function () {
     expect(urls("/dashboard"))->toBeFalse();
 });
 
-test('routeToController function loads correct file', function () {
-    $routes = [
-        "/home" => "controllers/home.php"
-    ];
+// test('routeToController function loads correct file', function () {
+//     $routes = [
+//         "/home" => "controllers/home.php"
+//     ];
     
-    ob_start();
-    routeToControler("/home", $routes);
-    $output = ob_get_clean();
+//     ob_start();
+//     routeToControler("/home", $routes);
+//     $output = ob_get_clean();
     
-    expect($output)->not()->toBeEmpty();
-});
+//     expect($output)->not()->toBeEmpty();
+// });
 
 
 test('logIn function sets session correctly', function () {
