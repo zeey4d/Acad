@@ -9,7 +9,8 @@
         <div class="div_show_ch">  
             <section class="card_islamic_endowments">
             <h3>التفاصيل</h3>
-            <img src="views/media/images/<?php  echo $projects['photo'] ?? "11.png" ?>" alt=" " loading="lazy">
+            <div class="imgs">
+            <img src="views/media/images/<?php  echo $projects['photo'] ?? "11.png" ?>" alt=" " loading="lazy"></div>
             <div><div></div></div>
             <h5>عمليات جراحيه</h5>
             <p>يسعى المشروع الى علاج ذوي الحاجه المصابين بالمياه الزرقاء</p>
