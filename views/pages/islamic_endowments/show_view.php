@@ -9,12 +9,11 @@
   <section class="card_islamic_endowments">
     <h3>التفاصيل</h3>
     <div class="image">
-      <img src="views/media/images/1.jpg" alt="" length="200" width="200">
-      <span>50% مكتمل</span>
+      <img src="views/media/images/<?php  echo $endowments['photo'] ?? "11.png" ?>" alt="" length="200" width="200" loading="lazy">
+      <span><?php echo ($endowments['collected_money']/$endowments['cost'])*100 ?>% مكتمل</span>
     </div>
-    <h4>وقف بناء جامع</h4>
-    <p>يسعى الوقف الى بناء جامع في منطقة سكنية للتسهيل على السكان
-       قطع الطريق؛ حيث يبعد اقرب جامع كيلو متر</p>
+    <h4><?php echo $endowments['name'] ?></h4>
+    <p> <?php echo $endowments['short_description'] ?> </p>
     
   </section>
  
@@ -22,19 +21,19 @@
   <section class="card_islamic_endowments">
     <div>
       <p>
-        <img src="" alt=""> نوع الوقف <span>خيري</span>
+        <img src="" alt=""> نوع الوقف <span><?php echo $endowments['type'] ?></span>
       </p>
       <p>
-        <img src="" alt=""> المبلغ المستهدف <span>70000 ر.س</span>
+        <img src="" alt=""> المبلغ المستهدف <span><?php echo $endowments['cost'] ?> ر.س</span>
       </p>
       <p>
         <img src="" alt=""> عدد المساهمين <span>8000</span>
       </p>
       <p>
-        <img src="" alt=""> المنطقة <span>تعز</span>
+        <img src="" alt=""> المنطقة <span><?php echo $endowments['city'] ?></span>
       </p>
       <p>
-        <img src="" alt="">المبلغ الذي تم جممه <span>35000 ر.س</span>
+        <img src="" alt="">المبلغ الذي تم جممه <span><?php echo $endowments['collection_money'] ?> ر.س</span>
       </p>
       <p>
         <img src="" alt=""> الشركاء في الوقف <span>مكتب الاوقاف</span>

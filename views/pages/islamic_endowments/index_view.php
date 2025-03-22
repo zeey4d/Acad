@@ -3,6 +3,8 @@
 <?php require('views/parts/navgtion.php') ?>
 <?php require('views/parts/header.php') ?>
 
+<?php dd($islamic_endowments) ?>
+
 <main>
   <!-- الفلتره -->
   <section class="bar_felter">
@@ -24,11 +26,12 @@
   </section>
   <!-- كرت الاوقاف -->
   <section class="container">
+  <?php foreach($islamic_endowments as $islamic_endowment): ?>
 
     <div class="card_islamic_endowments">
-      <img src="" alt="">
-      <h2>وقف بناء مسجد</h2>
-      <p>بناء مسجد في منطقة لا يوجد فيها مسجد</p>
+      <img src="views/media/images/<?= htmlspecialchars($islamic_endowment['photo'] ?? "11.png") ?>" alt=" " loading="lazy">
+      <h2> <?= htmlspecialchars($islamic_endowment['name']) ?> </h2>
+      <p>  <?= htmlspecialchars($islamic_endowment['short_description']) ?> </p>
       <form action="" method="">
         <label for="donation"><h3>مبلغ التبرع</h3></label><br>
         <input id="donation" type="number" name="donation" placeholder="ريال">
@@ -36,10 +39,12 @@
         <button class="add" name="add">إضافة الى السلة <img src="" alt=""></button>
         <button class="share" name="share">مشاركة المشروع <img src="" alt=""></button>
       </form>
-      <p>ينتهي في 30 ديسمبر 2025</p><br>
+      <p>ينتهي في  <?= htmlspecialchars($islamic_endowment['end_at']) ?> </p><br>
       <a class="more_details" href="">تفاصيل أكثر</a>
 
     </div>
+    <?php endforeach; ?>
+
   </section>
 
 

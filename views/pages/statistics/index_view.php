@@ -10,7 +10,7 @@
       <img src="" alt="">
       <p>
         إجمالي المبالغ التي تم تجميعها <br>
-        ريال سعودي 2556525563  
+        ريال سعودي <?php echo $users_statistics['donates_sum'] ?>  
       </p>
 
     </article>
@@ -18,7 +18,7 @@
       <img src="" alt="">
       <p>
         العدد الكلي للمستفيدين <br>
-        5265566 مستفيد
+        <?php echo $users_statistics['count'] ?> مستفيد
       </p>
 
     </article>
@@ -26,7 +26,7 @@
       <img src="" alt="">
       <p>
         عدد الحملات <br> 
-        254654 حملة
+        <?php echo $campaigns_statistics['count'] ?> حملة
       </p>
       
 
@@ -37,7 +37,7 @@
       <img src="" alt="">
       <p>
         عدد المشاريع <br>
-        25654 مشروع
+        <?php echo $projects_statistics['count'] ?> مشروع
       </p>
 
     </article>
@@ -45,7 +45,7 @@
       <img src="" alt="">
       <p>
         عدد الشركاء <br>
-        54654 جمعية
+        <?php echo $partners_statistics['count'] ?? "0" ?> جمعية
       </p>
       
 
@@ -56,7 +56,7 @@
       
       <p>
         مشاريع مكتملة <br>
-        414645 مشروع
+        <?php echo $projects_statistics['completed'] ?? "0" ?> مشروع
       </p>
 
     </article>

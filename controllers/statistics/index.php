@@ -24,9 +24,10 @@ $projects_statistics['count'] = $db->query("SELECT count(*) as count from projec
 $projects_statistics['donates_count'] = $db->query("SELECT count(*) as donates_count from users_donate_projects ;")->fetch(); // اجمالي التبرعات
 $projects_statistics['donates_sum'] = $db->query("SELECT sum(cost) as donates_sum from users_donate_projects ;")->fetch(); // اجمالي التبرعات للحملات الخيرية
 $projects_statistics['users_donates_count'] = $db->query("SELECT count(distinct user_id) as users_donate_camaigns from users_donate_projects ;")->fetch();
+$projects_statistics['completed'] = $db->query("SELECT count(*) as completed FROM projects WHERE status = 'completed';")->fetch(); // عدد المشاريع المكتملة
 
 $islamic_payments_statistics['count'] = $db->query("SELECT count(*) as count from islamic_payments ;")->fetch(); // عدد المدفوعات الاسلامية
-$islamic_payments_statistics['users_paid_count'] = $db->query("SELECT count(distinict user_id) as users_paid_count from islamic_payments ;")->fetch(); //  عدد المستخدمين الذين شاركوا في المصاريف الاسلامية
+$islamic_payments_statistics['users_paid_count'] = $db->query("SELECT count(distinct user_id) as users_paid_count from islamic_payments ;")->fetch(); //  عدد المستخدمين الذين شاركوا في المصاريف الاسلامية
 $islamic_payments_statistics['zakat_sum'] = $db->query("SELECT sum(cost) as zakat_sum from islamic_payments where type = 'zakat' ;")->fetch(); // اجمالي الزكاة الاسلامية
 $islamic_payments_statistics['Kaffarah_sum'] = $db->query("SELECT sum(cost) as Kaffarah_sum from islamic_payments where type = 'Kaffarah' ;")->fetch(); // اجمالي الكفارات الاسلامية
 $islamic_payments_statistics['Sadaqah_sum'] = $db->query("SELECT sum(cost) as Sadaqah_sum from islamic_payments where type = 'Sadaqah' ;")->fetch(); // اجمالي الصدقات الاسلامية
@@ -45,6 +46,8 @@ $users_statistics['donates_count'] =
     $endowments_statistics['users_donates_count']['users_donates_count']+
     $projects_statistics['users_donates_count']['users_donates_count']+
     $islamic_payments_statistics['users_paid_count']['users_paid_count'];// اجمالي عدد المستخدمين الذين تبرعوا للمشاريع والحملات والمدفوعات الاسلامية
+
+    $partners_statistics['count'] = $db->query("SELECT count(*) as count FROM partners;")->fetch(); // عدد الشركاء
 
 require "views/pages/statistics/index_view.php";
 
