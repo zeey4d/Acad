@@ -1776,23 +1776,26 @@ button[type="submit"]:hover {
     background-color: var(--bgcolor-white);
     margin: 30px;
     padding: 40px;
-    border: var(--bg-border-l);
     border-radius: var(--border-radius);
-    box-shadow: rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
     width: 100%;
 
     & h5 {
+        font-size: var(--font-size-l);
         padding-bottom: var(--padding-m);
         color: var(--font-color-bh);
     }
 
     & h6 {
+        font-size: var(--font-size-l);
+
         font-size: 15px;
         color: var(--font-color-bh);
 
     }
 
     & p {
+        font-size: var(--font-size-m);
         width: 100%;
         margin-bottom: var(--margin-m);
         background-color: var(--bgcolor-light);
