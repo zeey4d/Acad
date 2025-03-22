@@ -1767,17 +1767,18 @@ button[type="submit"]:hover {
 .div_show_ch{
     display: flex;
     justify-content: center;
-    background-color: white;
+    background-color: var(--bgcolor-light);
     width: 100%;
     direction: rtl;
 }
 
 .card_islamic_endowments{
-    background-color: #ffffff;
+    background-color: var(--bgcolor-white);
     margin: 30px;
     padding: 40px;
-    border: var(--bg-border);
+    border: var(--bg-border-l);
     border-radius: var(--border-radius);
+    box-shadow: rgba(0, 0, 0, 0.1);
     width: 100%;
 
     & h5 {
