@@ -8,8 +8,8 @@
 <main>
   <!-- الفلتره -->
   <section class="bar_felter">
+  <label for="gender_baby">  نوع الوقف</label>
     <form action="" method="">
-      <label for="gender_baby">  نوع الوقف</label>
         <select name="gender_baby" id="gender_baby">
           <option value="disabled selected">كل الأوقاف</option>
           <option value="charity">الوقف الخيري</option>

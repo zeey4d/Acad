@@ -63,7 +63,7 @@ $router->get('/charity_campaigns_update', 'controllers/charity_campaigns/update.
 $router->get('/charity_projects_create', 'controllers/charity_projects/create.php');
 $router->get('/charity_projects_destroy', 'controllers/charity_projects/destroy.php');
 $router->get('/charity_projects_edit', 'controllers/charity_projects/edit.php');
-$router->get('/charity_projects_manage', 'controllers/charity_projects/manage.php');
+$router->get('/charity_projects_manage_view', 'controllers/charity_projects/manage.php');
 $router->get('/charity_projects_index', 'controllers/charity_projects/index.php');
 $router->get('/charity_projects_show', 'controllers/charity_projects/show.php');
 $router->get('/charity_projects_list', 'controllers/charity_projects/list.php');

@@ -54,8 +54,7 @@ if (!Validator::string($place, 2, 255)) {
 
 // إذا كانت هناك أخطاء، قم بإعادة توجيه المستخدم إلى صفحة التسجيل مع عرض الأخطا
  if (! empty($errors)) {
-       require 'views/registertion/create_view.php';
-    
+    require 'views/registertion/create_view.php';
  }
 
 
@@ -69,52 +68,6 @@ if ($user) {
     require 'views/registertion/create_view.php';
     die();
 }
-
-if ($user) {
-    header('location: /');
-    exit();
-} else {
-    $user = $db->query('INSERT INTO users(email, password) VALUES(:email, :password)', [
-        'email' => $email,
-        'password' => password_hash($password, PASSWORD_BCRYPT)
-    ]);
-     
-    
-     // تسجيل دخول المستخدم بعد إنشاء الحساب
-  //   $authenticator = new Authenticator();
-  //   $authenticator->login($email);
-     
-    (new Authenticator)->login(['email' => $email]);
-
-
-    header('location: /');
-    exit();
-}
-
-
-
-// إدخال البيانات إلى قاعدة البيانات
-$db->query('INSERT INTO users (name, email, password, phone_number, place) VALUES (:name, :email, :password, :phone_number, :place)', [
-    'name' => $name,
-    'email' => $email,
-    'password' => password_hash($password, PASSWORD_BCRYPT),
-    'phone_number' => $phone_number,
-    'place' => $place
-]);
-
-//logIn($user);
-// توجيه المستخدم إلى الصفحة الرئيسية بعد التسجيل الناجح
-header("Location: /");
-die();
-
-
-
-
-$user =  $db->query(
-    'select * from users where email = :email',
-    ['email' => $email]
-)->findOrFail();
-
 $user_id = $db->query(
     "INSERT INTO USERS (username, password, photo, email, type, directorate, county, city, street, phone)
      VALUES (:username, :password, :photo, :email, :type, :directorate, :county, :city, :street, :phone)",
@@ -131,6 +84,52 @@ $user_id = $db->query(
     'phone' => $_POST['phone']
     ]
 )->getGeneratedKey();
+
+// if ($user) {
+//     header('location: /');
+//     exit();
+// } else {
+//     $user = $db->query('INSERT INTO users(email, password) VALUES(:email, :password)', [
+//         'email' => $email,
+//         'password' => password_hash($password, PASSWORD_BCRYPT)
+//     ]);
+     
+    
+//      // تسجيل دخول المستخدم بعد إنشاء الحساب
+//   //   $authenticator = new Authenticator();
+//   //   $authenticator->login($email);
+     
+//     (new Authenticator)->login(['email' => $email]);
+
+
+//     header('location: /');
+//     exit();
+// }
+
+
+
+// // إدخال البيانات إلى قاعدة البيانات
+// $db->query('INSERT INTO users (name, email, password, phone_number, place) VALUES (:name, :email, :password, :phone_number, :place)', [
+//     'name' => $name,
+//     'email' => $email,
+//     'password' => password_hash($password, PASSWORD_BCRYPT),
+//     'phone_number' => $phone_number,
+//     'place' => $place
+// ]);
+
+// //logIn($user);
+// // توجيه المستخدم إلى الصفحة الرئيسية بعد التسجيل الناجح
+// header("Location: /");
+// die();
+
+
+
+
+// $user =  $db->query(
+//     'select * from users where email = :email',
+//     ['email' => $email]
+// )->findOrFail();
+
 
     // $db->query(
     //     'INSERT INTO users (username , email , password ,admin )(:username ,:email , :password , :admin);',
