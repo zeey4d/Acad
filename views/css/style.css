@@ -330,11 +330,15 @@ align-items: center;
 
 /* admin Bar */
 .bar_admin {
-    margin: 10px 0;
-    border: var(--bg-border-l);
+    margin-top: 20px;
+    top: 85px;
+    z-index: 100;
+    border-bottom: var(--bg-border-l);
     background-color: #ffffff; /* لون خلفية الشريط */
     padding: 10px;
     border-radius: 5px;
+    position: sticky;
+    
   }
   
   .bar_admin ul {
@@ -395,10 +399,12 @@ align-items: center;
 
 /* header */
 .bg-white_shadow {
-    background-color: #ffffff; /* خلفية بيضاء */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* ظل خفيف */
+    background-color: var(--bgcolor-white); /* خلفية بيضاء */
     padding: 20px;
     border-radius: 8px;
+    border-bottom:var(--bg-border-l) ;
+
+
   }
   
   .bar-search {
@@ -482,29 +488,7 @@ align-items: center;
     background-color: var(--button-bg-l); /* لون خلفية الزر عند التحويم */
   }
   
-  @media (max-width: 768px) {
-    .bar-search {
-      flex-direction: column;
-      align-items: stretch;
-    }
-  
-    .search-container {
-      flex-direction: column;
-      gap: 10px;
-    }
-  
-    .form-search {
-      flex-direction: column;
-      gap: 10px;
-    }
-  
-    .search-input,
-    .filter-select,
-    .my-items-btn,
-    .button button {
-      width: 100%;
-    }
-  }
+
 
 
 
@@ -803,20 +787,21 @@ align-items: center;
 
 /* البطاقة  */
 
-.Carousel_card{
-    display: flex;
-    justify-content: center;
+
+.container_card{
+    margin: var(--margin-s);
     direction: rtl;
-   
-
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1rem;
 }
-
 .aghtha {
     display: flex;
     justify-content: space-between;
 }
 .donation-card {
-    width: 80%;
+    margin: var(--margin-s);
+    width: 100%;
     max-width: 420px;
     background: white;
     border-radius: 12px;
@@ -833,6 +818,7 @@ align-items: center;
 }
 .donation-card:hover {
     transform: translateY(-5px);
+    transform: scale(1.05);
 }
 
 .progress-bar {
@@ -1906,42 +1892,6 @@ button[type="submit"]:hover {
 /* index */
 
 
-.bar_search {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    border: var(--bg-border-l);
-    direction: rtl;
-}
-
-.bar_search form {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-
-.bar_search input[type="search"],
-.bar_search select {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-}
-.bar_search input{
-    width: 60%;
-}
-.bar_search select {
-    width: 15%;
-}
-
-.bar_search input[type="search"]:focus,
-.bar_search select:focus {
-    border-color: #007bff;
-    outline: none;
-}
-
 
 
 
@@ -1951,6 +1901,7 @@ button[type="submit"]:hover {
 .card_statistics_grup{
     display: flex;
     direction: rtl;
+  
 
 }
 .card_statistics {
