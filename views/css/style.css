@@ -22,8 +22,10 @@
     --bgcolor-Hh:#003337;
     --bgcolor-H:#00646E;
     --bgcolor-N:#00A7B5;
-    --bgcolor-light:#f0f0f0;
+    /* --bgcolor-light:#f0f0f0; */
     --bgcolor-white:#ffffff;
+    --bgcolor-light: rgba(0, 167, 181,0.03);
+
 
 
     --bg-border: 1px solid #b1b1b1 ;
