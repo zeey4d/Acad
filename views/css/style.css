@@ -1798,7 +1798,6 @@ button[type="submit"]:hover {
         font-size: var(--font-size-m);
         width: 100%;
         margin-bottom: var(--margin-m);
-        background-color: var(--bgcolor-light);
         border-radius: var(--border-radius);
         padding: var(--padding-m);
         color: var(--font-color-bl);
@@ -1814,9 +1813,13 @@ button[type="submit"]:hover {
 
         }
     }
+
+    & .imgs {
+        border-radius: 20px;
+    }
     & img {
         padding: var(--padding-m) 0 var(--padding-m) 0;
-        border-radius: var(--border-radius);
+        border-radius: 12px;
         width: 100%;
         height: auto;
 
@@ -1833,7 +1836,6 @@ button[type="submit"]:hover {
     padding: var(--padding-xl);
     width: 100%;
     border-radius: var(--border-radius);
-    border: var(--bg-border-l);
 
 
     & h6{
