@@ -19,5 +19,8 @@ jobs:
       - name: Install Dependencies
         run: composer install --prefer-dist --no-progress
 
+      - name: Fix Permissions
+        run: chmod +x vendor/bin/pest
+
       - name: Run Tests
-        run: ./vendor/bin/pest
+        run: php vendor/bin/pest
