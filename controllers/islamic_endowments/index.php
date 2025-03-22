@@ -7,6 +7,7 @@ $db = App::resolve(Database::class);
 $heading = "All My tests";
 
 
+// $islamic_endowments = $db->query("SELECT * from endowments;")->fetchAll();
 $endowments = $db->query(
     "SELECT 
         A.category_id,

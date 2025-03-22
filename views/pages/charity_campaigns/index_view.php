@@ -40,11 +40,6 @@
         <?= htmlspecialchars($campaign['cost']) ?>/<?= htmlspecialchars($campaign['collected_money']) ?> ريال
       </p>
 
-      <form action="" method="">
-        <label for="donation_amount">مبلغ التبرع</label>
-        <input id="donation_amount" type="number" name="donation_amount" placeholder="ريال">
-        <button id="btn_donation" type="submit" name="btn_donation">تبرع</button>
-        <button id="btn_basket" type="submit" name="btn_basket"><img src="" alt=""></button>
 
       </form>
       <a class="view_details" href="">عرض التفاصيل</a>

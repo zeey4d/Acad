@@ -328,6 +328,186 @@ align-items: center;
     color: white;
 }
 
+/* admin Bar */
+.bar_admin {
+    margin: 10px 0;
+    border: var(--bg-border-l);
+    background-color: #ffffff; /* لون خلفية الشريط */
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .bar_admin ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .bar_admin ul li {
+    margin: 0 10px;
+  }
+  
+  .bar_admin ul li form {
+    margin: 0;
+  }
+  
+  .bar_admin ul li button {
+    background-color: var(--button-bg-h); /* لون خلفية الأزرار */
+    color: white; /* لون النص */
+    padding: 10px 30px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .bar_admin ul li button:hover {
+    background-color: var(--button-bg-l); /* لون خلفية الأزرار عند التحويم */
+  }
+  
+  .bar_admin ul li button:active {
+    background-color: #1c5980;
+  }
+  
+  .bar_admin ul li button {
+    font-weight: bold;
+  }
+  
+  @media (max-width: 768px) {
+    .bar_admin ul {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .bar_admin ul li {
+      margin: 5px 0;
+    }
+  
+    .bar_admin ul li button {
+      width: 100%;
+      text-align: right;
+    }
+  }
+
+/* header */
+.bg-white_shadow {
+    background-color: #ffffff; /* خلفية بيضاء */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* ظل خفيف */
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .bar-search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+  }
+  
+  .search-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 800px;
+  }
+  
+  .form-search {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+  }
+  
+  .search-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  .search-input:focus {
+    border-color: #3498db; /* لون الحدود عند التركيز */
+  }
+  
+  .filter-select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  .filter-select:focus {
+    border-color: #3498db; /* لون الحدود عند التركيز */
+  }
+  
+  .my-items-btn {
+    padding: 10px 20px;
+    background-color: #3498db; /* لون خلفية الزر */
+    color: white; /* لون النص */
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .my-items-btn:hover {
+    background-color: #2980b9; /* لون خلفية الزر عند التحويم */
+  }
+  
+  .button button {
+    padding: 10px 20px;
+    background-color: var(--button-bg-h); /* لون خلفية الزر */
+    color: white; /* لون النص */
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button button:hover {
+    background-color: var(--button-bg-l); /* لون خلفية الزر عند التحويم */
+  }
+  
+  @media (max-width: 768px) {
+    .bar-search {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  
+    .search-container {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .form-search {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .search-input,
+    .filter-select,
+    .my-items-btn,
+    .button button {
+      width: 100%;
+    }
+  }
+
+
+
 /* users */
 
 /* users_create */
@@ -623,13 +803,6 @@ align-items: center;
 
 /* البطاقة  */
 
-.main_home{
-     & h1{
-        text-align: center;
-        margin: 40px 0 40px 0;
-        color: var(--font-color-bh);
-    }
-}
 .Carousel_card{
     display: flex;
     justify-content: center;
@@ -750,12 +923,13 @@ align-items: center;
 
 }
 .donate-btn {
-    background: #1a676b;
+    background: var(--button-bg-h);
     color: white;
     border: none;
     padding: 10px 22px;
     border-radius: 6px;
     cursor: pointer;
+    width: 140px;
     font-size: 16px;
     font-weight: bold;
     transition: background 0.3s ease-in-out;
@@ -778,7 +952,13 @@ align-items: center;
 
 /* home */
 
-
+.main_home{
+     & h1{
+        text-align: center;
+        margin: 40px 0 40px 0;
+        color: var(--font-color-bh);
+    }
+}
 .hero{
     position: relative;
 
@@ -797,6 +977,7 @@ align-items: center;
     }
 }
 .Carousel_card{
+    
     & h1 {
         color: var(--font-color-bh);
         font-size: var(--font-size-xl);
@@ -823,7 +1004,7 @@ align-items: center;
     & hr{
         width: 50%;
         margin: auto; /* توسيط الخط أفقيًا مع إضافة مسافة من الأعلى والأسفل */
-        border: 1px solid #ffffff
+        border: 1px solid #ffffff;
     }
 
     & .t3 {
@@ -1261,6 +1442,159 @@ h2 {
      }
 }
 
+/* manage */
+
+  
+  .main_manage {
+    padding: 20px;
+    direction: rtl;
+    background-color: var(--bgcolor-light);
+    
+
+    & h1, h2 {
+        margin: var(--margin-l);
+        color: var(--font-color-bh);
+        text-align: center;
+      }
+  }
+  .section_manage{
+    border: var(--bg-border);
+    padding: var(--padding-xl);
+    border-radius: var(--border-radius);
+    background-color: var(--bgcolor-white);
+    width: 80%;
+    margin: 0 auto ;
+
+  }
+  
+  
+  .management-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: var(--margin-l) 0;
+
+    & button {
+        background-color: #000000;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      & button:hover {
+        background-color: #fdfdfd;
+      }
+  }  
+  
+  #delete-selected {
+    background-color: #f44336;
+  }
+  
+  #delete-selected:hover {
+    background-color: #e53935;
+  }
+  
+  .bar_action_manage {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .bar_action_manage button {
+    background-color: var(--button-bg-h);
+    color: white;
+    padding: 10px var(--padding-xl);
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .bar_action_manage button:hover {
+    background-color: var(--button-bg-l);
+  }
+  
+  .campaigns-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+
+    & .campaigns-table td {
+        padding: 12px;
+        background-color: white;
+        text-align: center;
+        border-bottom: 1px solid #ddd;
+      }
+
+      & .show_color_green{
+        background-color: var(--button-bg-h);
+        color: white;
+        padding: 10px var(--padding-l);
+        border-radius: 5px;
+        border: none;
+      }
+
+
+  }
+  
+  
+  .campaigns-table th {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    background-color: var(--bgcolor-H);
+    font-weight: bold;
+  }
+  
+  .campaigns-table img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-btn {
+    background-color: var(--button-bg-h);
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+
+
 /* executive_partners */
 
 /* create */
@@ -1569,29 +1903,45 @@ button[type="submit"]:hover {
     
 }
 
-/* islamic_paymente  */
+/* index */
 
-/* show */
 
-.main_show_islamic_endowments{
+.bar_search {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: var(--bg-border-l);
+    direction: rtl;
+}
+
+.bar_search form {
     display: flex;
     justify-content: center;
-    direction: rtl;
-
-    
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
-.card_islamic_endowments_news {
-    & p {
-        width: 80%;
-        height: 30%;
-    }
-    & img {
-        width: 40%;
-        height: 40%;
-
-    }
+.bar_search input[type="search"],
+.bar_search select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
 }
+.bar_search input{
+    width: 60%;
+}
+.bar_search select {
+    width: 15%;
+}
+
+.bar_search input[type="search"]:focus,
+.bar_search select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
 
 
 
@@ -1623,7 +1973,6 @@ button[type="submit"]:hover {
 
 /* notifications */
 
-/* تنسيق عام للصفحة */
 .main_form_notifications {
     font-family: Arial, sans-serif;
     padding: var(--padding-m);
@@ -1780,6 +2129,148 @@ button[type="submit"]:hover {
     background-color: #e0a800;
 }
 
+/* list */
+.main_list_notifications {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    padding: 20px;
+    direction: rtl;
+  }
+  
+  .bar_search_notifications {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--margin-l);
+    padding: var(--padding-l);
+    background-color: #fff;
+    border: var(--bg-border);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    & form {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      & button {
+        padding: 8px var(--padding-xl);
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      & .delete {
+        background-color: #f44336;
+        color: white;
+      }
+
+      & .delete:hover {
+        background-color: #e53935;
+      }
+
+      & .read {
+        background-color: #4CAF50;
+        color: white;
+      }
+
+      & .read:hover {
+        background-color: #45a049;
+      }
+      & .obstruction {
+        background-color: #ff9800;
+        color: white;
+      }
+
+      & .obstruction:hover {
+        background-color: #fb8c00;
+      }
+
+      & .white-button {
+        background-color: #fff;
+        color: #333;
+        border: 1px solid #ddd;
+      }
+
+      & .white-button:hover {
+        background-color: #f1f1f1;
+      }
+
+      &  .search {
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 14px;
+        flex-grow: 1;
+      }
+      
+  }  
+  .container_notifications {
+    display: flex;
+    height: 40%;
+  
+  }
+  
+  .card_notifications {
+    background-color: var(--bgcolor-N);
+    padding: var(--padding-l);
+    border-radius: var(--border-radius);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 25%;
+    text-align: center;
+  }
+  
+  .card_notifications img {
+    width: 150px;
+    height: 150px;
+    background-color: white;
+    border-radius: 50%;
+    margin-bottom: 15px;
+  }
+  
+  .card_notifications h2 {
+    font-size: 20px;
+    color: white;
+    margin-bottom: 10px;
+  }
+  
+  .card_notifications .time {
+    font-size: 14px;
+    color: rgb(186, 186, 186);
+    margin-bottom: 15px;
+  }
+  
+  .card_notifications .hello {
+    padding: var(--padding-l);
+    text-align: right;
+    border-radius: var(--border-radius);
+    background-color: white;
+    font-size: 16px;
+    color: black;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  .card_notifications button.show {
+    background-color: white ;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .card_notifications button.show:hover {
+    background-color: var(--button-bg-l);
+    border: var(--bg-border);
+  }
+
 
 /* islamic payments */
 /* zalat */
@@ -1888,4 +2379,104 @@ table input[type="text"]:focus, table select:focus {
 
 .calc-button:hover {
     background-color: #218838;
+}
+
+/* show */
+
+.main_show_islamic_endowments{
+    display: flex;
+    justify-content: center;
+    direction: rtl;
+
+    
+}
+
+.card_islamic_endowments_news {
+    & p {
+        width: 80%;
+        height: 30%;
+    }
+    & img {
+        width: 40%;
+        height: 40%;
+
+    }
+}
+
+/* index */
+
+.nav_links_islamic_payments{
+    margin: var(--margin-xl);
+    display: flex;
+    justify-content: center;
+    direction: rtl;
+
+    & a {
+        text-decoration: none;
+        margin: var(--margin-m);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 150px;
+        height: 35px ;
+        background-color:var(--button-bgcolor) ;
+        border-radius: 30px;
+        border: none;
+        color: #ffffff;
+        font-weight: bold;
+
+    }
+    & a:hover{
+            background-color:var(--bgcolor-white) ;
+            border-radius: var(--button-radius);
+            color: var(--font-color-bh);
+            border: var(--bg-border);
+            border-radius: 30px;
+
+        
+    }
+    
+}
+
+
+/* islamic_edowments */
+
+/* index */
+
+.main_islamic_edowments_index{
+    
+}
+
+.bar_felter{
+    display: block;
+
+    direction: rtl;
+    margin: var(--margin-l);
+    padding: var(--padding-l);
+    background-color: #fff;
+    border: var(--bg-border);
+    border-radius: 5px;
+    width: 100%;
+    & label{
+        font-size: var(--font-size-l);
+    }
+    & form {
+        width: 100%;
+        display: flex;
+        justify-content: right;
+    }
+
+      & select {
+        height: 50px;
+        padding: 8px var(--padding-xl);
+        width: 80%;
+        border-radius: 50px;
+        border: var(--bg-border-l);
+        cursor: pointer;
+        font-size: 14px;
+        align-items: center;
+        gap: 5px;
+      }
+
+
 }

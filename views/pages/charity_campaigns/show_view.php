@@ -9,7 +9,7 @@
         <div class="div_show_ch">  
             <section class="card_islamic_endowments">
             <h3>التفاصيل</h3>
-            <img src="views/media/images/P251.png" alt="">
+            <img src="views/media/images/<?php  echo $projects['photo'] ?? "11.png" ?>" alt=" " loading="lazy">
             <div><div></div></div>
             <h5>عمليات جراحيه</h5>
             <p>يسعى المشروع الى علاج ذوي الحاجه المصابين بالمياه الزرقاء</p>
@@ -29,7 +29,7 @@
         <h6>نوع المشروع</h6>
         <p>علاجي</p>
         <h6>المبلغ المستهدف</h6>
-        <p>100000ر.س</p>
+        <p> <?php echo $campaigns['cost']?> ر.س</p>
         <h6>عدد المتبرعين</h6>
         <p>8000</p>
         </div>
@@ -37,7 +37,7 @@
         <h6>عدد المستفيدين</h6>
         <p>100 محتاج</p>
         <h6>المبلغ الذي تم جمعة</h6>
-        <p>50000ر.س</p>
+        <p> <?php echo $campaigns['collected_money']?> ر.س</p>
         <h6>الوقت المتبقي</h6>
         <p>60 يوم</p>
         </div>
@@ -51,8 +51,8 @@
         </div>
         <div><br><br>
         
-        <p>تاريخ البدء  :1  \  1 \   2025</p>
-        <p>تاريخ الانتهاء  :1  \  3 \   2025</p>
+        <p>تاريخ البدء  : <?php echo $campaigns['start_at']?></p>
+        <p>تاريخ الانتهاء  : <?php echo $campaigns['end_at']?></p>
       
         </div>
     </div>
