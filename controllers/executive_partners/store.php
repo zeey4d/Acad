@@ -167,48 +167,48 @@ values
 ])->getGeneratedKey('partner_id');
 
 // إدخال أرقام الهواتف
-if (isset($_POST['phones']) && is_array($_POST['phones'])) {
-    foreach ($_POST['phones'] as $phone) {
-        $db->query(
-            "INSERT INTO partner_phones (partner_id, phone, type)
-            VALUES
-            (
-                :partner_id,
-                :phone,
-                :type
-            )",
-            [
-                'partner_id' => $partner_id,
-                'phone' => $phone['phone'],
-                'type' => $phone['type']
-            ]
-        );
-    }
-}
-
+// if (isset($_POST['phones']) && is_array($_POST['phones'])) {
+    // foreach ($_POST['phones'] as $phone) {
+        // $db->query(
+            // "INSERT INTO partner_phones (partner_id, phone, type)
+            // VALUES
+            // (
+                // :partner_id,
+                // :phone,
+                // :type
+            // )",
+            // [
+                // 'partner_id' => $partner_id,
+                // 'phone' => $phone['phone'],
+                // 'type' => $phone['type']
+            // ]
+        // );
+    // }
+// }
+// 
 // إدخال الحسابات
-if (isset($_POST['accounts']) && is_array($_POST['accounts'])) {
-    foreach ($_POST['accounts'] as $account) {
-        $db->query(
-            "INSERT INTO partners_accounts (partner_id, account, account_type)
-            VALUES
-            (
-                :partner_id,
-                :account,
-                :account_type
-            )",
-            [
-                'partner_id' => $partner_id,
-                'account' => $account['account'],
-                'account_type' => $account['account_type']
-            ]
-        );
-    }
-}
-
-
-
-
+// if (isset($_POST['accounts']) && is_array($_POST['accounts'])) {
+    // foreach ($_POST['accounts'] as $account) {
+        // $db->query(
+            // "INSERT INTO partners_accounts (partner_id, account, account_type)
+            // VALUES
+            // (
+                // :partner_id,
+                // :account,
+                // :account_type
+            // )",
+            // [
+                // 'partner_id' => $partner_id,
+                // 'account' => $account['account'],
+                // 'account_type' => $account['account_type']
+            // ]
+        // );
+    // }
+// }
+// 
+// 
+// 
+// 
 header("Location: /executive_partners_index");
 die();
 

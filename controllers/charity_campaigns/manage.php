@@ -1,7 +1,5 @@
 <?php
 
-<<<<<<< HEAD
-=======
 use core\App;
 use core\Database;
 
@@ -17,5 +15,4 @@ group by(u.campaign_id)
 order by(g.start_at)")->fetchAll();
 
 
->>>>>>> 5ff166ee24a8ae700c81359667a01c0ee9f1863f
 require "views/pages/charity_campaigns/manage_view.php";
