@@ -1,7 +1,7 @@
 <?php
 $heading = "Create test";
 
-
+dd("goood");
 
 use core\App ;
 use core\Database;
@@ -266,3 +266,6 @@ $campaign_id = $db->query
         // $errors[$fileInput] = "نوع الملف غير مدعوم (JPEG/PNG فقط)";
     // }
 // }
+
+
+header("Location: /");
