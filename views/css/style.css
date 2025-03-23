@@ -1437,6 +1437,8 @@ h2 {
     padding: 20px;
     direction: rtl;
     background-color: var(--bgcolor-light);
+    display: flex;
+    justify-content: center;
     
 
     & h1, h2 {
@@ -1450,8 +1452,8 @@ h2 {
     padding: var(--padding-xl);
     border-radius: var(--border-radius);
     background-color: var(--bgcolor-white);
-    width: 80%;
-    margin: 0 auto ;
+    width: 100%;
+    margin: var(--margin-xl) ;
 
   }
   
@@ -1510,11 +1512,14 @@ h2 {
     border-collapse: collapse;
     margin-bottom: 20px;
 
+
     & .campaigns-table td {
         padding: 12px;
         background-color: white;
         text-align: center;
         border-bottom: 1px solid #ddd;
+        text-align: right;
+
       }
 
       & .show_color_green{
@@ -1525,16 +1530,24 @@ h2 {
         border: none;
       }
 
+      & td {
+        text-align: right;
+        
+    
+
+      }
+
+      
 
   }
-  
+
   
   .campaigns-table th {
     padding: 12px;
-    text-align: center;
     border-bottom: 1px solid #ddd;
     background-color: var(--bgcolor-H);
     font-weight: bold;
+    text-align: right;
   }
   
   .campaigns-table img {
@@ -1542,45 +1555,6 @@ h2 {
     height: 50px;
     border-radius: 50%;
   }
-  
-  .dropdown {
-    position: relative;
-    display: inline-block;
-  }
-  
-  .dropdown-btn {
-    background-color: var(--button-bg-h);
-    color: white;
-    padding: 8px 12px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-  }
-  
-  .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-  }
-  
-  .dropdown-content a:hover {
-    background-color: #f1f1f1;
-  }
-  
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
-
 
 
 /* executive_partners */
@@ -1602,6 +1576,19 @@ h2 {
     border: 1px solid var(--border-color);
     & h2 {
         color: var(--font-color-bh);
+    }
+
+    & button[type="submit"] {
+        background-color: var(--font-color-bh);
+        color: #fff;
+        border: none;
+        padding: 10px 40px;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    
+    & button[type="submit"]:hover {
+        background-color: var(--button-bgcolor);
     }
 
 }
@@ -1634,18 +1621,7 @@ h2 {
     resize: vertical;
 }
 
-button[type="submit"] {
-    background-color: var(--font-color-bh);
-    color: #fff;
-    border: none;
-    padding: 10px 40px;
-    border-radius: 10px;
-    cursor: pointer;
-}
 
-button[type="submit"]:hover {
-    background-color: var(--button-bgcolor);
-}
 .ash3t{
    margin: 5% 20px;
    height: 200px;
@@ -1657,13 +1633,15 @@ button[type="submit"]:hover {
 /* index */
 
 .main_executive_partners_index{
-    background-color: #fff;
+    background-color: var(--bgcolor-light);
     color: var(--bgcolor-H);
     margin: 0;
     padding: 0;
     text-align: right;
     direction: rtl;
     padding: 20px;
+    display: flex;
+    justify-content: center;
     
     & h1 {
         text-align: center;
@@ -1674,7 +1652,7 @@ button[type="submit"]:hover {
 
 
 
-.management-buttons {
+/* .management-buttons {
     margin-bottom: 20px;
 }
 
@@ -1690,9 +1668,19 @@ button[type="submit"]:hover {
 
 .management-buttons button:hover {
     background-color: var(--button-bgcolor);
-}
+} */
+.executive_partners_index{
+    background-color: var(--bgcolor-white);
+    padding: var(--padding-xl);
+    width: 100%;
+    border: var(--bg-border);
+    border-radius: var(--border-radius);
+    margin: var(--margin-xl);
 
+
+}
 .partners-table {
+    margin: 0 auto ;
     width: 100%;
     border-collapse: collapse;
     background-color: #fff;
@@ -1710,17 +1698,53 @@ button[type="submit"]:hover {
         height: 50px;
         border-radius: 4px;
     }
+    & tr{
+        background-color: #000;
+    }
 }
 
 .partners-table th, .partners-table td {
     padding: 12px;
     border-bottom: 1px solid #ddd;
-    text-align: center;
+    text-align: right;
 }
 
 
+.options{
+    width: auto;
+    height: auto;
+    background: transparent;
 
-.dropdown {
+   & ul{
+    display: flex;
+    justify-content: right;
+    list-style: none;
+    gap: 20px;
+    }
+
+    & button{
+        background: transparent;
+        border: none;
+        font-size: var(--font-size-m);
+        color: var(--font-color-bl);
+        padding: var(--padding-xs);
+        font-weight: bold;
+    &:hover{
+        color: #00646E;
+    }
+
+    }
+    
+}
+
+/* .partners-table .options:hover{
+    display: block;
+
+} */
+
+
+
+/* .dropdown {
     position: relative;
     display: inline-block;
 }
@@ -1757,7 +1781,7 @@ button[type="submit"]:hover {
 
 .dropdown:hover .dropdown-content {
     display: block;
-}
+} */
 
 
 /* charity_campaigns */
@@ -1774,7 +1798,7 @@ button[type="submit"]:hover {
 
 .card_islamic_endowments{
     background-color: var(--bgcolor-white);
-    margin: 30px;
+    margin: var(--margin-xl);
     padding: 40px;
     border-radius: var(--border-radius);
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
@@ -1788,8 +1812,6 @@ button[type="submit"]:hover {
 
     & h6 {
         font-size: var(--font-size-l);
-
-        font-size: 15px;
         color: var(--font-color-bh);
 
     }
@@ -1801,6 +1823,16 @@ button[type="submit"]:hover {
         border-radius: var(--border-radius);
         padding: var(--padding-m);
         color: var(--font-color-bl);
+    }
+  
+
+    .news {
+        background-color: var(--bgcolor-light);
+        padding: var(--padding-l);
+        border-radius: var(--border-radius);
+         & h4 {
+            padding:  var(--padding-m ) 0;
+         }
     }
 
     & .details_show_ch{
@@ -1814,11 +1846,10 @@ button[type="submit"]:hover {
         }
     }
 
-    & .imgs {
-        border-radius: 20px;
-    }
+
     & img {
         padding: var(--padding-m) 0 var(--padding-m) 0;
+        border: 1px solid white;
         border-radius: 12px;
         width: 100%;
         height: auto;
@@ -1856,14 +1887,17 @@ button[type="submit"]:hover {
 }
 .bar_actions{
     justify-content: center;
+    background-color: var(--bgcolor-white);
     direction: rtl;
+    width: 100%;
     padding: var(--padding-xl);
-    margin: var(--margin-xl);
     border-radius: var(--border-radius);
-    border: var(--bg-border);
+    border: var(--bg-border-l);
     
     & p {
         text-align: center;
+        font-size: var(--font-size-l);
+        color: var(--font-color-bh);
     }
 
     & button{
@@ -1874,6 +1908,7 @@ button[type="submit"]:hover {
         color: white;
         margin: var(--margin-m);
         font-weight: bold;
+        
         border: none;
 
     }
@@ -1885,7 +1920,7 @@ button[type="submit"]:hover {
 
     & .add_to_cart{
         background-color: yellow;
-      
+
         color: black;
     }
 
