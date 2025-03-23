@@ -1722,20 +1722,23 @@ h2 {
     gap: 20px;
     }
 
-    & button{
-        background: transparent;
+    & a{
+        text-decoration: none;
         border: none;
         font-size: var(--font-size-m);
         color: var(--font-color-bl);
         padding: var(--padding-xs);
-        font-weight: bold;
+        border-left: var(--bg-border-l);
     &:hover{
         color: #00646E;
+
     }
 
     }
     
 }
+
+
 
 /* .partners-table .options:hover{
     display: block;

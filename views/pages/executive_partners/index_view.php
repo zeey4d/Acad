@@ -48,23 +48,23 @@
                     <nav class="options">
         <ul>
             <li>
-                <form action="/islamic_endowments_manage" method="get"><input type="hidden" name="" value=""><button type="submit">ارسال بريد الكتروني</button></form>
+                <form action="/islamic_endowments_manage" method="get"><input type="hidden" name="" value=""><a href="#" type="submit">ارسال بريد الكتروني</a></form>
             </li>
             <li>
-                <form action="/charity_projects_manage" method="get"><input type="hidden" name="" value=""><button type="submit">تعديل الشريك</button></form>
+                <form action="/charity_projects_manage" method="get"><input type="hidden" name="" value=""><a href="#" type="submit">تعديل الشريك</a></form>
             </li>
             <li>
-                <form action="/charity_campaigns_manage" method="get"><input type="hidden" name="" value=""><button type="submit" style="color: red; ">حذف شريك</button></form>
+                <form action="/charity_campaigns_manage" method="get"><input type="hidden" name="" value=""><a href="#" type="submit" style="color: red; ">حذف شريك</a></form>
             </li>
             <li>
-                <form action="/notifications_manage" method="get"><input type="hidden" name="" value=""><button type="submit">عرض تقرير</button></form>
+                <form action="/notifications_manage" method="get"><input type="hidden" name="" value=""><a href="#" type="submit">عرض تقرير</a></form>
             </li>
             <li>
-                <form action="/users_manage" method="get"><input type="hidden" name="" value=""><button type="submit">اضاقة تقرير</button></form>
+                <form action="/users_manage" method="get"><input type="hidden" name="" value=""><a href="#" type="submit">اضاقة تقرير</a></form>
             </li>
 
         </ul>
-    </nav></td>
+    </nav</td>
                     <td>وصف قصير عن الشريك الأول.</td>
                     <!-- <td>
                         <div class="dropdown">
@@ -86,19 +86,19 @@
                     <nav class="options">
         <ul>
             <li>
-                <form action="/islamic_endowments_manage" method="get"><input type="hidden" name="" value=""><button type="submit">ارسال بريد الكتروني</button></form>
+                <form action="/islamic_endowments_manage" method="get"><input type="hidden" name="" value=""><a href="#" type="submit">ارسال بريد الكتروني</a></form>
             </li>
             <li>
-                <form action="/charity_projects_manage" method="get"><input type="hidden" name="" value=""><button type="submit">تعديل الشريك</button></form>
+                <form action="/charity_projects_manage" method="get"><input type="hidden" name="" value=""><a href="#" type="submit">تعديل الشريك</a></form>
             </li>
             <li>
-                <form action="/charity_campaigns_manage" method="get"><input type="hidden" name="" value=""><button type="submit" style="color: red; ">حذف شريك</button></form>
+                <form action="/charity_campaigns_manage" method="get"><input type="hidden" name="" value=""><a href="#" type="submit" style="color: red; ">حذف شريك</a></form>
             </li>
             <li>
-                <form action="/notifications_manage" method="get"><input type="hidden" name="" value=""><button type="submit">عرض تقرير</button></form>
+                <form action="/notifications_manage" method="get"><input type="hidden" name="" value=""><a href="#" type="submit">عرض تقرير</a></form>
             </li>
             <li>
-                <form action="/users_manage" method="get"><input type="hidden" name="" value=""><button type="submit">اضاقة تقرير</button></form>
+                <form action="/users_manage" method="get"><input type="hidden" name="" value=""><a href="#" type="submit">اضاقة تقرير</a></form>
             </li>
 
         </ul>
@@ -130,24 +130,5 @@
         </section>
     </main>
 
-    <nav class="">
-        <ul>
-            <li>
-                <form action="/islamic_endowments_manage" method="get"><input type="hidden" name="" value=""><button type="submit">ارسال بريد الكتروني</button></form>
-            </li>
-            <li>
-                <form action="/charity_projects_manage" method="get"><input type="hidden" name="" value=""><button type="submit">تعديل الشريك</button></form>
-            </li>
-            <li>
-                <form action="/charity_campaigns_manage" method="get"><input type="hidden" name="" value=""><button type="submit">حذف شريك</button></form>
-            </li>
-            <li>
-                <form action="/notifications_manage" method="get"><input type="hidden" name="" value=""><button type="submit">عرض تقرير</button></form>
-            </li>
-            <li>
-                <form action="/users_manage" method="get"><input type="hidden" name="" value=""><button type="submit">اضاقة تقرير</button></form>
-            </li>
 
-        </ul>
-    </nav>
 
