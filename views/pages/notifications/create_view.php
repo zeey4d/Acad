@@ -7,7 +7,7 @@
   <section class="form_notifications">
   
     <div class="data">
-      <form action="" method="">
+      <form action="/notifications_store" method="post">
         <label for="project_name">إسم المشروع</label>
         <input id="project_name" type="text" name="project_name" placeholder="أدخل إسم المشروع"><br>
         <label for="amount">المبلغ المستهدف</label>

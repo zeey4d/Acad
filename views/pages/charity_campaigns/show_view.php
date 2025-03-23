@@ -8,8 +8,10 @@
 <main class="main_show_ch">
         <div class="div_show_ch">  
             <section class="card_islamic_endowments">
-            <h3>التفاصيل</h3>
-            <img src="views/media/images/<?php  echo $projects['photo'] ?? "11.png" ?>" alt=" " loading="lazy">
+            <h3 style="color: var(--font-color-bh);
+        font-size: var(--font-size-xl);">التفاصيل</h3>
+            <div class="imgs">
+            <img src="views/media/images/<?php  echo $projects['photo'] ?? "11.png" ?>" alt=" " loading="lazy"></div>
             <div><div></div></div>
             <h5>عمليات جراحيه</h5>
             <p>يسعى المشروع الى علاج ذوي الحاجه المصابين بالمياه الزرقاء</p>
@@ -42,9 +44,9 @@
         <p>60 يوم</p>
         </div>
     </div>
+    <h5>مراحل المشروع</h5>
     <div class="card_insid" id="card_insid2">
         <div>
-        <h6>مراحل المشروع</h6>
         <p>المرحلة الاولى </p>
         <p>المرحلة الثانية </p>
         <p>المرحلة الثالثة</p>
@@ -56,11 +58,11 @@
       
         </div>
     </div>
-    <div>
-        <h5>اخبار المشروع</h5>
+    <h5>اخبار المشروع</h5>
+    <div class="news" >
         <div><h4>30%</h4><p>تم جمع 30% من التبرعات</p></div>
-        <div><p>تم الانتهاء من المرحله الاولى </p></div>
-        <div><h4>50%</h4>تم جمع 50% من التبرعات</div>
+        <div><h4>30%</h4><p>تم الانتهاء من المرحله الاولى </p></div>
+        <div><h4>50%</h4><p>تم جمع 50% من التبرعات</p></div>
     </div>
 
 </section>
@@ -68,6 +70,7 @@
 
 <!-- شريط الاحداث -->
 <section class="bar_actions">
+    <div class="bar_actions_div">
 <p><img src="" alt=""> ساهم في المشروع</p>
 <div class="donate">
     <form action="" method="">
@@ -76,6 +79,6 @@
       <button class="share_project" name="share_project"><img src="" alt=""> مشاركة المشروع</button>
       </div>
     </form>
-
+    </div>
 </section>
 <?php require('views/parts/footer.php') ?>

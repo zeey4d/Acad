@@ -3,7 +3,7 @@
 <?php require('views/parts/navgtion.php') ?>
 <?php require('views/parts/header.php') ?>
 
-<?php dd($islamic_endowments) ?>
+<?php //dd($islamic_endowments) ?>
 
 <main>
   <!-- الفلتره -->

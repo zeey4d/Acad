@@ -36,7 +36,7 @@ $heading = "All My tests";
 // );
 
 
-require "views/pages/islamic_endowments/index_view.php";
+require "views/pages/islamic_endowments/manage_view.php";
 
 
 ?>
