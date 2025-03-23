@@ -8,7 +8,7 @@
 
 <main>
   <!-- شريط التنقل -->
-  <section class="bar_navigation">
+  <!-- <section class="bar_navigation">
     <div  class="button">
       <a class="public_projects" id="public_projects" href="">مشاريع عامة</a>
       <a class="sponsoring_orphans" id="sponsoring_orphans" href="">مشاريع عامة</a>
@@ -20,15 +20,15 @@
     </form>
     <p>انضموا الينا في تقديم فرص تبرع تؤثر بشكل واسع وتدعم المجتمعات المحتاجة مع ضمان تحقيق نتائج طويلة الأمد</p>
   
-  </section>
+  </section> -->
 
 <!-- حاوية الكروت -->
-<section class="Carousel_card">
+
   <!-- حاوية البطاقات -->
 
 
     <main class="main_cart">
-      <section class="container">
+      <section class="container_card">
 
       <?php foreach($projects as $project): ?>
 
@@ -56,19 +56,17 @@
             </div>
             <div class="details">عرض التفاصيل</div>
           </div>
-      </section>
-      <section class="bar_action">
-                  <?php endforeach; ?>
+           </div>
+          <?php endforeach; ?>
 
       </section>
-    </main>
-
-    
       <section class="bar_action">
 
       </section>
     </main>
 
-  </section>
+  
+
+  
 </main>
 <?php require('views/parts/footer.php') ?>

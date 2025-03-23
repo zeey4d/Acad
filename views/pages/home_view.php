@@ -6,7 +6,7 @@
 
 <?php
 // $config = require('config.php');
-echo"<br><br><br>" ;
+//echo"<br><br><br>" ;
 //dd($campaigns);  
 ?>
 <main>
@@ -15,45 +15,45 @@ echo"<br><br><br>" ;
   <!-- الصوره الكبير الي بل البدايه -->
   <section class="hero">
     <img src="views/media/images/andrewSmall.jpg" alt="">
-    <h1>بِفَضْلِ تَبَرُّعاتِكُمْ، نَصْنَعُ فَرْقًا حَقِيقِيًّا فِي حَياةِ الْمُحْتاجِين.</h1>
+    <h1 style=" color : white;  margin: -80px 10px 0 0; text-align: right;">بِفَضْلِ تَبَرُّعاتِكُمْ، نَصْنَعُ فَرْقًا حَقِيقِيًّا فِي حَياةِ الْمُحْتاجِين</h1>
 
 
   </section>
 
-  <h1>الصَّدَقَةُ لَا تَنْقُصُ الْمَالَ، بَلْ تَزِيدُهُ بَرَكَةً وَطُهْرًا</h1>
+  <h1 style="     margin: 100px;    text-align: center;    color: var(--font-color-bh); ">الصَّدَقَةُ لَا تَنْقُصُ الْمَالَ، بَلْ تَزِيدُهُ بَرَكَةً وَطُهْرًا</h1>
 
   <section class="Carousel_card">
-  <!-- حاوية البطاقات -->
+    <!-- حاوية البطاقات -->
 
     <main class="main_cart">
-      <section class="container">
-        <?php foreach($campaigns as $campaign): ?>
-        <div class="donation-card">
-          <img src="views/media/images/<?= htmlspecialchars($campaign['photo'] ?? "11.png") ?>" alt="مشروع نور السعودية" loading="lazy">
-          <div class="donation-info">
-            <div class="aghtha">
-              <h6>إغاثة</h6>
-              <h5>رقم الحملة : <?= htmlspecialchars($campaign['campaign_id']) ?></h5>
-              <a href=""><img src="" alt=""></a>
-            </div>
-            <h3><?= htmlspecialchars($campaign['name']) ?></h3>
-            <div class="progress-bar">
-              <div class="progress" style="width:<?= htmlspecialchars(($campaign['collected_money']/$campaign['cost'])*100) ?>% "></div>
-            </div>
-            <div class="donation-details">
-              <div>
-                <p><strong style="display: inline;">SR <?= htmlspecialchars($campaign['collected_money']) ?>/</strong><?= htmlspecialchars($campaign['cost']) ?></p>
+      <section class="container_card">
+        <?php foreach ($campaigns as $campaign): ?>
+          <div class="donation-card">
+            <img src="views/media/images/<?= htmlspecialchars($campaign['photo'] ?? "11.png") ?>" alt="مشروع نور السعودية" loading="lazy">
+            <div class="donation-info">
+              <div class="aghtha">
+                <h6>إغاثة</h6>
+                <h5>رقم الحملة : <?= htmlspecialchars($campaign['campaign_id']) ?></h5>
+                <a href=""><img src="" alt=""></a>
               </div>
+              <h3><?= htmlspecialchars($campaign['name']) ?></h3>
+              <div class="progress-bar">
+                <div class="progress" style="width:<?= htmlspecialchars(($campaign['collected_money'] / $campaign['cost']) * 100) ?>% "></div>
+              </div>
+              <div class="donation-details">
+                <div>
+                  <p><strong style="display: inline;">SR <?= htmlspecialchars($campaign['collected_money']) ?>/</strong><?= htmlspecialchars($campaign['cost']) ?></p>
+                </div>
+              </div>
+              <div class="donate-section">
+                <input class="inp" type="text" placeholder=" مبلغ التبرع                   ر.س">
+                <button class="donate-btn">تبرع الأن</button>
+                <button class="donate_cart"><img src="views/media/images/cart.png" alt=""></button>
+              </div>
+              <div class="details">عرض التفاصيل</div>
             </div>
-            <div class="donate-section">
-              <input class="inp" type="text" placeholder=" مبلغ التبرع                   ر.س">
-              <button class="donate-btn">تبرع الأن</button>
-              <button class="donate_cart"><img src="views/media/images/cart.png" alt=""></button>
-            </div>
-            <div class="details">عرض التفاصيل</div>
           </div>
-        </div>
-          <?php endforeach; ?>
+        <?php endforeach; ?>
       </section>
       <section class="bar_action">
 
@@ -61,12 +61,12 @@ echo"<br><br><br>" ;
     </main>
 
 
-    
+
 
   </section>
   <!-- الاحداث السريعه -->
   <section class="Fast-acting">
-    <div class="tbr3" >
+    <div class="tbr3">
       <h1>بِتَكاتُفِنا، نَسْتَطِيعُ تَحْقِيقَ الْمُسْتَحِيل </h1>
 
       <div class="t3">
@@ -75,12 +75,12 @@ echo"<br><br><br>" ;
       </div>
       <hr>
       <div class="t3">
-        <p>إنجاز جديد يضاف إلى سجلنا. توصلنا إلى عدداً 
+        <p>إنجاز جديد يضاف إلى سجلنا. توصلنا إلى عدداً
           من المشاريع المكتملة <br>
           وغيرنا بهم حياة الكثيرين.
         </p>
         <p class="pt">عددالمشاريع المكتملة<br><span>
-          25,7 ألف </span><br> مشروع</p>
+            25,7 ألف </span><br> مشروع</p>
       </div>
       <hr>
 
@@ -112,7 +112,9 @@ echo"<br><br><br>" ;
           <p>
             تبرعك اليوم يصنع فرقاً، غداً كن جزءاً من الخير.<br>
             لا تتردد، تبرعك اليوم قد يغير حياة شخصاً، كن سبباً في سعادته.
-          </p><button href="">تبرع الان</button>
+          </p>
+          <button href="">تبرع الان</button>
+          <!-- <a href="/charity_campaigns_donate">تبرع الان</a> -->
         </div>
 
       </div>

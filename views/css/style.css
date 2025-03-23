@@ -22,8 +22,10 @@
     --bgcolor-Hh:#003337;
     --bgcolor-H:#00646E;
     --bgcolor-N:#00A7B5;
-    --bgcolor-light:#f0f0f0;
+    /* --bgcolor-light:#f0f0f0; */
     --bgcolor-white:#ffffff;
+    --bgcolor-light: rgba(0, 167, 181,0.03);
+
 
 
     --bg-border: 1px solid #b1b1b1 ;
@@ -330,11 +332,15 @@ align-items: center;
 
 /* admin Bar */
 .bar_admin {
-    margin: 10px 0;
-    border: var(--bg-border-l);
+    margin-top: 20px;
+    top: 85px;
+    z-index: 100;
+    border-bottom: var(--bg-border-l);
     background-color: #ffffff; /* لون خلفية الشريط */
     padding: 10px;
     border-radius: 5px;
+    position: sticky;
+    
   }
   
   .bar_admin ul {
@@ -395,10 +401,12 @@ align-items: center;
 
 /* header */
 .bg-white_shadow {
-    background-color: #ffffff; /* خلفية بيضاء */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* ظل خفيف */
+    background-color: var(--bgcolor-white); /* خلفية بيضاء */
     padding: 20px;
     border-radius: 8px;
+    border-bottom:var(--bg-border-l) ;
+
+
   }
   
   .bar-search {
@@ -482,29 +490,7 @@ align-items: center;
     background-color: var(--button-bg-l); /* لون خلفية الزر عند التحويم */
   }
   
-  @media (max-width: 768px) {
-    .bar-search {
-      flex-direction: column;
-      align-items: stretch;
-    }
-  
-    .search-container {
-      flex-direction: column;
-      gap: 10px;
-    }
-  
-    .form-search {
-      flex-direction: column;
-      gap: 10px;
-    }
-  
-    .search-input,
-    .filter-select,
-    .my-items-btn,
-    .button button {
-      width: 100%;
-    }
-  }
+
 
 
 
@@ -803,20 +789,21 @@ align-items: center;
 
 /* البطاقة  */
 
-.Carousel_card{
-    display: flex;
-    justify-content: center;
+
+.container_card{
+    margin: var(--margin-s);
     direction: rtl;
-   
-
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1rem;
 }
-
 .aghtha {
     display: flex;
     justify-content: space-between;
 }
 .donation-card {
-    width: 80%;
+    margin: var(--margin-s);
+    width: 100%;
     max-width: 420px;
     background: white;
     border-radius: 12px;
@@ -833,6 +820,7 @@ align-items: center;
 }
 .donation-card:hover {
     transform: translateY(-5px);
+    transform: scale(1.05);
 }
 
 .progress-bar {
@@ -1449,6 +1437,8 @@ h2 {
     padding: 20px;
     direction: rtl;
     background-color: var(--bgcolor-light);
+    display: flex;
+    justify-content: center;
     
 
     & h1, h2 {
@@ -1462,8 +1452,8 @@ h2 {
     padding: var(--padding-xl);
     border-radius: var(--border-radius);
     background-color: var(--bgcolor-white);
-    width: 80%;
-    margin: 0 auto ;
+    width: 100%;
+    margin: var(--margin-xl) ;
 
   }
   
@@ -1522,11 +1512,14 @@ h2 {
     border-collapse: collapse;
     margin-bottom: 20px;
 
+
     & .campaigns-table td {
         padding: 12px;
         background-color: white;
         text-align: center;
         border-bottom: 1px solid #ddd;
+        text-align: right;
+
       }
 
       & .show_color_green{
@@ -1537,16 +1530,24 @@ h2 {
         border: none;
       }
 
+      & td {
+        text-align: right;
+        
+    
+
+      }
+
+      
 
   }
-  
+
   
   .campaigns-table th {
     padding: 12px;
-    text-align: center;
     border-bottom: 1px solid #ddd;
     background-color: var(--bgcolor-H);
     font-weight: bold;
+    text-align: right;
   }
   
   .campaigns-table img {
@@ -1554,45 +1555,6 @@ h2 {
     height: 50px;
     border-radius: 50%;
   }
-  
-  .dropdown {
-    position: relative;
-    display: inline-block;
-  }
-  
-  .dropdown-btn {
-    background-color: var(--button-bg-h);
-    color: white;
-    padding: 8px 12px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-  }
-  
-  .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-  }
-  
-  .dropdown-content a:hover {
-    background-color: #f1f1f1;
-  }
-  
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
-
 
 
 /* executive_partners */
@@ -1614,6 +1576,19 @@ h2 {
     border: 1px solid var(--border-color);
     & h2 {
         color: var(--font-color-bh);
+    }
+
+    & button[type="submit"] {
+        background-color: var(--font-color-bh);
+        color: #fff;
+        border: none;
+        padding: 10px 40px;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    
+    & button[type="submit"]:hover {
+        background-color: var(--button-bgcolor);
     }
 
 }
@@ -1646,18 +1621,7 @@ h2 {
     resize: vertical;
 }
 
-button[type="submit"] {
-    background-color: var(--font-color-bh);
-    color: #fff;
-    border: none;
-    padding: 10px 40px;
-    border-radius: 10px;
-    cursor: pointer;
-}
 
-button[type="submit"]:hover {
-    background-color: var(--button-bgcolor);
-}
 .ash3t{
    margin: 5% 20px;
    height: 200px;
@@ -1669,13 +1633,15 @@ button[type="submit"]:hover {
 /* index */
 
 .main_executive_partners_index{
-    background-color: #fff;
+    background-color: var(--bgcolor-light);
     color: var(--bgcolor-H);
     margin: 0;
     padding: 0;
     text-align: right;
     direction: rtl;
     padding: 20px;
+    display: flex;
+    justify-content: center;
     
     & h1 {
         text-align: center;
@@ -1686,7 +1652,7 @@ button[type="submit"]:hover {
 
 
 
-.management-buttons {
+/* .management-buttons {
     margin-bottom: 20px;
 }
 
@@ -1702,9 +1668,19 @@ button[type="submit"]:hover {
 
 .management-buttons button:hover {
     background-color: var(--button-bgcolor);
-}
+} */
+.executive_partners_index{
+    background-color: var(--bgcolor-white);
+    padding: var(--padding-xl);
+    width: 100%;
+    border: var(--bg-border);
+    border-radius: var(--border-radius);
+    margin: var(--margin-xl);
 
+
+}
 .partners-table {
+    margin: 0 auto ;
     width: 100%;
     border-collapse: collapse;
     background-color: #fff;
@@ -1722,17 +1698,53 @@ button[type="submit"]:hover {
         height: 50px;
         border-radius: 4px;
     }
+    & tr{
+        background-color: #000;
+    }
 }
 
 .partners-table th, .partners-table td {
     padding: 12px;
     border-bottom: 1px solid #ddd;
-    text-align: center;
+    text-align: right;
 }
 
 
+.options{
+    width: auto;
+    height: auto;
+    background: transparent;
 
-.dropdown {
+   & ul{
+    display: flex;
+    justify-content: right;
+    list-style: none;
+    gap: 20px;
+    }
+
+    & button{
+        background: transparent;
+        border: none;
+        font-size: var(--font-size-m);
+        color: var(--font-color-bl);
+        padding: var(--padding-xs);
+        font-weight: bold;
+    &:hover{
+        color: #00646E;
+    }
+
+    }
+    
+}
+
+/* .partners-table .options:hover{
+    display: block;
+
+} */
+
+
+
+/* .dropdown {
     position: relative;
     display: inline-block;
 }
@@ -1769,7 +1781,7 @@ button[type="submit"]:hover {
 
 .dropdown:hover .dropdown-content {
     display: block;
-}
+} */
 
 
 /* charity_campaigns */
@@ -1779,37 +1791,48 @@ button[type="submit"]:hover {
 .div_show_ch{
     display: flex;
     justify-content: center;
-    background-color: white;
+    background-color: var(--bgcolor-light);
     width: 100%;
     direction: rtl;
 }
 
 .card_islamic_endowments{
-    background-color: #ffffff;
-    margin: 30px;
+    background-color: var(--bgcolor-white);
+    margin: var(--margin-xl);
     padding: 40px;
-    border: var(--bg-border);
     border-radius: var(--border-radius);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
     width: 100%;
 
     & h5 {
+        font-size: var(--font-size-l);
         padding-bottom: var(--padding-m);
         color: var(--font-color-bh);
     }
 
     & h6 {
-        font-size: 15px;
+        font-size: var(--font-size-l);
         color: var(--font-color-bh);
 
     }
 
     & p {
+        font-size: var(--font-size-m);
         width: 100%;
         margin-bottom: var(--margin-m);
-        background-color: var(--bgcolor-light);
         border-radius: var(--border-radius);
         padding: var(--padding-m);
         color: var(--font-color-bl);
+    }
+  
+
+    .news {
+        background-color: var(--bgcolor-light);
+        padding: var(--padding-l);
+        border-radius: var(--border-radius);
+         & h4 {
+            padding:  var(--padding-m ) 0;
+         }
     }
 
     & .details_show_ch{
@@ -1822,9 +1845,12 @@ button[type="submit"]:hover {
 
         }
     }
+
+
     & img {
         padding: var(--padding-m) 0 var(--padding-m) 0;
-        border-radius: var(--border-radius);
+        border: 1px solid white;
+        border-radius: 12px;
         width: 100%;
         height: auto;
 
@@ -1841,7 +1867,6 @@ button[type="submit"]:hover {
     padding: var(--padding-xl);
     width: 100%;
     border-radius: var(--border-radius);
-    border: var(--bg-border-l);
 
 
     & h6{
@@ -1862,14 +1887,17 @@ button[type="submit"]:hover {
 }
 .bar_actions{
     justify-content: center;
+    background-color: var(--bgcolor-white);
     direction: rtl;
+    width: 100%;
     padding: var(--padding-xl);
-    margin: var(--margin-xl);
     border-radius: var(--border-radius);
-    border: var(--bg-border);
+    border: var(--bg-border-l);
     
     & p {
         text-align: center;
+        font-size: var(--font-size-l);
+        color: var(--font-color-bh);
     }
 
     & button{
@@ -1880,6 +1908,7 @@ button[type="submit"]:hover {
         color: white;
         margin: var(--margin-m);
         font-weight: bold;
+        
         border: none;
 
     }
@@ -1891,7 +1920,7 @@ button[type="submit"]:hover {
 
     & .add_to_cart{
         background-color: yellow;
-      
+
         color: black;
     }
 
@@ -1906,42 +1935,6 @@ button[type="submit"]:hover {
 /* index */
 
 
-.bar_search {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    border: var(--bg-border-l);
-    direction: rtl;
-}
-
-.bar_search form {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-
-.bar_search input[type="search"],
-.bar_search select {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-}
-.bar_search input{
-    width: 60%;
-}
-.bar_search select {
-    width: 15%;
-}
-
-.bar_search input[type="search"]:focus,
-.bar_search select:focus {
-    border-color: #007bff;
-    outline: none;
-}
-
 
 
 
@@ -1951,6 +1944,7 @@ button[type="submit"]:hover {
 .card_statistics_grup{
     display: flex;
     direction: rtl;
+  
 
 }
 .card_statistics {
