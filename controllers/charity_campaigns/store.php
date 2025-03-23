@@ -1,7 +1,7 @@
 <?php
 $heading = "Create test";
 
-dd("goood");
+//dd("goood");
 
 use core\App ;
 use core\Database;
@@ -38,7 +38,7 @@ $campaign_id = $db->query
       'state' => $_POST['state'],
       'end_at' => $_POST['end_at'],
       'photo' => $_POST['photo']
-  ])->getGeneratedKey();
+  ])->fetchAll();
 
   // استقبال البيانات المطابقة لقاعدة البيانات 
 

@@ -113,8 +113,8 @@
             تبرعك اليوم يصنع فرقاً، غداً كن جزءاً من الخير.<br>
             لا تتردد، تبرعك اليوم قد يغير حياة شخصاً، كن سبباً في سعادته.
           </p>
-          <!-- <button href="">تبرع الان</button> -->
-          <a href="/charity_campaigns_donate">تبرع الان</a>
+          <button href="">تبرع الان</button>
+          <!-- <a href="/charity_campaigns_donate">تبرع الان</a> -->
         </div>
 
       </div>

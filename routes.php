@@ -290,7 +290,7 @@ $router->get('/charity_campaigns_create', 'controllers/charity_campaigns/create.
 $router->get('/charity_campaigns_edit', 'controllers/charity_campaigns/edit.php');
 $router->post('/charity_campaigns_store', 'controllers/charity_campaigns/store.php');
 $router->put('/charity_campaigns_update', 'controllers/charity_campaigns/update.php');
-$router->get('/charity_campaigns_donate', 'controllers/charity_campaigns/donate.php');
+$router->patch('/charity_campaigns_donate', 'controllers/charity_campaigns/donate.php');
 
  
 $router->get('/charity_projects_create', 'controllers/charity_projects/create.php');
