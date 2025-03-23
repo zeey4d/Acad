@@ -3,7 +3,7 @@
         'name' => 'lenovo/badir',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'e1ee3f9948b449471de947342e1822bba705a3ac',
+        'reference' => '0f9180121fdb39dd796a68408be781e30aff2fb4',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -67,7 +67,7 @@
         'lenovo/badir' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'e1ee3f9948b449471de947342e1822bba705a3ac',
+            'reference' => '0f9180121fdb39dd796a68408be781e30aff2fb4',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

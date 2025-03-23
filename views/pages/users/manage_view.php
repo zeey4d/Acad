@@ -10,6 +10,7 @@
         <div class="management-buttons">
           <button id="add-campaign">إضافة حملة تبرع</button>
           <button id="delete-selected">حذف المحددين</button>
+          <a href="/users_create"> إضافة حملة تبرع</a>
         </div>
       
        
