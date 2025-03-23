@@ -32,8 +32,14 @@
                       <input type="hidden" name="category_id" value="0">
                       <input type="hidden" name="partner_id" value="0">
                       <input type="hidden" name="state" value="0">
+                     <!-- داخل الفورم -->
+                     <input type="hidden" name="campaign_request_id" value="0">
+                     <input type="hidden" name="short_description" value="وصف مبدئي">
+                     <input type="hidden" name="end_at" value="<?= date('Y-m-d', strtotime('+30 days')) ?>">
+                     <input type="hidden" name="photo" value="default.jpg">
+                     <input type="hidden" name="name" value="حملة تبرع">
+                     <input type="hidden" name="cost" value="0">
                      
-
                 <!-- الاسم الكامل -->
                 <div class="form-group">
                     <label for="fullName">الاسم الكامل:</label>

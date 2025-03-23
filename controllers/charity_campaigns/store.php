@@ -51,7 +51,7 @@ $full_description = $_POST['full_description'];
 $cost = $_POST['cost'];
 $state = $_POST['state'];
 $end_at = $_POST['end_at'];
- 
+$photo = $_POST['photo'];
   // استقبال البيانات من النموذج
 
  $caseType = $_POST['caseType'];
