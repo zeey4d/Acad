@@ -86,7 +86,7 @@
     --button-shadow: 0 0 0.5em rgba(0, 0, 0, 0.1);
     --button-border: 1px solid #dddddd ;
     --button-hover-shadow: 0 0 1em rgba(0, 0, 0, 0.1);
-    --button-hover-border: 1px solid #00575F;
+    --button-hover-border: 1px solid #006770;
     --button-hover-color: #00575F;
     --button-hover-bg: white;
 
@@ -216,13 +216,14 @@ footer {
 display: flex;
 justify-content: center;
 align-items: center;
+gap: 10px;
 
  & .but_login{
     text-decoration: none;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 150px;
+    width: 8rem;
     height: 35px ;
     background-color:var(--button-bgcolor) ;
     border-radius: var(--button-radius);
@@ -232,7 +233,28 @@ align-items: center;
 
  }
  & .but_login:hover{
+    
+    background-color:   #006770;
+    border-radius: var(--button-radius);
+    border: var(--bg-border);
+
+ }
+ & .but_sgin{
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 8rem;
+    height: 35px ;
     background-color:var(--bgcolor-white) ;
+    border-radius: var(--button-radius);
+    color: var(--font-color-bh);
+    border: var(--bg-border);
+    font-weight: bold;
+
+ }
+ & .but_sgin:hover{
+    background-color:var(--bgcolor-light) ;
     border-radius: var(--button-radius);
     color: var(--font-color-bh);
     border: var(--bg-border);
@@ -240,9 +262,8 @@ align-items: center;
  }
 
  & img {
-    width: 26px;
-    height: 26px;
-    margin-left:15px ;
+    width: 24px;
+    height: 24px;
 
  }
 }
