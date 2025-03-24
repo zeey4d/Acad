@@ -5,6 +5,8 @@
 
 <main>
   <section class="container">
+  <?php foreach ($notifications as $notification): ?>
+
     <div class="card_notifications">
 
       <img src="bader.png" alt="شعار بادر">
@@ -27,6 +29,8 @@
 
 
     </div>
+    <?php endforeach; ?>
+
   </section>
 </main>
 <?php require('views/parts/footer.php') ?>

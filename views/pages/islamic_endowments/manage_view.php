@@ -40,14 +40,18 @@
             </tr>
           </thead>
           <tbody>
+
+          <?php foreach ($islamic_endowments as $islamic_endowment): ?>
+
+
             <tr>
               <td><input type="checkbox" class="select-campaign"></td>
-              <td><img src="" alt="شعار الحملة" class="campaign-logo"></td>
-              <td>حملة 1</td>
-              <td>وصف الحملة 1</td>
+              <td><img src="views/media/images/<?= htmlspecialchars($islamic_endowment['photo'] ?? "11.png") ?>" alt="شعار الحملة" class="campaign-logo"></td>
+              <td><?= htmlspecialchars($islamic_endowment['name']) ?></td>
+              <td><?= htmlspecialchars($islamic_endowment['short_description']) ?></td>
               <td>إغاثة</td>
-              <td><span>70000$</span> / <span>35000$</span></td>
-              <td><span>30/12/2024</span> - <span>30/12/2025</span></td>
+              <td><span><?= htmlspecialchars($islamic_endowment['cost']) ?>$</span> / <span>35000$</span></td>
+              <td><span><?= htmlspecialchars($islamic_endowment['start_at']) ?></span> - <span><?= htmlspecialchars($islamic_endowment['end_at']) ?></span></td>
               <td><button class="show_color_green">عرض</button></td>
               <td>
                 <div class="dropdown">
@@ -63,6 +67,9 @@
                 </div>
               </td>
             </tr>
+
+            <?php endforeach; ?>
+            
           </tbody>
         </table>
       
