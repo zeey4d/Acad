@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php require('views/parts/head.php') ?>
 <?php require('views/parts/adminbar.php') ?>
 <?php require('views/parts/navgtion.php') ?>
@@ -135,3 +136,5 @@
 
     <?php require('views/parts/footer.php') ?>
 
+=======
+>>>>>>> d9515df8d743f516ea3714615bfe30bb60620ae1

@@ -1,7 +1,7 @@
 <?php
 $heading = "Create test";
 
-use core\App ;
+use core\App;
 use core\Database;
 
 $db = App::resolve(Database::class);
@@ -58,7 +58,7 @@ if (! empty($errors)) {
 //     ])->getGeneratedKey('project_id');
 
 
- // استقبال البيانات المطابقة لقاعدة البيانات 
+// استقبال البيانات المطابقة لقاعدة البيانات 
 // $category_id = $_POST['category_id'];
 // $partner_id = $_POST['partner_id'];
 // $campaign_request_id =$_POST['campaign_request_id'];
@@ -95,7 +95,7 @@ if (! empty($errors)) {
 //  if (!isset($_POST['age']) || !(Validator::number($_POST['age']?? '', -1, 100 ))){
 //     $errors["age"] = "العمر غير صالح ";
 //  }
- 
+
 //  if (!isset($_POST['circumstances']) || !Validator::string($_POST['circumstances'] ?? '',1 ,1000)){
 //       $errors["circumstances"] = "الظروف غير صالح";
 //  }  
@@ -150,7 +150,7 @@ if (! empty($errors)) {
 // // 
 // // $idBackName = uniqid() . '_' . basename($_FILES['idBack']['name']);
 // // move_uploaded_file($_FILES['idBack']['tmp_name'], $uploadPath . $idBackName);
- 
+
 
 // $allowedTypes = ['image/jpeg', 'application/pdf'];
 // if (!in_array($_FILES['idFront']['type'], $allowedTypes)) {
@@ -169,7 +169,7 @@ if (! empty($errors)) {
 
 // // إدخال البيانات في قاعدة البيانات
 
-    
+
 //     $_SESSION['success'] = "تم تقديم الطلب بنجاح";
 //     header('Location: /charity_campaigns');
 //     exit();
@@ -208,8 +208,11 @@ try {
             short_description,
             full_description,
             cost,
+<<<<<<< HEAD
             level,
             state,
+=======
+>>>>>>> d9515df8d743f516ea3714615bfe30bb60620ae1
             country,
             city,
             street
@@ -233,27 +236,20 @@ try {
             'level' => $_POST['level'],
             'short_description' => htmlspecialchars($_POST['short_description']),
             'full_description' => htmlspecialchars($_POST['full_description']),
-            'type' => htmlspecialchars($_POST['type']),
             'cost' => filter_var($_POST['cost'], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION),
-            'start_at' => $_POST['start_at'] ?? date('Y-m-d H:i:s'), // Default to current timestamp
-            'stop_at' => $_POST['stop_at'] ?? null,
-            'end_at' => $_POST['end_at'] ?? null,
-            'state' => $_POST['state'] ?? 'active', // Default value if not provided
             'directorate' => htmlspecialchars($_POST['directorate']),
             'country' => htmlspecialchars($_POST['country']),
             'city' => htmlspecialchars($_POST['city']),
             'street' => htmlspecialchars($_POST['street'])
         ]
     );
-    
-    }catch (PDOException $e) {
-        error_log($e->getMessage());
-        $_SESSION['error'] = "حدث خطأ أثناء حفظ البعانات";
-        header("Location: /charity_projects_create");
-        exit();
-    }
+} catch (PDOException $e) {
+    error_log($e->getMessage());
+    $_SESSION['error'] = "حدث خطأ أثناء حفظ البعانات";
+    header("Location: /charity_projects_create");
+    exit();
+}
 
 
 header("Location: " . $_SERVER["HTTP_REFERER"]);
 die();
-
