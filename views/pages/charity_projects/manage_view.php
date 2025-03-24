@@ -7,15 +7,17 @@
 
       
         <!-- أزرار الإدارة -->
-        <div class="management-buttons">
+        <!-- <div class="management-buttons">
           <button id="add-campaign">إضافة حملة تبرع</button>
-          <button id="delete-selected">حذف المحددين</button>
+           <button id="delete-selected">حذف المحددين</button>
           <a href="/charity_projects_create"> إضافة حملة تبرع</a>
-        </div>
+        </div> --> 
       
        
       <section class="section_manage">
         <!-- جدول الحملات الحالية -->
+        <a href="#" id="add-campaign">إضافة حملة تبرع</a>
+
         <h1>إدارة حملات التبرع الإنسانية</h1>
 
         <h2>الحملات الحالية</h2>

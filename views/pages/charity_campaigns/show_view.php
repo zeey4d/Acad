@@ -20,10 +20,12 @@
                 <p>الفحوصات الطبية</p>
                 <p>العمليات الجراحية</p>
                 <p>الادوية</p>
-            </div>
+        </div>
+
 
 
 </section>
+</div>
 <!-- باقي البينات -->
 <section class="card_islamic_endowments" id="card_islamic_endowments">
     <div class="card_insid" id="card_insid">
@@ -66,6 +68,7 @@
     </div>
 
 </section>
+
 </main>
 
 <!-- شريط الاحداث -->
@@ -81,4 +84,5 @@
     </form>
     </div>
 </section>
+
 <?php require('views/parts/footer.php') ?>
