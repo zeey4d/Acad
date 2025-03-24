@@ -9,20 +9,22 @@
 //echo"<br><br><br>" ;
 //dd($campaigns);  
 ?>
+
+
 <main>
 
 
   <!-- الصوره الكبير الي بل البدايه -->
   <section class="hero">
     <img src="views/media/images/andrewSmall.jpg" alt="">
-    <h1 style=" color : white;  margin: -80px 10px 0 0; text-align: right;">بِفَضْلِ تَبَرُّعاتِكُمْ، نَصْنَعُ فَرْقًا حَقِيقِيًّا فِي حَياةِ الْمُحْتاجِين</h1>
+    <h1  style=" color : white;  margin: -80px 10px 0 0; text-align: right;">بِفَضْلِ تَبَرُّعاتِكُمْ، نَصْنَعُ فَرْقًا حَقِيقِيًّا فِي حَياةِ الْمُحْتاجِين</h1>
 
 
   </section>
 
   <h1 style="     margin: 100px;    text-align: center;    color: var(--font-color-bh); ">الصَّدَقَةُ لَا تَنْقُصُ الْمَالَ، بَلْ تَزِيدُهُ بَرَكَةً وَطُهْرًا</h1>
 
-  <section class="Carousel_card">
+  <section  class="Carousel_card">
     <!-- حاوية البطاقات -->
 
     <main class="main_cart">
@@ -65,9 +67,9 @@
 
   </section>
   <!-- الاحداث السريعه -->
-  <section class="Fast-acting">
+  <section  class="Fast-acting">
     <div class="tbr3">
-      <h1>بِتَكاتُفِنا، نَسْتَطِيعُ تَحْقِيقَ الْمُسْتَحِيل </h1>
+      <h1 >بِتَكاتُفِنا، نَسْتَطِيعُ تَحْقِيقَ الْمُسْتَحِيل </h1>
 
       <div class="t3">
         <p>بفضل كرمكم تجاوزنا الكثير من التبرعات. معاً نصنع الفرق.</p>
