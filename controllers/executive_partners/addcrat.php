@@ -1,4 +1,4 @@
-\<?php
+<?php
 $heading = "one test";
 use core\App ;
 use core\Database ;
@@ -8,25 +8,21 @@ $db = App::resolve(Database::class);
 
 try {
     $db->query(
-        "INSERT INTO users_islamic_payments (
+        "INSERT INTO users_cart_endowments (
             user_id,
-            islamic_payment_id,
-            cost,
-            donate_date
+            endowment_id,
+            cost
         ) VALUES (
             :user_id,
-            :islamic_payment_id,
-            :cost,
-            :donate_date
+            :endowment_id,
+            :cost
         )",
         [
             'user_id' => $_POST['user_id'],
-            'islamic_payment_id' => $_POST['islamic_payment_id'],
-            'cost' => filter_var($_POST['cost'], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION),
-            'donate_date' => date('Y-m-d H:i:s') // Defaulting to current timestamp if not provided
+            'endowment_id' => $_POST['endowment_id'],
+            'cost' => filter_var($_POST['cost'], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION)
         ]
     );
-    
 } catch (PDOException $e) {
     error_log($e->getMessage());
     $_SESSION['error'] = "حدث خطأ أثناء حفظ البعانات";
