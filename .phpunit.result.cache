@@ -1,0 +1,1 @@
+{"version":1,"defects":{"tests\\Unit\\DatabaseTest::testConnection":8,"tests\\Unit\\DatabaseTest::testQueryAndFetch":8,"tests\\Unit\\DatabaseTest::testQueryAndFetchAll":8,"tests\\Unit\\DatabaseTest::testFindOrFailWithData":8,"tests\\Unit\\DatabaseTest::testFindOrFailWithoutData":8},"times":[]}

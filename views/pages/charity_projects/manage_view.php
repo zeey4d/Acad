@@ -52,20 +52,20 @@
               <nav class="options">
         <ul>
             <li>
-                <form action="/islamic_endowments_manage" method="get"><input type="hidden" name="" value=""><button type="submit">عرض</button></form>
+                <form action="/islamic_endowments_manage" method="get"><input type="hidden" name="" value=""><a  href="#" >عرض</a></form>
             </li>
             <li>
-                <form action="/charity_projects_manage" method="get"><input type="hidden" name="" value=""><button type="submit">تعديل</button></form>
+                <form action="/charity_projects_manage" method="get"><input type="hidden" name="" value=""><a href="#" >تعديل</a></form>
             </li>
             <li>
-                <form action="/notifications_manage" method="get"><input type="hidden" name="" value=""><button style="    color: red;" type="submit">حدف</button></form>
+                <form action="/notifications_manage" method="get"><input type="hidden" name="" value=""><a href="#" style="    color: red;" >حدف</a></form>
             </li>
             <li>
-                <form action="/users_manage" method="get"><input type="hidden" name="" value=""><button type="submit">اشعار</button></form>
+                <form action="/users_manage" method="get"><input type="hidden" name="" value=""><a href="#">اشعار</a></form>
             </li>
 
         </ul>
-    </nav>                
+    </nav>              
               </td>
               <td><?= htmlspecialchars($project['short_description']) ?></td>
               <td>إغاثة</td>
@@ -115,16 +115,16 @@
               <nav class="options">
         <ul>
             <li>
-                <form action="/islamic_endowments_manage" method="get"><input type="hidden" name="" value=""><button type="submit">عرض</button></form>
+                <form action="/islamic_endowments_manage" method="get"><input type="hidden" name="" value=""><a  href="#" >عرض</a></form>
             </li>
             <li>
-                <form action="/charity_projects_manage" method="get"><input type="hidden" name="" value=""><button type="submit">تعديل</button></form>
+                <form action="/charity_projects_manage" method="get"><input type="hidden" name="" value=""><a href="#" >تعديل</a></form>
             </li>
             <li>
-                <form action="/notifications_manage" method="get"><input type="hidden" name="" value=""><button style="    color: red;" type="submit">حدف</button></form>
+                <form action="/notifications_manage" method="get"><input type="hidden" name="" value=""><a href="#" style="    color: red;" >حدف</a></form>
             </li>
             <li>
-                <form action="/users_manage" method="get"><input type="hidden" name="" value=""><button type="submit">اشعار</button></form>
+                <form action="/users_manage" method="get"><input type="hidden" name="" value=""><a href="#">اشعار</a></form>
             </li>
 
         </ul>
