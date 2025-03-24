@@ -1733,7 +1733,8 @@ h2 {
     gap: 20px;
     }
 
-    & a{
+    & button{
+        background-color: transparent;
         text-decoration: none;
         border: none;
         font-size: var(--font-size-m);

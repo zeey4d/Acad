@@ -54,16 +54,16 @@
               <nav class="options">
         <ul>
             <li>
-                <form action="/islamic_endowments_manage" method="get"><input type="hidden" name="" value=""><a  href="#" >عرض</a></form>
+                <form action="/islamic_endowments_manage" method="post" type="hidden" name="" value=""><button type="submit" >عرض</button></form>
             </li>
             <li>
-                <form action="/charity_projects_manage" method="get"><input type="hidden" name="" value=""><a href="#" >تعديل</a></form>
+                <form action="/charity_projects_manage" method="get"><input type="hidden" name="" value=""><button type="submit" >تعديل</button></form>
             </li>
             <li>
-                <form action="/notifications_manage" method="get"><input type="hidden" name="" value=""><a href="#" style="    color: red;" >حدف</a></form>
+                <form action="/notifications_manage" method="get"><input type="hidden" name="" value=""><button type="submit" style="    color: red;" >حدف</button></form>
             </li>
             <li>
-                <form action="/users_manage" method="get"><input type="hidden" name="" value=""><a href="#">اشعار</a></form>
+                <form action="/users_manage" method="get"><input type="hidden" name="" value=""><button type="submit">اشعار</button></form>
             </li>
 
         </ul>
@@ -94,7 +94,7 @@
           </tbody>
         </table>
       
-  
+   
         </section>
       </main>
 <?php require('views/parts/footer.php') ?>

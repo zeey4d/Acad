@@ -7,14 +7,15 @@
 
       
         <!-- أزرار الإدارة -->
-        <div class="management-buttons">
-          <button id="add-campaign">إضافة حملة تبرع</button>
-          <button id="delete-selected">حذف المحددين</button>
+        <!-- <div class="management-buttons"> -->
+          <!-- <button id="delete-selected">حذف المحددين</button>
           <a href="/charity_campaigns_create"> إضافة حملة تبرع</a>
-        </div>
+        </div> -->
       
        
       <section class="section_manage">
+      <a id="add-campaign">إضافة حملة تبرع</a>
+
         <!-- جدول الحملات الحالية -->
         <h1>إدارة حملات التبرع الإنسانية</h1>
 
@@ -52,7 +53,7 @@
               <nav class="options">
         <ul>
             <li>
-                <form action="/islamic_endowments_manage" method="get"><input type="hidden" name="" value=""><button type="submit">عرض</button></form>
+                <form action="/islamic_endowments_manage" method="post" ><input type="hidden" name="" value=""><button type="submit">عرض</button></form>
             </li>
             <li>
                 <form action="/charity_projects_manage" method="get"><input type="hidden" name="" value=""><button type="submit">تعديل</button></form>
