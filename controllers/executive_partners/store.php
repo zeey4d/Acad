@@ -48,43 +48,16 @@ $errors = [];
 
 
 
-// use core\App ;
-// use core\Database;
-
-// $db = App::resolve(Database::class);
-
-
-
-// $errors = [];
-
-// if (!(Validator::string($_POST['name'], 1, 255))) {
-//     $errors["name"] = "Titel  is too short or too long";
-// }
-// // if (!(Validator::string($_POST['body'], 1, 1000))) {
-// //     $errors["titel"] = " body is too short or long";
-// // }
-
-
-// if (! empty($errors)) {
-
-//     require "views/pages/executive_partners/create_view.php";
-//     die();
-// }
-
-
-// $db->query("INSERT INTO executive_partners (name) VALUES (:name)", [
-//     'name' => $_POST['name'],
-// ]);
-
-// $name = $_POST['name'];
-// $logo = $_POST['logo'];
-// $description = $_POST['description'];
-// $more_information = $_POST['more_information'];
-// $email = $_POST['email'];
-// $directorate = $_POST['directorate'];
-// $county = $_POST['county'];
-// $city = $_POST['city'];
-// $street = $_POST['street'];
+ $name = $_POST['name'];
+ $photo = $_POST['photo'];
+ $description = $_POST['description'];
+ $more_information = $_POST['more_information'];
+ $email = $_POST['email'];
+ $directorate = $_POST['directorate'];
+ $county = $_POST['county'];
+ $city = $_POST['city'];
+ $street = $_POST['street'];
+ $phone = $_POST['phone'];
 
 
 // التحقق من الحقول المطلوبة
@@ -111,37 +84,31 @@ if (!isset($_POST['description']) || !Validator::string($_POST['description'] ??
  if ( !isset($_POST['directorate']) ||!Validator::string($_POST['directorate'], 1, 255)) {
     $errors["directorate"] = "المديرية يجب أن تكون بين 1 و 255 حرفًا";
 }
-
-
-
-
-
-
 if ( !isset($_POST['street']) || !Validator::string($_POST['street'], 1, 255)) {
     $errors["street"] = "الشارع يجب أن يكون بين 1 و 255 حرفًا";
 }
 
-if (!isset($_FILES['logo']) || $_FILES['logo']['error'] !== UPLOAD_ERR_OK) {
-    $errors["logo"] = "يجب تحميل شعار صالح";
+if (!isset($_FILES['photo']) || $_FILES['photo']['error'] !== UPLOAD_ERR_OK) {
+    $errors["photo"] = "يجب تحميل شعار صالح";
 }
 
 //  معالجة رفع الشعار
-$logo = $_FILES['logo']['name'];
-$logo_tmp = $_FILES['logo']['tmp_name'];
-$logo_path = "uploads/" . basename($logo);
+$logo = $_FILES['photo']['name'];
+$logo_tmp = $_FILES['photo']['tmp_name'];
+$logo_path = "views\media\uploads/" . basename($logo);
 
 if (!move_uploaded_file($logo_tmp, $logo_path)) {
-    $errors["logo"] = "فشل في تحميل الشعار";
+    $errors["photo"] = "فشل في تحميل الشعار";
     require "views/pages/executive_partners/create_view.php";
     die();
 }
-
-if (! empty($errors)) {
-
-    require "views/pages/executive_partners/create_view.php";
-    die();
-}
-
+// 
+// if (! empty($errors)) {
+// 
+    // require "views/pages/executive_partners/create_view.php";
+    // die();
+// }
+// 
 
     
 

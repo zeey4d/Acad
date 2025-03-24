@@ -4,185 +4,163 @@ use core\App;
 use core\Database;
 use core\Authenticator;
 
-
 $db = App::resolve(Database::class);
 
-
-
-// مبارك يكتب حق الاستعلامات حق قاعدة البيانات هنا 
-
-
-
-$user_id = $db->query(
-    "INSERT INTO USERS (username, password, photo, email, type, directorate,
-    county, city, street, phone)
-     VALUES (:username, :password, :photo, :email, :type, :directorate, 
-     :county, :city, :street, :phone)",
+ $user_id = $db->query(
+    "INSERT INTO users (
+        username,
+        password,
+        photo,
+        email,
+        type,
+        country,
+        city,
+        street,
+        phone,
+        notifications
+    ) VALUES (
+        :username,
+        :password,
+        :photo,
+        :email,
+        :type,
+        :country,
+        :city,
+        :street,
+        :phone,
+        :notifications
+    )",
     [
-    'username' => $_POST['username'],
-    'password' => $_POST['password'],
-    'photo' => $_POST['photo'],
-    'email' => $_POST['email'],
-    'type' => $_POST['type'],
-    'directorate' => $_POST['directorate'],
-    'county' => $_POST['county'],
-    'city' => $_POST['city'],
-    'street' => $_POST['street'],
-    'phone' => $_POST['phone']
+        'username' => htmlspecialchars($_POST['username']),
+        'password' => password_hash($_POST['password'], PASSWORD_BCRYPT), // Hash the password before saving
+        'photo' => $_POST['photo']?? null,
+        'email' => filter_var($_POST['email'], FILTER_SANITIZE_EMAIL),
+        'type' => $_POST['type'] ?? 'normal', // Default to 'normal' if not provided
+        'country' => htmlspecialchars($_POST['country']),
+        'city' => htmlspecialchars($_POST['city']),
+        'street' => htmlspecialchars($_POST['street']),
+        'phone' => filter_var($_POST['phone'], FILTER_SANITIZE_STRING),
+        'notifications' => isset($_POST['notifications']) ? 1 : 0 // Convert boolean to integer (1 or 0)
     ]
-)->getGeneratedKey();
-
+);
 
 // استقبال البيانات من النموذج
-$name = $_POST['name'];
+$name = $_POST['username'];
 $email = $_POST['email'];
 $password = $_POST['password'];
 $confirm_password = $_POST['confirm_password'];
-$phone_number = $_POST['phone_number'];
-$place = $_POST['place'];
+$phone_number = $_POST['phone'];
+$place = $_POST['country'];
 
 // التحقق من البيانات
 
 $errors = [];
 
 if (!Validator::string($name, 2, 255)) {
-    $errors['name'] = 'الاسم يجب أن يكون بين 2 و 255 حرفًا.';
+   $errors['name'] = 'الاسم يجب أن يكون بين 2 و 255 حرفًا.';
 }
 
 if (!Validator::email($email)) {
-    $errors['email'] = 'يرجى تقديم عنوان بريد إلكتروني صالح.';
+   $errors['email'] = 'يرجى تقديم عنوان بريد إلكتروني صالح.';
 }
 
 if (!Validator::string($password, 8, 255)) {
-    $errors['password'] = 'كلمة المرور يجب أن تكون على الأقل 8 أحرف.';
+   $errors['password'] = 'كلمة المرور يجب أن تكون على الأقل 8 أحرف.';
 }
 
 if ($password !== $confirm_password) {
-    $errors['confirm_password'] = 'كلمتا المرور غير متطابقتين.';
+   $errors['confirm_password'] = 'كلمتا المرور غير متطابقتين.';
 }
 
 if (!Validator::string($phone_number, 8, 15)) {
-    $errors['phone_number'] = 'رقم الهاتف يجب أن يكون بين 8 و 15 رقمًا.';
+   $errors['phone_number'] = 'رقم الهاتف يجب أن يكون بين 8 و 15 رقمًا.';
 }
 
 if (!Validator::string($place, 2, 255)) {
-    $errors['place'] = 'المنطقة يجب أن تكون بين 2 و 255 حرفًا.';
+   $errors['place'] = 'المنطقة يجب أن تكون بين 2 و 255 حرفًا.';
 }
 
 
-// إذا كانت هناك أخطاء، قم بإعادة توجيه المستخدم إلى صفحة التسجيل مع عرض الأخطا
+ //إذا كانت هناك أخطاء، قم بإعادة توجيه المستخدم إلى صفحة التسجيل مع عرض الأخطا
  if (! empty($errors)) {
-    require 'views/registertion/create_view.php';
+    require 'views/pages/users/create_view.php';
  }
 
-
 // التحقق مما إذا كان البريد الإلكتروني موجودًا مسبقًا
-$user = $db->query('SELECT * FROM users WHERE email = :email', [
-    'email' => $email
+$user_id = $db->query('SELECT * FROM users WHERE email = :email', [
+   'email' => $email
 ])->find();
 
-if ($user) {
-    $errors['email'] = 'البريد الإلكتروني موجود مسبقًا.';
-    require 'views/registertion/create_view.php';
-    die();
-}
+if ($user_id) {
+   $errors['email'] = 'البريد الإلكتروني موجود مسبقًا.';
+   require 'views/pages/users/create_view.php';
+  die();
 
-//     header('location: /');
-//     exit();
-// } else {
-//     $user = $db->query('INSERT INTO users(email, password) VALUES(:email, :password)', [
-//         'email' => $email,
-//         'password' => password_hash($password, PASSWORD_BCRYPT)
-//     ]);
+
+     header('location: /');
+     exit();
+}else {
+     $user_id = $db->query('INSERT INTO users(email, password) VALUES(:email, :password)', [
+         'email' => $email,
+         'password' => password_hash($password, PASSWORD_BCRYPT)
+     ]);
      
     
-//      // تسجيل دخول المستخدم بعد إنشاء الحساب
-//   //   $authenticator = new Authenticator();
-//   //   $authenticator->login($email);
+     // تسجيل دخول المستخدم بعد إنشاء الحساب
+    $authenticator = new Authenticator();
+    $authenticator->login($email);
      
-//     (new Authenticator)->login(['email' => $email]);
+    (new Authenticator)->login(['email' => $email]);
 
 
-//     header('location: /');
-//     exit();
-// }
+   header('location: /');
+    exit();
+}
 
-
-
-// // إدخال البيانات إلى قاعدة البيانات
-// $db->query('INSERT INTO users (name, email, password, phone_number, place) VALUES (:name, :email, :password, :phone_number, :place)', [
-//     'name' => $name,
-//     'email' => $email,
-//     'password' => password_hash($password, PASSWORD_BCRYPT),
-//     'phone_number' => $phone_number,
-//     'place' => $place
-// ]);
-
-// //logIn($user);
-// // توجيه المستخدم إلى الصفحة الرئيسية بعد التسجيل الناجح
-// header("Location: /");
-// die();
-
-
-
-
-// $user =  $db->query(
-//     'select * from users where email = :email',
-//     ['email' => $email]
-// )->findOrFail();
-
-
-    // $db->query(
-    //     'INSERT INTO users (username , email , password ,admin )(:username ,:email , :password , :admin);',
-    //     [
-    //         'username' => 'guo',
-    //         'email' => $email,
-    //         'password' => password_hash($password, PASSWORD_BCRYPT),
-    //         'admin' => 0
-    //     ]
-    // );
-
-
+ logIn($user);
+ // توجيه المستخدم إلى الصفحة الرئيسية بعد التسجيل الناجح
+ header("Location: /");
+ die();
     try {
-        $db->query(
-            "INSERT INTO users (
-                username,
-                password,
-                photo,
-                email,
-                type,
-                country,
-                city,
-                street,
-                phone,
-                notifications
-            ) VALUES (
-                :username,
-                :password,
-                :photo,
-                :email,
-                :type,
-                :country,
-                :city,
-                :street,
-                :phone,
-                :notifications
-            )",
-            [
-                'username' => htmlspecialchars($_POST['username']),
-                'password' => password_hash($_POST['password'], PASSWORD_BCRYPT), // Hash the password before saving
-                'photo' => $_POST['photo'],
-                'email' => filter_var($_POST['email'], FILTER_SANITIZE_EMAIL),
-                'type' => $_POST['type'] ?? 'normal', // Default to 'normal' if not provided
-                'country' => htmlspecialchars($_POST['country']),
-                'city' => htmlspecialchars($_POST['city']),
-                'street' => htmlspecialchars($_POST['street']),
-                'phone' => filter_var($_POST['phone'], FILTER_SANITIZE_STRING),
-                'notifications' => isset($_POST['notifications']) ? 1 : 0 // Convert boolean to integer (1 or 0)
-            ]
-        );
-        
-        
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+    
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
         
         
         }catch (PDOException $e) {

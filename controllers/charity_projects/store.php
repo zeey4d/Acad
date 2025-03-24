@@ -208,6 +208,11 @@ try {
             short_description,
             full_description,
             cost,
+<<<<<<< HEAD
+            level,
+            state,
+=======
+>>>>>>> d9515df8d743f516ea3714615bfe30bb60620ae1
             country,
             city,
             street
@@ -228,6 +233,7 @@ try {
             'category_id' => $_POST['category_id'],
             'name' => htmlspecialchars($_POST['name']),
             'photo' => $_POST['photo'],
+            'level' => $_POST['level'],
             'short_description' => htmlspecialchars($_POST['short_description']),
             'full_description' => htmlspecialchars($_POST['full_description']),
             'cost' => filter_var($_POST['cost'], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION),
