@@ -17,90 +17,62 @@
             <form id="donationForm" action="/charity_campaigns_store" method="POST" enctype="multipart/form-data">
                 <!-- نوع الحالة -->
                 <div class="form-group">
-                    <label for="caseType">نوع الحالة:</label>
-                    <select id="caseType" name="caseType" required>
-                        <option value="">اختر نوع الحالة</option>
-                        <option value="سجين">سجين</option>
-                        <option value="أرملة">أرملة</option>
-                        <option value="مريض">مريض</option>
-                        <option value="كفالة يتيم">كفالة يتيم</option>
-                        <option value="مشرد">مشرد</option>
+                    <label for="caseType">نوع الحمله:</label>
+                    <select id="caseType" name="category_id" required>
+                        <option value="1">صحه</option>
+                        <option value="2">تعليم</option>
+                        <option value="3">اغاثة</option>
                     </select>
                 </div>
-
-                    <!--  اضافة حقول مخفيه كي تظابق قاعدة البيانات  -->
-                      <input type="hidden" name="category_id" value="2">
-                      <input type="hidden" name="partner_id" value="2">
-                      <input type="hidden" name="state" value="only">
-                     <!-- داخل الفورم -->
-                     <input type="hidden" name="campaign_request_id" value="1">
-                     <input type="hidden" name="short_description" value="وصف مبدئي">
-                     <input type="hidden" name="end_at" value="<?= date('Y-m-d', strtotime('+30 days')) ?>">
-                     <input type="hidden" name="photo" value="default.jpg">
-                     <input type="hidden" name="name" value="حملة تبرع">
-                     <input type="hidden" name="cost" value="0">
-                     <input type="hidden" name="full_description" value="Ali">
-                     <input type="hidden" name="state" value="0">
- 
- 
                      
                 <!-- الاسم الكامل -->
                 <div class="form-group">
-                    <label for="fullName">الاسم الكامل:</label>
-                    <input type="text" id="fullName" name="fullName" required>
+                    <label for="fullName">الاسم :</label>
+                    <input type="text" id="fullName" name="name" required>
                 </div>
 
-                <!-- العمر -->
                 <div class="form-group">
-                    <label for="age">العمر:</label>
-                    <input type="number" id="age" name="age" min="1" max="120" required>
+                    <label for="caseType">الشريك</label>
+                    <select id="caseType" name="partner_id" required>
+                        <option value="1">الشريك الاول</option>
+                        <option value="2">الشريك الثاني</option>
+                        <option value="3">الشريك الثالث</option>
+                    </select>
                 </div>
 
-                <!-- الظروف -->
                 <div class="form-group">
-                    <label for="circumstances">الظروف:</label>
-                    <textarea id="circumstances" name="circumstances" rows="4" required></textarea>
+                    <label for="fullName">الوصف القصير :</label>
+                    <input type="text" id="fullName" name="short_description" required>
                 </div>
 
-                <!-- المبلغ المطلوب -->
                 <div class="form-group">
-                    <label for="amount">المبلغ المطلوب:</label>
-                    <input type="number" id="amount" name="amount" min="1" required>
+                    <label for="fullName">الوصف المطول :</label>
+                     <textarea name="full_description" id=""></textarea>
                 </div>
 
-                <!-- المستندات الداعمة -->
                 <div class="form-group">
+                    <label for="fullName">الوصف التكلفه :</label>
+                    <input type="number" id="fullName" name="cost" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="fullName">الوصف الحاله :</label>
+                    <input type="hidden" id="fullName" name="state" value="active" required>
+                </div> 
+
+                <div class="form-group">
+                    <label for="fullName">الصوره</label>
+                    <input type="text" id="fullName" name="photo" required>
+                </div> 
+
+                <!-- <div class="form-group">
                     <label for="documents">المستندات الداعمة:</label>
                     <input type="file" id="documents" name="documents" multiple required>
-                </div>
-
-                <!-- صور البطاقة الشخصية -->
-                <div class="form-group">
-                    <label for="idFront">صورة البطاقة الشخصية (من الأمام):</label>
-                    <input type="file" id="idFront" name="idFront" accept="image/*" required>
-                </div>
-                <div class="form-group">
-                    <label for="idBack">صورة البطاقة الشخصية (من الخلف):</label>
-                    <input type="file" id="idBack" name="idBack" accept="image/*" required>
-                </div>
-
-                <!-- معلومات الحساب -->
-                <div class="form-group">
-                    <label for="accountNumber">رقم الحساب:</label>
-                    <input type="text" id="accountNumber" name="accountNumber" required>
-                </div>
-                <div class="form-group">
-                    <label for="bankName">اسم البنك:</label>
-                    <input type="text" id="bankName" name="bankName" required>
-                </div>
-                <div class="form-group">
-                    <label for="accountType">نوع الحساب:</label>
-                    <input type="text" id="accountType" name="accountType" required>
-                </div>
+                </div> -->
 
                 <!-- زر التأكيد -->
-                <div class="form-group">
-                    <button type="submit">تقديم الطلب</button>
+                <div  class="form-group">
+                    <button type="submit" style="background-color: green;"> حفض</button>
                 </div>
             </form>
         </section>

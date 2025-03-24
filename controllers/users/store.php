@@ -141,3 +141,57 @@ if ($user) {
     //         'admin' => 0
     //     ]
     // );
+
+
+    try {
+        $db->query(
+            "INSERT INTO users (
+                username,
+                password,
+                photo,
+                email,
+                type,
+                country,
+                city,
+                street,
+                phone,
+                notifications
+            ) VALUES (
+                :username,
+                :password,
+                :photo,
+                :email,
+                :type,
+                :country,
+                :city,
+                :street,
+                :phone,
+                :notifications
+            )",
+            [
+                'username' => htmlspecialchars($_POST['username']),
+                'password' => password_hash($_POST['password'], PASSWORD_BCRYPT), // Hash the password before saving
+                'photo' => $_POST['photo'],
+                'email' => filter_var($_POST['email'], FILTER_SANITIZE_EMAIL),
+                'type' => $_POST['type'] ?? 'normal', // Default to 'normal' if not provided
+                'country' => htmlspecialchars($_POST['country']),
+                'city' => htmlspecialchars($_POST['city']),
+                'street' => htmlspecialchars($_POST['street']),
+                'phone' => filter_var($_POST['phone'], FILTER_SANITIZE_STRING),
+                'notifications' => isset($_POST['notifications']) ? 1 : 0 // Convert boolean to integer (1 or 0)
+            ]
+        );
+        
+        
+        
+        
+        }catch (PDOException $e) {
+            error_log($e->getMessage());
+            $_SESSION['error'] = "حدث خطأ أثناء حفظ البعانات";
+            header("Location: /charity_projects_create");
+            exit();
+        }
+        
+    
+    header("Location: " . $_SERVER["HTTP_REFERER"]);
+    die();

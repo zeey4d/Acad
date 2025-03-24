@@ -26,36 +26,36 @@ if (! empty($errors)) {
 // $db->query("INSERT INTO charity_projects (name) VALUES (:name)", [
 //     'name' => $_POST['name'],
 // ]);
-$partner_id = $db->query("INSERT INTO projects ( partner_id,  category_id,  level,  name,  photo,  short_description,  full_description,  type,  cost,  start_at,  end_at,  state,  directorate)
-VALUES
-    (
-    :partner_id,
-    :category_id,
-    :level,
-    :name,
-    :photo,
-    :short_description,
-    :full_description,
-    :type, :cost,
-    now(),
-    :end_at,
-    :state,
-    :directorate
-    )",
-    [
-        'partner_id' => $_POST['partner_id'],
-        'category_id'=> $_POST['category_id'],
-        'name' => $_POST['name'],
-        'photo' => $_POST['photo'],
-        'level' => $_POST['level'],
-        'short_description' => $_POST['short_description'],
-        'full_description' => $_POST['full_description'],
-        'type' => $_POST['type'],
-        'cost' => $_POST['cost'],
-        'end_at' => $_POST['end_at'],
-        'state' => $_POST['state'],
-        'directorate' => $_POST['directorate']
-    ])->getGeneratedKey('project_id');
+// $partner_id = $db->query("INSERT INTO projects ( partner_id,  category_id,  level,  name,  photo,  short_description,  full_description,  type,  cost,  start_at,  end_at,  state,  directorate)
+// VALUES
+//     (
+//     :partner_id,
+//     :category_id,
+//     :level,
+//     :name,
+//     :photo,
+//     :short_description,
+//     :full_description,
+//     :type, :cost,
+//     now(),
+//     :end_at,
+//     :state,
+//     :directorate
+//     )",
+//     [
+//         'partner_id' => $_POST['partner_id'],
+//         'category_id'=> $_POST['category_id'],
+//         'name' => $_POST['name'],
+//         'photo' => $_POST['photo'],
+//         'level' => $_POST['level'],
+//         'short_description' => $_POST['short_description'],
+//         'full_description' => $_POST['full_description'],
+//         'type' => $_POST['type'],
+//         'cost' => $_POST['cost'],
+//         'end_at' => $_POST['end_at'],
+//         'state' => $_POST['state'],
+//         'directorate' => $_POST['directorate']
+//     ])->getGeneratedKey('project_id');
 
 
  // استقبال البيانات المطابقة لقاعدة البيانات 
@@ -168,50 +168,7 @@ VALUES
 // );
 
 // // إدخال البيانات في قاعدة البيانات
-// try {
-//     $db->query(
-//         "INSERT INTO campaigns (
-//             category_id,
-//             partner_id,
-//             name,
-//             full_description,
-//             cost,
-//             state,
-//             bank_account,
-//             identity_documents,
-//             age,
-//             case_type,
-//             id_front,
-//             id_back
-//         ) VALUES (
-//             :category_id,
-//             :partner_id,
-//             :name,
-//             :full_description,
-//             :cost,
-//             :state,
-//             :bank_account,
-//             :identity_documents,
-//             :age,
-//             :case_type,
-//             :id_front,
-//             :id_back
-//         )",
-//         [
-//             'category_id' => $_POST['category_id'],
-//             'partner_id' => $_POST['partner_id'],
-//             'name' => htmlspecialchars($_POST['fullName']),
-//             'full_description' => htmlspecialchars($_POST['circumstances']),
-//             'cost' => filter_var($_POST['amount'], FILTER_SANITIZE_NUMBER_INT),
-//             'state' => $_POST['state'],
-//             'bank_account' => encryptData($_POST['accountNumber']), // دالة تشفير مخصصة
-//             'identity_documents' => json_encode($documentPaths),
-//             'age' => filter_var($_POST['age'], FILTER_SANITIZE_NUMBER_INT),
-//             'case_type' => htmlspecialchars($_POST['caseType']),
-//             'id_front' => $idFrontName,
-//             'id_back' => $idBackName
-//         ]
-//     );
+
     
 //     $_SESSION['success'] = "تم تقديم الطلب بنجاح";
 //     header('Location: /charity_campaigns');
@@ -239,3 +196,62 @@ VALUES
 //     require "views/pages/charity_campaigns/create_view.php";
 //     die();
 // }
+
+
+try {
+    $db->query(
+        "INSERT INTO projects (
+            partner_id,
+            category_id,
+            name,
+            photo,
+            short_description,
+            full_description,
+            cost,
+            state,
+            country,
+            city,
+            street
+        ) VALUES (
+            :partner_id,
+            :category_id,
+            :name,
+            :photo,
+            :short_description,
+            :full_description,
+            :cost,
+            :country,
+            :city,
+            :street
+        )",
+        [
+            'partner_id' => $_POST['partner_id'],
+            'category_id' => $_POST['category_id'],
+            'name' => htmlspecialchars($_POST['name']),
+            'photo' => $_POST['photo'],
+            'short_description' => htmlspecialchars($_POST['short_description']),
+            'full_description' => htmlspecialchars($_POST['full_description']),
+            'type' => htmlspecialchars($_POST['type']),
+            'cost' => filter_var($_POST['cost'], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION),
+            'start_at' => $_POST['start_at'] ?? date('Y-m-d H:i:s'), // Default to current timestamp
+            'stop_at' => $_POST['stop_at'] ?? null,
+            'end_at' => $_POST['end_at'] ?? null,
+            'state' => $_POST['state'] ?? 'active', // Default value if not provided
+            'directorate' => htmlspecialchars($_POST['directorate']),
+            'country' => htmlspecialchars($_POST['country']),
+            'city' => htmlspecialchars($_POST['city']),
+            'street' => htmlspecialchars($_POST['street'])
+        ]
+    );
+    
+    }catch (PDOException $e) {
+        error_log($e->getMessage());
+        $_SESSION['error'] = "حدث خطأ أثناء حفظ البعانات";
+        header("Location: /charity_projects_create");
+        exit();
+    }
+
+
+header("Location: " . $_SERVER["HTTP_REFERER"]);
+die();
+

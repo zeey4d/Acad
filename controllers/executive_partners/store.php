@@ -12,38 +12,38 @@ $errors = [];
 //}
 // if (!(Validator::string($_POST['body'], 1, 1000))) {
 //     $errors["titel"] = " body is too short or long";
-if(isset($_POST["submit"])){
+// if(isset($_POST["submit"])){
    
-    $file = $_FILES['partner-logo']['name'];
-    $tmp = $_FILES['partner-logo']['tmp_name'];
-    $size = $_FILES['partner-logo']['size'];
-    $type = $_FILES['partner-logo']['type'];
-    $error = $_FILES['partner-logo']['error'];
-    $fileExt = explode('.', $file);
-    $fileActual=strtolower(end($fileExt));
-    $allow=array('jpg','jpeg','png','pdf');
-    // echo$fileActual;
-    // echo"great";
-    if(in_array($fileActual, $allow)){
-        if($error === 0){
-          if($size < 10000000){
-            $filenamenew=uniqid('',true).".".$fileActual;
-            $fileDestination = __DIR__ . '/../../views/media/uploads/' . $filenamenew;
+//     $file = $_FILES['partner-logo']['name'];
+//     $tmp = $_FILES['partner-logo']['tmp_name'];
+//     $size = $_FILES['partner-logo']['size'];
+//     $type = $_FILES['partner-logo']['type'];
+//     $error = $_FILES['partner-logo']['error'];
+//     $fileExt = explode('.', $file);
+//     $fileActual=strtolower(end($fileExt));
+//     $allow=array('jpg','jpeg','png','pdf');
+//     // echo$fileActual;
+//     // echo"great";
+//     if(in_array($fileActual, $allow)){
+//         if($error === 0){
+//           if($size < 10000000){
+//             $filenamenew=uniqid('',true).".".$fileActual;
+//             $fileDestination = __DIR__ . '/../../views/media/uploads/' . $filenamenew;
 
-            echo $fileDestination;
-            move_uploaded_file($tmp,$fileDestination);
-          }else{
-            echo "your file is too big";
-          }
-        }else{  
-            echo "there was an error uploading your file";
-        }
-    } else{
-       echo "you are not allow to uplaod file";
-    }
-} else{
-    echo "error";
-}
+//             echo $fileDestination;
+//             move_uploaded_file($tmp,$fileDestination);
+//           }else{
+//             echo "your file is too big";
+//           }
+//         }else{  
+//             echo "there was an error uploading your file";
+//         }
+//     } else{
+//        echo "you are not allow to uplaod file";
+//     }
+// } else{
+//     echo "error";
+// }
 
 
 
@@ -76,15 +76,15 @@ if(isset($_POST["submit"])){
 //     'name' => $_POST['name'],
 // ]);
 
-$name = $_POST['name'];
-$logo = $_POST['logo'];
-$description = $_POST['description'];
-$more_information = $_POST['more_information'];
-$email = $_POST['email'];
-$directorate = $_POST['directorate'];
-$county = $_POST['county'];
-$city = $_POST['city'];
-$street = $_POST['street'];
+// $name = $_POST['name'];
+// $logo = $_POST['logo'];
+// $description = $_POST['description'];
+// $more_information = $_POST['more_information'];
+// $email = $_POST['email'];
+// $directorate = $_POST['directorate'];
+// $county = $_POST['county'];
+// $city = $_POST['city'];
+// $street = $_POST['street'];
 
 
 // التحقق من الحقول المطلوبة
@@ -142,29 +142,8 @@ if (! empty($errors)) {
     die();
 }
 
-$partner_id = $db->query("INSERT into partners(name, logo, description, more_information, email, directorate, county, city, street)
-values
-(
-    :name,
-    :logo,
-    :description,
-    :more_information,
-    :email,
-    :directorate,
-    :county,
-    :city,
-    :street
-) RETURNING partner_id", [
-    'name' => $_POST['name'],
-    'logo' => $_POST['logo'],
-    'description' => $_POST['description'],
-    'more_information' => $_POST['more_information'],
-    'email' => $_POST['email'],
-    'directorate' => $_POST['directorate'],
-    'county' => $_POST['county'],
-    'city' => $_POST['city'],
-    'street' => $_POST['street']
-])->getGeneratedKey('partner_id');
+
+    
 
 // إدخال أرقام الهواتف
 // if (isset($_POST['phones']) && is_array($_POST['phones'])) {
@@ -209,7 +188,57 @@ values
 // 
 // 
 // 
-header("Location: /executive_partners_index");
+
+
+try {
+    $db->query(
+        "INSERT INTO partners (
+            name,
+            description,
+            more_information,
+            email,
+            directorate,
+            country,
+            city,
+            street,
+            phone,
+            photo
+        ) VALUES (
+            :name,
+            :description,
+            :more_information,
+            :email,
+            :directorate,
+            :country,
+            :city,
+            :street,
+            :phone,
+            :photo
+        )",
+        [
+            'name' => htmlspecialchars($_POST['name']),
+            'description' => htmlspecialchars($_POST['description']),
+            'more_information' => htmlspecialchars($_POST['more_information']),
+            'email' => filter_var($_POST['email'], FILTER_SANITIZE_EMAIL),
+            'directorate' => htmlspecialchars($_POST['directorate']),
+            'country' => htmlspecialchars($_POST['country']),
+            'city' => htmlspecialchars($_POST['city']),
+            'street' => htmlspecialchars($_POST['street']),
+            'phone' => filter_var($_POST['phone'], FILTER_SANITIZE_STRING),
+            'photo' => $_POST['photo']
+        ]
+    );
+    
+    
+    }catch (PDOException $e) {
+        error_log($e->getMessage());
+        $_SESSION['error'] = "حدث خطأ أثناء حفظ البعانات";
+        header("Location: /charity_projects_create");
+        exit();
+    }
+
+
+header("Location: " . $_SERVER["HTTP_REFERER"]);
 die();
 
 
