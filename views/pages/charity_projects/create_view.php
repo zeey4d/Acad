@@ -12,32 +12,38 @@
                 <!-- نوع الحالة -->
                 <div class="form-group">
                     <label for="caseType">نوع الحالة:</label>
-                    <select id="caseType" name="caseType" required>
+                    <select id="caseType" name="category_id" required>
                         <option value="">اختر نوع الحالة</option>
-                        <option value="سجين">سجين</option>
-                        <option value="أرملة">أرملة</option>
-                        <option value="مريض">مريض</option>
-                        <option value="كفالة يتيم">كفالة يتيم</option>
-                        <option value="مشرد">مشرد</option>
+                        <option value="1">سجين</option>
+                        <option value="2">أرملة</option>
+                        <option value="3">مريض</option>
+                        <option value="4">كفالة يتيم</option>
+                        <option value="5">مشرد</option>
                     </select>
                 </div>
 
+
                    <!--  اضافة حقول مخفيه كي تظابق قاعدة البيانات  -->
-                   <input type="hidden" name="category_id" value="0">
-                   <input type="hidden" name="partner_id" value="0">
-                    <input type="hidden" name="state" value="0">
-  
-                <!-- الاسم الكامل -->
+                  
+                   <input type="hidden" name="partner_id" value="7">
+                     <input type="hidden" id="place" type="text" name="country" placeholder="الدولة"><br>
+                     <input type="hidden"id="place" type="text" name="city" placeholder="المدينه"><br>
+                     <input type="hidden" id="place" type="text" name="street" placeholder="الشارع"><br>
+                    <input type="hidden" id="type" type="text" name="type" placeholder="type"><br>
+                    <input type="hidden" id="directorate" type="text" name="directorate" placeholder="directorate"><br>
+                    <input type="hidden" id="level" type="text" name="level" placeholder="level"><br>
+               
+                     <!-- الاسم الكامل -->
                 <div class="form-group">
                     <label for="fullName">الاسم الكامل:</label>
-                    <input type="text" id="fullName" name="fullName" required>
+                    <input type="text" id="fullName" name="name" required>
                 </div>
 
                 <!-- العمر -->
-                <div class="form-group">
-                    <label for="age">العمر:</label>
-                    <input type="number" id="age" name="age" min="1" max="120" required>
-                </div>
+               <div class="form-group">
+                   <label for="age">العمر:</label>
+                   <input type="number" id="age" name="age" min="1" max="120" required>
+               </div>
 
                 <!-- الظروف -->
                 <div class="form-group">
@@ -45,27 +51,48 @@
                     <textarea id="circumstances" name="circumstances" rows="4" required></textarea>
                 </div>
 
+                
                 <!-- المبلغ المطلوب -->
                 <div class="form-group">
                     <label for="amount">المبلغ المطلوب:</label>
-                    <input type="number" id="amount" name="amount" min="1" required>
+                    <input type="number" id="amount" name="cost" min="1" required>
                 </div>
+
+
+                <div class="form-group">
+                   <label for="fullName"> الوصف الطويل :</label>
+                   <input type="text" id="fullName" name="full_description" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="fullName">الوصف القصير :</label>
+                    <input type="text" id="fullName" name="short_description" required>
+               </div>
+
+
+
+
 
                 <!-- المستندات الداعمة -->
+                <!-- <div class="form-group"> -->
+                    <!-- <label for="documents">المستندات الداعمة:</label> -->
+                    <!-- <input type="file" id="documents" name="documents" multiple required> -->
+                <!-- </div> -->
+
                 <div class="form-group">
-                    <label for="documents">المستندات الداعمة:</label>
-                    <input type="file" id="documents" name="documents" multiple required>
-                </div>
+                  <label for="fullName">الصوره</label>
+                  <input type="text" id="fullName" name="photo" required>
+               </div> 
 
                 <!-- صور البطاقة الشخصية -->
-                <div class="form-group">
-                    <label for="idFront">صورة البطاقة الشخصية (من الأمام):</label>
-                    <input type="file" id="idFront" name="idFront" accept="image/*" required>
-                </div>
-                <div class="form-group">
-                    <label for="idBack">صورة البطاقة الشخصية (من الخلف):</label>
-                    <input type="file" id="idBack" name="idBack" accept="image/*" required>
-                </div>
+                <!-- <div class="form-group"> -->
+                    <!-- <label for="idFront">صورة البطاقة الشخصية (من الأمام):</label> -->
+                    <!-- <input type="file" id="idFront" name="idFront" accept="image/*" required> -->
+                <!-- </div> -->
+                <!-- <div class="form-group"> -->
+                    <!-- <label for="idBack">صورة البطاقة الشخصية (من الخلف):</label> -->
+                    <!-- <input type="file" id="idBack" name="idBack" accept="image/*" required> -->
+                <!-- </div> -->
 
                 <!-- معلومات الحساب -->
                 <div class="form-group">
@@ -83,7 +110,7 @@
 
                 <!-- زر التأكيد -->
                 <div class="form-group">
-                    <button type="submit">تقديم الطلب</button>
+                    <button type="submit" style="background-color: green;">تقديم الطلب</button>
                 </div>
             </form>
         </section>

@@ -15,12 +15,11 @@
                 <form id="add-partner-form" action="/executive_partners_store" method="post" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="partner-name">اسم الشريك:</label>
-
-                        <input type="text" id="partner-name" name="partner-name" required>
+                        <input type="text" id="partner-name" name="name" required>
                     </div>
                     <div class="form-group">
                         <label for="partner-region">المدينة:</label>
-                        <input type="text" id="partner-region" name="partner-region" required>
+                        <input type="text" id="partner-region" name="city" required>
 
                     </div>
 
@@ -29,20 +28,22 @@
                     <input type="hidden" name="street" value="0">
                      <input type="hidden" name="country" value="0">
                      <input type="hidden" name="directorate" value="0">
+                     <input type="hidden" id="partner-region" name="phone" required>
+
                     </div>
 
                     <div class="form-group">
                         <label for="partner-email">البريد الإلكتروني:</label>
 
-                        <input type="email" id="partner-email"  name="partner-email"required>
+                        <input type="email" id="partner-email"  name="email"required>
                     </div>
                     <div class="form-group">
                         <label for="partner-description">عرف نفسك:</label>
-                        <textarea id="partner-description"  name="partner-description"rows="4" required></textarea>
+                        <textarea id="partner-description"  name="description"rows="4" required></textarea>
                     </div>
                     <div class="form-group">
                         <label for="partner-contact">بيانات التواصل الإضافية:</label>
-                        <textarea id="partner-contact" rows="4" name="partner-contact" required></textarea>
+                        <textarea id="partner-contact" rows="4" name="more_information" required></textarea>
 
                     </div>
                     <button type="submit" name="submit">إضافة</button>
@@ -53,7 +54,7 @@
               <img src="" alt="">
                         <label for="partner-logo">الشعار:</label>
 
-                        <input type="file" id="partner-logo"  name="partner-logo"accept="image/*"  required>
+                        <input type="file" id="partner-logo"  name="photo"accept="image/*"  required>
 
                     </div></div>
                  

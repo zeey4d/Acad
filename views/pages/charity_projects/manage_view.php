@@ -54,16 +54,16 @@
               <nav class="options">
         <ul>
             <li>
-                <form action="/islamic_endowments_manage" method="get"><input type="hidden" name="" value=""><a  href="#" >عرض</a></form>
+                <form action="/islamic_endowments_manage" method="post" type="hidden" name="" value=""><button type="submit" >عرض</button></form>
             </li>
             <li>
-                <form action="/charity_projects_manage" method="get"><input type="hidden" name="" value=""><a href="#" >تعديل</a></form>
+                <form action="/charity_projects_manage" method="get"><input type="hidden" name="" value=""><button type="submit" >تعديل</button></form>
             </li>
             <li>
-                <form action="/notifications_manage" method="get"><input type="hidden" name="" value=""><a href="#" style="    color: red;" >حدف</a></form>
+                <form action="/notifications_manage" method="get"><input type="hidden" name="" value=""><button type="submit" style="    color: red;" >حدف</button></form>
             </li>
             <li>
-                <form action="/users_manage" method="get"><input type="hidden" name="" value=""><a href="#">اشعار</a></form>
+                <form action="/users_manage" method="get"><input type="hidden" name="" value=""><button type="submit">اشعار</button></form>
             </li>
 
         </ul>
@@ -94,63 +94,7 @@
           </tbody>
         </table>
       
-        <!-- جدول الحملات المقدمة -->
-        <h2>الحملات المقدمة</h2>
-        <table class="campaigns-table">
-          <thead>
-            <tr>
-              <th><input type="checkbox" id="select-all"></th>
-              <th>الشعار</th>
-              <th>اسم الحملة</th>
-              <th>وصف الحملة</th>
-              <th>المبلغ المستهدف / المجموع</th>
-              <th>تاريخ التسجيل/ الانتهاء</th>
-              <!-- <th>التقارير</th> -->
-              <!-- <th>الخيارات</th> -->
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><input type="checkbox" class="select-campaign"></td>
-              <td><img src="" alt="شعار الحملة" class="campaign-logo"></td>
-              <td>حملة 2 
-              <nav class="options">
-        <ul>
-            <li>
-                <form action="/islamic_endowments_manage" method="get"><input type="hidden" name="" value=""><a  href="#" >عرض</a></form>
-            </li>
-            <li>
-                <form action="/charity_projects_manage" method="get"><input type="hidden" name="" value=""><a href="#" >تعديل</a></form>
-            </li>
-            <li>
-                <form action="/notifications_manage" method="get"><input type="hidden" name="" value=""><a href="#" style="    color: red;" >حدف</a></form>
-            </li>
-            <li>
-                <form action="/users_manage" method="get"><input type="hidden" name="" value=""><a href="#">اشعار</a></form>
-            </li>
-
-        </ul>
-    </nav> 
-              </td>
-              <td>وصف الحملة 2</td>
-              <td><span>458148 ريال سعودي$</span> / <span>41518 ريال سعودي$</span></td>
-              <td><span>30/12/2024</span> - <span>30/12/2025</span></td>
-              <!-- <td><button class="show_color_green">عرض</button></td> -->
-              <!-- <td>
-                <div class="dropdown">
-                  <button class="dropdown-btn">خيارات</button>
-                  <div class="dropdown-content">
-                    <a href="#" class="btn_accept_campaign">قبول الحملة</a>
-                    <a href="#" class="btn_refusal_campaign">رفض الحملة</a>
-                    <a href="#" class="btn_post_notifications">نشر إشعار</a>
-                    <a href="#" class="view-reports">عرض التقارير</a>
-                    <a href="#" class="add-report">إضافة تقرير</a>
-                  </div>
-                </div>
-              </td> -->
-            </tr>
-          </tbody>
-        </table>
+   
         </section>
       </main>
 <?php require('views/parts/footer.php') ?>
