@@ -133,5 +133,5 @@
         </section>
     </main>
 
-
+    <?php require('views/parts/footer.php') ?>
 
