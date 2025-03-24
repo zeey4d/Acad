@@ -9,7 +9,7 @@ $db = App::resolve(Database::class);
 $heading = "All My tests";
 $notifications = $db->query(
     "SELECT * from notifications;"
-)->findOrFail();
+)->fetchAll();
 
 
 // $notifications = $db->query(

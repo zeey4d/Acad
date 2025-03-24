@@ -1,5 +1,5 @@
 <?php
-$heading = "Edit test";
+$heading = "Create ";
 
 use core\App ;
 use core\Database ;
@@ -8,52 +8,45 @@ use core\Database ;
 $db = App::resolve(Database::class);
 
 
-$userID = 1;
+try {
+    $categories = $db->query(
+        "SELECT * FROM categories"
+    )->fetchAll(); // Fetch all rows from the query result 
+    $partners = $db->query(
+        "SELECT * FROM partners"
+    )->fetchAll(); // Fetch all rows from the query result
+    $endowments = $db->query(
+        "SELECT 
+            A.category_id,
+            A.partner_id,
+            A.name,
+            A.short_description,
+            A.full_description,
+            A.cost,
+            sum(B.cost) as donate_cost,
+            max(B.donate_date) as donate_date,
+            A.start_at,
+            A.end_at,
+            A.state,
+            A.directorate,
+            A.city,
+            A.street,
+            A.photo
+        FROM endowments A JOIN users_donate_endowments B ON (A.endowment_id = B. endowment_id)
+        GROUP BY(A.endowment_id)
+        HAVING A.endowment_id = : endowment_id
+        ORDER BY donate_date DESC
+        ",[
+            'endowment_id' => $_GET['endowment_id']
+        ]
+    );
 
-$endowments = $db->query("SELECT * from endowments where endowment_id = :endowment_id ", [
-    'endowment_id' => $_GET['endowment_id']
-])->findOrFail();
-
-// $item = $db->query("SELECT * from islamic_endowments where id = :id ", [
-//   'id' => $_GET['id'],
-// ])->findOrFail();
-$db->query(
-    "
-    UPDATE endowments SET
-    (
-        category_id = :category_id,
-        partner_id = :partner_id,
-        name = :name,
-        short_description = :short_description,
-        full_description = :full_description,
-        cost = :cost,
-        start_at = :start_at,
-        end_at = :end_at,
-        state = :state,
-        directorate = :directorate,
-        city = :city,
-        street = :street,
-        photo  = :photo
-    )where endowment_id = :endowment_id
-    ", [
-        'category_id' => $_POST['category_id'],
-        'partner_id' => $_POST['partner_id'],
-        'name' => $_POST['name'],
-        'short_description' => $_POST['short_description'],
-        'full_description' => $_POST['full_description'],
-        'cost' => $_POST['cost'],
-        'start_at' => $_POST['start_at'],
-        'end_at' => $_POST['end_at'],
-        'state' => $_POST['state'],
-        'directorate' => $_POST['directorate'],
-        'city' => $_POST['city'],
-        'street' => $_POST['street'],
-        'photo' => $_POST['photo'],
-        'endowment_id' => $_GET['endowment_id']
-    ]
-);
-
-//authorize($item['other_id'] == $userID);
+} catch (PDOException $e) {
+    error_log($e->getMessage());
+    $_SESSION['error'] = "حدث خطأ أثناء حفظ البعانات";
+    header("Location: /charity_campaigns_create");
+    exit();
+}
 
 
 

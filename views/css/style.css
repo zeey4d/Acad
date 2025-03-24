@@ -1459,7 +1459,7 @@ h2 {
 
   }
   
-  #add-campaign {
+  .add-link {
     background-color: var(--button-bg-h);
     padding: var(--padding-s);
     color: white;
