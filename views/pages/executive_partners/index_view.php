@@ -41,10 +41,13 @@
                 </tr>
             </thead>
             <tbody>
+                
+            <?php foreach ($partners as $partner): ?>
+
                 <tr>
                     <td><input type="checkbox" class="select-partner"></td>
-                    <td><img src="logo1.png" alt="شعار الشريك 1" class="partner-logo"></td>
-                    <td>شركة التقنية
+                    <td><img src="views/media/images/<?= htmlspecialchars($partner['logo'] ?? "11.png") ?>" alt="شعار الشريك 1" class="partner-logo"></td>
+                    <td><?= htmlspecialchars($partner['name']) ?>
                     <nav class="options">
         <ul>
             <li>
@@ -79,7 +82,7 @@
                         </div>
                     </td> -->
                 </tr>
-                <tr>
+                <!-- <tr>
                     <td><input type="checkbox" class="select-partner"></td>
                     <td><img src="views/media/uploads/67dcbd064e6894.78416477.jpg" alt="شعار الشريك 2" class="partner-logo"></td>
                     <td>شركة التعليم     
@@ -105,7 +108,7 @@
     </nav></td>
                     <td>وصف قصير عن الشريك الثاني.</td>
                     
-                    <!-- <td>
+                     <td>
                         <div class="dropdown">
                             <button class="dropdown-btn">خيارات</button>
                             <div class="dropdown-content">
@@ -116,10 +119,10 @@
                                 <a href="#" class="add-report">إضافة تقرير</a>
                             </div>
                         </div>
-                    </td> -->
+                    </td> 
                 </tr>
             </tbody>
-        </table>
+        </table> -->
         </section>
 
         <!-- بطاقات الشركا التنفيذيين -->

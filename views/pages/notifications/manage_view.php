@@ -41,9 +41,12 @@
             </tr>
           </thead>
           <tbody>
+
+          <?php foreach ($notifications as $notification): ?>
+
             <tr>
               <td><input type="checkbox" class="select-campaign"></td>
-              <td><img src="" alt="شعار الحملة" class="campaign-logo"></td>
+              <td><img src="views/media/images/<?= htmlspecialchars($notification['photo'] ?? "11.png") ?>" alt="شعار الحملة" class="campaign-logo"></td>
               <td>حملة 1</td>
               <td>وصف الحملة 1</td>
               <td>إغاثة</td>
@@ -64,6 +67,9 @@
                 </div>
               </td>
             </tr>
+
+            <?php endforeach; ?>
+
           </tbody>
         </table>
       

@@ -104,7 +104,39 @@ foreach($_POST['campaigns'] as $campaign){
         );// ارسال الاشعارات
     }
 }
-header("Location: /pages/notifications");
+
+
+
+
+
+try {
+    $db->query(
+        "INSERT INTO notifications (
+            title,
+            content,
+            send_at,
+            photo
+        ) VALUES (
+            :title,
+            :content,
+            :send_at,
+            :photo
+        )",
+        [
+            'title' => htmlspecialchars($_POST['title']),
+            'content' => htmlspecialchars($_POST['content']),
+            'send_at' => $_POST['send_at'] ?? date('Y-m-d H:i:s'), // Default to current timestamp
+            'photo' => $_POST['photo']
+        ]
+    );
+    
+    }catch (PDOException $e) {
+        error_log($e->getMessage());
+        $_SESSION['error'] = "حدث خطأ أثناء حفظ البعانات";
+        header("Location: /charity_projects_create");
+        exit();
+    }
+    
+
+header("Location: " . $_SERVER["HTTP_REFERER"]);
 die();
-
-

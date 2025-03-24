@@ -11,7 +11,7 @@
             <h3 style="color: var(--font-color-bh);
         font-size: var(--font-size-xl);">التفاصيل</h3>
             <div class="imgs">
-            <img src="views/media/images/<?php  echo $projects['photo'] ?? "11.png" ?>" alt=" " loading="lazy"></div>
+            <img src="views/media/images/<?php  echo $campaigns['photo'] ?? "11.png" ?>" alt=" " loading="lazy"></div>
             <div><div></div></div>
             <h5>عمليات جراحيه</h5>
             <p>يسعى المشروع الى علاج ذوي الحاجه المصابين بالمياه الزرقاء</p>
@@ -43,7 +43,7 @@
         <h6>المبلغ الذي تم جمعة</h6>
         <p> <?php echo $campaigns['collected_money']?> ر.س</p>
         <h6>الوقت المتبقي</h6>
-        <p>60 يوم</p>
+        <p><?php echo ceil((strtotime($campaigns['end_at']) - strtotime($campaigns['start_at'])) / (60 * 60 * 24)) ?> يوم</p>
         </div>
     </div>
     <h5>مراحل المشروع</h5>

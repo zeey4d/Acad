@@ -44,10 +44,13 @@
             </tr>
           </thead>
           <tbody>
+
+          <?php foreach ($projects as $project): ?>
+
             <tr>
               <td><input type="checkbox" class="select-campaign"></td>
-              <td><img src="" alt="شعار الحملة" class="campaign-logo"></td>
-              <td>حملة 1
+              <td><img src="views/media/images/<?= htmlspecialchars($projects['photo'] ?? "11.png") ?>" alt="شعار الحملة" class="campaign-logo"></td>
+              <td><?= htmlspecialchars($project['name']) ?>
               <nav class="options">
         <ul>
             <li>
@@ -66,10 +69,10 @@
         </ul>
     </nav>              
               </td>
-              <td>وصف الحملة 1</td>
+              <td><?= htmlspecialchars($project['short_description']) ?></td>
               <td>إغاثة</td>
-              <td><span>70000$</span> / <span>35000$</span></td>
-              <td><span>30/12/2024</span> - <span>30/12/2025</span></td>
+              <td><span><?= htmlspecialchars($project['cost']) ?>$</span> / <span><?= htmlspecialchars($project['collected_money']) ?>$</span></td>
+              <td><span><?= htmlspecialchars($project['start_at']) ?></span> - <span><?= htmlspecialchars($project['end_at']) ?></span></td>
               <!-- <td><button class="show_color_green">عرض</button></td> -->
               <!-- <td>
                 <div class="dropdown">
@@ -85,6 +88,9 @@
                 </div>
               </td> -->
             </tr>
+
+            <?php endforeach; ?>
+
           </tbody>
         </table>
       
