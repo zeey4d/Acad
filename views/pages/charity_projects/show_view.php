@@ -2,58 +2,92 @@
 <?php require('views/parts/adminbar.php') ?>
 <?php require('views/parts/navgtion.php') ?>
 <?php require('views/parts/header.php') ?>
-<main>
-  <section class="card_islamic_endowments">
 
-  </section>
-  <!-- باقي البينات -->
-  <section class="card_islamic_endowments">
-    <div class="main_image">
-      <h3>التفاصيل</h3>
-      <img src="views/media/images/<?php  echo $projects['photo'] ?? "11.png" ?>" alt=" " loading="lazy">
-      <span><?php echo ($projects['collected_money']/$projects['cost'])*100 ?>% مكتمل</span>
-      <p>يسعى المشروع الى <?php echo $projects['name']?> </p>
-      <p>
-        <h4>تفاصيل تكاليف العمليات</h4>
-        <strong>الفحوصات الطبية</strong>
-        <strong>العمليات الجراحية</strong>
-        <strong>الادوية </strong>
-      </p>
+<main class="main_show_ch">
+            <section class="card_islamic_endowments">
+            <!-- <h3 style="color: var(--font-color-bh);
+        font-size: var(--font-size-xl);">التفاصيل</h3> -->
+            <div class="imgs">
+            <img src="views/media/images/<?php  echo $campaigns['photo'] ?? "11.png" ?>" alt=" " loading="lazy"></div>
+            <p class="localshin">المنطقة تعز</p>
+            <h5>عمليات جراحيه</h5>
+            <p class="details_p">يسعى المشروع الى علاج ذوي الحاجه المصابين بالمياه الزرقاء</p>
+            <h5>رقم الحملة :</h5>
+            <div class="progress-bar">
+                <div class="progress"></div>
+              </div>
+              <div class="donation-details">
+                <div >
+                  <p><strong style="display: inline;">SR/</strong></p>
+                  <p style="text-align: right;">المبلغ المتبقي</p>
+                  <p style="text-align: right;">محمع التبراعات</p>
+                </div>
+              </div>  
+
+            <div class="details_show_ch">
+                <h5>تفاصيل تكاليف العمليات</h5>
+                <p>الفحوصات الطبية</p>
+                <p>العمليات الجراحية</p>
+                <p>الادوية</p>
+        </div>
+        <div class="card_insid" id="card_insid">
+        <div>
+        <h6>نوع المشروع</h6>
+        <p>علاجي</p>
+        <h6>المبلغ المستهدف</h6>
+        <p> ر.س</p>
+        <h6>عدد المتبرعين</h6>
+        <p>8000</p>
+        </div>
+        <div>
+        <h6>عدد المستفيدين</h6>
+        <p>100 محتاج</p>
+        <h6>المبلغ الذي تم جمعة</h6>
+        <p> ر.س</p>
+        <h6>الوقت المتبقي</h6>
+        <p>يوم</p>
+        </div>
+    </div>
+
+
+
+
+</section>
+<!-- باقي البينات -->
+<section class="card_islamic_endowments" id="card_islamic_endowments">
+
+    <h5>مراحل المشروع</h5>
+    <div class="card_insid" id="card_insid2">
+        <div>
+        <p>المرحلة الاولى </p>
+        <p>المرحلة الثانية </p>
+        <p>المرحلة الثالثة</p>
+        </div>
+        <div><br><br>
+        
+        <p>تاريخ البدء  : </p>
+        <p>تاريخ الانتهاء  </p>
       
+        </div>
     </div>
-    <div class="data">
-      <p><img src="" alt=""> نوع المشروع <span><?php echo $projects['type']?></span></p>
-      <p><img src="" alt=""> المبلغ المستهدف<span><?php echo $projects['cost']?>ر.س</span></p>
-      <p><img src="" alt=""> عدد المتبرعين<span>8000</span></p>
-      <p><img src="" alt=""> عدد المستفيدين<span>100 محتاج</span></p>
-      <p><img src="" alt="">المبلغ الذي تم جمعه<span><?php echo $projects['collected_money']?>ر.س</span></p>
-      <p><img src="" alt=""> الوقت المتبقي<span><?php echo ceil((strtotime($projects['end_at']) - strtotime($campaigns['start_at'])) / (60 * 60 * 24)) ?> يوم</span></p>
-      <p>
-        <h4>مراحل المشروع</h4>
-        <span>المرحلة الاولى </span>
-        <span>المرحلة الثانية</span>
-        <span>المرحلة الثالثة</span>
-      </p>
-      <p>
-        <span>تاريخ البدء :</span> <strong><?php echo $projects['start_at']?></strong>
-        <span>تاريخ الانتهاء :</span> <strong><?php echo $projects['end_at']?></strong>
-      </p>
-      <p><span><?php echo ($projects['collected_money']/$projects['cost'])*100 ?>%</span>تم جمع <?php echo ($projects['collected_money']/$projects['cost'])*100 ?>% من التبرعات</p>
-      <p><img src="" alt="">تم الانتهاء من المرحلة الاولى</p>
-
+    <h5>اخبار المشروع</h5>
+    <div class="news" >
+        <div>30%<p>تم جمع 30% من التبرعات</p></div>
+        <div>30%<p>تم الانتهاء من المرحله الاولى </p></div>
     </div>
 
-  </section>
+    <section class="bar_actions">
+<div class="donation-box">
+        <h3>مبلغ التبرع</h3>
+        <div style="display: flex;">
+        <input type="number" id="customAmount" placeholder="قيمة المبلغ" oninput="updateDonateButton()">
+        <a class="icon_nav_search" id="icon_nav_search" href=""><img class="icon_img" style="width: 30px; height: 30px ;padding: var(--padding-s);" src="views/media/images/cart.png" alt=""></a>
+        </div>
+        <button id="donate">تبرع الآن</button>
+    </div>
+</section>
 
-  <!-- شريط الاحداث -->
-  <section class="bar_actions">
-    <p><img src="" alt=""> ساهم في المشروع</p>
-    <form action="" method="">
-      <button class="donate_now" name="donate_now" ><img src="" alt=""> تبرع الان</button>
-      <button class="add_to_cart" name="add_to_cart"><img src="" alt=""> إضافة الى السلة</button>
-      <button class="share_project" name="share_project"><img src="" alt=""> مشاركة المشروع</button>
-    </form>
+</section>
 
-  </section>
 </main>
 <?php require('views/parts/footer.php') ?>

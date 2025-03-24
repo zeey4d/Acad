@@ -2,64 +2,92 @@
 <?php require('views/parts/adminbar.php') ?>
 <?php require('views/parts/navgtion.php') ?>
 <?php require('views/parts/header.php') ?>
-<main>
-  <div class="main_show_islamic_endowments">
-  <button> تبرع الان <img src="views/media/images/2.png" alt="" length="10" width="10"> </button>
-  <!-- التفاصيل الاسايسيه -->
-  <section class="card_islamic_endowments">
-    <h3>التفاصيل</h3>
-    <div class="image">
-      <img src="views/media/images/<?php  echo $endowments['photo'] ?? "11.png" ?>" alt="" length="200" width="200" loading="lazy">
-      <span><?php echo ($endowments['collected_money']/$endowments['cost'])*100 ?>% مكتمل</span>
-    </div>
-    <h4><?php echo $endowments['name'] ?></h4>
-    <p> <?php echo $endowments['short_description'] ?> </p>
-    
-  </section>
- 
-  <!-- باقي البينات -->
-  <section class="card_islamic_endowments">
-    <div>
-      <p>
-        <img src="" alt=""> نوع الوقف <span><?php echo $endowments['type'] ?></span>
-      </p>
-      <p>
-        <img src="" alt=""> المبلغ المستهدف <span><?php echo $endowments['cost'] ?> ر.س</span>
-      </p>
-      <p>
-        <img src="" alt=""> عدد المساهمين <span>8000</span>
-      </p>
-      <p>
-        <img src="" alt=""> المنطقة <span><?php echo $endowments['city'] ?></span>
-      </p>
-      <p>
-        <img src="" alt="">المبلغ الذي تم جممه <span><?php echo $endowments['collection_money'] ?> ر.س</span>
-      </p>
-      <p>
-        <img src="" alt=""> الشركاء في الوقف <span>مكتب الاوقاف</span>
-      </p>
+
+<main class="main_show_ch">
+            <section class="card_islamic_endowments">
+            <!-- <h3 style="color: var(--font-color-bh);
+        font-size: var(--font-size-xl);">التفاصيل</h3> -->
+            <div class="imgs">
+            <img src="views/media/images/<?php  echo $campaigns['photo'] ?? "11.png" ?>" alt=" " loading="lazy"></div>
+            <p class="localshin">المنطقة تعز</p>
+            <h5>عمليات جراحيه</h5>
+            <p class="details_p">يسعى المشروع الى علاج ذوي الحاجه المصابين بالمياه الزرقاء</p>
+            <h5>رقم الحملة :</h5>
+            <div class="progress-bar">
+                <div class="progress"></div>
+              </div>
+              <div class="donation-details">
+                <div >
+                  <p><strong style="display: inline;">SR/</strong></p>
+                  <p style="text-align: right;">المبلغ المتبقي</p>
+                  <p style="text-align: right;">محمع التبراعات</p>
+                </div>
+              </div>  
+
+            <div class="details_show_ch">
+                <h5>تفاصيل تكاليف العمليات</h5>
+                <p>الفحوصات الطبية</p>
+                <p>العمليات الجراحية</p>
+                <p>الادوية</p>
+        </div>
+        <div class="card_insid" id="card_insid">
+        <div>
+        <h6>نوع المشروع</h6>
+        <p>علاجي</p>
+        <h6>المبلغ المستهدف</h6>
+        <p> ر.س</p>
+        <h6>عدد المتبرعين</h6>
+        <p>8000</p>
+        </div>
+        <div>
+        <h6>عدد المستفيدين</h6>
+        <p>100 محتاج</p>
+        <h6>المبلغ الذي تم جمعة</h6>
+        <p> ر.س</p>
+        <h6>الوقت المتبقي</h6>
+        <p>يوم</p>
+        </div>
     </div>
 
-  </section>
-  </div>
-  <!-- الاخبار -->
-  <section class="card_islamic_endowments" id="card_islamic_endowments_news">
- <div class="card_notifications">
-  <p>
-    <span>30%</span> تم جمع 30% من التبرعات
-  </p>
-  <p>
-     تم شراء ارض الجامع  <img src="views/media/images/3.jpg" alt="" length="200" width="100"> 
-  </p>
-  <p>
-     تم الانتهاء من بناء أساس الجامع <img src="views/media/images/4.jpg" alt="" length="200" width="100">
-  </p>
-  <p>
-    <span>50%</span> تم جمع 50% من التبرعات
-  </p>
 
- </div>
-  </section>
+
+
+</section>
+<!-- باقي البينات -->
+<section class="card_islamic_endowments" id="card_islamic_endowments">
+
+    <h5>مراحل المشروع</h5>
+    <div class="card_insid" id="card_insid2">
+        <div>
+        <p>المرحلة الاولى </p>
+        <p>المرحلة الثانية </p>
+        <p>المرحلة الثالثة</p>
+        </div>
+        <div><br><br>
+        
+        <p>تاريخ البدء  : </p>
+        <p>تاريخ الانتهاء  </p>
+      
+        </div>
+    </div>
+    <h5>اخبار المشروع</h5>
+    <div class="news" >
+        <div>30%<p>تم جمع 30% من التبرعات</p></div>
+        <div>30%<p>تم الانتهاء من المرحله الاولى </p></div>
+    </div>
+
+    <section class="bar_actions">
+<div class="donation-box">
+        <h3>مبلغ التبرع</h3>
+        <div style="display: flex;">
+        <input type="number" id="customAmount" placeholder="قيمة المبلغ" oninput="updateDonateButton()">
+        <a class="icon_nav_search" id="icon_nav_search" href=""><img class="icon_img" style="width: 30px; height: 30px ;padding: var(--padding-s);" src="views/media/images/cart.png" alt=""></a>
+        </div>
+        <button id="donate">تبرع الآن</button>
+    </div>
+</section>
+
+</section>
 
 </main>
 <?php require('views/parts/footer.php') ?>
