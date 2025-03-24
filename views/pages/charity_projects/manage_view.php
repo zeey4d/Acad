@@ -42,32 +42,35 @@
             </tr>
           </thead>
           <tbody>
+
+          <?php foreach ($projects as $project): ?>
+
             <tr>
               <td><input type="checkbox" class="select-campaign"></td>
-              <td><img src="" alt="شعار الحملة" class="campaign-logo"></td>
-              <td>حملة 1
+              <td><img src="views/media/images/<?= htmlspecialchars($projects['photo'] ?? "11.png") ?>" alt="شعار الحملة" class="campaign-logo"></td>
+              <td><?= htmlspecialchars($project['name']) ?>
               <nav class="options">
         <ul>
             <li>
-                <form action="/islamic_endowments_manage" method="get"><input type="hidden" name="" value=""><button type="submit">عرض</button></form>
+                <form action="/islamic_endowments_manage" method="get"><input type="hidden" name="" value=""><a  href="#" >عرض</a></form>
             </li>
             <li>
-                <form action="/charity_projects_manage" method="get"><input type="hidden" name="" value=""><button type="submit">تعديل</button></form>
+                <form action="/charity_projects_manage" method="get"><input type="hidden" name="" value=""><a href="#" >تعديل</a></form>
             </li>
             <li>
-                <form action="/notifications_manage" method="get"><input type="hidden" name="" value=""><button style="    color: red;" type="submit">حدف</button></form>
+                <form action="/notifications_manage" method="get"><input type="hidden" name="" value=""><a href="#" style="    color: red;" >حدف</a></form>
             </li>
             <li>
-                <form action="/users_manage" method="get"><input type="hidden" name="" value=""><button type="submit">اشعار</button></form>
+                <form action="/users_manage" method="get"><input type="hidden" name="" value=""><a href="#">اشعار</a></form>
             </li>
 
         </ul>
-    </nav>                
+    </nav>              
               </td>
-              <td>وصف الحملة 1</td>
+              <td><?= htmlspecialchars($project['short_description']) ?></td>
               <td>إغاثة</td>
-              <td><span>70000$</span> / <span>35000$</span></td>
-              <td><span>30/12/2024</span> - <span>30/12/2025</span></td>
+              <td><span><?= htmlspecialchars($project['cost']) ?>$</span> / <span><?= htmlspecialchars($project['collected_money']) ?>$</span></td>
+              <td><span><?= htmlspecialchars($project['start_at']) ?></span> - <span><?= htmlspecialchars($project['end_at']) ?></span></td>
               <!-- <td><button class="show_color_green">عرض</button></td> -->
               <!-- <td>
                 <div class="dropdown">
@@ -83,6 +86,9 @@
                 </div>
               </td> -->
             </tr>
+
+            <?php endforeach; ?>
+
           </tbody>
         </table>
       
@@ -109,16 +115,16 @@
               <nav class="options">
         <ul>
             <li>
-                <form action="/islamic_endowments_manage" method="get"><input type="hidden" name="" value=""><button type="submit">عرض</button></form>
+                <form action="/islamic_endowments_manage" method="get"><input type="hidden" name="" value=""><a  href="#" >عرض</a></form>
             </li>
             <li>
-                <form action="/charity_projects_manage" method="get"><input type="hidden" name="" value=""><button type="submit">تعديل</button></form>
+                <form action="/charity_projects_manage" method="get"><input type="hidden" name="" value=""><a href="#" >تعديل</a></form>
             </li>
             <li>
-                <form action="/notifications_manage" method="get"><input type="hidden" name="" value=""><button style="    color: red;" type="submit">حدف</button></form>
+                <form action="/notifications_manage" method="get"><input type="hidden" name="" value=""><a href="#" style="    color: red;" >حدف</a></form>
             </li>
             <li>
-                <form action="/users_manage" method="get"><input type="hidden" name="" value=""><button type="submit">اشعار</button></form>
+                <form action="/users_manage" method="get"><input type="hidden" name="" value=""><a href="#">اشعار</a></form>
             </li>
 
         </ul>

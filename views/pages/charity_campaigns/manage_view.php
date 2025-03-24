@@ -42,10 +42,13 @@
             </tr>
           </thead>
           <tbody>
+            
+          <?php foreach ($campaigns as $campaign): ?>
+
             <tr>
               <td><input type="checkbox" class="select-campaign"></td>
-              <td><img src="" alt="شعار الحملة" class="campaign-logo"></td>
-              <td>حملة 1
+              <td><img src="views/media/images/<?= htmlspecialchars($campaign['photo'] ?? "11.png") ?>" alt="شعار الحملة" class="campaign-logo"></td>
+              <td><?= htmlspecialchars($campaign['name']) ?>
               <nav class="options">
         <ul>
             <li>
@@ -55,7 +58,7 @@
                 <form action="/charity_projects_manage" method="get"><input type="hidden" name="" value=""><button type="submit">تعديل</button></form>
             </li>
             <li>
-                <form action="/notifications_manage" method="get"><input type="hidden" name="" value=""><button type="submit">حدف</button></form>
+                <form action="/notifications_manage" method="get"><input type="hidden" name="" value=""><button type="submit">حذف</button></form>
             </li>
             <li>
                 <form action="/users_manage" method="get"><input type="hidden" name="" value=""><button type="submit">اشعار</button></form>
@@ -64,10 +67,10 @@
         </ul>
     </nav>                
               </td>
-              <td>وصف الحملة 1</td>
+              <td><?= htmlspecialchars($campaign['short_description']) ?></td>
               <td>إغاثة</td>
-              <td><span>70000$</span> / <span>35000$</span></td>
-              <td><span>30/12/2024</span> - <span>30/12/2025</span></td>
+              <td><span><?= htmlspecialchars($campaign['cost']) ?>$</span> / <span><?= htmlspecialchars($campaign['collected_money']) ?>$</span></td>
+              <td><span><?= htmlspecialchars($campaign['start_at']) ?></span> - <span><?= htmlspecialchars($campaign['end_at']) ?></span></td>
               <!-- <td><button class="show_color_green">عرض</button></td> -->
               <!-- <td>
                 <div class="dropdown">
@@ -83,6 +86,9 @@
                 </div>
               </td> -->
             </tr>
+
+            <?php endforeach; ?>
+
           </tbody>
         </table>
       

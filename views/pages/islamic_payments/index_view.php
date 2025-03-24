@@ -19,12 +19,15 @@
 
     <main class="main_cart">
       <section class="container">
+
+      <?php foreach ($islamic_payments as $islamic_payment): ?>
+
         <div class="donation-card">
-          <img src="views/media/images/P251.png" alt="مشروع نور السعودية">
+          <img src="views/media/images/<?= htmlspecialchars($islamic_payment['photo'] ?? "11.png") ?>" alt="مشروع نور السعودية">
           <div class="donation-info">
             <div class="aghtha">
-              <h6>إغاثة</h6>
-              <h5>رقم الحملة :</h5>
+              <h6><?= htmlspecialchars($islamic_payment['type']) ?></h6>
+              <h5>رقم الحملة : <?= htmlspecialchars($islamic_payment['islamic_payment_id']) ?></h5>
               <a href=""><img src="" alt=""></a>
             </div>
             <h3>مشروع نور السعودية</h3>
@@ -33,7 +36,7 @@
             </div>
             <div class="donation-details">
               <div>
-                <p><strong style="display: inline;">SR 15000/</strong>14000</p>
+                <p><strong style="display: inline;">SR <?= htmlspecialchars($islamic_payment['cost']) ?>/</strong><?= htmlspecialchars($islamic_payment['paid_cost']) ?></p>
               </div>
             </div>
             <div class="donate-section">
@@ -43,13 +46,14 @@
             </div>
             <div class="details">عرض التفاصيل</div>
           </div>
+          <?php endforeach; ?>
       </section>
       <section class="bar_action">
 
       </section>
     </main>
 
-    <main class="main_cart">
+    <!-- <main class="main_cart">
       <section class="container">
         <div class="donation-card">
           <img src="views/media/images/P251.png" alt="مشروع نور السعودية">
@@ -79,7 +83,7 @@
       <section class="bar_action">
 
       </section>
-    </main>
+    </main> -->
 
     
 

@@ -40,11 +40,14 @@
             </tr>
           </thead>
           <tbody>
+            
+            <?php foreach ($partners as $partner): ?>
+
             <tr>
               <td><input type="checkbox" class="select-campaign"></td>
-              <td><img src="" alt="شعار الحملة" class="campaign-logo"></td>
-              <td>حملة 1</td>
-              <td>وصف الحملة 1</td>
+              <td><img src="views/media/images/<?= htmlspecialchars($partner['logo'] ?? "11.png") ?>" alt="شعار الحملة" class="campaign-logo"></td>
+              <td><?= htmlspecialchars($partner['name']) ?></td>
+              <td><?= htmlspecialchars($partner['short_description']) ?></td>
               <td>إغاثة</td>
               <td><span>70000$</span> / <span>35000$</span></td>
               <td><span>30/12/2024</span> - <span>30/12/2025</span></td>
@@ -63,6 +66,9 @@
                 </div>
               </td>
             </tr>
+            
+            <?php endforeach; ?>
+
           </tbody>
         </table>
       

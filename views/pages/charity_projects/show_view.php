@@ -27,7 +27,7 @@
       <p><img src="" alt=""> عدد المتبرعين<span>8000</span></p>
       <p><img src="" alt=""> عدد المستفيدين<span>100 محتاج</span></p>
       <p><img src="" alt="">المبلغ الذي تم جمعه<span><?php echo $projects['collected_money']?>ر.س</span></p>
-      <p><img src="" alt=""> الوقت المتبقي<span>60 يوم</span></p>
+      <p><img src="" alt=""> الوقت المتبقي<span><?php echo ceil((strtotime($projects['end_at']) - strtotime($campaigns['start_at'])) / (60 * 60 * 24)) ?> يوم</span></p>
       <p>
         <h4>مراحل المشروع</h4>
         <span>المرحلة الاولى </span>
