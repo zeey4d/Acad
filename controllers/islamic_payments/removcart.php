@@ -8,9 +8,11 @@ $db = App::resolve(Database::class);
 
 try {
     $db->query(
-        "DELETE FROM campaigns WHERE campaign_id = :campaign_id",
+        "DELETE FROM users_cart_islamic_payments 
+         WHERE user_id = :user_id AND islamic_payments_id = :islamic_payments_id",
         [
-            'campaign_id' => $_POST['campaign_id']
+            'user_id' => $_POST['user_id'],
+            'islamic_payments_id' => $_POST['islamic_payments_id']
         ]
     );
 } catch (PDOException $e) {

@@ -8,8 +8,10 @@ $db = App::resolve(Database::class);
 
 try {
     $db->query(
-        "DELETE FROM campaigns WHERE campaign_id = :campaign_id",
+        "DELETE FROM users_cart_campaigns 
+         WHERE user_id = :user_id AND campaign_id = :campaign_id",
         [
+            'user_id' => $_POST['user_id'],
             'campaign_id' => $_POST['campaign_id']
         ]
     );

@@ -1,11 +1,28 @@
 <?php
-$heading = "Create test";
+$heading = "Create ";
+
+use core\App ;
+use core\Database ;
 
 
+$db = App::resolve(Database::class);
 
 
-// $db->query("INSERT INTO islamic_endowments (name) VALUES (':item')", [
-//     'item' => $_POST['item'],
-//   ]);
+try {
+    $categories = $db->query(
+        "SELECT * FROM categories"
+    )->fetchAll(); // Fetch all rows from the query result 
+    $partners = $db->query(
+        "SELECT * FROM partners"
+    )->fetchAll(); // Fetch all rows from the query result
+
+} catch (PDOException $e) {
+    error_log($e->getMessage());
+    $_SESSION['error'] = "حدث خطأ أثناء حفظ البعانات";
+    header("Location: /charity_campaigns_create");
+    exit();
+}
+
+
 
 require "views/pages/islamic_endowments/create_view.php";

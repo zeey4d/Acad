@@ -291,6 +291,8 @@ $router->get('/charity_campaigns_edit', 'controllers/charity_campaigns/edit.php'
 $router->post('/charity_campaigns_store', 'controllers/charity_campaigns/store.php');
 $router->put('/charity_campaigns_update', 'controllers/charity_campaigns/update.php');
 $router->patch('/charity_campaigns_donate', 'controllers/charity_campaigns/donate.php');
+$router->patch('/charity_campaigns_addcart', 'controllers/charity_campaigns/addcrat.php');
+$router->patch('/charity_campaigns_removcart', 'controllers/charity_campaigns/removcart.php');
 
  
 $router->get('/charity_projects_create', 'controllers/charity_projects/create.php');
@@ -303,16 +305,10 @@ $router->get('/charity_projects_list', 'controllers/charity_projects/list.php');
 $router->post('/charity_projects_store', 'controllers/charity_projects/store.php');
 $router->put('/charity_projects_update', 'controllers/charity_projects/update.php');
 $router->patch('/charity_projects_donate', 'controllers/charity_projects/donate.php');
+$router->patch('/charity_projects_addcart', 'controllers/charity_projects/addcrat.php');
+$router->patch('/charity_projects_removcart', 'controllers/charity_projects/removcart.php');
 
 
-$router->get('/executive_partners_create', 'controllers/executive_partners/create.php');
-$router->delete('/executive_partners_destroy', 'controllers/executive_partners/destroy.php');
-$router->get('/executive_partners_edit', 'controllers/executive_partners/edit.php');
-$router->get('/executive_partners_index', 'controllers/executive_partners/index.php');
-$router->get('/executive_partners_manage', 'controllers/executive_partners/manage.php');
-$router->get('/executive_partners_show', 'controllers/executive_partners/show.php');
-$router->post('/executive_partners_store', 'controllers/executive_partners/store.php');
-$router->put('/executive_partners_update', 'controllers/executive_partners/update.php');
 
 
 $router->get('/islamic_endowments_create', 'controllers/islamic_endowments/create.php');
@@ -325,6 +321,9 @@ $router->get('/islamic_endowments_manage', 'controllers/islamic_endowments/manag
 $router->post('/islamic_endowments_store', 'controllers/islamic_endowments/store.php');
 $router->put('/islamic_endowments_update', 'controllers/islamic_endowments/update.php');
 $router->patch('/islamic_endowments_donate', 'controllers/islamic_endowments/donate.php');
+$router->patch('/islamic_endowments_addcart', 'controllers/islamic_endowments/addcrat.php');
+$router->patch('/islamic_endowments_removcart', 'controllers/islamic_endowments/removcart.php');
+
 
 
 $router->get('/islamic_payments_create', 'controllers/islamic_payments/create.php');
@@ -338,6 +337,21 @@ $router->get('/islamic_payments_list', 'controllers/islamic_payments/list.php');
 $router->post('/islamic_payments_store', 'controllers/islamic_payments/store.php');
 $router->put('/islamic_payments_update', 'controllers/islamic_payments/update.php');
 $router->patch('/islamic_payments_donate', 'controllers/islamic_payments/donate.php');
+$router->patch('/islamic_payments_addcart', 'controllers/islamic_payments/addcrat.php');
+$router->patch('/islamic_payments_removcart', 'controllers/islamic_payments/removcart.php');
+
+
+
+
+$router->get('/executive_partners_create', 'controllers/executive_partners/create.php');
+$router->delete('/executive_partners_destroy', 'controllers/executive_partners/destroy.php');
+$router->get('/executive_partners_edit', 'controllers/executive_partners/edit.php');
+$router->get('/executive_partners_index', 'controllers/executive_partners/index.php');
+$router->get('/executive_partners_manage', 'controllers/executive_partners/manage.php');
+$router->get('/executive_partners_show', 'controllers/executive_partners/show.php');
+$router->post('/executive_partners_store', 'controllers/executive_partners/store.php');
+$router->put('/executive_partners_update', 'controllers/executive_partners/update.php');
+
 
 
 $router->get('/statistics_create', 'controllers/statistics/create.php');
@@ -347,6 +361,7 @@ $router->get('/statistics_index', 'controllers/statistics/index.php');
 $router->get('/statistics_show', 'controllers/statistics/show.php');
 $router->post('/statistics_store', 'controllers/statistics/store.php');
 $router->put('/statistics_update', 'controllers/statistics/update.php');
+
 
 
 $router->get('/notifications_create', 'controllers/notifications/create.php');
