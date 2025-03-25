@@ -18,7 +18,7 @@
                 <form action="/users_manage" method="get"><input type="hidden" name="" value=""><button type="submit">المستخدمين</button></form>
             </li>
             <li>
-                <form action="/executive_partners_manage" method="get"><input type="hidden" name="" value=""><button type="submit">الشركا التنفيذيين</button></form>
+                <form action="/executive_partners_manage" method="get"><input type="hidden" name="" value=""><button type="submit">الشركاء التنفيذيين</button></form>
             </li>
 
         </ul>
