@@ -8,19 +8,19 @@
             <!-- <h3 style="color: var(--font-color-bh);
         font-size: var(--font-size-xl);">التفاصيل</h3> -->
             <div class="imgs">
-            <img src="views/media/images/<?php  echo $campaigns['photo'] ?? "11.png" ?>" alt=" " loading="lazy"></div>
-            <p class="localshin">المنطقة تعز</p>
+            <img src="views/media/images/<?php  echo $endowments['0']['photo'] ?? "11.png" ?>" alt=" " loading="lazy"></div>
+            <p class="localshin">المنطقة <?php  echo $endowments['0']['directorate'] ?></p>
             <div>
-            <h5>عمليات جراحيه</h5>
-            <p class="details_p">يسعى المشروع الى علاج ذوي الحاجه المصابين بالمياه الزرقاء</p>
+            <h5><?php  echo $endowments['0']['name'] ?></h5>
+            <p class="details_p"><?php  echo $endowments['0']['short_description'] ?></p>
         </div>
-            <h5>رقم الحملة :</h5>
+            <h5>رقم الحملة : <?php  echo $endowments['0']['campaign_id'] ?> </h5>
             <div class="progress-bar">
-                <div class="progress"></div>
+                <div class="progress" style="width:<?= htmlspecialchars(($endowments['0']['collected_money']/$endowments['0']['cost'])*100) ?>% " ></div>
               </div>
               <div class="donation-details">
                 
-                  <p><strong style="display: inline;">SR/</strong></p>
+                  <p><strong style="display: inline;">SR <?= htmlspecialchars($endowments['0']['donate_cost']) ?>/</strong><?= htmlspecialchars($endowments['0']['cost']) ?></p>
   
               </div>  
               <section class="bar_actions">
@@ -66,7 +66,7 @@
         </div>
         <div>
         <h6>المبلغ الذي تم جمعة</h6>
-        <p> ر.س</p>
+        <p>  <?php  echo $endowments['0']['donate_cost'] ?> ر.س</p>
         <h6>عدد المتبرعين</h6>
         <p>8000</p>
         </div>
@@ -84,7 +84,7 @@
         </div>
     <div class="news" >
     <h5>اخبار المشروع</h5>
-        <div><p>تم جمع 30% من التبرعات</p></div>
+        <div><p>تم جمع <?= htmlspecialchars(($endowments['0']['donate_cost']/$endowments['0']['cost'])*100) ?>% من التبرعات</p></div>
         <!-- <div>30%<p>تم الانتهاء من المرحله الاولى </p></div> -->
     </div>
 
