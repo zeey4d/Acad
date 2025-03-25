@@ -87,9 +87,9 @@ if (!Validator::string($place, 2, 255)) {
  }
 
 // التحقق مما إذا كان البريد الإلكتروني موجودًا مسبقًا
-$user_id = $db->query('SELECT * FROM users WHERE email = :email', [
-   'email' => $email
-])->find();
+//$user_id = $db->query('SELECT * FROM users WHERE email = :email', [
+//   'email' => $email
+//])->find();
 
 if ($user_id) {
    $errors['email'] = 'البريد الإلكتروني موجود مسبقًا.';
