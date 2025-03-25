@@ -10,17 +10,6 @@ $db = App::resolve(Database::class);
 
 $errors = [];
 
-//if (!(Validator::string($_POST['name'], 1, 255))) {
-//  $errors["name"] = "Titel  is too short or too long";
-//}
-// if (!(Validator::string($_POST['body'], 1, 1000))) {
-//     $errors["titel"] = " body is too short or long";
-// }
-
-
-
-
-
 // $campaign_id = $db->query
 //   ("INSERT INTO campaigns (category_id, partner_id, campaign_request_id, name, short_description, full_description, cost, state, start_at, end_at, photo)
 //   VALUES (:category_id, :partner_id, :campaign_request_id, :name, :short_description, :full_description, :cost, :state ,now(), :end_at, :photo)",
@@ -37,19 +26,50 @@ $errors = [];
 //       'photo' => $_POST['photo']
 //   ])->fetchAll();
 
+ $campaign_id = $db->query(
+    "INSERT INTO campaigns (
+        category_id,
+        partner_id,
+        name,
+        short_description,
+        full_description,
+        cost,
+        state,
+        photo
+    ) VALUES (
+        :category_id,
+        :partner_id,
+        :name,
+        :short_description,
+        :full_description,
+        :cost,
+        :state,
+        :photo
+    )",
+    [
+        'category_id' => $_POST['category_id'],
+        'partner_id' => $_POST['partner_id'],
+        'name' => htmlspecialchars($_POST['name']),
+        'short_description' => htmlspecialchars($_POST['short_description']),
+        'full_description' => htmlspecialchars($_POST['full_description']),
+        'cost' => filter_var($_POST['cost'], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION),
+        'state' => $_POST['state'] ?? 'active', // Default value if not provided
+        'photo' => $_POST['photo']     ]
+    )->fetchAll();
 // استقبال البيانات المطابقة لقاعدة البيانات 
-// 
-// $category_id = $_POST['category_id'];
-// $partner_id = $_POST['partner_id'];
-// $campaign_request_id =$_POST['campaign_request_id'];
-// $name = $_POST['name'];
-// $short_description = $_POST['short_description'];
-// $full_description = $_POST['full_description'];
-// $cost = $_POST['cost'];
-// $state = $_POST['state'];
-// $end_at = $_POST['end_at'];
-// $photo = $_POST['photo'];
-//   // استقبال البيانات من النموذج
+
+$category_id = $_POST['category_id'];
+$partner_id = $_POST['partner_id'];
+$campaign_request_id =$_POST['campaign_request_id'];
+$name = $_POST['name'];
+$short_description = $_POST['short_description'];
+$full_description = $_POST['full_description'];
+$cost = $_POST['cost'];
+$state = $_POST['state'];
+$end_at = $_POST['end_at'];
+$photo = $_POST['photo'];
+
+// استقبال البيانات من النموذج
 
 //  $caseType = $_POST['caseType'];
 //  $age = $_POST ['age']; 
@@ -64,31 +84,26 @@ $errors = [];
 
 // التحقق من الحقول المطلوبة
 
-if (!isset($_POST['caseType']) || !Validator::string($_POST['caseType'] ?? '', 1, 255)) {
-    $errors["caseType"] = "نوع الحالة غير صالحة";
+if (!isset($_POST['category_id']) || !Validator::string($_POST['category_id'] ?? '', 1, 255)) {
+    $errors["category_id"] = "نوع الحالة غير صالحة";
 }
-
 if (!isset($_POST['name']) || !Validator::string($_POST['name'] ?? '', 1, 255)) {
     $errors["name"] = "الاسم يجب ان يكون بين  1 او 255 حرفا";
 }
-if (!isset($_POST['age']) || !(Validator::number($_POST['age'] ?? '', 1, 100))) {
-    $errors["age"] = "العمر غير صالح ";
-}
-
-if (!isset($_POST['circumstances']) || !Validator::string($_POST['circumstances'] ?? '', 1, 1000)) {
-    $errors["circumstances"] = "الظروف غير صالح";
+//if (!isset($_POST['age']) || !(Validator::number($_POST['age'] ?? '', 1, 100))) {
+//    $errors["age"] = "العمر غير صالح ";
+//}
+if (!isset($_POST['partner_id']) || !Validator::string($_POST['partner_id'] ?? '', 1, 1000)) {
+    $errors["partner_id"] = "الظروف غير صالح";
 }
 if (!isset($_POST['accountNumber']) || !Validator::string($_POST['accountNumber'] ?? '', 1, 225)) {
     $errors["accountNumber "] = "االحساب غير صالح ";
 }
-if (!isset($_POST['bankName']) || !Validator::string($_POST['bankName'] ?? '', 1, 1000)) {
-    $errors["bankName"] = "  اسم البنك غير صالح";
+if (!isset($_POST['short_description']) || !Validator::string($_POST['short_description'] ?? '', 1, 1000)) {
+    $errors["short_description"] = "  الوصف غير صالح";
 }
-if (!isset($_POST['accountType']) || !Validator::string($_POST['accountType'] ?? '', 1, 1000)) {
-    $errors["ciraccountTypecumstances"] = "  نوع الحساب غير صالح";
-}
-if (!Validator::number($_POST['cost'] ?? 0, 1, 10000000)) {
-    $errors["name"] = " المبلغ غير صالح ";
+if (!isset($_POST['full_description']) || !Validator::string($_POST['full_description'] ?? '', 1, 1000)) {
+    $errors["full_description"] = "  الوصف  غير صالح";
 }
 if (!Validator::number($_POST['cost'] ?? 0, 1, 10000000)) {
     $errors["name"] = " المبلغ غير صالح ";
@@ -147,8 +162,6 @@ if (!Validator::number($_POST['cost'] ?? 0, 1, 10000000)) {
 //     'your-encryption-key'
 // );
 
-// إدخال البيانات في قاعدة البيانات
-
 // if (!empty($errors)) {
 //     header("Location: /charity_campaigns_create");;
 //     die();
@@ -159,12 +172,6 @@ if (!Validator::number($_POST['cost'] ?? 0, 1, 10000000)) {
 //     header('Location: /charity_campaigns');
 //     exit();
 
-// } catch (PDOException $e) {
-//     error_log($e->getMessage());
-//     $_SESSION['error'] = "حدث خطأ أثناء حفظ البيانات";
-//     header('Location: /charity_campaigns/create');
-//     exit();
-// }
 // دالة مساعدة للتشفير
 // function encryptData($data) {
 //     return openssl_encrypt(
@@ -182,30 +189,6 @@ if (!Validator::number($_POST['cost'] ?? 0, 1, 10000000)) {
 //     die();
 // }
 
-
-
-
-// تحقق من صحة الملفات
-// $allowedImageTypes = ['image/jpeg', 'image/png'];
-// $maxFileSize = 2 * 1024 * 1024; // 2MB
-
-// تحقق من ملفات المستندات
-//  if (count($_FILES['documents']['name']) > 5) {
-//  $errors['documents'] = "الحد الأقصى 5 مستندات";
-//  }
-//  
-//  foreach ($_FILES['documents']['tmp_name'] as $index => $tmpName) {
-//  if ($_FILES['documents']['size'][$index] > $maxFileSize) {
-//  $errors['documents'] = "حجم الملف يتجاوز 2MB";
-//  }
-//  }
-//  
-// تحقق من صور البطاقة
-// foreach (['idFront', 'idBack'] as $fileInput) {
-// if (!in_array($_FILES[$fileInput]['type'], $allowedImageTypes)) {
-// $errors[$fileInput] = "نوع الملف غير مدعوم (JPEG/PNG فقط)";
-// }
-// }
 
 try {
     $db->query(

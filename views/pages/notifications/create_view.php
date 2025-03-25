@@ -20,16 +20,26 @@
         <textarea id="full_explan" name="full_explan" ></textarea><br>
         <label for="implementing_agency">الجهةالمنفذة</label>
         <select name="implementing_agency" id="implementing_agency">
-          <option value=""></option>
+          <option value="1">الشركاء</option>
+          <option value="2">المتبرعين</option>
+          <option value="3">-----</option>
+          <option value="4">-----</option>
         </select>
         <label for="implement_stages">مراحل التنفيذ</label>
         <select name="implement_stages" id="implement_stages">
-          <option value=""></option>
+          <option value="1">المرحلة الاولى </option>
+          <option value="2">المرحلة الثانية</option>
+          <option value="3">المرحلة الثالثه</option>
+          <option value="4">المرحلة الرابعه</option>
         </select>
+        
         <label for="type_project">نوع المشروع</label>
         <input id="type_project" type="text" name="type_project" list="type_project_list" placeholder="">
           <datalist id="type_project_list">
-            <option value=""></option>
+            <option value="1">صحي </option>
+            <option value="2">تعليمي</option>
+            <option value="3">-----</option>
+            <option value="4">-----</option>
 
           </datalist>
         <label for="project_location">موقع المشروع</label>
