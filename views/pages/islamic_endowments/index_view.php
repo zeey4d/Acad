@@ -39,7 +39,7 @@
         <button class="add" name="add">إضافة الى السلة <img src="" alt=""></button>
         <button class="share" name="share">مشاركة المشروع <img src="" alt=""></button>
       </form>
-      <p>ينتهي في  <?= htmlspecialchars($islamic_endowment['end_at']) ?> </p><br>
+      <!-- <p>ينتهي في  <?= htmlspecialchars($islamic_endowment['end_at']) ?> </p><br> -->
       <a class="more_details" href="">تفاصيل أكثر</a>
 
     </div>
