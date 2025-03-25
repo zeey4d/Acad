@@ -86,7 +86,7 @@
     --button-bg-h: #00575F;
     --button-bg-l: #00A7B5;
 
-    --button-height: 2em;
+    --button-height: 2.5em;
     --button-width: 100%;
     --button-radius: 0.2em;
     --button-shadow: 0 0 0.5em rgba(0, 0, 0, 0.1);
@@ -105,6 +105,8 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
 }
 
 body {
@@ -285,9 +287,8 @@ gap: 10px;
     align-items: center;
     justify-content: center;
     & img {
-        width: 150px;
+        width: auto;
         height: 180px;
-        background-color: #00646E;
         border-radius: 20px;
         opacity: 0.5;
 
@@ -302,6 +303,10 @@ gap: 10px;
     background-color: #003337;
     color: #ffffff;
     height: 350px;
+
+    & hr{
+        border: #ffffff 1px solid;
+    }
     & div {
         width: 20%;
         margin: 20px 10px 0 10px;
@@ -310,8 +315,8 @@ gap: 10px;
         width: 10%;
     }
     & input{
-        background-color: white;
-        border-radius: 8px;
+        background-color: rgb(244, 244, 244);
+        border-radius: var(--button-radius);
         height: 30px;
         width: 150px;
     }
@@ -320,29 +325,45 @@ gap: 10px;
         height: 25px;
         background-color: #00646E;
         color: #fff;
+        font-weight: bold;
         border-radius: 5px;
         border: none;
         margin-top: 5px;
     }
     & h1{
-        font-size: 20px;
+        font-size: 2em;
         margin-bottom: 10px;
 
     }
     & p{
-        font-size: 12px;
+        font-size: var(--font-size-m);
         font-weight:100;
         margin-top: 10px;
         
     }
+
+
 }
 
+& input::file-selector-button {
+    font-weight: bold;
+    background-color: var(--button-bg-h);
+    color: white;
+    padding: 0.5em;
+    border: thin solid rgb(255, 255, 255);
+    border-radius: 3px;
+  }
+
 .icon_foter {
+    height: 6em;
+    width: auto;
     display: flex;
+    align-items: end;
+    gap: 1em;
 
 & img{
-    width: 25px;
-    height: 25px;
+    width: 30px;
+    height: auto;
 }
 }
 
@@ -360,13 +381,15 @@ gap: 10px;
 
 /* admin Bar */
 .bar_admin {
-    margin-top: 20px;
-    top: 85px;
+    top: 80px;
     z-index: 100;
     border-bottom: var(--bg-border-l);
     background-color: #ffffff; /* لون خلفية الشريط */
     padding: 10px;
     position: sticky;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     
   }
   
@@ -437,7 +460,13 @@ gap: 10px;
 
 
   }
-  
+
+  .search-input::placeholder{
+    color:rgba(0, 0, 0, 0.5);
+    font-size: var(--font-size-l);
+    font-weight: bold;
+    letter-spacing: 2px;
+  }
   .bar-search {
     display: flex;
     justify-content: center;
@@ -472,6 +501,16 @@ gap: 10px;
           }
     
       }
+
+      & .my-items-btn{
+        background-color: var(--bgcolor-light);
+        border: var(--bg-border);
+        height: 2.5em;
+        color: #000;
+        
+
+      }
+      
       
  
   }
@@ -494,16 +533,12 @@ gap: 10px;
   .search-input {
     text-align: right;
     padding: 10px;
-    border: 1px solid #ddd;
+    border: var(--bg-border);
     border-radius: 0.5em;
     outline: none;
     transition: border-color 0.3s ease;
     height: 3.5em;
-    width: 40em;
-  }
-  
-  .search-input:focus {
-    border-color: #3498db; /* لون الحدود عند التركيز */
+    width: 60em;
   }
   
   .filter-select {
@@ -517,13 +552,6 @@ gap: 10px;
     transition: border-color 0.3s ease;
   }
   
-  .filter-select:focus {
-    border-color: #3498db; /* لون الحدود عند التركيز */
-  }
-
-
-
-
 
 /* users */
 
@@ -992,6 +1020,8 @@ gap: 10px;
 
 
     }
+
+    
 }
 .Carousel_card{
     
@@ -1000,17 +1030,12 @@ gap: 10px;
         font-size: var(--font-size-xl);
         padding: var(--padding-xl);
     }
+    
 
 }
 .tbr3 {    
     background-color: rgba(0, 167, 181, 0.3);
-    & h1 {
-        background-color: white;
-        color: var(--font-color-bh);
-        text-align: center;
-        padding: var(--padding-xl);
 
-    }
     & p {
         color:#00575F;
         padding: var(--padding-xl);
@@ -1033,9 +1058,19 @@ gap: 10px;
     & .pt {
         background-color: #00575F;
         color: #ffffff;
-        width: 300px;
+        width: 40em;
         border-radius: 20px;
         margin: 20px;
+
+        &:hover{
+            color: #ffffff;
+            width: 40em;
+            border-radius: 20px;
+            margin: 20px;
+            transform: translateY(-5px);
+            transform: scale(1.05);
+
+        }
     }
     & span{
         color: var(--font-color-bl);
