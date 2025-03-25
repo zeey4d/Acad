@@ -57,6 +57,7 @@ $errors = [];
         'photo' => $_POST['photo']     ]
     )->fetchAll();
 // استقبال البيانات المطابقة لقاعدة البيانات 
+if(isset($_POST['Go__create_chatity'])){
 
 $category_id = $_POST['category_id'];
 $partner_id = $_POST['partner_id'];
@@ -68,7 +69,7 @@ $cost = $_POST['cost'];
 $state = $_POST['state'];
 $end_at = $_POST['end_at'];
 $photo = $_POST['photo'];
-
+}
 // استقبال البيانات من النموذج
 
 //  $caseType = $_POST['caseType'];
@@ -85,7 +86,7 @@ $photo = $_POST['photo'];
 // التحقق من الحقول المطلوبة
 
 if (!isset($_POST['category_id']) || !Validator::string($_POST['category_id'] ?? '', 1, 255)) {
-    $errors["category_id"] = "نوع الحالة غير صالحة";
+    $errors["category_id"] = " يجب اختيار تصنيف صحيح للحملة";
 }
 if (!isset($_POST['name']) || !Validator::string($_POST['name'] ?? '', 1, 255)) {
     $errors["name"] = "الاسم يجب ان يكون بين  1 او 255 حرفا";
@@ -94,28 +95,28 @@ if (!isset($_POST['name']) || !Validator::string($_POST['name'] ?? '', 1, 255)) 
 //    $errors["age"] = "العمر غير صالح ";
 //}
 if (!isset($_POST['partner_id']) || !Validator::string($_POST['partner_id'] ?? '', 1, 1000)) {
-    $errors["partner_id"] = "الظروف غير صالح";
+    $errors["partner_id"] = " يجب اختيار شريك صحيح ";
 }
 if (!isset($_POST['accountNumber']) || !Validator::string($_POST['accountNumber'] ?? '', 1, 225)) {
     $errors["accountNumber "] = "االحساب غير صالح ";
 }
-if (!isset($_POST['short_description']) || !Validator::string($_POST['short_description'] ?? '', 1, 1000)) {
-    $errors["short_description"] = "  الوصف غير صالح";
+if (!isset($_POST['short_description']) || !Validator::string($_POST['short_description'] ?? '',10, 1000)) {
+    $errors["short_description"] = "  الوصف المختصر يجب ان يكون بين 10الى 1000 حرفا";
 }
-if (!isset($_POST['full_description']) || !Validator::string($_POST['full_description'] ?? '', 1, 1000)) {
-    $errors["full_description"] = "  الوصف  غير صالح";
+if (!isset($_POST['full_description']) || !Validator::string($_POST['full_description'] ?? '', 30, 1000)) {
+    $errors["full_description"] = "لوصف المختصر يجب ان يكون بين 10الى 1000 حرفا";
 }
 if (!Validator::number($_POST['cost'] ?? 0, 1, 10000000)) {
     $errors["name"] = " المبلغ غير صالح ";
 }
 
 // معالجة الأخطاء
-// if (!empty($errors)) {
-//     $_SESSION['errors'] = $errors;
-//     $_SESSION['old'] = $_POST;
-//     header('Location: /charity_campaigns_create');
-//     exit();
-// }
+if (!empty($errors)) {
+    $_SESSION['errors'] = $errors;
+    $_SESSION['old'] = $_POST;
+    header('Location: /charity_campaigns_create');
+    exit();
+}
 
 //  معالجة الملفات المرفوعة
 // $uploadDir = __DIR__ . 'views\media\images';

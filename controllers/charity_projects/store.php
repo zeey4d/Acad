@@ -59,15 +59,17 @@ if (! empty($errors)) {
 
 
 // استقبال البيانات المطابقة لقاعدة البيانات 
-// $category_id = $_POST['category_id'];
-// $partner_id = $_POST['partner_id'];
-// $campaign_request_id =$_POST['campaign_request_id'];
-// $name = $_POST['name'];
-// $short_description = $_POST['short_description'];
-// $full_description = $_POST['full_description'];
-// $cost = $_POST['cost'];
-// $state = $_POST['state'];
-// $end_at = $_POST['end_at'];
+$category_id = $_POST['category_id'];
+$partner_id = $_POST['partner_id'];
+$campaign_request_id =$_POST['campaign_request_id'];
+$name = $_POST['name'];
+$short_description = $_POST['short_description'];
+$full_description = $_POST['full_description'];
+$cost = $_POST['cost'];
+$state = $_POST['state'];
+$end_at = $_POST['end_at'];
+$age = $_POST ['age']; 
+
 //   // استقبال البيانات من النموذج
 //  $caseType = $_POST['caseType'];
 //  $age = $_POST ['age']; 
@@ -80,40 +82,33 @@ if (! empty($errors)) {
 //  $idFont = $_POST['idFont']; 
 //  $idback = $_POST['idback']; 
 
-// header("Location: /pages/charity_projects");
-// die();
 
-// // التحقق من الحقول المطلوبة
+ // التحقق من الحقول المطلوبة
 
-// if (!isset($_POST['caseType']) || !Validator::string($_POST['caseType'] ?? '',1 ,255)){
-//     $errors["caseType"] = "نوع الحالة غير صالحة";
-//  }
-//  if (!isset($_POST['name']) || !Validator::string($_POST['name'] ?? '',1 ,255)){
-//  $errors["name"] = "الاسم يجب ان يكون بين  1 او 255 حرفا";
-//  }
-
-//  if (!isset($_POST['age']) || !(Validator::number($_POST['age']?? '', -1, 100 ))){
-//     $errors["age"] = "العمر غير صالح ";
-//  }
-
-//  if (!isset($_POST['circumstances']) || !Validator::string($_POST['circumstances'] ?? '',1 ,1000)){
-//       $errors["circumstances"] = "الظروف غير صالح";
-//  }  
-
-//  if (!isset($_POST['accountNumber']) || !Validator::string($_POST['accountNumber'] ?? '',1 ,225)){
-//     $errors["accountNumber "] = "االحساب غير صالح ";
-//  }
-
-//  if (!isset($_POST['bankName']) || !Validator::string($_POST['bankName'] ?? '',1 ,1000)){
-//     $errors["bankName"] = "  اسم البنك غير صالح";
-//  } 
-//  if (!isset($_POST['accountType']) || !Validator::string($_POST['accountType'] ?? '',1 ,1000)){
-//     $errors["ciraccountTypecumstances"] = "  نوع الحساب غير صالح";
-//  }
-//  if (!Validator::number($_POST['cost'] ?? 0, 1 , 10000000)){
-//     $errors["name"] = " المبلغ غير صالح ";
-//  }
-
+if (!isset($_POST['category_id']) || !Validator::string($_POST['category_id'] ?? '', 1, 255)) {
+    $errors["category_id"] = " يجب اختيار تصنيف صحيح للحملة";
+}
+if (!isset($_POST['name']) || !Validator::string($_POST['name'] ?? '', 1, 255)) {
+    $errors["name"] = "الاسم يجب ان يكون بين  1 او 255 حرفا";
+}
+if (!isset($_POST['age']) || !(Validator::number($_POST['age'] ?? '', 1, 100))) {
+   $errors["age"] = "العمر غير صالح ";
+}
+if (!isset($_POST['partner_id']) || !Validator::string($_POST['partner_id'] ?? '', 1, 1000)) {
+    $errors["partner_id"] = " يجب اختيار شريك صحيح ";
+}
+if (!isset($_POST['state']) || !Validator::string($_POST['state'] ?? '', 1, 225)) {
+    $errors["state "] = "الحالة  غير صالح ";
+}
+if (!isset($_POST['short_description']) || !Validator::string($_POST['short_description'] ?? '',10, 1000)) {
+    $errors["short_description"] = "  الوصف المختصر يجب ان يكون بين 10الى 1000 حرفا";
+}
+if (!isset($_POST['full_description']) || !Validator::string($_POST['full_description'] ?? '', 30, 1000)) {
+    $errors["full_description"] = "لوصف المختصر يجب ان يكون بين 10الى 1000 حرفا";
+}
+if (!Validator::number($_POST['cost'] ?? 0, 1, 10000000)) {
+    $errors["name"] = " المبلغ غير صالح ";
+}
 //  // معالجة الأخطاء
 //  if (!empty($errors)) {
 //     $_SESSION['errors'] = $errors;
@@ -161,15 +156,6 @@ if (! empty($errors)) {
 //     $errors['idFront'] = 'حجم الملف يتجاوز 2MB';
 // }
 
-// $accountNumber = openssl_encrypt(
-//     $_POST['accountNumber'],
-//     'AES-256-CBC',
-//     'your-encryption-key'
-// );
-
-// // إدخال البيانات في قاعدة البيانات
-
-
 //     $_SESSION['success'] = "تم تقديم الطلب بنجاح";
 //     header('Location: /charity_campaigns');
 //     exit();
@@ -179,16 +165,6 @@ if (! empty($errors)) {
 //     $_SESSION['error'] = "حدث خطأ أثناء حفظ البيانات";
 //     header('Location: /charity_campaigns/create');
 //     exit();
-// }
-// // دالة مساعدة للتشفير
-// function encryptData($data) {
-//     return openssl_encrypt(
-//         $data,
-//         'AES-256-CBC',
-//         'your-secret-key',
-//         0,
-//         'your-iv-vector'
-//     );
 // }
 
 // //  إذا كان هناك أخطاء، عرضها
@@ -208,11 +184,6 @@ try {
             short_description,
             full_description,
             cost,
-<<<<<<< HEAD
-            level,
-            state,
-=======
->>>>>>> d9515df8d743f516ea3714615bfe30bb60620ae1
             country,
             city,
             street

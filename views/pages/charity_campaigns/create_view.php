@@ -72,7 +72,7 @@
 
                 <!-- زر التأكيد -->
                 <div  class="form-group">
-                    <button type="submit" style="background-color: green;"> حفض</button>
+                    <button type="submit" style="background-color: green;" name="Go__create_chatity">حفظ</button>
                 </div>
             </form>
         </section>
