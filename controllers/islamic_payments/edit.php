@@ -16,7 +16,7 @@ try {
         "SELECT * FROM partners"
     )->fetchAll(); // Fetch all rows from the query result
     $IslamicPayments = $db->query("SELECT * FROM islamic_payments where islamic_payment_id = :islamic_payment_id",[
-        'islamic_payment_id' => $_POST['islamic_payment_id']
+        'islamic_payment_id' => $_GET['islamic_payment_id']
     ])->findOrFail();
 
 } catch (PDOException $e) {

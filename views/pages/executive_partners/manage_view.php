@@ -5,7 +5,7 @@
 
 <main class="main_manage">
   <section class="section_manage">
-    <a class="add-link" href="/islamic_payments_creat">إضافة</a>
+    <a class="add-link" href="/executive_partners_create">إضافة</a>
     <!-- جدول الحملات الحالية -->
     <h2> الشركاء التنفيذيين</h2>
     <!-- شريط الأحداث -->
@@ -57,11 +57,11 @@
                     </form>
                   </li>
                   <li>
-                      <form action="/notifications_create" method="get">
-                        <input type="hidden" name="" value="">
-                        <input type="hidden" name="partner_id" value="<?= htmlspecialchars($campaign['partner_id']) ?>">
-                        <button type="submit">اشعار</button>
-                      </form>
+                    <form action="/notifications_create" method="get">
+                      <input type="hidden" name="" value="">
+                      <input type="hidden" name="partner_id" value="<?= htmlspecialchars($campaign['partner_id']) ?>">
+                      <button type="submit">اشعار</button>
+                    </form>
                   </li>
                 </ul>
               </nav>

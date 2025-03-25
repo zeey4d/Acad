@@ -17,13 +17,24 @@ $userID = 1;
 // ])->findOrFail();
 
 //authorize($note['other_id'] == $userID);
-$notifications = $db->query(
-    "SELECT * FROM notifications WHERE notification_id = :notification_id",
-    [
-        'notification_id' => $_GET['notification_id']
-    ]
-)->findOrFail();
+try {
+    $categories = $db->query(
+        "SELECT * FROM categories"
+    )->fetchAll(); // Fetch all rows from the query result 
+    $partners = $db->query(
+        "SELECT * FROM partners"
+    )->fetchAll(); // Fetch all rows from the query result
+    $notifications = $db->query(
+        "SELECT * FROM notifications WHERE notification_id = :notification_id",[
+            'notification_id'=>$_GET['notification_id']]
+    )->fetchAll();
 
+} catch (PDOException $e) {
+    error_log($e->getMessage());
+    $_SESSION['error'] = "حدث خطأ أثناء حفظ البعانات";
+    header("Location: /charity_campaigns_create");
+    exit();
+}
 
 
 
