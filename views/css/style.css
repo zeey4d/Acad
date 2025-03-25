@@ -433,8 +433,6 @@ gap: 10px;
 /* header */
 .bg-white_shadow {
     background-color: var(--bgcolor-white); /* خلفية بيضاء */
-    padding: 20px;
-    border-radius: 8px;
     border-bottom:var(--bg-border-l) ;
 
 
@@ -444,32 +442,64 @@ gap: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 4em;
 
     gap: 10px;
+
+    &   button {
+
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--button-bg-h); /* لون خلفية الأزرار */
+        color: white; /* لون النص */
+        padding: 10px 30px;
+        height: var(--button-height);
+        border: none;
+        border-radius: var(--button-radius);
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+        height: 2.5em;
+        &:hover {
+            background-color: var(--bgcolor-light);
+            border: var(--bg-border);
+            height: 3em;
+            color: #000; /* لون خلفية الزر عند التحويم */
+          }
+    
+      }
+      
+ 
   }
   
   .search-container {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 10px;
     width: 100%;
-    max-width: 800px;
   }
   
   .form-search {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 10px;
-    width: 100%;
   }
   
   .search-input {
-    flex: 1;
+    text-align: right;
     padding: 10px;
     border: 1px solid #ddd;
-    border-radius: var(--border-radius);
+    border-radius: 0.5em;
     outline: none;
     transition: border-color 0.3s ease;
+    height: 3.5em;
+    width: 40em;
   }
   
   .search-input:focus {
@@ -490,37 +520,7 @@ gap: 10px;
   .filter-select:focus {
     border-color: #3498db; /* لون الحدود عند التركيز */
   }
-  
-  .my-items-btn {
-    padding: 10px 20px;
-    background-color: #3498db; /* لون خلفية الزر */
-    color: white; /* لون النص */
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .my-items-btn:hover {
-    background-color: #2980b9; /* لون خلفية الزر عند التحويم */
-  }
-  
-  .button button {
-    padding: 10px 20px;
-    background-color: var(--button-bg-h); /* لون خلفية الزر */
-    color: rgb(0, 0, 0); /* لون النص */
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .button button:hover {
-    background-color: var(--button-bg-l); /* لون خلفية الزر عند التحويم */
-  }
-  
+
 
 
 
