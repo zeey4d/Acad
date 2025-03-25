@@ -1,7 +1,6 @@
 <?php require('views/parts/head.php') ?>
 <?php require('views/parts/adminbar.php') ?>
 <?php require('views/parts/navgtion.php') ?>
-<?php require('views/parts/header.php') ?>
 <main class="main_user">
   <!-- عرض حساب المستخدم -->
   <section  class="user" id="show_user">

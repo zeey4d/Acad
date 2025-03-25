@@ -34,7 +34,7 @@
             <img src="views/media/images/<?= htmlspecialchars($campaign['photo'] ?? "11.png") ?>" alt="مشروع نور السعودية" loading="lazy">
             <div class="donation-info">
               <div class="aghtha">
-                <h6>إغاثة</h6>
+                <h6>بادر</h6>
                 <h5>رقم الحملة : <?= htmlspecialchars($campaign['campaign_id']) ?></h5>
                 <a href=""><img src="" alt=""></a>
               </div>
@@ -48,7 +48,7 @@
                 </div>
               </div>
               <div class="donate-section">
-                <input class="inp" type="text" placeholder=" مبلغ التبرع                   ر.س">
+                <input class="inp" type="number" placeholder=" مبلغ التبرع                   ر.س">
                 <button class="donate-btn">تبرع الأن</button>
                 <button class="donate_cart"><img src="views/media/images/cart.png" alt=""></button>
               </div>
