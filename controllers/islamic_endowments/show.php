@@ -32,8 +32,6 @@ try {
             A.cost,
             sum(B.cost) as donate_cost,
             max(B.donate_date) as donate_date,
-            A.start_at,
-            A.end_at,
             A.state,
             A.directorate,
             A.city,

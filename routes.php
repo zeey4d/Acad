@@ -141,9 +141,9 @@ $router->get('/charity_campaigns_create', 'controllers/charity_campaigns/create.
 $router->get('/charity_campaigns_edit', 'controllers/charity_campaigns/edit.php');
 $router->post('/charity_campaigns_store', 'controllers/charity_campaigns/store.php');
 $router->put('/charity_campaigns_update', 'controllers/charity_campaigns/update.php');
-$router->patch('/charity_campaigns_donate', 'controllers/charity_campaigns/donate.php');
-$router->patch('/charity_campaigns_addcart', 'controllers/charity_campaigns/addcrat.php');
-$router->patch('/charity_campaigns_removcart', 'controllers/charity_campaigns/removcart.php');
+$router->post('/charity_campaigns_donate', 'controllers/charity_campaigns/donate.php');
+$router->post('/charity_campaigns_addcart', 'controllers/charity_campaigns/addcrat.php');
+$router->post('/charity_campaigns_removcart', 'controllers/charity_campaigns/removcart.php');
 
  
 $router->get('/charity_projects_create', 'controllers/charity_projects/create.php');
@@ -155,9 +155,9 @@ $router->get('/charity_projects_show', 'controllers/charity_projects/show.php');
 $router->get('/charity_projects_list', 'controllers/charity_projects/list.php');
 $router->post('/charity_projects_store', 'controllers/charity_projects/store.php');
 $router->put('/charity_projects_update', 'controllers/charity_projects/update.php');
-$router->patch('/charity_projects_donate', 'controllers/charity_projects/donate.php');
-$router->patch('/charity_projects_addcart', 'controllers/charity_projects/addcrat.php');
-$router->patch('/charity_projects_removcart', 'controllers/charity_projects/removcart.php');
+$router->post('/charity_projects_donate', 'controllers/charity_projects/donate.php');
+$router->post('/charity_projects_addcart', 'controllers/charity_projects/addcrat.php');
+$router->post('/charity_projects_removcart', 'controllers/charity_projects/removcart.php');
 
 
 
@@ -171,9 +171,9 @@ $router->get('/islamic_endowments_list', 'controllers/islamic_endowments/list.ph
 $router->get('/islamic_endowments_manage', 'controllers/islamic_endowments/manage.php');
 $router->post('/islamic_endowments_store', 'controllers/islamic_endowments/store.php');
 $router->put('/islamic_endowments_update', 'controllers/islamic_endowments/update.php');
-$router->patch('/islamic_endowments_donate', 'controllers/islamic_endowments/donate.php');
-$router->patch('/islamic_endowments_addcart', 'controllers/islamic_endowments/addcrat.php');
-$router->patch('/islamic_endowments_removcart', 'controllers/islamic_endowments/removcart.php');
+$router->post('/islamic_endowments_donate', 'controllers/islamic_endowments/donate.php');
+$router->post('/islamic_endowments_addcart', 'controllers/islamic_endowments/addcrat.php');
+$router->post('/islamic_endowments_removcart', 'controllers/islamic_endowments/removcart.php');
 
 
 
@@ -187,9 +187,9 @@ $router->get('/islamic_payments_zakat', 'controllers/islamic_payments/zakat.php'
 $router->get('/islamic_payments_list', 'controllers/islamic_payments/list.php');
 $router->post('/islamic_payments_store', 'controllers/islamic_payments/store.php');
 $router->put('/islamic_payments_update', 'controllers/islamic_payments/update.php');
-$router->patch('/islamic_payments_donate', 'controllers/islamic_payments/donate.php');
-$router->patch('/islamic_payments_addcart', 'controllers/islamic_payments/addcrat.php');
-$router->patch('/islamic_payments_removcart', 'controllers/islamic_payments/removcart.php');
+$router->post('/islamic_payments_donate', 'controllers/islamic_payments/donate.php');
+$router->post('/islamic_payments_addcart', 'controllers/islamic_payments/addcrat.php');
+$router->post('/islamic_payments_removcart', 'controllers/islamic_payments/removcart.php');
 
 
 
