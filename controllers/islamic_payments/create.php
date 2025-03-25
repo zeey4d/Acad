@@ -7,7 +7,6 @@ use core\Database ;
 
 $db = App::resolve(Database::class);
 
-
 try {
     $categories = $db->query(
         "SELECT * FROM categories"

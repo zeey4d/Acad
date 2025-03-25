@@ -9,20 +9,24 @@ $db = App::resolve(Database::class);
 
 $userID = 1;
 
+try {
+    $categories = $db->query(
+        "SELECT * FROM categories"
+    )->fetchAll(); // Fetch all rows from the query result 
+    $partners = $db->query(
+        "SELECT * FROM partners"
+    )->fetchAll(); // Fetch all rows from the query result
+    $partners = $db->query("SELECT * from partners where partner_id = :partner_id",[
+        'partner_id' => $_GET['partner_id']
+    ])->fetchAll();
 
-$partners = $db->query("SELECT * from partners where partner_id = :partner_id",[
-    'partner_id' => $_POST['partner_id']
-])->findOrFail();
-$partners['phones'] = $db->query(
-    "SELECT phone, type from partners_phones
-    WHERE partner_id = :partner_id",[
-        'partner_id' => $_POST['partner_id']
-    ])->fetchAll();
-$partners['accounts'] = $db->query(
-    "SELECT account, account_type from partners_accounts
-    WHERE partner_id = :partner_id",[
-        'partner_id' => $_POST['partner_id']
-    ])->fetchAll();
+} catch (PDOException $e) {
+    error_log($e->getMessage());
+    $_SESSION['error'] = "حدث خطأ أثناء حفظ البعانات";
+    header("Location: /charity_campaigns_create");
+    exit();
+}
+
 
 // $note = $db->query("SELECT * from executive_partners where id = :id ", [
 //   'id' => $_GET['id'],

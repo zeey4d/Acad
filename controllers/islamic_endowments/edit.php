@@ -39,7 +39,7 @@ try {
         ",[
             'endowment_id' => $_GET['endowment_id']
         ]
-    );
+    )->fetchAll();
 
 } catch (PDOException $e) {
     error_log($e->getMessage());

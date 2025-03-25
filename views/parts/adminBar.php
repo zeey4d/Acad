@@ -20,6 +20,9 @@
             <li>
                 <form action="/executive_partners_manage" method="get"><input type="hidden" name="" value=""><button type="submit">الشركا التنفيذيين</button></form>
             </li>
+            <li>
+                <form action="/islamic_payments_manage" method="get"><input type="hidden" name="" value=""><button type="submit"> المصارف الاسلاميه</button></form>
+            </li>
 
         </ul>
     </nav>

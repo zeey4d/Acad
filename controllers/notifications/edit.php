@@ -18,7 +18,7 @@ try {
     $notifications = $db->query(
         "SELECT * FROM notifications WHERE notification_id = :notification_id",[
             'notification_id'=>$_GET['notification_id']]
-    )->findOrFail();
+    )->fetchAll();
 
 } catch (PDOException $e) {
     error_log($e->getMessage());
