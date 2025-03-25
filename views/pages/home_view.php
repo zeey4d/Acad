@@ -50,6 +50,12 @@
               <div class="donate-section">
                 <input class="inp" type="number" placeholder=" مبلغ التبرع                   ر.س">
                 <button class="donate-btn">تبرع الأن</button>
+
+                <form action="/charity_campaigns_addcart" method="post">
+                      <input type="hidden" name="endowment_id" value="<?= htmlspecialchars($endowment['endowment_id']) ?>">
+                      <button type="submit">سله  </button>
+                    </form>
+
                 <button class="donate_cart"><img src="views/media/images/cart.png" alt=""></button>
               </div>
               <div class="details">عرض التفاصيل</div>
@@ -61,6 +67,7 @@
 
       </section>
     </main>
+
 
 
 
@@ -131,3 +138,5 @@
 
 
 <?php require('views/parts/footer.php') ?>
+
+
