@@ -5,7 +5,7 @@ use core\Database ;
 
 
 $db = App::resolve(Database::class);
-
+$_POST['user_id'] = $_SESSION['user_id'];
 try {
     $db->query(
         "INSERT INTO users_cart_campaigns (
@@ -20,7 +20,7 @@ try {
         [
             'user_id' => $_POST['user_id'],
             'campaign_id' => $_POST['campaign_id'],
-            'cost' => filter_var($_POST['cost'], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION)
+            'cost' => filter_var( $_POST['cost'] ?? 0, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION)
         ]
     );
 } catch (PDOException $e) {

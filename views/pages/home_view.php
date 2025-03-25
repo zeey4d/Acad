@@ -17,21 +17,23 @@
   <!-- الصوره الكبير الي بل البدايه -->
   <section class="hero">
     <img src="views/media/images/andrewSmall.jpg" alt="">
-    <h1  style=" color : white;  margin: -80px 10px 0 0; text-align: right;">بِفَضْلِ تَبَرُّعاتِكُمْ، نَصْنَعُ فَرْقًا حَقِيقِيًّا فِي حَياةِ الْمُحْتاجِين</h1>
+    <h1 style=" color : white;  margin: -80px 10px 0 0; text-align: right;">بِفَضْلِ تَبَرُّعاتِكُمْ، نَصْنَعُ فَرْقًا حَقِيقِيًّا فِي حَياةِ الْمُحْتاجِين</h1>
 
 
   </section>
 
   <h1 style="     margin: 100px;    text-align: center;    color: var(--font-color-bh); ">الصَّدَقَةُ لَا تَنْقُصُ الْمَالَ، بَلْ تَزِيدُهُ بَرَكَةً وَطُهْرًا</h1>
 
-  <section  class="Carousel_card">
+  <section class="Carousel_card">
     <!-- حاوية البطاقات -->
 
     <main class="main_cart">
       <section class="container_card">
         <?php foreach ($campaigns as $campaign): ?>
           <div class="donation-card">
-            <img src="views/media/images/<?= htmlspecialchars($campaign['photo'] ?? "11.png") ?>" alt="مشروع نور السعودية" loading="lazy">
+            <a href="/charity_campaigns_show?campaign_id=<?= htmlspecialchars($campaign['campaign_id']) ?>">
+              <img src="views/media/images/<?= htmlspecialchars($campaign['photo'] ?? "11.png") ?>" alt="مشروع نور السعودية" loading="lazy">
+            </a>
             <div class="donation-info">
               <div class="aghtha">
                 <h6>بادر</h6>
@@ -44,21 +46,23 @@
               </div>
               <div class="donation-details">
                 <div>
-                  <p><strong style="display: inline;">SR <?= htmlspecialchars($campaign['collected_money']) ?>/</strong><?= htmlspecialchars($campaign['cost']) ?></p>
+                  <p><strong style="display: inline;">$ <?= htmlspecialchars($campaign['collected_money']) ?>/</strong><?= htmlspecialchars($campaign['cost']) ?></p>
                 </div>
               </div>
               <div class="donate-section">
-                <input class="inp" type="number" placeholder=" مبلغ التبرع                   ر.س">
-                <button class="donate-btn">تبرع الأن</button>
-
+                <form action="/charity_campaigns_donate" method="post">
+                  <input class="inp" type="number" name="cost" placeholder="$">
+                  <input type="hidden" name="campaign_id" value="<?= htmlspecialchars($campaign['campaign_id']) ?>">
+                  <button type="submit">تبرع الأن</button>
+                </form>
                 <form action="/charity_campaigns_addcart" method="post">
-                      <input type="hidden" name="endowment_id" value="<?= htmlspecialchars($endowment['endowment_id']) ?>">
-                      <button type="submit">سله  </button>
-                    </form>
-
-                <button class="donate_cart"><img src="views/media/images/cart.png" alt=""></button>
+                  <input type="hidden" name="campaign_id" value="<?= htmlspecialchars($campaign['campaign_id']) ?>">
+                  <button type="submit"><img src="views/media/images/cart.png" alt=""></button>
+                </form>
               </div>
-              <div class="details">عرض التفاصيل</div>
+              <div class="details">
+                <a href="/charity_campaigns_show?campaign_id=<?= htmlspecialchars($campaign['campaign_id']) ?>">عرض التفاصيل</a>
+              </div>
             </div>
           </div>
         <?php endforeach; ?>
@@ -74,9 +78,9 @@
 
   </section>
   <!-- الاحداث السريعه -->
-  <section  class="Fast-acting">
+  <section class="Fast-acting">
     <div class="tbr3">
-      <h1 >بِتَكاتُفِنا، نَسْتَطِيعُ تَحْقِيقَ الْمُسْتَحِيل </h1>
+      <h1>بِتَكاتُفِنا، نَسْتَطِيعُ تَحْقِيقَ الْمُسْتَحِيل </h1>
 
       <div class="t3">
         <p>بفضل كرمكم تجاوزنا الكثير من التبرعات. معاً نصنع الفرق.</p>
@@ -138,5 +142,3 @@
 
 
 <?php require('views/parts/footer.php') ?>
-
-

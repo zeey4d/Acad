@@ -5,6 +5,8 @@ use core\Database ;
 
 
 $db = App::resolve(Database::class);
+$_POST['user_id'] = $_SESSION['user_id'];
+
 
 try {
     $db->query(
