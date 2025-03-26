@@ -4,7 +4,7 @@
 <?php require('views/parts/header.php') ?>
 
 <main>
-  <section class="container_notifications">
+  <section class="container_card">
   <?php foreach ($notifications as $notification): ?>
 
     <div class="card_notifications">

@@ -30,10 +30,10 @@
 
   <main class="main_cart">
     <section class="container_card">
-
       <?php foreach ($projects as $project): ?>
 
         <div class="donation-card">
+
           <img src="views/media/images/<?= htmlspecialchars($project['photo'] ?? "11.png") ?>" alt="مشروع نور السعودية" loading="lazy">
           <div class="donation-info">
             <div class="aghtha">

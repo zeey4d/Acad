@@ -109,12 +109,10 @@
     margin: 0;
     box-sizing: border-box;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-
+    scrollbar-width: thin;
+    scrollbar-color: var(--bgcolor-H) var(--border-color);
 }
 
-body {
-    height: auto;
-}
 
 nav {
     background-color: rgb(255, 255, 255);
@@ -128,7 +126,7 @@ nav {
 
 main {
     background-color: rgb(255, 255, 255);
-    height: auto;
+    min-height: 60vh;
 }
 
 footer {
@@ -181,7 +179,7 @@ footer {
     justify-content: space-between;
     align-items: center;
     background: white;
-    padding: 15px 30px;
+    padding: 0em 1em;
     position: fixed;
     width: 100%;
     top: 0;
@@ -202,25 +200,45 @@ footer {
 .nav-links {
     list-style: none;
     display: flex;
-    justify-content: right;
-    gap: 20px;
+    justify-content: space-evenly;
+    gap: 0.5em;
+    height: auto;
+    align-self: stretch;
 }
 .nav-links li {
     display: inline;
-    height: 30px;
-    /* background-color: #003337; */
-}
-.nav-links a {
-    text-decoration: none;
+    height:100%;
     color: var(--font-color-bh);
-    font-size: var(--font-size-l);
-    transition: color 0.3s ease;
+    padding: 0.2em;
+    & a{
+        height: 100%;
+        text-decoration: none;
+        color: var(--font-color-bh);
+        font-size: var(--font-size-l);
+        transition: color 0.3s ease;
+    }
+
+    &:hover{
+        height: 100%;
+        background-color: var(--bgcolor-H);
+        color: #ffffff;  
+    
+        & a{
+            color: #fff;
+        }
+    }
 
 }
-.nav-links a:hover {
-    color: #ffffff;
-    background-color: var(--bgcolor-H);
-    
+
+
+.box_link{
+    height: 95%;
+}
+
+.box_link:hover{
+
+ border-bottom: white 2px solid;
+
 }
 
 .all_icon_nav{
@@ -280,6 +298,7 @@ gap: 10px;
 }
 
 
+
 /* صحفة footer  */
 
 
@@ -311,7 +330,7 @@ gap: 10px;
         border: #ffffff 1px solid;
     }
     & div {
-        width: 20%;
+        width: 25%;
         margin: 20px 10px 0 10px;
     }
     & .photo_padi{
@@ -870,6 +889,7 @@ gap: 10px;
     direction: rtl;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-items:center;
     gap: 1rem;
 }
 .aghtha {
@@ -889,8 +909,11 @@ gap: 10px;
     transition: transform 0.3s ease-in-out;
 
     & img {
+        display: block;
         width: 100%;
         height: auto;
+        aspect-ratio: 16 / 9;
+        object-fit:fill;
     }
 }
 .donation-card:hover {
@@ -2694,4 +2717,57 @@ table input[type="text"]:focus, table select:focus {
       }
 
 
+}
+
+
+
+/*   التحكم بي الموقع عند اختلاف المقاسات الشاشة*/
+
+
+@media screen and (max-width: 1200px) {
+    .container_card {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+/* Medium screens (tablets) */
+@media screen and (max-width: 992px) {
+    .container_card {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Small screens (phones) */
+@media screen and (max-width: 768px) {
+    .container_card {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Extra small screens */
+@media screen and (max-width: 480px) {
+    .container_card {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+        margin: var(--margin-xs);
+    }
+}
+
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--border-color);
+    opacity: 0.1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--bgcolor-H);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--button-bg-h);
 }

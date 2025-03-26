@@ -3,19 +3,20 @@
     <!-- <h1>navgation</h1> -->
     <div class="main_nav">
         <div>
-            <a href="/"> <img class="logo_image" src="views/media/images/bader.png" alt=""></a>
+            <a href="/"> <img class="logo_image" src="views/media/images/bader.png"></a>
         </div>
 
         <ul class="nav-links">
-            <li><a href="/">الرئيسية</a></li>
-            <li><a href="/islamic_endowments_index">الأوقاف</a></li>
-            <li><a href="/charity_projects_index">المشاريع</a></li>
-            <li><a href="/charity_campaigns_index">الحملات الخيرية</a></li>
+            <li><div class="box_link"><a href="/">الرئيسية</a></div></li>
+            <li><div class="box_link"><a href="/islamic_endowments_index">الأوقاف</a></div></li>
+            <li><div class="box_link"><a href="/charity_projects_index">المشاريع</a></div></li>
+            <li><div class="box_link"><a href="/charity_campaigns_index">الحملات الخيرية</a></div></li>
+            <li><div class="box_link"><a href="/islamic_payments_index">المصارف الاسلامية</a></div></li>
+            <li><div class="box_link"><a href="/notifications_index">الإشعارات</a></div></li>
+            <li><div class="box_link"><a href="/contact">اتصل بنا</a></div></li>
             <!-- <li><a href="#">الماهمات</a></li> -->
             <!-- <li><a href="#">الاخبار</a></li> -->
             <!-- <li><a href="#">التقييمات</a></li> -->
-            <li><a href="/notifications_index">الإشعارات</a></li>
-            <li><a href="/contact">اتصل بنا</a></li>
             <!-- <li><a href="/contact">الدعم الفني</a></li> -->
 
 
