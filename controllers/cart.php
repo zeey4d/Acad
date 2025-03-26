@@ -51,10 +51,6 @@ $endowments = $db->query(
     ]
 )->fetchAll(); // محتوى السلة من الأوقاف
 
-$do = $db->query(
-    "    SELECT * From users_cart_islamic_payments ;",
-)->fetchAll(); // محتوى السلة من الأعمال الخيرية
-
 
 $islamic_payments = $db->query(
     "SELECT 

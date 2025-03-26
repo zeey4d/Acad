@@ -59,16 +59,15 @@ if (! empty($errors)) {
 
 
 // استقبال البيانات المطابقة لقاعدة البيانات 
-$category_id = $_POST['category_id'];
-$partner_id = $_POST['partner_id'];
-$campaign_request_id =$_POST['campaign_request_id'];
-$name = $_POST['name'];
-$short_description = $_POST['short_description'];
-$full_description = $_POST['full_description'];
-$cost = $_POST['cost'];
-$state = $_POST['state'];
-$end_at = $_POST['end_at'];
-$age = $_POST ['age']; 
+// $category_id = $_POST['category_id'];
+// $partner_id = $_POST['partner_id'];
+// $name = $_POST['name'];
+// $short_description = $_POST['short_description'];
+// $full_description = $_POST['full_description'];
+// $cost = $_POST['cost'];
+// $state = $_POST['state'];
+// $end_at = $_POST['end_at'];
+// $age = $_POST ['age']; 
 
 //   // استقبال البيانات من النموذج
 //  $caseType = $_POST['caseType'];
@@ -204,11 +203,9 @@ try {
             'category_id' => $_POST['category_id'],
             'name' => htmlspecialchars($_POST['name']),
             'photo' => $_POST['photo'],
-            'level' => $_POST['level'],
             'short_description' => htmlspecialchars($_POST['short_description']),
             'full_description' => htmlspecialchars($_POST['full_description']),
             'cost' => filter_var($_POST['cost'], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION),
-            'directorate' => htmlspecialchars($_POST['directorate']),
             'country' => htmlspecialchars($_POST['country']),
             'city' => htmlspecialchars($_POST['city']),
             'street' => htmlspecialchars($_POST['street'])
