@@ -1160,10 +1160,11 @@ gap: 10px;
 .main_cart_view{
     text-align: right;
     direction: rtl;
-    margin: var(--margin-xl);
     & h2 {
         text-align: center;
-        margin: 20px;
+        margin: var(--margin-xl);
+        font-size: var(--font-size-ll);
+        color: var(--font-color-bh);
     }
 
 }
@@ -1172,7 +1173,8 @@ gap: 10px;
     padding: 20px;
     display: flex;
     justify-content: center;
-    background-color: #f4f4f4;
+    background-color: var(--bgcolor-light);
+    width: 100%;
 
 
 }
@@ -1180,28 +1182,25 @@ gap: 10px;
 
 .projects-list, .donation-cart {
     background-color: white;
+    border: var(--bg-border);
     padding: 20px;
     border-radius: 8px;
     width: 80%;
 }
 
-h2 {
-    color: #333;
-    margin-bottom: 20px;
-}
+
 
 .project {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
     background-color: white;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 20px;
-    border: 1px solid rgb(240, 240, 240);
+    padding: var(--padding-m);
+    border: var(--bg-border-l);
     border-radius: 10px;
     & img {
-        width: 100px;
-        height: 100px;
+        width: auto;
+        height: 100%;
         border-radius: 8px;
         margin-left: 15px;
     }
@@ -1218,13 +1217,15 @@ h2 {
 
     & h3 {
         margin: 10px 0 10px 0;
-        font-size: 18px;
+        font-size: var(--font-size-l);
+        color: var(--font-color-bh);
+
 
     }
 
     & p {
         margin: 5px 0;
-        color: #555;
+        color: var(--font-color-bl);
     }
  
     & input {
@@ -1263,6 +1264,15 @@ h2 {
     top: 20px;
     height: fit-content;
     width: 80%;
+    border: none;
+
+    & label{
+        display: block;
+        font-size: var(--font-size-l);
+        color: var(--font-color-bh);
+        padding: var(--padding-s);
+
+    }
 }
 
 #cart-items {
