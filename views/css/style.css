@@ -74,7 +74,7 @@
     --font-size-m: 1em;
     --font-size-l: 1.25em;
     --font-size-xl: 1.5em;
-    --font-size-ll: 2.5em;
+    --font-size-ll: 2em;
 
     /*البطاقات  */
     --card-height: auto;
@@ -1103,9 +1103,8 @@ gap: 10px;
 .login_home{
     background-color: #ffffff;
     & h1 {
-        text-align: center;
         padding-top: var(--padding-xl);
-        font-size: var(--font-size-xl);
+        text-align: center;
         font-weight: bold;
         color: var(--font-color-bh);
     }
@@ -2642,16 +2641,16 @@ table input[type="text"]:focus, table select:focus {
 
 .bar_felter{
     display: block;
-
     direction: rtl;
-    margin: var(--margin-l);
     padding: var(--padding-l);
     background-color: #fff;
-    border: var(--bg-border);
+    border-bottom: var(--bg-border-l);
     border-radius: 5px;
     width: 100%;
     & label{
         font-size: var(--font-size-l);
+        padding: var(--padding-s);
+        display: block;
     }
     & form {
         width: 100%;
