@@ -9,11 +9,7 @@ use core\Database;
 
 $db = App::resolve(Database::class);
 
-
-
 $userID = 1;
-
-
 
 // $note = $db->query("SELECT * from charity_campaigns where id = :id ", [
 //   'id' => $_POST['id'],
@@ -21,14 +17,11 @@ $userID = 1;
 
 authorize($note['other_id'] == $userID);
 
-
-
-
 $errors = [];
 
-if (!(Validator::string($_POST['anme'], 1, 255))) {
-    $errors["titel"] = "Titel  is too short or too long";
-}
+//if (!(Validator::string($_POST['anme'], 1, 255))) {
+  //  $errors["titel"] = "Titel  is too short or too long";
+//}
 // if (!(Validator::string($_POST['body'], 1, 1000))) {
 //     $errors["titel"] = " body is too short or long";
 // }
@@ -74,70 +67,72 @@ $db->query("update campaigns set
 
 
 // استقبال البيانات من النموذج
-// $campaign_id = $_POST['campaign_id'];
-// $partner_id = $_POST['partner_id'];
-// $campaign_request_id =$_POST['campaign_request_id'];
-// $name = $_POST['name'];
-// $short_description = $_POST['short_description'];
-// $full_description = $_POST['full_description'];
-// $cost = $_POST['cost'];
-// $state = $_POST['state'];
-// $end_at = $_POST['end_at'];
+$campaign_id = $_POST['campaign_id'];
+$partner_id = $_POST['partner_id'];
+$name = $_POST['name'];
+$short_description = $_POST['short_description'];
+$full_description = $_POST['full_description'];
+$cost = $_POST['cost'];
+$state = $_POST['state'];
+$photo = $_POST['photo'];
 
 
-//   // استقبال البيانات من النموذج
 
-//   $caseType = $_POST['caseType'];
-//   $age = $_POST ['age']; 
-//   $circumstances = $_POST['circumstances'];
-//   $amount = $_POST['amount'];
-//   $accountNumber = $_POST['accountNumber']; 
-//   $bankName = $_POST['bankName']; 
-//   $accountType = $_POST['accountType']; 
-  
-//   $documents = $_POST['documents']; 
-//   $idFont = $_POST['idFont']; 
-//   $idback = $_POST['idback']; 
- 
+// التحقق من الحقول المطلوبة
 
-// // التحقق من الحقول المطلوبة
-//   if (!isset($_POST['caseType']) || !Validator::string($_POST['caseType'] ?? '',1 ,255)){
-//     $errors["caseType"] = "نوع الحالة غير صالحة";
-//  }
+// . التحقق من تصنيف الحملة
+if (empty($_POST['category_id'])) {
+    $errors['category_id'] = "حقل التصنيف مطلوب";
+} elseif (!Validator::string($_POST['category_id']?? '', 1, 255)) {
+    $errors['category_id'] = "يجب اختيار تصنيف صحيح من القائمة";
 
-//  if (!isset($_POST['name']) || !Validator::string($_POST['name'] ?? '',1 ,255)){
-//     $errors["name"] = "الاسم يجب ان يكون بين  1 او 255 حرفا";
-// }
+}
+// . التحقق من الشريك
+if (empty($_POST['partner_id'])) {
+    $errors['partner_id'] = "حقل الشريك مطلوب";
+} elseif (!Validator::number($_POST['partner_id'] ?? '', 1, 1000)) {
+    $errors['partner_id'] = "يجب اختيار شريك صحيح من القائمة";
+}
 
-// if (!isset($_POST['age']) || !(Validator::number($_POST['age']?? '', -1, 100 ))){
-//      $errors["age"] = "العمر غير صالح ";
-// }    
+// . التحقق من اسم الحملة
+if (empty($_POST['name'])) {
+    $errors['name'] = "حقل اسم الحملة مطلوب";
+} elseif (!Validator::string($_POST['name'] ?? '', 3, 255)) {
+    $errors['name'] = "يجب أن يكون اسم الحملة بين 3 إلى 255 حرفاً";
+}
+// . التحقق من الوصف المختصر
+if (empty($_POST['short_description'])) {
+   $errors['short_description'] = "حقل الوصف المختصر مطلوب";
+} elseif (!Validator::string($_POST['short_description'] ?? '', 20, 1000)) {
+    $errors['short_description'] = "يجب أن يكون الوصف المختصر بين 20 إلى 1000 حرفاً";
+ }
 
-// if (!isset($_POST['circumstances']) || !Validator::string($_POST['circumstances'] ?? '',1 ,1000)){
-//     $errors["circumstances"] = "الظروف غير صالح";
-// }  
-// if (!isset($_POST['accountNumber']) || !Validator::string($_POST['accountNumber'] ?? '',1 ,225)){
-//     $errors["accountNumber "] = "االحساب غير صالح ";
-// }
-// if (!isset($_POST['bankName']) || !Validator::string($_POST['bankName'] ??  '',1 ,1000)){
-//     $errors["bankName"] = "  اسم البنك غير صالح";
-// } 
-  
-// if (!isset($_POST['bankName']) || !Validator::string($_POST['bankName'] ?? '',1 ,1000)){
-//    $errors["ciraccountTypecumstances"] = "  نوع الحساب غير صالح";
-// }
-// if (!Validator::number($_POST['cost'] ?? 0, 1 , 10000000)){
-//    $errors["name"] = " المبلغ غير صالح ";
-// }
+// . التحقق من الوصف الكامل
+if (empty($_POST['full_description'])) {
+    $errors['full_description'] = "حقل الوصف الكامل مطلوب";
+} elseif (!Validator::string($_POST['full_description'] ?? '', 50, 5000)) {
+    $errors['full_description'] = "يجب أن يكون الوصف الكامل بين 50 إلى 5000 حرفاً";
+}
+// و. التحقق من التكلفة
+if (empty($_POST['cost'])) {
+    $errors['cost'] = "حقل التكلفة مطلوب";
+} elseif (!Validator::number($_POST['cost'] ?? 0, 1, 10000000)) {
+ $errors['cost'] = "يجب أن تكون التكلفة بين 1 إلى 10,000,000";
+}
+
+// ط. التحقق من الصورة (إذا تم إدخالها)
+if (!empty($inputs['photo']) && !filter_var($inputs['photo'], FILTER_VALIDATE_URL)) {
+    $errors['photo'] = "رابط الصورة غير صالح. يجب أن يكون رابطاً صحيحاً";
+}
+// معالجة الأخطاء
+if (!empty($errors)) {
+    $_SESSION['errors'] = $errors;
+    $_SESSION['old'] = $_POST;
+    header("Location: " . $_SERVER["HTTP_REFERER"]);
+        exit();
+}
 
 
-//    // معالجة الأخطاء
-//    if (!empty($errors)) {
-//     $_SESSION['errors'] = $errors;
-//     $_SESSION['old'] = $_POST;
-//     header('Location: /charity_campaigns/create');
-//     exit();
-// }
 
 //  //  معالجة الملفات المرفوعة
 // $uploadDir = __DIR__ . 'views\media\images';
@@ -178,81 +173,10 @@ $db->query("update campaigns set
 // if ($_FILES['idFront']['size'] > 2 * 1024 * 1024) {
 //     $errors['idFront'] = 'حجم الملف يتجاوز 2MB';
 // }
-  
-// $accountNumber = openssl_encrypt(
-//     $_POST['accountNumber'],
-//     'AES-256-CBC',
-//     'your-encryption-key'
-// );
 
-  
-// // إدخال البيانات في قاعدة البيانات
-// try {
-//     $db->query(
-//         "INSERT INTO campaigns (
-//             category_id,
-//             partner_id,
-//             name,
-//             full_description,
-//             cost,
-//             state,
-//             bank_account,
-//             identity_documents,
-//             age,
-//             case_type,
-//             id_front,
-//             id_back
-//         ) VALUES (
-//             :category_id,
-//             :partner_id,
-//             :name,
-//             :full_description,
-//             :cost,
-//             :state,
-//             :bank_account,
-//             :identity_documents,
-//             :age,
-//             :case_type,
-//             :id_front,
-//             :id_back
-//         )",
-//         [
-//             'category_id' => $_POST['category_id'],
-//             'partner_id' => $_POST['partner_id'],
-//             'name' => htmlspecialchars($_POST['fullName']),
-//             'full_description' => htmlspecialchars($_POST['circumstances']),
-//             'cost' => filter_var($_POST['amount'], FILTER_SANITIZE_NUMBER_INT),
-//             'state' => $_POST['state'],
-//             'bank_account' => encryptData($_POST['accountNumber']), // دالة تشفير مخصصة
-//             'identity_documents' => json_encode($documentPaths),
-//             'age' => filter_var($_POST['age'], FILTER_SANITIZE_NUMBER_INT),
-//             'case_type' => htmlspecialchars($_POST['caseType']),
-//             'id_front' => $idFrontName,
-//             'id_back' => $idBackName
-//             ]
-//         );
-        
-//         $_SESSION['success'] = "تم تقديم الطلب بنجاح";
-//         header('Location: /charity_campaigns');
-//         exit();
-    
-//     } catch (PDOException $e) {
-//         error_log($e->getMessage());
-//         $_SESSION['error'] = "حدث خطأ أثناء حفظ البيانات";
-//         header('Location: /charity_campaigns/edit');
-//         exit();
-//     }
-//     // دالة مساعدة للتشفير
-//     function encryptData($data) {
-//         return openssl_encrypt(
-//             $data,
-//             'AES-256-CBC',
-//             'your-secret-key',
-//             0,
-//             'your-iv-vector'
-//         );
-//     }
-    
+
+
+
 //     //  إذا كان هناك أخطاء، عرضها
 //     if (!empty($errors)) {
 //       require "views/pages/charity_campaigns/edit_view.php";

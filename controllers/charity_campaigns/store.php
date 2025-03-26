@@ -7,58 +7,17 @@ use core\App;
 use core\Database;
 
 $db = App::resolve(Database::class);
-
 $errors = [];
 
-// $campaign_id = $db->query
-//   ("INSERT INTO campaigns (category_id, partner_id, campaign_request_id, name, short_description, full_description, cost, state, start_at, end_at, photo)
-//   VALUES (:category_id, :partner_id, :campaign_request_id, :name, :short_description, :full_description, :cost, :state ,now(), :end_at, :photo)",
-//   [
-//       'category_id' => $_POST['category_id'],
-//       'partner_id' => $_POST['partner_id'],
-//       'campaign_request_id' => $_POST['campaign_request_id'],
-//       'name' => $_POST['name'],
-//       'short_description' => $_POST['short_description'],
-//       'full_description' => $_POST['full_description'],
-//       'cost' => $_POST['cost'],
-//       'state' => $_POST['state'],
-//       'end_at' => $_POST['end_at'],
-//       'photo' => $_POST['photo']
-//   ])->fetchAll();
+//  التحقق من طريقة الإرسال
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    $errors['general'] = "يجب إرسال النموذج بطريقة POST";
+    header("Location: " . $_SERVER["HTTP_REFERER"]);
+    exit();
+}
 
- $campaign_id = $db->query(
-    "INSERT INTO campaigns (
-        category_id,
-        partner_id,
-        name,
-        short_description,
-        full_description,
-        cost,
-        state,
-        photo
-    ) VALUES (
-        :category_id,
-        :partner_id,
-        :name,
-        :short_description,
-        :full_description,
-        :cost,
-        :state,
-        :photo
-    )",
-    [
-        'category_id' => $_POST['category_id'],
-        'partner_id' => $_POST['partner_id'],
-        'name' => htmlspecialchars($_POST['name']),
-        'short_description' => htmlspecialchars($_POST['short_description']),
-        'full_description' => htmlspecialchars($_POST['full_description']),
-        'cost' => filter_var($_POST['cost'], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION),
-        'state' => $_POST['state'] ?? 'active', // Default value if not provided
-        'photo' => $_POST['photo']     ]
-    )->fetchAll();
 // استقبال البيانات المطابقة لقاعدة البيانات 
 if(isset($_POST['Go__create_chatity'])){
-
 $category_id = $_POST['category_id'];
 $partner_id = $_POST['partner_id'];
 $name = $_POST['name'];
@@ -66,55 +25,61 @@ $short_description = $_POST['short_description'];
 $full_description = $_POST['full_description'];
 $cost = $_POST['cost'];
 $state = $_POST['state'];
-$end_at = $_POST['end_at'];
 $photo = $_POST['photo'];
 }
-// استقبال البيانات من النموذج
-
-//  $caseType = $_POST['caseType'];
-//  $age = $_POST ['age']; 
-//  $circumstances = $_POST['circumstances'];
-//  $amount = $_POST['amount'];
-//  $accountNumber = $_POST['accountNumber']; 
-//  $bankName = $_POST['bankName']; 
-// $accountType = $_POST['accountType']; 
-// $documents = $_POST['documents']; 
-// $idFont = $_POST['idFont']; 
-// $idback = $_POST['idback']; 
 
 // التحقق من الحقول المطلوبة
 
-if (!isset($_POST['category_id']) || !Validator::string($_POST['category_id'] ?? '', 1, 255)) {
-    $errors["category_id"] = " يجب اختيار تصنيف صحيح للحملة";
+// . التحقق من تصنيف الحملة
+if (empty($_POST['category_id'])) {
+    $errors['category_id'] = "حقل التصنيف مطلوب";
+} elseif (!Validator::string($_POST['category_id']?? '', 1, 255)) {
+    $errors['category_id'] = "يجب اختيار تصنيف صحيح من القائمة";
+
 }
-if (!isset($_POST['name']) || !Validator::string($_POST['name'] ?? '', 1, 255)) {
-    $errors["name"] = "الاسم يجب ان يكون بين  1 او 255 حرفا";
-}
-//if (!isset($_POST['age']) || !(Validator::number($_POST['age'] ?? '', 1, 100))) {
-//    $errors["age"] = "العمر غير صالح ";
-//}
-if (!isset($_POST['partner_id']) || !Validator::string($_POST['partner_id'] ?? '', 1, 1000)) {
-    $errors["partner_id"] = " يجب اختيار شريك صحيح ";
-}
-if (!isset($_POST['accountNumber']) || !Validator::string($_POST['accountNumber'] ?? '', 1, 225)) {
-    $errors["accountNumber "] = "االحساب غير صالح ";
-}
-if (!isset($_POST['short_description']) || !Validator::string($_POST['short_description'] ?? '',10, 1000)) {
-    $errors["short_description"] = "  الوصف المختصر يجب ان يكون بين 10الى 1000 حرفا";
-}
-if (!isset($_POST['full_description']) || !Validator::string($_POST['full_description'] ?? '', 30, 1000)) {
-    $errors["full_description"] = "لوصف المختصر يجب ان يكون بين 10الى 1000 حرفا";
-}
-if (!Validator::number($_POST['cost'] ?? 0, 1, 10000000)) {
-    $errors["name"] = " المبلغ غير صالح ";
+// . التحقق من الشريك
+if (empty($_POST['partner_id'])) {
+    $errors['partner_id'] = "حقل الشريك مطلوب";
+} elseif (!Validator::number($_POST['partner_id'] ?? '', 1, 1000)) {
+    $errors['partner_id'] = "يجب اختيار شريك صحيح من القائمة";
 }
 
+// . التحقق من اسم الحملة
+if (empty($_POST['name'])) {
+    $errors['name'] = "حقل اسم الحملة مطلوب";
+} elseif (!Validator::string($_POST['name'] ?? '', 3, 255)) {
+    $errors['name'] = "يجب أن يكون اسم الحملة بين 3 إلى 255 حرفاً";
+}
+// . التحقق من الوصف المختصر
+if (empty($_POST['short_description'])) {
+   $errors['short_description'] = "حقل الوصف المختصر مطلوب";
+} elseif (!Validator::string($_POST['short_description'] ?? '', 20, 1000)) {
+    $errors['short_description'] = "يجب أن يكون الوصف المختصر بين 20 إلى 1000 حرفاً";
+ }
+
+// . التحقق من الوصف الكامل
+if (empty($_POST['full_description'])) {
+    $errors['full_description'] = "حقل الوصف الكامل مطلوب";
+} elseif (!Validator::string($_POST['full_description'] ?? '', 50, 5000)) {
+    $errors['full_description'] = "يجب أن يكون الوصف الكامل بين 50 إلى 5000 حرفاً";
+}
+// و. التحقق من التكلفة
+if (empty($_POST['cost'])) {
+    $errors['cost'] = "حقل التكلفة مطلوب";
+} elseif (!Validator::number($_POST['cost'] ?? 0, 1, 10000000)) {
+ $errors['cost'] = "يجب أن تكون التكلفة بين 1 إلى 10,000,000";
+}
+
+// ط. التحقق من الصورة (إذا تم إدخالها)
+if (!empty($inputs['photo']) && !filter_var($inputs['photo'], FILTER_VALIDATE_URL)) {
+    $errors['photo'] = "رابط الصورة غير صالح. يجب أن يكون رابطاً صحيحاً";
+}
 // معالجة الأخطاء
 if (!empty($errors)) {
     $_SESSION['errors'] = $errors;
     $_SESSION['old'] = $_POST;
-    header('Location: /charity_campaigns_create');
-    exit();
+    header("Location: " . $_SERVER["HTTP_REFERER"]);
+        exit();
 }
 
 //  معالجة الملفات المرفوعة
@@ -155,33 +120,10 @@ if (!empty($errors)) {
 // if ($_FILES['idFront']['size'] > 2 * 1024 * 1024) {
 //     $errors['idFront'] = 'حجم الملف يتجاوز 2MB';
 // }
-// 
-// $accountNumber = openssl_encrypt(
-//     $_POST['accountNumber'],
-//     'AES-256-CBC',
-//     'your-encryption-key'
-// );
-
-// if (!empty($errors)) {
-//     header("Location: /charity_campaigns_create");;
-//     die();
-// }
-
 
 //     $_SESSION['success'] = "تم تقديم الطلب بنجاح";
 //     header('Location: /charity_campaigns');
 //     exit();
-
-// دالة مساعدة للتشفير
-// function encryptData($data) {
-//     return openssl_encrypt(
-//         $data,
-//         'AES-256-CBC',
-//         'your-secret-key',
-//         0,
-//         'your-iv-vector'
-//     );
-// }
 
 //  إذا كان هناك أخطاء، عرضها
 // if (!empty($errors)) {
@@ -222,13 +164,17 @@ try {
             'photo' => $_POST['photo']
         ]
     );
+
+    $_SESSION['success'] = "تم إنشاء الحملة بنجاح!";
+    header('Location: /campaigns');
+    exit();
+
+
 } catch (PDOException $e) {
     error_log($e->getMessage());
-    $_SESSION['error'] = "حدث خطأ أثناء حفظ البعانات";
+    $_SESSION['error'] = "حدث خطأ أثناء حفظ البيانات";
     header("Location: /charity_campaigns_create");
     exit();
 }
-
-
 
 header("Location: " . $_SERVER["HTTP_REFERER"]);
