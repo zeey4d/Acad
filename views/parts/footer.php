@@ -12,10 +12,10 @@
                 بالمشاريع الانسانية والتنموية حول العالم بكل شفافية وسهولة. لنكون جسراً بين 
                  الرغبة في العطاء وحاجة المجتمع. من خلال توفير قنوات 
                  آمنة وفعالة لإدارة التبرعات وتوجيهها الى مكانها الصحيح
-            </p><br><br><hr>
+            </p><br><br>
             <div class="icon_foter">
                 <a id="whats_icon" class="whats_icon" href=""><img src="views/media/images/whatsapp.png" alt=""></a>
-                <a id="email_icon" class="email_icon" href=""><img src="views/media/images/email.png" alt=""></a>
+                <a id="email_icon" class="email_icon" href=""><img src="views/media/images/mail.png" alt=""></a>
                 <a id="insta_icon" class="insta_icon" href=""><img src="views/media/images/instagram.png" alt=""></a>
             </div>
 

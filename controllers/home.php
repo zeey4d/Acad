@@ -11,13 +11,32 @@ $db = App::resolve(Database::class);
 
 $heading = "All My tests";
 
-
-$campaigns = $db->query(
-    "select g.campaign_id, g.category_id, g.partner_id, sum(u.cost) as collected_money,
-    g.name,g.photo, g.short_description, g.full_description, g.cost, g.state, g.start_at, g.stop_at, g.end_at
-    from campaigns g join users_donate_campaigns u on (g.campaign_id = u.campaign_id) 
-    group by(u.campaign_id)
-    order by(g.start_at)"
-)->fetchAll();
+try {
+    $campaigns = $db->query(
+        "SELECT 
+            g.campaign_id, 
+            g.category_id, 
+            g.partner_id, 
+            COALESCE(SUM(u.cost), 0) AS collected_money, 
+            g.name, 
+            g.photo, 
+            g.short_description, 
+            g.full_description, 
+            g.cost, 
+            g.state, 
+            g.start_at, 
+            g.stop_at, 
+            g.end_at
+        FROM campaigns g  
+        LEFT JOIN users_donate_campaigns u ON g.campaign_id = u.campaign_id  
+        GROUP BY g.campaign_id
+        ORDER BY g.start_at;"
+        )->fetchAll();
+} catch (PDOException $e) {
+    error_log($e->getMessage());
+    $_SESSION['error'] = "حدث خطأ أثناء حفظ البعانات";
+    header("Location: /charity_campaigns_create");
+    exit();
+}
 
 require "views/pages/home_view.php";

@@ -4,33 +4,25 @@
 <?php require('views/parts/header.php') ?>
 
 <main>
-  <section class="container">
+  <section class="container_notifications">
   <?php foreach ($notifications as $notification): ?>
 
     <div class="card_notifications">
-
-      <img src="bader.png" alt="شعار بادر">
-      <h2>أخبار جديدة في منصة بادر!</h2>
+    <a href="/notifications_show?notification_id=<?= htmlspecialchars($notification['notification_id']) ?>">
+      <img src="views/media/images/<?= htmlspecialchars($notification['photo'] ?? "11.png") ?>" alt="مشروع نور السعودية" loading="lazy">
+  </a>
+      <h2><?= htmlspecialchars($notification['title']) ?></h2>
       <p class="time">منذ 5 دقائق</p>
 
-
-      <p>
-        مرحباً [اسم المستخدم]!<br><br>
-        نود إبلاغك أنه تم إضافة بعض التحديثات الهامة على منصة بادر!<br>
-        لمعرفة المزيد من التفاصيل حول التحديثات الجديدة أو للوصول إلى الروابط المتعلقة بها،<br>
-        يرجى النقر على التفاصيل أدناه.<br><br>
-        شكراً لاستخدامك منصة بادر.
+      <p style="color: white;    padding: var(--padding-m); ">
+      <?= htmlspecialchars($notification['content']) ?>
       </p>
 
-      <h2>أخبار جديدة في منصة بادر! </h2>
-
-      <button class="show" id="show" name="show">عرض التفاصيل</button>
-
-
-
+      <h2>تاريخ الاشعار : <?= htmlspecialchars($notification['send_at']) ?> </h2>
+      <a class="dtlt" href="/notifications_show?notification_id=<?= htmlspecialchars($notification['notification_id']) ?>">عرض التفاصيل</a>
     </div>
     <?php endforeach; ?>
-
+    
   </section>
 </main>
 <?php require('views/parts/footer.php') ?>

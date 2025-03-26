@@ -67,7 +67,7 @@
                 
               </nav>
             </td>
-            <td><?= htmlspecialchars($payment['paid_for']) ?></td>
+            <td><?= htmlspecialchars($payment['short_description']) ?></td>
             <td>زكاة / صدقة</td> <!-- Replace this if there's a column for the type -->
             <td><span><?= htmlspecialchars($payment['cost']) ?>$</span></td>
           </tr>

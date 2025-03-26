@@ -9,7 +9,7 @@ $db = App::resolve(Database::class);
 $heading = "All My tests";
 $notifications = $db->query(
     "SELECT * from notifications;"
-)->findOrFail();
+)->fetchAll();
 
 
 // $notifications = $db->query(
@@ -56,6 +56,6 @@ $notifications = $db->query(
 //}
 
 // $notifications = $db->query("SELECT * from notifications ;")->fetchAll();
-
+// dd($notifications);
 
 require "views/pages/notifications/index_view.php";

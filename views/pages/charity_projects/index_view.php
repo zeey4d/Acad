@@ -3,7 +3,8 @@
 <?php require('views/parts/navgtion.php') ?>
 <?php require('views/parts/header.php') ?>
 
-<?php //dd($projects) ?>  
+<?php //dd($projects) 
+?>
 
 
 <main>
@@ -22,15 +23,15 @@
   
   </section> -->
 
-<!-- حاوية الكروت -->
+  <!-- حاوية الكروت -->
 
   <!-- حاوية البطاقات -->
 
 
-    <main class="main_cart">
-      <section class="container_card">
+  <main class="main_cart">
+    <section class="container_card">
 
-      <?php foreach($projects as $project): ?>
+      <?php foreach ($projects as $project): ?>
 
         <div class="donation-card">
           <img src="views/media/images/<?= htmlspecialchars($project['photo'] ?? "11.png") ?>" alt="مشروع نور السعودية" loading="lazy">
@@ -40,9 +41,9 @@
               <h5>رقم الحملة : <?= htmlspecialchars($project['project_id']) ?></h5>
               <a href=""><img src="" alt=""></a>
             </div>
-            <h3>مشروع نور السعودية</h3>
+            <h3> <?= htmlspecialchars($project['name']) ?> </h3>
             <div class="progress-bar">
-              <div class="progress" style="width:<?= htmlspecialchars(($project['collected_money']/$project['cost'])*100) ?>% "></div>
+              <div class="progress" style="width:<?= htmlspecialchars(($project['collected_money'] / $project['cost']) * 100) ?>% "></div>
             </div>
             <div class="donation-details">
               <div>
@@ -50,23 +51,31 @@
               </div>
             </div>
             <div class="donate-section">
-              <input class="inp" type="text" placeholder=" مبلغ التبرع                   ر.س">
-              <button class="donate-btn">تبرع الأن</button>
-              <button class="donate_cart"><img src="views/media/images/cart.png" alt=""></button>
+              <form action="/charity_projects_donate" method="post">
+                <input class="inp" type="number" name="cost" placeholder="$">
+                <input type="hidden" name="project_id" value="<?= htmlspecialchars($project['project_id']) ?>">
+                <button type="submit">تبرع الأن</button>
+              </form>
+              <form action="/charity_projects_addcart" method="post">
+                <input type="hidden" name="project_id" value="<?= htmlspecialchars($project['project_id']) ?>">
+                <button type="submit"><img src="views/media/images/cart.png" alt=""></button>
+              </form>
             </div>
-            <div class="details">عرض التفاصيل</div>
+            <div class="details">
+              <a href="/charity_projects_show?project_id=<?= htmlspecialchars($project['project_id']) ?>">عرض التفاصيل</a>
+            </div>
           </div>
-           </div>
-          <?php endforeach; ?>
+        </div>
+      <?php endforeach; ?>
 
-      </section>
-      <section class="bar_action">
+    </section>
+    <section class="bar_action">
 
-      </section>
-    </main>
+    </section>
+  </main>
 
-  
 
-  
+
+
 </main>
 <?php require('views/parts/footer.php') ?>

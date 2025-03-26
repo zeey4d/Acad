@@ -14,29 +14,53 @@ $_SESSION['user_id'] = 1;
 
 
 $projects = $db->query(
-    "SELECT * FROM users_cart_projects WHERE user_id = :user_id",[
-        'user_id' => $_SESSION['user_id'] 
+    "SELECT 
+    c.user_id,c.project_id, m.name ,m.short_description
+    FROM
+    users_cart_projects c JOIN projects m
+    WHERE
+    c.user_id = :user_id and c.project_id = m.project_id;",
+    [
+        'user_id' => $_SESSION['user_id']
     ]
-)->fetchAll();// محتوى السلة من المشاريع
+)->fetchAll(); // محتوى السلة من المشاريع
 
 
 $campaigns = $db->query(
-    "SELECT * FROM users_cart_campaigns WHERE user_id = :user_id",[
-        'user_id' => $_SESSION['user_id'] 
+    "SELECT 
+    c.user_id,c.campaign_id, m.name ,m.short_description
+    FROM
+    users_cart_campaigns c JOIN campaigns m
+    WHERE
+    c.user_id = :user_id and c.campaign_id = m.campaign_id;",
+    [
+        'user_id' => $_SESSION['user_id']
     ]
-)->fetchAll();// محتوى السلة من الحملات الخيرية
+)->fetchAll(); // محتوى السلة من الحملات الخيرية
 
 
 $endowments = $db->query(
-    "SELECT  * FROM users_cart_endowments WHERE user_id = :user_id",[
-        'user_id' => $_SESSION['user_id'] 
+    "SELECT 
+    c.user_id,c.endowment_id, m.name ,m.short_description
+    FROM
+    users_cart_endowments c JOIN endowments m
+    WHERE
+    c.user_id = :user_id and c.endowment_id = m.endowment_id;",
+    [
+        'user_id' => $_SESSION['user_id']
     ]
-)->fetchAll();// محتوى السلة من الأوقاف
+)->fetchAll(); // محتوى السلة من الأوقاف
 
 
-$islamic_payments =$db->query(
-    "SELECT * FROM users_cart_islamic_payments WHERE user_id = :user_id",[
-        'user_id' => $_SESSION['user_id'] 
+$islamic_payments = $db->query(
+    "SELECT 
+    c.user_id,c.islamic_payment_id, m.name ,m.short_description
+    FROM
+    users_cart_islamic_payments c JOIN islamic_payments m
+    WHERE
+    c.user_id = :user_id and c.islamic_payment_id = m.islamic_payment_id ;",
+    [
+        'user_id' => $_SESSION['user_id']
     ]
 )->fetchAll();
 

@@ -61,7 +61,6 @@ if(isset($_POST['Go__create_chatity'])){
 
 $category_id = $_POST['category_id'];
 $partner_id = $_POST['partner_id'];
-$campaign_request_id =$_POST['campaign_request_id'];
 $name = $_POST['name'];
 $short_description = $_POST['short_description'];
 $full_description = $_POST['full_description'];

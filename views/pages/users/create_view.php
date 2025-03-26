@@ -9,7 +9,7 @@
     <div class="create">
       <div>
       <h1>إنشاءحساب</h1>
-      <form action="users_store" method="POST">
+      <form  class="group" action="users_store" method="POST">
        <div class="box_h">
         <label for="name">:الإسم</label>
         <input id="name" type="text" name="username" placeholder="الإسم">

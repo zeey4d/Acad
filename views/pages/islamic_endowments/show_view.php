@@ -14,9 +14,9 @@
             <h5><?php  echo $endowments['0']['name'] ?></h5>
             <p class="details_p"><?php  echo $endowments['0']['short_description'] ?></p>
         </div>
-            <h5>رقم الحملة : <?php  echo $endowments['0']['campaign_id'] ?> </h5>
+            <h5>رقم الحملة : <?php  echo $endowments['0']['category_id'] ?> </h5>
             <div class="progress-bar">
-                <div class="progress" style="width:<?= htmlspecialchars(($endowments['0']['collected_money']/$endowments['0']['cost'])*100) ?>% " ></div>
+                <div class="progress" style="width:<?= htmlspecialchars(($endowments['0']['donate_cost']/$endowments['0']['cost'])*100) ?>% " ></div>
               </div>
               <div class="donation-details">
                 
