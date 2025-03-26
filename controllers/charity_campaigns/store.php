@@ -16,6 +16,37 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit();
 }
 
+$category_id = $db->query(
+    "INSERT INTO campaigns (
+        category_id,
+        partner_id,
+        name,
+        short_description,
+        full_description,
+        cost,
+        state,
+        photo
+    ) VALUES (
+        :category_id,
+        :partner_id,
+        :name,
+        :short_description,
+        :full_description,
+        :cost,
+        :state,
+        :photo
+    )",
+    [
+        'category_id' => $_POST['category_id'],
+        'partner_id' => $_POST['partner_id'],
+        'name' => htmlspecialchars($_POST['name']),
+        'short_description' => htmlspecialchars($_POST['short_description']),
+        'full_description' => htmlspecialchars($_POST['full_description']),
+        'cost' => filter_var($_POST['cost'], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION),
+        'state' => $_POST['state'] ?? 'active', // Default value if not provided
+        'photo' => $_POST['photo']
+    ]
+);
 // استقبال البيانات المطابقة لقاعدة البيانات 
 if(isset($_POST['Go__create_chatity'])){
 $category_id = $_POST['category_id'];
