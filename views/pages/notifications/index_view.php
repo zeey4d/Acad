@@ -4,7 +4,7 @@
 <?php require('views/parts/header.php') ?>
 
 <main>
-  <section class="container">
+  <section class="container_notifications">
   <?php foreach ($notifications as $notification): ?>
 
     <div class="card_notifications">
@@ -14,12 +14,12 @@
       <h2><?= htmlspecialchars($notification['title']) ?></h2>
       <p class="time">منذ 5 دقائق</p>
 
-      <p>
+      <p style="color: white;    padding: var(--padding-m); ">
       <?= htmlspecialchars($notification['content']) ?>
       </p>
 
       <h2>تاريخ الاشعار : <?= htmlspecialchars($notification['send_at']) ?> </h2>
-      <a href="/notifications_show?notification_id=<?= htmlspecialchars($notification['notification_id']) ?>">عرض التفاصيل</a>
+      <a class="dtlt" href="/notifications_show?notification_id=<?= htmlspecialchars($notification['notification_id']) ?>">عرض التفاصيل</a>
     </div>
     <?php endforeach; ?>
     
