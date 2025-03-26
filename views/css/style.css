@@ -27,6 +27,9 @@
     --bgcolor-white:#ffffff;
     --bgcolor-light: rgba(0, 167, 181,0.03);
 
+    --bgcolor-dark: #003337;
+
+
 
 
     --bg-border: 1px solid #b1b1b1 ;
@@ -709,6 +712,7 @@ gap: 10px;
 .main_contact{
     display: flex;
     justify-content: center;
+    background-color: var(--bgcolor-light);
  
 }
 .contact{
@@ -717,7 +721,7 @@ gap: 10px;
 
     width: 60%;
     background-color: #ffffff;
-    border-radius: 20px;
+    border-radius: 8px;
     border: 1px solid rgb(199, 199, 199) ;
     & h1{
     text-align: center;
@@ -737,6 +741,7 @@ gap: 10px;
         text-align: right;
         margin: 10px 0 0 0;
         padding: 10px 0 5px 0;
+        font-size: var(--font-size-l);
         
         
     }
@@ -755,15 +760,29 @@ gap: 10px;
         border-color: rgb(205, 205, 205);
         
     }
-    & button {
-        margin-top: 10px;
-        width: 100%;
-        background-color: var(--button-bgcolor);
-        height: 35px;
-        color: #fff;
+    & button{
+        background-color: var(--button-bg-h);
+        width: var(--button-width);
+        height: var(--button-height);
+        border-radius:var(--button-radius) ;
+        color: white;
+        margin-top: var(--margin-m);
+        font-weight: bold;
         border: none;
-        border-radius:  var(--button-radius);
+        padding: var(--padding-m);
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
+
+    }
+    & button:hover{
+        color: var(--button-hover-color);
+        border-radius:var(--button-radius) ;
+        background-color: var(--button-hover-bg);
+        margin-top: var(--margin-m);
+        font-weight: bold;
+        border: var(--button-hover-border);
     }
 
 }
@@ -1342,16 +1361,13 @@ h2 {
 
 /* charity_projects */
 
-/* create */
+/* create */ 
 /* تنسيق عام */
 
 .main_create_chatity {
+    background-color: var(--bgcolor-dark);
     
-    & h1 {
-    text-align: center;
-    margin: 40px;
-    color: var(--font-color-bh);
-}
+
 
     &  .request-status {
         display: flex;
@@ -1368,6 +1384,14 @@ h2 {
     display: flex;
     justify-content: center;
     direction: rtl;
+    width: 100%;
+    & h1 {
+        text-align: center;
+        color: var(--font-color-bh);
+        padding: var(--padding-xl);
+        font-size: var(--font-size-ll);
+    
+    }
 }
 
 .donation-form, .request-status {
@@ -1375,7 +1399,6 @@ h2 {
     background-color: white;
     padding: 20px;
     margin-bottom: 20px;
-    border-radius: 20px;
     border: 0.5px solid rgb(173, 173, 173);
 
 
@@ -1407,7 +1430,7 @@ h2 {
         width: 100%;
         padding: 10px;
         border: 1px solid #ccc;
-        border-radius: 10px;
+        border-radius: var(--button-radius);
         font-size: 16px;
     }
 
@@ -1640,30 +1663,41 @@ h2 {
     height: 100%;
     direction: rtl;
     display: flex;
+    background-color: var(--bgcolor-dark);
+    justify-content: center;
+
 }
 
 .modal-content {
-    background-color: #fff;
-    margin: 5% 20px;
-    padding: 20px;
-    border-radius: 15px;
+    background-color: var(--bgcolor-white);
+    padding: var(--padding-xl);
     width: 80%;
-    border: 1px solid var(--border-color);
     & h2 {
         color: var(--font-color-bh);
     }
-
-    & button[type="submit"] {
-        background-color: var(--font-color-bh);
-        color: #fff;
+    & button{
+        background-color: var(--button-bg-h);
+        width: var(--button-width);
+        height: var(--button-height);
+        border-radius:var(--button-radius) ;
+        color: white;
+        margin-top: var(--margin-m);
+        font-weight: bold;
         border: none;
-        padding: 10px 40px;
-        border-radius: 10px;
-        cursor: pointer;
+        padding: var(--padding-m);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+
     }
-    
-    & button[type="submit"]:hover {
-        background-color: var(--button-bgcolor);
+    & button:hover{
+        color: var(--button-hover-color);
+        border-radius:var(--button-radius) ;
+        background-color: var(--button-hover-bg);
+        margin-top: var(--margin-m);
+        font-weight: bold;
+        border: var(--button-hover-border);
     }
 
 }
@@ -1676,8 +1710,11 @@ h2 {
         display: block;
         margin-bottom: 5px;
         font-weight: bold;
-        color: var(--font-color-bl);
+        color: var(--font-color-bh);
     }
+
+    
+
 
     
 }
@@ -1698,11 +1735,9 @@ h2 {
 
 
 .ash3t{
-   margin: 5% 20px;
    height: 200px;
-   padding: 30px;
-   border-radius:var(--card-radius) ;
-   border: 1px solid var(--border-color);
+   padding: var(--padding-xl);
+   background-color: var(--bgcolor-white);
 }
 
 /* index */
@@ -2130,9 +2165,9 @@ margin-bottom: var(--margin-s) ;
 
 
 /* notifications */
+/* create */
 
 .main_form_notifications {
-    font-family: Arial, sans-serif;
     padding: var(--padding-m);
     display: flex;
     justify-content: center;
@@ -2179,13 +2214,15 @@ margin-bottom: var(--margin-s) ;
         font-weight: bold;
         border: none;
         padding: var(--padding-m);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
 
     }
     & button:hover{
         color: var(--button-hover-color);
-        border-radius:var(--button-radius) ;
         background-color: var(--button-hover-bg);
-        margin-top: var(--margin-m);
         font-weight: bold;
         border: var(--button-hover-border);
     }
@@ -2601,9 +2638,7 @@ table input[type="text"]:focus, table select:focus {
 
 /* index */
 
-.main_islamic_edowments_index{
-    
-}
+
 
 .bar_felter{
     display: block;
