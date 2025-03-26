@@ -9,6 +9,7 @@
 <main>
   <!-- الفلتره -->
   <section class="bar_felter">
+    <div class="bar">
     <label for="gender_baby"> نوع الوقف</label>
     <form action="" method="">
       <select name="gender_baby" id="gender_baby">
@@ -23,35 +24,63 @@
       </select>
     </form>
 
-
+    </div>
   </section>
-  <!-- كرت الاوقاف -->
-  <section class="container">
-    <?php foreach ($islamic_endowments as $islamic_endowment): ?>
 
-      <div class="card_islamic_endowments">
+
+
+  <section class="Carousel_card">
+    <!-- حاوية البطاقات -->
+
+    <main class="main_cart">
+      <section class="container_card">
+      <?php foreach ($islamic_endowments as $islamic_endowment): ?>
+        <div class="donation-card">
         <a href="/islamic_endowments_show?endowment_id=<?= htmlspecialchars($islamic_endowment['endowment_id']) ?>">
-          <img src="views/media/images/<?= htmlspecialchars($islamic_endowment['photo'] ?? "11.png") ?>" alt=" " loading="lazy">
+        <img src="views/media/images/<?= htmlspecialchars($islamic_endowment['photo'] ?? "11.png") ?>" alt=" " loading="lazy">
         </a>
-        <h2> <?= htmlspecialchars($islamic_endowment['name']) ?> </h2>
-        <p> <?= htmlspecialchars($islamic_endowment['short_description']) ?> </p>
-        <div class="donate-section">
-          <form action="/islamic_endowments_donate" method="post">
-            <input class="inp" type="number" name="cost" placeholder="$">
-            <input type="hidden" name="endowment_id" value="<?= htmlspecialchars($islamic_endowment['endowment_id']) ?>">
-            <button type="submit">تبرع الأن</button>
-          </form>
-          <form action="/islamic_endowments_addcart" method="post">
-            <input type="hidden" name="endowment_id" value="<?= htmlspecialchars($islamic_endowment['endowment_id']) ?>">
-            <button type="submit"><img src="views/media/images/cart.png" alt=""></button>
-          </form>
-        </div>
-        <div class="details">
-          <a href="/islamic_endowments_show?endowment_id=<?= htmlspecialchars($islamic_endowment['endowment_id']) ?>">عرض التفاصيل</a>
-        </div>
+            <div class="donation-info">
+              <div class="aghtha">
+                <h6>بادر</h6>
+                <h5>رقم الحملة : <?= htmlspecialchars($islamic_endowment['endowment_id']) ?>"></h5>
+                <a href=""><img src="" alt=""></a>
+              </div>
+              <h3><?= htmlspecialchars($islamic_endowment['name']) ?></h3>
+              <div class="progress-bar">
+                <div class="progress" style="width:<?= htmlspecialchars(($campaign['collected_money'] / $campaign['cost']) * 100) ?>% "></div>
+              </div>
+              <div class="donation-details">
+                <div>
+                  <p><strong style="display: inline;">$ <?= htmlspecialchars($campaign['collected_money']) ?>/</strong><?= htmlspecialchars($campaign['cost']) ?></p>
+                </div>
+              </div>
+              <div class="donate-section">
+                <form action="/islamic_endowments_donate" method="post">
+                  <input class="inp" type="number" name="cost" placeholder="$">
+                  <input type="hidden" name="campaign_id" value="<?= htmlspecialchars($islamic_endowment['endowment_id']) ?>">
+                  <button type="submit">تبرع الأن</button>
+                </form>
+                <form action="/islamic_endowments_addcart" method="post">
+                  <input type="hidden" name="campaign_id" value="<?= htmlspecialchars($islamic_endowment['endowment_id']) ?>">
+                  <button type="submit"><img src="views/media/images/cart.png" alt=""></button>
+                </form>
+              </div>
+              <div class="details">
+                <a href="/islamic_endowments_show?endowment_id=<?= htmlspecialchars($islamic_endowment['endowment_id']) ?>">عرض التفاصيل</a>
+              </div>
+            </div>
+          </div>
+        <?php endforeach; ?>
+      </section>
+      
+      <section class="bar_action">
 
-      </div>
-    <?php endforeach; ?>
+      </section>
+    </main>
+
+
+
+
 
   </section>
 
