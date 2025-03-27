@@ -9,45 +9,78 @@ use core\Database;
 $db = App::resolve(Database::class);
 $errors = [];
 
-//  التحقق من طريقة الإرسال
-if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    $errors['general'] = "يجب إرسال النموذج بطريقة POST";
-    header("Location: " . $_SERVER["HTTP_REFERER"]);
-    exit();
+if (isset($_POST["submit"])) {
+
+    $file = $_FILES['photo']['name'];
+    $tmp = $_FILES['photo']['tmp_name'];
+    $size = $_FILES['photo']['size'];
+    $type = $_FILES['photo']['type'];
+    $error = $_FILES['photo']['error'];
+    $fileExt = explode('.', $file);
+    $fileActual = strtolower(end($fileExt));
+    $allow = array('jpg', 'jpeg', 'png', 'pdf');
+    if (in_array($fileActual, $allow)) {
+        if ($error === 0) {
+            if ($size < 10000000) {
+                $filenamenew = uniqid('', true) . "." . $fileActual;
+                $fileDestination = __DIR__ . '/../../views/media/images/' . $filenamenew;
+
+                echo $fileDestination;
+                move_uploaded_file($tmp, $fileDestination);
+            } else {
+                echo "your file is too big";
+            }
+        } else {
+            echo "there was an error uploading your file";
+        }
+    } else {
+        echo "you are not allow to uplaod file";
+    }
+} else {
+    echo "error";
 }
 
-$category_id = $db->query(
-    "INSERT INTO campaigns (
-        category_id,
-        partner_id,
-        name,
-        short_description,
-        full_description,
-        cost,
-        state,
-        photo
-    ) VALUES (
-        :category_id,
-        :partner_id,
-        :name,
-        :short_description,
-        :full_description,
-        :cost,
-        :state,
-        :photo
-    )",
-    [
-        'category_id' => $_POST['category_id'],
-        'partner_id' => $_POST['partner_id'],
-        'name' => htmlspecialchars($_POST['name']),
-        'short_description' => htmlspecialchars($_POST['short_description']),
-        'full_description' => htmlspecialchars($_POST['full_description']),
-        'cost' => filter_var($_POST['cost'], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION),
-        'state' => $_POST['state'] ?? 'active', // Default value if not provided
-        'photo' => $_POST['photo']
-    ]
-);
+//  التحقق من طريقة الإرسال
+// if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+//     $errors['general'] = "يجب إرسال النموذج بطريقة POST";
+//     header("Location: " . $_SERVER["HTTP_REFERER"]);
+//     exit();
+// }
+
+// $category_id = $db->query(
+//     "INSERT INTO campaigns (
+//         category_id,
+//         partner_id,
+//         name,
+//         short_description,
+//         full_description,
+//         cost,
+//         state,
+//         photo
+//     ) VALUES (
+//         :category_id,
+//         :partner_id,
+//         :name,
+//         :short_description,
+//         :full_description,
+//         :cost,
+//         :state,
+//         :photo
+//     )",
+//     [
+//         'category_id' => $_POST['category_id'],
+//         'partner_id' => $_POST['partner_id'],
+//         'name' => htmlspecialchars($_POST['name']),
+//         'short_description' => htmlspecialchars($_POST['short_description']),
+//         'full_description' => htmlspecialchars($_POST['full_description']),
+//         'cost' => filter_var($_POST['cost'], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION),
+//         'state' => $_POST['state'] ?? 'active', // Default value if not provided
+//         'photo' => $filenamenew
+//     ]
+// );
 // استقبال البيانات المطابقة لقاعدة البيانات 
+
+
 if(isset($_POST['Go__create_chatity'])){
 $category_id = $_POST['category_id'];
 $partner_id = $_POST['partner_id'];
@@ -106,12 +139,12 @@ if (!empty($inputs['photo']) && !filter_var($inputs['photo'], FILTER_VALIDATE_UR
     $errors['photo'] = "رابط الصورة غير صالح. يجب أن يكون رابطاً صحيحاً";
 }
 // معالجة الأخطاء
-if (!empty($errors)) {
-    $_SESSION['errors'] = $errors;
-    $_SESSION['old'] = $_POST;
-    header("Location: " . $_SERVER["HTTP_REFERER"]);
-        exit();
-}
+// if (!empty($errors)) {
+//     $_SESSION['errors'] = $errors;
+//     $_SESSION['old'] = $_POST;
+//     header("Location: " . $_SERVER["HTTP_REFERER"]);
+//         exit();
+// }
 
 //  معالجة الملفات المرفوعة
 // $uploadDir = __DIR__ . 'views\media\images';
@@ -192,14 +225,9 @@ try {
             'full_description' => htmlspecialchars($_POST['full_description']),
             'cost' => filter_var($_POST['cost'], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION),
             'state' => $_POST['state'] ?? 'active', // Default value if not provided
-            'photo' => $_POST['photo']
+            'photo' => $filenamenew
         ]
     );
-
-    $_SESSION['success'] = "تم إنشاء الحملة بنجاح!";
-    header('Location: /campaigns');
-    exit();
-
 
 } catch (PDOException $e) {
     error_log($e->getMessage());

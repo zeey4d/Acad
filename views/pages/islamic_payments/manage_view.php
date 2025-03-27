@@ -34,7 +34,7 @@
           <tr>
             <td><input type="checkbox" class="select-payment"></td>
             <td><img src="views/media/images/<?= htmlspecialchars($payment['photo'] ?? "default.png") ?>" alt="شعار المصرف" class="payment-logo"></td>
-            <td><?= htmlspecialchars($payment['type']) ?>
+            <td><?= htmlspecialchars($payment['name']) ?>
               <nav class="options">
                 <ul>
                   <li>

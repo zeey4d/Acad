@@ -4,42 +4,61 @@
 <main class="main_user">
 
   <!-- انشاء حساب جديد -->
-  <section class="user" >
+  <!-- <section class="user" > -->
     
-    <div class="create">
-      <div>
-      <h1>إنشاءحساب</h1>
-      <form  class="group" action="users_store" method="POST">
-       <div class="box_h">
-        <label for="name">:الإسم</label>
-        <input id="name" type="text" name="username" placeholder="الإسم">
-        <div class="box_h">
-        <label for="email">:البريدالإلكتروني</label>
-        <input id="email" type="email" name="email" placeholder="البريد الإلكتروني">
-        <label for="password">:كلمةالمرور</label>
-        <div class="box_h">
-        <input id="password" type="password" name="password" placeholder="كلمة المرور">
-        <label for="confirm_password">:تأكيدكلمةالمرور</label>
-        <div class="box_h">
-        <input id="confirm_password" type="password" name="confirm_password" placeholder="تأكيد كلمةالمرور">
-        <div class="box_h">
-        <label for="phone_number">:رقم الهاتف</label>
-        <input id="phone_number" type="text" name="phone" placeholder="رقم الهاتف">
-        <div class="box_h">
-        <label for="place">:الدولة</label>
-        <input id="place" type="text" name="country" placeholder="الدولة"><br>
-        <div class="box_h">
-        <label for="place">:المدينه</label>
-        <input id="place" type="text" name="city" placeholder="المدينه"><br>
-        <div class="box_h">
-        <label for="place">:الشارع</label>
-        <input id="place" type="text" name="street" placeholder="الشارع"><br>
-        <button class="button" id="button">تسجيل الدخول</button>
+  <div class="modal-content">
+    <h2>تسجيل مستخدم جديد</h2>
+    <form id="register-user-form" action="/user_register" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="username">اسم المستخدم:</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div class="form-group">
+            <label for="password">كلمة المرور:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <div class="form-group">
+            <label for="email">البريد الإلكتروني:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="type">نوع المستخدم:</label>
+            <select id="type" name="type">
+                <option value="normal">عادي</option>
+                <option value="admin">مسؤول</option>
+                <option value="manager">مدير</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="country">الدولة:</label>
+            <input type="text" id="country" name="country" required>
+        </div>
+        <div class="form-group">
+            <label for="city">المدينة:</label>
+            <input type="text" id="city" name="city" required>
+        </div>
+        <div class="form-group">
+            <label for="street">الشارع:</label>
+            <input type="text" id="street" name="street" required>
+        </div>
+        <div class="form-group">
+            <label for="phone">رقم الهاتف:</label>
+            <input type="text" id="phone" name="phone" required>
+        </div>
+        <div class="form-group">
+            <label for="photo">صورة المستخدم:</label>
+            <input type="file" id="photo" name="photo" accept="image/*">
+        </div>
+        <div class="form-group">
+            <label for="notifications">استقبال الإشعارات:</label>
+            <input type="checkbox" id="notifications" name="notifications" checked>
+        </div>
+        <div class="form-group">
+            <button type="submit" name="submit">تسجيل مستخدم</button>
+        </div>
+    </form>
+</div>
 
-      </form>
-      
-    
-    
   </section>
 </main>
 <?php require('views/parts/footer.php') ?>

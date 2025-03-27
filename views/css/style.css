@@ -109,8 +109,7 @@
     margin: 0;
     box-sizing: border-box;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    scrollbar-width: thin;
-    scrollbar-color: var(--bgcolor-H) var(--border-color);
+    scrollbar-color: var(--bgcolor-H) var(--bgcolor-N);
 }
 
 
@@ -2760,13 +2759,12 @@ table input[type="text"]:focus, table select:focus {
 }
 
 ::-webkit-scrollbar-track {
-    background: var(--border-color);
-    opacity: 0.1;
+    background: var(--bgcolor-N);
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--bgcolor-H);
-    border-radius: 10px;
+    background: var(--button-bg-l);
+    border-radius: 0.5em;
 }
 
 ::-webkit-scrollbar-thumb:hover {
