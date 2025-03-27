@@ -233,6 +233,7 @@ footer {
 
 .box_link{
     height: 95%;
+    padding: 0 1em;
 }
 
 .box_link:hover{
