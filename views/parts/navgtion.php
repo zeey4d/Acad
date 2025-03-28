@@ -2,11 +2,13 @@
 <nav>
     <!-- <h1>navgation</h1> -->
     <div class="main_nav">
-        <div>
+        <div class="logo-menu">
+        <a href="" onclick="togglemenu()"><img class="menu" src="views/media/images/list.png" alt=""></a>
             <a href="/"> <img class="logo_image" src="views/media/images/bader.png" alt=""></a>
         </div>
 
-        <ul class="nav-links">
+        <ul class="nav-links" id="menulist">
+            <a class="close" id="close" href=""><img width="30px" height="30px" src="views/media/images/close.png" alt=""></a>
             <li><a href="/">الرئيسية</a></li>
             <li><a href="/islamic_endowments_index">الأوقاف</a></li>
             <li><a href="/charity_projects_index">المشاريع</a></li>
