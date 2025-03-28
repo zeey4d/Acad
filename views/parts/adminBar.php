@@ -1,6 +1,6 @@
 <!-- قائمة المشرف للتحكم بي الموقع -->
 <?php if ($_SESSION['user'] ?? false) : ?>
-    <?php if (! $_SESSION['user']['type'] == "normal") : ?>
+    <?php if ($_SESSION['user']['type'] == "admin" || $_SESSION['user']['type'] == "manager") : ?>
         <nav class="bar_admin">
             <ul>
                 <li>

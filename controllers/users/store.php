@@ -91,7 +91,6 @@ $user = $db->query('SELECT * FROM users WHERE email = :email', [
 
 
 if ($user) {
-   logIn($user);
    header('location: /');
    die();
 } else {
@@ -133,6 +132,10 @@ if ($user) {
             'notifications' => isset($_POST['notifications']) ? 1 : 0 // Convert boolean to integer (1 or 0)
          ]
       );
+      $user = $db->query('SELECT * FROM users WHERE email = :email', [
+         'email' => filter_var($_POST['email'], FILTER_SANITIZE_EMAIL)
+       ])->fetch();
+
    } catch (PDOException $e) {
       error_log($e->getMessage());
       $_SESSION['error'] = "حدث خطأ أثناء حفظ البعانات";
@@ -145,6 +148,6 @@ if ($user) {
 
 logIn($user);
 
+header('location: /');
 
-header("Location: " . $_SERVER["HTTP_REFERER"]);
 die();

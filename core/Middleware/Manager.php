@@ -1,8 +1,8 @@
 <?php
 namespace core\Middleware ;
-class Auth {
+class Manager {
     public function handle(){
-        if( (!$_SESSION['user']) ?? false){
+        if(($_SESSION['user']['type'] != "manager") ?? false){
             header('location:/');
             exit();
         }

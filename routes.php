@@ -119,124 +119,121 @@ $router->get('/users_update_view', 'views/pages/users/update_view.php');
 // ------------------------------
 
 
-$router->get('/items', 'controllers/items/index.php');
 $router->get('/', 'controllers/home.php');
-$router->get('/home/hi', 'controllers/home.php');
 $router->get('/about', 'controllers/about.php');
 $router->get('/contact', 'controllers/contact.php');
 $router->post('/services/phpmailer/send-email', 'services/phpmailer/send-email.php');
-
 $router->get('/policies_privacy', 'controllers/policies_privacy.php');
-$router->get('/cart', 'controllers/cart.php');
+$router->get('/cart', 'controllers/cart.php')->only('registered');
 
 
 
 
 $router->get('/charity_campaigns_index', 'controllers/charity_campaigns/index.php');
-$router->delete('/charity_campaigns_destroy', 'controllers/charity_campaigns/destroy.php');
+$router->delete('/charity_campaigns_destroy', 'controllers/charity_campaigns/destroy.php')->only('admin');
 $router->get('/charity_campaigns_show', 'controllers/charity_campaigns/show.php');
-$router->get('/charity_campaigns_list', 'controllers/charity_campaigns/list.php');
-$router->get('/charity_campaigns_manage', 'controllers/charity_campaigns/manage.php');
-$router->get('/charity_campaigns_create', 'controllers/charity_campaigns/create.php');
-$router->get('/charity_campaigns_edit', 'controllers/charity_campaigns/edit.php');
-$router->post('/charity_campaigns_store', 'controllers/charity_campaigns/store.php');
-$router->put('/charity_campaigns_update', 'controllers/charity_campaigns/update.php');
-$router->post('/charity_campaigns_donate', 'controllers/charity_campaigns/donate.php');
-$router->post('/charity_campaigns_addcart', 'controllers/charity_campaigns/addcrat.php');
-$router->post('/charity_campaigns_removcart', 'controllers/charity_campaigns/removcart.php');
+$router->get('/charity_campaigns_list', 'controllers/charity_campaigns/list.php');  // --- delete this page leater
+$router->get('/charity_campaigns_manage', 'controllers/charity_campaigns/manage.php')->only('admin');
+$router->get('/charity_campaigns_create', 'controllers/charity_campaigns/create.php')->only('admin');
+$router->get('/charity_campaigns_edit', 'controllers/charity_campaigns/edit.php')->only('admin');
+$router->post('/charity_campaigns_store', 'controllers/charity_campaigns/store.php')->only('admin');
+$router->put('/charity_campaigns_update', 'controllers/charity_campaigns/update.php')->only('admin');
+$router->post('/charity_campaigns_donate', 'controllers/charity_campaigns/donate.php')->only('registered');
+$router->post('/charity_campaigns_addcart', 'controllers/charity_campaigns/addcrat.php')->only('registered');
+$router->post('/charity_campaigns_removcart', 'controllers/charity_campaigns/removcart.php')->only('registered');
 
  
-$router->get('/charity_projects_create', 'controllers/charity_projects/create.php');
-$router->delete('/charity_projects_destroy', 'controllers/charity_projects/destroy.php');
-$router->get('/charity_projects_edit', 'controllers/charity_projects/edit.php');
-$router->get('/charity_projects_manage', 'controllers/charity_projects/manage.php');
+$router->get('/charity_projects_create', 'controllers/charity_projects/create.php')->only('admin');
+$router->delete('/charity_projects_destroy', 'controllers/charity_projects/destroy.php')->only('admin');
+$router->get('/charity_projects_edit', 'controllers/charity_projects/edit.php')->only('admin');
+$router->get('/charity_projects_manage', 'controllers/charity_projects/manage.php')->only('admin');
 $router->get('/charity_projects_index', 'controllers/charity_projects/index.php');
 $router->get('/charity_projects_show', 'controllers/charity_projects/show.php');
 $router->get('/charity_projects_list', 'controllers/charity_projects/list.php');
-$router->post('/charity_projects_store', 'controllers/charity_projects/store.php');
-$router->put('/charity_projects_update', 'controllers/charity_projects/update.php');
-$router->post('/charity_projects_donate', 'controllers/charity_projects/donate.php');
-$router->post('/charity_projects_addcart', 'controllers/charity_projects/addcrat.php');
-$router->post('/charity_projects_removcart', 'controllers/charity_projects/removcart.php');
+$router->post('/charity_projects_store', 'controllers/charity_projects/store.php')->only('admin');
+$router->put('/charity_projects_update', 'controllers/charity_projects/update.php')->only('admin');
+$router->post('/charity_projects_donate', 'controllers/charity_projects/donate.php')->only('registered');
+$router->post('/charity_projects_addcart', 'controllers/charity_projects/addcrat.php')->only('registered');
+$router->post('/charity_projects_removcart', 'controllers/charity_projects/removcart.php')->only('registered');
 
 
 
 
-$router->get('/islamic_endowments_create', 'controllers/islamic_endowments/create.php');
-$router->delete('/islamic_endowments_destroy', 'controllers/islamic_endowments/destroy.php');
-$router->get('/islamic_endowments_edit', 'controllers/islamic_endowments/edit.php');
+$router->get('/islamic_endowments_create', 'controllers/islamic_endowments/create.php')->only('admin');
+$router->delete('/islamic_endowments_destroy', 'controllers/islamic_endowments/destroy.php')->only('admin');
+$router->get('/islamic_endowments_edit', 'controllers/islamic_endowments/edit.php')->only('admin');
 $router->get('/islamic_endowments_index', 'controllers/islamic_endowments/index.php');
 $router->get('/islamic_endowments_show', 'controllers/islamic_endowments/show.php');
 $router->get('/islamic_endowments_list', 'controllers/islamic_endowments/list.php');
-$router->get('/islamic_endowments_manage', 'controllers/islamic_endowments/manage.php');
-$router->post('/islamic_endowments_store', 'controllers/islamic_endowments/store.php');
-$router->put('/islamic_endowments_update', 'controllers/islamic_endowments/update.php');
-$router->post('/islamic_endowments_donate', 'controllers/islamic_endowments/donate.php');
-$router->post('/islamic_endowments_addcart', 'controllers/islamic_endowments/addcrat.php');
-$router->post('/islamic_endowments_removcart', 'controllers/islamic_endowments/removcart.php');
+$router->get('/islamic_endowments_manage', 'controllers/islamic_endowments/manage.php')->only('admin');
+$router->post('/islamic_endowments_store', 'controllers/islamic_endowments/store.php')->only('admin');
+$router->put('/islamic_endowments_update', 'controllers/islamic_endowments/update.php')->only('admin');
+$router->post('/islamic_endowments_donate', 'controllers/islamic_endowments/donate.php')->only('registered');
+$router->post('/islamic_endowments_addcart', 'controllers/islamic_endowments/addcrat.php')->only('registered');
+$router->post('/islamic_endowments_removcart', 'controllers/islamic_endowments/removcart.php')->only('registered');
 
 
 
-$router->get('/islamic_payments_create', 'controllers/islamic_payments/create.php');
-$router->delete('/islamic_payments_destroy', 'controllers/islamic_payments/destroy.php');
-$router->get('/islamic_payments_edit', 'controllers/islamic_payments/edit.php');
+$router->get('/islamic_payments_create', 'controllers/islamic_payments/create.php')->only('admin');
+$router->delete('/islamic_payments_destroy', 'controllers/islamic_payments/destroy.php')->only('admin');
+$router->get('/islamic_payments_edit', 'controllers/islamic_payments/edit.php')->only('admin');
 $router->get('/islamic_payments_index', 'controllers/islamic_payments/index.php');
-$router->get('/islamic_payments_manage', 'controllers/islamic_payments/manage.php');
+$router->get('/islamic_payments_manage', 'controllers/islamic_payments/manage.php')->only('admin');
 $router->get('/islamic_payments_show', 'controllers/islamic_payments/show.php');
 $router->get('/islamic_payments_zakat', 'controllers/islamic_payments/zakat.php');
 $router->get('/islamic_payments_list', 'controllers/islamic_payments/list.php');
-$router->post('/islamic_payments_store', 'controllers/islamic_payments/store.php');
-$router->put('/islamic_payments_update', 'controllers/islamic_payments/update.php');
-$router->post('/islamic_payments_donate', 'controllers/islamic_payments/donate.php');
-$router->post('/islamic_payments_addcart', 'controllers/islamic_payments/addcrat.php');
-$router->post('/islamic_payments_removcart', 'controllers/islamic_payments/removcart.php');
+$router->post('/islamic_payments_store', 'controllers/islamic_payments/store.php')->only('admin');
+$router->put('/islamic_payments_update', 'controllers/islamic_payments/update.php')->only('admin');
+$router->post('/islamic_payments_donate', 'controllers/islamic_payments/donate.php')->only('registered');
+$router->post('/islamic_payments_addcart', 'controllers/islamic_payments/addcrat.php')->only('registered');
+$router->post('/islamic_payments_removcart', 'controllers/islamic_payments/removcart.php')->only('registered');
 
 
 
 
-$router->get('/executive_partners_create', 'controllers/executive_partners/create.php');
-$router->delete('/executive_partners_destroy', 'controllers/executive_partners/destroy.php');
-$router->get('/executive_partners_edit', 'controllers/executive_partners/edit.php');
+$router->get('/executive_partners_create', 'controllers/executive_partners/create.php')->only('admin');
+$router->delete('/executive_partners_destroy', 'controllers/executive_partners/destroy.php')->only('admin');
+$router->get('/executive_partners_edit', 'controllers/executive_partners/edit.php')->only('admin');
 $router->get('/executive_partners_index', 'controllers/executive_partners/index.php');
-$router->get('/executive_partners_manage', 'controllers/executive_partners/manage.php');
+$router->get('/executive_partners_manage', 'controllers/executive_partners/manage.php')->only('admin');
 $router->get('/executive_partners_show', 'controllers/executive_partners/show.php');
-$router->post('/executive_partners_store', 'controllers/executive_partners/store.php');
-$router->put('/executive_partners_update', 'controllers/executive_partners/update.php');
+$router->post('/executive_partners_store', 'controllers/executive_partners/store.php')->only('admin');
+$router->put('/executive_partners_update', 'controllers/executive_partners/update.php')->only('admin');
 
 
 
-$router->get('/statistics_create', 'controllers/statistics/create.php');
-$router->delete('/statistics_destroy', 'controllers/statistics/destroy.php');
-$router->get('/statistics_edit', 'controllers/statistics/edit.php');
+$router->get('/statistics_create', 'controllers/statistics/create.php')->only('admin');
+$router->delete('/statistics_destroy', 'controllers/statistics/destroy.php')->only('admin');
+$router->get('/statistics_edit', 'controllers/statistics/edit.php')->only('admin');
 $router->get('/statistics_index', 'controllers/statistics/index.php');
 $router->get('/statistics_show', 'controllers/statistics/show.php');
-$router->post('/statistics_store', 'controllers/statistics/store.php');
-$router->put('/statistics_update', 'controllers/statistics/update.php');
+$router->post('/statistics_store', 'controllers/statistics/store.php')->only('admin');
+$router->put('/statistics_update', 'controllers/statistics/update.php')->only('admin');
 
 
 
-$router->get('/notifications_create', 'controllers/notifications/create.php');
-$router->delete('/notifications_destroy', 'controllers/notifications/destroy.php');
-$router->get('/notifications_edit', 'controllers/notifications/edit.php');
+$router->get('/notifications_create', 'controllers/notifications/create.php')->only('admin');
+$router->delete('/notifications_destroy', 'controllers/notifications/destroy.php')->only('admin');
+$router->get('/notifications_edit', 'controllers/notifications/edit.php')->only('admin');
 $router->get('/notifications_index', 'controllers/notifications/index.php');
 $router->get('/notifications_show', 'controllers/notifications/show.php');
 $router->get('/notifications_list', 'controllers/notifications/list.php');
-$router->get('/notifications_manage', 'controllers/notifications/manage.php');
-$router->post('/notifications_store', 'controllers/notifications/store.php');
-$router->put('/notifications_update', 'controllers/notifications/update.php');
+$router->get('/notifications_manage', 'controllers/notifications/manage.php')->only('admin');
+$router->post('/notifications_store', 'controllers/notifications/store.php')->only('admin');
+$router->put('/notifications_update', 'controllers/notifications/update.php')->only('admin');
 
 
-$router->get('/users_create', 'controllers/users/create.php');
-$router->delete('/users_destroy', 'controllers/users/destroy.php');
+$router->get('/users_create', 'controllers/users/create.php')->only('guest');
+$router->delete('/users_destroy', 'controllers/users/destroy.php')->only('manager');
 $router->get('/users_edit', 'controllers/users/edit.php');
 $router->get('/users_index', 'controllers/users/index.php');
 $router->get('/users_show', 'controllers/users/show.php');
-$router->get('/users_manage', 'controllers/users/manage.php');
+$router->get('/users_manage', 'controllers/users/manage.php')->only('manager');
 $router->post('/users_store', 'controllers/users/store.php');
 $router->put('/users_update', 'controllers/users/update.php');
 
 
 
-$router->get('/sessions_create', 'controllers/sessions/create.php');
-$router->delete('/sessions_destroy', 'controllers/sessions/destroy.php');
-$router->post('/sessions_store', 'controllers/sessions/store.php');
+$router->get('/sessions_create', 'controllers/sessions/create.php')->only('guest');
+$router->delete('/sessions_destroy', 'controllers/sessions/destroy.php')->only('registered');
+$router->post('/sessions_store', 'controllers/sessions/store.php')->only('guest');
