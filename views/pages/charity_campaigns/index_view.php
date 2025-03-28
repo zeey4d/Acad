@@ -32,14 +32,14 @@
                 </div>
               </div>
               <div class="donate-section">
-                <form action="/charity_campaigns_donate" method="post">
+                <form action="/charity_campaigns_donate" method="post" class="donate-section">
                   <input class="inp" type="number" name="cost" placeholder="$">
                   <input type="hidden" name="campaign_id" value="<?= htmlspecialchars($campaign['campaign_id']) ?>">
-                  <button type="submit">تبرع الأن</button>
+                  <button type="submit" class="donate-btn">تبرع الأن</button>
                 </form>
-                <form action="/charity_campaigns_addcart" method="post">
+                <form action="/charity_campaigns_addcart" method="post" >
                   <input type="hidden" name="campaign_id" value="<?= htmlspecialchars($campaign['campaign_id']) ?>">
-                  <button type="submit"><img src="views/media/images/cart.png" alt=""></button>
+                  <button type="submit" class="donate_cart"><img src="views/media/images/cart.png" alt="" ></button>
                 </form>
               </div>
               <div class="details">

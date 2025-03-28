@@ -32,6 +32,7 @@
       <tbody>
         <?php foreach ($users as $user): ?>
           <tr>
+
             <td><input type="checkbox" class="select-user"></td>
             <td><img src="views/media/images/<?= htmlspecialchars($user['photo'] ?? "default.png") ?>" alt="شعار المستخدم" class="user-logo"></td>
             <td><?= htmlspecialchars($user['username']) ?>
@@ -57,18 +58,18 @@
                     </form>
                   </li>
                   <li>
-                        <form action="/notifications_create" method="get">
-                          <input type="hidden" name="" value="">
-                          <input type="hidden" name="user_id" value="<?= htmlspecialchars($campaign['user_id']) ?>">
-                          <button type="submit">اشعار</button>
-                        </form>
-                    </li>
+                    <form action="/notifications_create" method="get">
+                      <input type="hidden" name="" value="">
+                      <input type="hidden" name="user_id" value="<?= htmlspecialchars($campaign['user_id']) ?>">
+                      <button type="submit">اشعار</button>
+                    </form>
+                  </li>
                 </ul>
               </nav>
             </td>
             <td><?= htmlspecialchars($user['type']) ?></td>
             <td><?= htmlspecialchars($user['email']) ?></td>
-            <td><span><?= htmlspecialchars($user['notifications']) ?>$</span></td>
+            <td><span>$</span></td>
           </tr>
         <?php endforeach; ?>
       </tbody>

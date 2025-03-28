@@ -9,10 +9,10 @@ $db = App::resolve(Database::class);
 try {
     $db->query(
         "DELETE FROM users_cart_islamic_payments 
-         WHERE user_id = :user_id AND islamic_payments_id = :islamic_payments_id",
+         WHERE user_id = :user_id AND islamic_payment_id = :islamic_payment_id",
         [
-            'user_id' => $_POST['user_id'],
-            'islamic_payments_id' => $_POST['islamic_payments_id']
+            'user_id' => filter_var( $_SESSION['user']['id'], FILTER_SANITIZE_NUMBER_INT),
+            'islamic_payment_id' => $_POST['islamic_payment_id']
         ]
     );
 } catch (PDOException $e) {

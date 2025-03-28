@@ -15,7 +15,7 @@ try {
     $partners = $db->query(
         "SELECT * FROM partners"
     )->fetchAll(); // Fetch all rows from the query result
-    $users = $db->query("SELECT (username, password, photo, email, type, directorate, county, city, street, phone) from users where user_id = :user_id ", [
+    $users = $db->query("SELECT * from users where user_id = :user_id ", [
       'user_id' => $_GET['user_id']
     ])->findOrFail();
     

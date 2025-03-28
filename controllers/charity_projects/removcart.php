@@ -11,7 +11,7 @@ try {
         "DELETE FROM users_cart_projects 
          WHERE user_id = :user_id AND project_id = :project_id",
         [
-            'user_id' => $_POST['user_id'],
+            'user_id' => filter_var( $_SESSION['user']['id'], FILTER_SANITIZE_NUMBER_INT),
             'project_id' => $_POST['project_id']
         ]
     );

@@ -14,80 +14,57 @@
     </div>
     <!-- الصدقه -->
     <section class="Carousel_card">
-  <!-- حاوية البطاقات -->
+      <!-- حاوية البطاقات -->
 
 
-    <main class="main_cart">
-      <section class="container">
+      <main class="main_cart">
+        <section class="container_card">
 
-      <?php foreach ($islamic_payments as $islamic_payment): ?>
+          <?php foreach ($islamic_payments as $islamic_payment): ?>
 
-        <div class="donation-card">
-          <img src="views/media/images/<?= htmlspecialchars($islamic_payment['photo'] ?? "11.png") ?>" alt="مشروع نور السعودية">
-          <div class="donation-info">
-            <div class="aghtha">
-              <h6><?= htmlspecialchars($islamic_payment['type']) ?></h6>
-              <h5>رقم الحملة : <?= htmlspecialchars($islamic_payment['islamic_payment_id']) ?></h5>
-              <a href=""><img src="" alt=""></a>
-            </div>
-            <h3>مشروع نور السعودية</h3>
-            <div class="progress-bar">
-              <div class="progress"></div>
-            </div>
-            <div class="donation-details">
-              <div>
-                <p><strong style="display: inline;">SR <?= htmlspecialchars($islamic_payment['cost']) ?>/</strong><?= htmlspecialchars($islamic_payment['paid_cost']) ?></p>
+            <div class="donation-card">
+              <a href="/islamic_payments_zakat">
+                <img src="views/media/images/<?= htmlspecialchars($islamic_payment['photo'] ?? "11.png") ?>" alt="مشروع نور السعودية">
+              </a>
+              <div class="donation-info">
+                <div class="aghtha">
+
+                  <h5>رقم الحملة : <?= htmlspecialchars($islamic_payment['islamic_payment_id']) ?></h5>
+                  <a href=""><img src="" alt=""></a>
+                </div>
+                <h3> <?= htmlspecialchars($islamic_payment['type']) ?> </h3>
+                <div class="progress-bar">
+                  <div class="progress"></div>
+                </div>
+                <div class="donation-details">
+                  <div>
+                    <p><strong style="display: inline;">$ <?= htmlspecialchars($islamic_payment['cost']) ?>/</strong><?= htmlspecialchars($islamic_payment['paid_cost']) ?></p>
+                  </div>
+                </div>
+                <div class="donate-section">
+                  <form action="/islamic_payments_donate" method="post" class="donate-section">
+                    <input class="inp" type="number" name="cost" placeholder="$">
+                    <input type="hidden" name="islamic_payment_id" value="<?= htmlspecialchars($islamic_payment['islamic_payment_id']) ?>">
+                    <button type="submit" class="donate-btn">تبرع الأن</button>
+                  </form>
+                  <form action="/islamic_payments_addcart" method="post">
+                    <input type="hidden" name="islamic_payment_id" value="<?= htmlspecialchars($islamic_payment['islamic_payment_id']) ?>">
+                    <button type="submit" class="donate_cart"><img src="views/media/images/cart.png" alt=""></button>
+                  </form>
+                </div>
+                <a href="/islamic_payments_zakat">
+                  <div class="details">عرض التفاصيل</div>
+                </a>
               </div>
             </div>
-            <div class="donate-section">
-              <input class="inp" type="text" placeholder=" مبلغ التبرع                   ر.س">
-              <button class="donate-btn">تبرع الأن</button>
-              <button class="donate_cart"><img src="views/media/images/cart.png" alt=""></button>
-            </div>
-            <div class="details">عرض التفاصيل</div>
-          </div>
           <?php endforeach; ?>
-      </section>
-      <section class="bar_action">
+        </section>
+        <section class="bar_action">
 
-      </section>
-    </main>
+        </section>
+      </main>
 
-    <!-- <main class="main_cart">
-      <section class="container">
-        <div class="donation-card">
-          <img src="views/media/images/P251.png" alt="مشروع نور السعودية">
-          <div class="donation-info">
-            <div class="aghtha">
-              <h6>إغاثة</h6>
-              <h5>رقم الحملة :</h5>
-              <a href=""><img src="" alt=""></a>
-            </div>
-            <h3>مشروع نور السعودية</h3>
-            <div class="progress-bar">
-              <div class="progress"></div>
-            </div>
-            <div class="donation-details">
-              <div>
-                <p><strong style="display: inline;">SR 15000/</strong>14000</p>
-              </div>
-            </div>
-            <div class="donate-section">
-              <input class="inp" type="text" placeholder=" مبلغ التبرع                   ر.س">
-              <button class="donate-btn">تبرع الأن</button>
-              <button class="donate_cart"><img src="views/media/images/cart.png" alt=""></button>
-            </div>
-            <div class="details">عرض التفاصيل</div>
-          </div>
-      </section>
-      <section class="bar_action">
-
-      </section>
-    </main> -->
-
-    
-
-  </section>
+    </section>
   </section>
 </main>
 <?php require('views/parts/footer.php') ?>

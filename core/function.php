@@ -45,7 +45,9 @@ function logIn($user)
 {
 
     $_SESSION['user'] =  [
-        'email' => $user['email']
+        'email' => $user['email'],
+        'id' => $user['user_id'],
+        'type' => $user['type']
     ];
     session_regenerate_id(true);
 }
@@ -56,6 +58,8 @@ function logOut()
 {
     $_SESSION = [];
     $user['email']  = null;
+    $user['user_id'] = null;
+    $user['type'] = null;
     session_destroy();
 
     $params =  session_get_cookie_params();

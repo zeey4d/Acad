@@ -8,7 +8,6 @@ spl_autoload_register(function ($class) {
     require "{$class}.php";
 });
 
-$_SESSION['user_id'] = 1 ;
 
 //يستدعي كلاسات التحقق
 require 'core\\' . "Validator.php";
@@ -37,6 +36,8 @@ $router->route($uri,$methode);
 
 
 //يطعبع كل خصائص السرفر اسفل الصفحه
-dd($_SERVER);
 
 
+if($_SESSION['user']){
+dd($_SESSION['user']);
+}

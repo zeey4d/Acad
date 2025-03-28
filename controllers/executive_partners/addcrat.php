@@ -10,17 +10,14 @@ try {
     $db->query(
         "INSERT INTO users_cart_endowments (
             user_id,
-            endowment_id,
-            cost
+            endowment_id
         ) VALUES (
             :user_id,
-            :endowment_id,
-            :cost
+            :endowment_id
         )",
         [
-            'user_id' => $_POST['user_id'],
-            'endowment_id' => $_POST['endowment_id'],
-            'cost' => filter_var($_POST['cost'], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION)
+            'user_id' => filter_var( $_SESSION['user']['id'], FILTER_SANITIZE_NUMBER_INT),
+            'endowment_id' => $_POST['endowment_id']
         ]
     );
 } catch (PDOException $e) {

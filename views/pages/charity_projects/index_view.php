@@ -30,11 +30,12 @@
 
   <main class="main_cart">
     <section class="container_card">
-
       <?php foreach ($projects as $project): ?>
 
         <div class="donation-card">
+        <a href="/charity_projects_show?project_id=<?= htmlspecialchars($project['project_id']) ?>">
           <img src="views/media/images/<?= htmlspecialchars($project['photo'] ?? "11.png") ?>" alt="مشروع نور السعودية" loading="lazy">
+        </a>
           <div class="donation-info">
             <div class="aghtha">
               <h6><?= htmlspecialchars($project['type']) ?></h6>
@@ -51,14 +52,14 @@
               </div>
             </div>
             <div class="donate-section">
-              <form action="/charity_projects_donate" method="post">
+              <form action="/charity_projects_donate" method="post" class="donate-section">
                 <input class="inp" type="number" name="cost" placeholder="$">
                 <input type="hidden" name="project_id" value="<?= htmlspecialchars($project['project_id']) ?>">
-                <button type="submit">تبرع الأن</button>
+                <button type="submit" class="donate-btn">تبرع الأن</button>
               </form>
               <form action="/charity_projects_addcart" method="post">
                 <input type="hidden" name="project_id" value="<?= htmlspecialchars($project['project_id']) ?>">
-                <button type="submit"><img src="views/media/images/cart.png" alt=""></button>
+                <button type="submit" class="donate_cart"><img src="views/media/images/cart.png" alt=""></button>
               </form>
             </div>
             <div class="details">

@@ -31,16 +31,16 @@
             <h1>تواصل معنا</h1><hr>
             <p>إذا واجهتك مشكلة أو لديك أي استفسار لا تتردد في التواصل معنا</p>
             <h3>إرسال إشعار</h3><hr>
-            <div class="send_notifications">
+            <!-- <div class="send_notifications">
                 <form  action="" method="" enctype="multipart/form-data">
                     <input class="address_notice" id="address_notice" type="text" name="address_notice" placeholder="عنوان الاشعار"><br>
                     <input class="content_notice" id="content_notice" type="text" name="content_notice" placeholder="محتوى الاشعار"><br>
                     <input class="image_notice" id="image_notice" type="file" accept="image/*" name="image_notice" ><br>
                     <button id="button_send_notice" class="button_send_notice" type="submit">تأكيد</button><br>
                 </form>
-            </div>
+            </div> -->
         </div>
-        <div class="certificates_and_ratings">
+        <!-- <div class="certificates_and_ratings">
             <h1>الشهادات والتقييمات</h1><hr>
             <a class="said_about_us" id="said_about_us" href=""></a><br>
             <h3> نشر خبر</h3><hr>
@@ -53,7 +53,7 @@
                 </form>
             </div>
 
-        </div>
+        </div> -->
        
     </div>
     <p class="end_foter">جميع الحقوق محفوظة لمنصة بادر الخيرية &#169; 2025</p>

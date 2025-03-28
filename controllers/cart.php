@@ -9,7 +9,7 @@ use core\Database;
 $db = App::resolve(Database::class);
 
 
-$_SESSION['user_id'] = 1;
+
 
 
 
@@ -21,7 +21,7 @@ $projects = $db->query(
     WHERE
     c.user_id = :user_id and c.project_id = m.project_id;",
     [
-        'user_id' => $_SESSION['user_id']
+        'user_id' =>filter_var( $_SESSION['user']['id'], FILTER_SANITIZE_NUMBER_INT),
     ]
 )->fetchAll(); // محتوى السلة من المشاريع
 
@@ -34,7 +34,7 @@ $campaigns = $db->query(
     WHERE
     c.user_id = :user_id and c.campaign_id = m.campaign_id;",
     [
-        'user_id' => $_SESSION['user_id']
+        'user_id' =>filter_var( $_SESSION['user']['id'], FILTER_SANITIZE_NUMBER_INT),
     ]
 )->fetchAll(); // محتوى السلة من الحملات الخيرية
 
@@ -47,13 +47,9 @@ $endowments = $db->query(
     WHERE
     c.user_id = :user_id and c.endowment_id = m.endowment_id;",
     [
-        'user_id' => $_SESSION['user_id']
+        'user_id' =>filter_var( $_SESSION['user']['id'], FILTER_SANITIZE_NUMBER_INT),
     ]
 )->fetchAll(); // محتوى السلة من الأوقاف
-
-$do = $db->query(
-    "    SELECT * From users_cart_islamic_payments ;",
-)->fetchAll(); // محتوى السلة من الأعمال الخيرية
 
 
 $islamic_payments = $db->query(
@@ -64,7 +60,7 @@ $islamic_payments = $db->query(
     WHERE
     c.user_id = :user_id and c.islamic_payment_id = m.islamic_payment_id ;",
     [
-        'user_id' => $_SESSION['user_id']
+        'user_id' =>filter_var( $_SESSION['user']['id'], FILTER_SANITIZE_NUMBER_INT),
     ]
 )->fetchAll();
 

@@ -5,7 +5,7 @@ use core\Database ;
 
 
 $db = App::resolve(Database::class);
-$_POST['user_id'] = $_SESSION['user_id'];
+ 
 
 
 try {
@@ -22,7 +22,7 @@ try {
             :donate_date
         )",
         [
-            'user_id' => $_POST['user_id'],
+            'user_id' => filter_var( $_SESSION['user']['id'], FILTER_SANITIZE_NUMBER_INT),
             'campaign_id' => $_POST['campaign_id'],
             'cost' => filter_var($_POST['cost'], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION),
             'donate_date' => date('Y-m-d H:i:s') // Defaulting to current timestamp if not provided

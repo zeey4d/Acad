@@ -4,36 +4,50 @@ use core\Database ;
 $db = App::resolve(Database::class);
 
 
-$heading = "All My tests";
+$page = "islamic_endowments_index" ;
+
+try {
+    // Fetch categories for filtering
+    $categories = $db->query("SELECT category_id, name FROM categories")->fetchAll();
+
+    // Get search and filter inputs from $_GET
+    $search = $_GET['search'] ?? '';
+    $filter = $_GET['filter'] ?? 'all';
+
+    // Base Query
+    $query = "SELECT * FROM endowments WHERE 1=1";
+    $params = [];
+
+    // 🔎 Add Search Filter
+    if (!empty($search)) {
+        $query .= " AND MATCH(name, short_description, full_description) AGAINST (:search IN NATURAL LANGUAGE MODE)";
+        $params['search'] = $search;
+    }
+
+    // 🎯 Add Category Filter (if a valid category is selected)
+    if ($filter !== 'all' && is_numeric($filter)) {
+        $query .= " AND category_id = :category_id";
+        $params['category_id'] = $filter;
+    }
+    if ($_GET['submit'] == "foryou") {
+        $query .= " AND u.user_id = :user_id";
+        $params['user_id'] = $_SESSION['user']['id'];
+    }
 
 
- $islamic_endowments = $db->query("SELECT * from endowments;")->fetchAll();
-// $endowments = $db->query(
-//     "SELECT 
-//         A.category_id,
-//         A.partner_id,
-//         A.name,
-//         A.short_description,
-//         A.full_description,
-//         A.cost,
-//         sum(B.cost) as donate_cost,
-//         max(B.donate_date) as donate_date,
-//         A.start_at,
-//         A.end_at,
-//         A.state,
-//         A.directorate,
-//         A.city,
-//         A.street,
-//         A.photo
-//     FROM endowments A JOIN users_donate_endowments B ON (A.endowment_id = B. endowment_id)
-//     GROUP BY(A.endowment_id)
-//     HAVING A.endowment_id IN
-//     (
-//         select endowment_id from users_donate_endowments
-//     )
-//     ORDER BY donate_date DESC
-//     "
-// );
+    // 👌 Finalize Query
+    $query .= " ORDER BY name ASC;";
+
+    // Execute the query
+    $islamic_endowments = $db->query($query, $params)->fetchAll();
+
+} catch (PDOException $e) {
+    error_log($e->getMessage());
+    $_SESSION['error'] = "حدث خطأ أثناء جلب البيانات";
+    header("Location: /endowments");
+    exit();
+}
+
 
 
 require "views/pages/islamic_endowments/index_view.php";

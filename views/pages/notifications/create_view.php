@@ -3,73 +3,36 @@
 <?php require('views/parts/navgtion.php') ?>
 <?php require('views/parts/header.php') ?>
 
-<main class="main_form_notifications">
-  <section class="form_notifications">
+<main class="main_create_chatity">
+    <div class="div_tbr3"> 
+  <section class="donation-form">
   
-    <div class="data">
-      <form action="/notifications_store" method="post">
-        <label for="project_name">إسم المشروع</label>
-        <input id="project_name" type="text" name="project_name" placeholder="أدخل إسم المشروع"><br>
-        <label for="amount">المبلغ المستهدف</label>
-        <input id="amount" type="number" name="amount" placeholder=""><br>
-        <label for="duration">مدةالمشروع</label>
-        <input id="duration" type="text" name="duration" placeholder=""><br>
-        <label for="brief_explan">شرح مختصر</label>
-        <input id="brief_explan" type="text" name="brief_explan" placeholder=""><br>
-        <label for="full_explan">شرح مكتمل</label>
-        <textarea id="full_explan" name="full_explan" ></textarea><br>
-        <label for="implementing_agency">الجهةالمنفذة</label>
-        <select name="implementing_agency" id="implementing_agency">
-          <option value="1">الشركاء</option>
-          <option value="2">المتبرعين</option>
-          <option value="3">-----</option>
-          <option value="4">-----</option>
-        </select>
-        <label for="implement_stages">مراحل التنفيذ</label>
-        <select name="implement_stages" id="implement_stages">
-          <option value="1">المرحلة الاولى </option>
-          <option value="2">المرحلة الثانية</option>
-          <option value="3">المرحلة الثالثه</option>
-          <option value="4">المرحلة الرابعه</option>
-        </select>
-        
-        <label for="type_project">نوع المشروع</label>
-        <input id="type_project" type="text" name="type_project" list="type_project_list" placeholder="">
-          <datalist id="type_project_list">
-            <option value="1">صحي </option>
-            <option value="2">تعليمي</option>
-            <option value="3">-----</option>
-            <option value="4">-----</option>
+  <div class="modal-content">
+    <h2>إضافة إشعار جديد</h2>
+    <form id="add-notification-form" action="/notifications_store" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="title">عنوان الإشعار:</label>
+            <input type="text" id="title" name="title" required>
+        </div>
+        <div class="form-group">
+            <label for="content">محتوى الإشعار:</label>
+            <textarea id="content" name="content" rows="4" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="send_at">تاريخ الإرسال:</label>
+            <input type="datetime-local" id="send_at" name="send_at">
+        </div>
+        <div class="form-group">
+            <label for="photo">صورة مرفقة:</label>
+            <input type="file" id="photo" name="photo" accept="image/*">
+        </div>
+        <div class="form-group">
+            <button type="submit" name="submit">إضافة الإشعار</button>
+        </div>
+    </form>
+</div>
 
-          </datalist>
-        <label for="project_location">موقع المشروع</label>
-        <select name="project_location" id="project_location">
-          <option value=""></option>
-        </select>
-        <label for="stage">المراحل التي يمر بها المشروع</label>
-        <input id="stage" type="text" name="stage" list="stage_list" placeholder="">
-          <datalist id="stage_list">
-            <option value=""></option>
-
-          </datalist>
-          <button id="reporting" name="reporting">رفع التقارير</button>
-      </form>
-      <div class="button">
-      <button class="confirmation" id="confirmation" name="confirmation">تأكيد</button>
-      <button class="cancel" id="cancel" name="cancel">إلغاء</button>
-    </div>
-    </div>
-   
-    <div class="image">
-      <div>
-      <img class="image_notifi_create" src="views/media/images/P251.png" alt="">
-      </div>
-      <div class="btn_image_notifi">
-        <button class="btn_image" id="btn_image" name="btn_image">إضافة صورة</button>
-        <img class="camera" id="camera" src="views/media/images/camerab.png" alt="">
-        <img class="folder" id="folder" src="views/media/images/folder.png" alt="">
-      </div>
-    </div>
   </section>
+    </div>
 </main>
 <?php require('views/parts/footer.php') ?>
