@@ -234,3 +234,9 @@ $router->get('/users_show', 'controllers/users/show.php');
 $router->get('/users_manage', 'controllers/users/manage.php');
 $router->post('/users_store', 'controllers/users/store.php');
 $router->put('/users_update', 'controllers/users/update.php');
+
+
+
+$router->get('/sessions_create', 'controllers/sessions/create.php');
+$router->delete('/sessions_destroy', 'controllers/sessions/destroy.php');
+$router->post('/sessions_store', 'controllers/sessions/store.php');

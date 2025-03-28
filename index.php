@@ -41,3 +41,4 @@ $router->route($uri,$methode);
 
 
 
+dd($_SESSION['user']);

@@ -57,18 +57,18 @@
                     </form>
                   </li>
                   <li>
-                        <form action="/notifications_create" method="get">
-                          <input type="hidden" name="" value="">
-                          <input type="hidden" name="user_id" value="<?= htmlspecialchars($campaign['user_id']) ?>">
-                          <button type="submit">اشعار</button>
-                        </form>
-                    </li>
+                    <form action="/notifications_create" method="get">
+                      <input type="hidden" name="" value="">
+                      <input type="hidden" name="user_id" value="<?= htmlspecialchars($campaign['user_id']) ?>">
+                      <button type="submit">اشعار</button>
+                    </form>
+                  </li>
                 </ul>
               </nav>
             </td>
             <td><?= htmlspecialchars($user['type']) ?></td>
             <td><?= htmlspecialchars($user['email']) ?></td>
-            <td><span><?= htmlspecialchars($user['notifications']) ?>$</span></td>
+            <td><span>$</span></td>
           </tr>
         <?php endforeach; ?>
       </tbody>
