@@ -23,7 +23,7 @@
 
   </section>
 
-  <h1 style="             margin: 110px;    text-align: center;    color: var(--font-color-bh); ">الصَّدَقَةُ لَا تَنْقُصُ الْمَالَ، بَلْ تَزِيدُهُ بَرَكَةً وَطُهْرًا</h1>
+  <h1 style=" margin: 110px;    text-align: center;    color: var(--font-color-bh); ">الصَّدَقَةُ لَا تَنْقُصُ الْمَالَ، بَلْ تَزِيدُهُ بَرَكَةً وَطُهْرًا</h1>
 
   <section class="Carousel_card">
     <!-- حاوية البطاقات -->
@@ -37,9 +37,9 @@
             </a>
             <div class="donation-info">
               <div class="aghtha">
-                <h6>بادر</h6>
+                <h6 >بادر</h6>
                 <h5>رقم الحملة : <?= htmlspecialchars($campaign['campaign_id']) ?></h5>
-                <a href=""><img src="" alt=""></a>
+                <!-- <a href=""><img src="" alt=""></a> -->
               </div>
               <h3><?= htmlspecialchars($campaign['name']) ?></h3>
               <div class="progress-bar">
