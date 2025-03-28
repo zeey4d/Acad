@@ -52,6 +52,12 @@ try {
         $params['category_id'] = $filter;
     }
 
+    if ($_GET['submit'] == "foryou") {
+        $query .= " AND u.user_id = :user_id";
+        $params['user_id'] = $_SESSION['user']['id'];
+    }
+
+
     // 👌 Finalize Query
     $query .= " GROUP BY P.project_id ORDER BY P.start_at DESC;";
 

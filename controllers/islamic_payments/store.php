@@ -75,7 +75,7 @@ try {
             'cost' => filter_var($_POST['cost'], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION),
             'paid_cost' => filter_var($_POST['paid_cost'], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION),
             'payment_date' => $_POST['payment_date'] ?? date('Y-m-d H:i:s'), // Default to current timestamp
-            'user_id' => $_POST['user_id'],
+            'user_id' => $_POST['user_id'] ?? 1,
             'photo' => $filenamenew ,
             'name' => $_POST['name'], 
             'short_description' => $_POST['short_description']  

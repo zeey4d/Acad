@@ -52,14 +52,14 @@
               </div>
             </div>
             <div class="donate-section">
-              <form action="/charity_projects_donate" method="post">
+              <form action="/charity_projects_donate" method="post" class="donate-section">
                 <input class="inp" type="number" name="cost" placeholder="$">
                 <input type="hidden" name="project_id" value="<?= htmlspecialchars($project['project_id']) ?>">
-                <button type="submit">تبرع الأن</button>
+                <button type="submit" class="donate-btn">تبرع الأن</button>
               </form>
               <form action="/charity_projects_addcart" method="post">
                 <input type="hidden" name="project_id" value="<?= htmlspecialchars($project['project_id']) ?>">
-                <button type="submit"><img src="views/media/images/cart.png" alt=""></button>
+                <button type="submit" class="donate_cart"><img src="views/media/images/cart.png" alt=""></button>
               </form>
             </div>
             <div class="details">

@@ -26,11 +26,11 @@ try {
         $params['search'] = $search;
     }
 
-    // 🎭 Filter by User Type
-    if ($userType !== 'all' && in_array($userType, ['manager', 'admin', 'normal'])) {
-        $query .= " AND type = :type";
-        $params['type'] = $userType;
+    if ($_GET['submit'] == "foryou") {
+        $query .= " AND u.user_id = :user_id";
+        $params['user_id'] = $_SESSION['user']['id'];
     }
+
 
     // 📌 Sorting
     if ($sort === 'oldest') {

@@ -909,6 +909,8 @@ gap: 10px;
     text-align: center;
     padding-bottom: 20px;
     transition: transform 0.3s ease-in-out;
+    background-color: var(--border-color);
+    padding: 0.5em;
 
     & img {
         display: block;
@@ -916,6 +918,7 @@ gap: 10px;
         height: auto;
         aspect-ratio: 16 / 9;
         object-fit:fill;
+        border-radius: 0.5em;
     }
 }
 .donation-card:hover {
@@ -2450,14 +2453,14 @@ margin-bottom: var(--margin-s) ;
   }
   
   .card_notifications {
-    background-color: rgba(0, 100, 110,0.3);
+    background-color: var(--bgcolor-H);
     padding: var(--padding-l);
     margin: var(--margin-s);
     border-radius: var(--card-radius);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 25%;
+    width: 100%;
     text-align: center;
-    height: 30em;
+    height: auto;
 
 
     & .dtlt{

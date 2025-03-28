@@ -10,17 +10,14 @@ try {
     $db->query(
         "INSERT INTO users_cart_islamic_payments (
             user_id,
-            islamic_payment_describtion,
-            cost,
+            islamic_payment_id
         ) VALUES (
             :user_id,
-            :islamic_payment_describtion,
-            :cost,
+            :islamic_payment_id
         )",
         [
-            'user_id' => $_POST['user_id'],
-            'islamic_payment_describtion' => htmlspecialchars($_POST['islamic_payment_describtion']),
-            'cost' => filter_var($_POST['cost'], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION),
+            'user_id' => filter_var( $_SESSION['user']['id'], FILTER_SANITIZE_NUMBER_INT),
+            'islamic_payment_id' => htmlspecialchars($_POST['islamic_payment_id'])
         ]
     );
     

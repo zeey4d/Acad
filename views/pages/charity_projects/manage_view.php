@@ -35,11 +35,11 @@
           </thead>
           <tbody>
 
-          <?php foreach ($projects as $project): ?>
+          <?php  foreach ($projects as $project): ?>
 
             <tr>
               <td><input type="checkbox" class="select-campaign"></td>
-              <td><img src="views/media/images/<?= htmlspecialchars($projects['photo'] ?? "11.png") ?>" alt="شعار الحملة" class="campaign-logo"></td>
+              <td><img src="views/media/images/<?= htmlspecialchars($project['photo'] ?? "11.png") ?>" alt="شعار الحملة" class="campaign-logo"></td>
               <td><?= htmlspecialchars($project['name']) ?>
               <nav class="options">
                 <ul>

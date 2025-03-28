@@ -47,7 +47,7 @@
                     <input type="hidden" name="islamic_payment_id" value="<?= htmlspecialchars($islamic_payment['islamic_payment_id']) ?>">
                     <button type="submit" class="donate-btn">تبرع الأن</button>
                   </form>
-                  <form action="/islamic_payments_donate" method="post">
+                  <form action="/islamic_payments_addcart" method="post">
                     <input type="hidden" name="islamic_payment_id" value="<?= htmlspecialchars($islamic_payment['islamic_payment_id']) ?>">
                     <button type="submit" class="donate_cart"><img src="views/media/images/cart.png" alt=""></button>
                   </form>

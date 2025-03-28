@@ -27,6 +27,11 @@ try {
         $query .= " AND type = :type";
         $params['type'] = $filter;
     }
+    if ($_GET['submit'] == "foryou") {
+        $query .= " AND u.user_id = :user_id";
+        $params['user_id'] = $_SESSION['user']['id'];
+    }
+
 
     // 👌 Finalize Query
     $query .= " ORDER BY payment_date DESC;";

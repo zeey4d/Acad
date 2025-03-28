@@ -23,6 +23,11 @@ try {
         $query .= " AND MATCH(title, content) AGAINST (:search IN NATURAL LANGUAGE MODE)";
         $params['search'] = $search;
     }
+    if ($_GET['submit'] == "foryou") {
+        $query .= " AND u.user_id = :user_id";
+        $params['user_id'] = $_SESSION['user']['id'];
+    }
+
 
     // 📌 Add Sorting Option
     if ($sort === 'oldest') {

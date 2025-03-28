@@ -32,6 +32,7 @@
       <tbody>
         <?php foreach ($users as $user): ?>
           <tr>
+
             <td><input type="checkbox" class="select-user"></td>
             <td><img src="views/media/images/<?= htmlspecialchars($user['photo'] ?? "default.png") ?>" alt="شعار المستخدم" class="user-logo"></td>
             <td><?= htmlspecialchars($user['username']) ?>

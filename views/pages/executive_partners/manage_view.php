@@ -32,6 +32,7 @@
       <tbody>
         <?php foreach ($partners as $partner): ?>
           <tr>
+            
             <td><input type="checkbox" class="select-partner"></td>
             <td><img src="views/media/images/<?= htmlspecialchars($partner['photo'] ?? "default.png") ?>" alt="شعار الشريك" class="partner-logo"></td>
             <td><?= htmlspecialchars($partner['name']) ?>

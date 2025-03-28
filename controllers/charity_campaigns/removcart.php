@@ -5,13 +5,13 @@ use core\Database ;
 
 
 $db = App::resolve(Database::class);
-$_POST['user_id'] = $_SESSION['user_id'];
+
 try {
     $db->query(
         "DELETE FROM users_cart_campaigns 
          WHERE user_id = :user_id AND campaign_id = :campaign_id",
         [
-            'user_id' => $_POST['user_id'],
+            'user_id' => filter_var( $_SESSION['user']['id'], FILTER_SANITIZE_NUMBER_INT),
             'campaign_id' => $_POST['campaign_id']
         ]
     );

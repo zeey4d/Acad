@@ -19,6 +19,11 @@ try {
         $query .= " AND MATCH(name, description, more_information) AGAINST (:search IN NATURAL LANGUAGE MODE)";
         $params['search'] = $search;
     }
+    if ($_GET['submit'] == "foryou") {
+        $query .= " AND u.user_id = :user_id";
+        $params['user_id'] = $_SESSION['user']['id'];
+    }
+
 
     // 👌 Finalize Query
     $query .= " ORDER BY name ASC;";

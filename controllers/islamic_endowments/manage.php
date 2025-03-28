@@ -29,6 +29,11 @@ try {
         $query .= " AND category_id = :category_id";
         $params['category_id'] = $filter;
     }
+    if ($_GET['submit'] == "foryou") {
+        $query .= " AND u.user_id = :user_id";
+        $params['user_id'] = $_SESSION['user']['id'];
+    }
+
 
     // 👌 Finalize Query
     $query .= " ORDER BY name ASC;";
@@ -45,7 +50,7 @@ try {
 
 
 
-require "views/pages/islamic_endowments/index_view.php";
+require "views/pages/islamic_endowments/manage_view.php";
 
 
 ?>

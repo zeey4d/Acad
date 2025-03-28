@@ -52,6 +52,11 @@ try {
         $query .= " AND g.category_id = :category_id";
         $params['category_id'] = $filter;
     }
+    if ($_GET['submit'] == "foryou") {
+        $query .= " AND u.user_id = :user_id";
+        $params['user_id'] = $_SESSION['user']['id'];
+    }
+
 
     // 👌 Finalize Query
     $query .= " GROUP BY g.campaign_id ORDER BY g.start_at;";

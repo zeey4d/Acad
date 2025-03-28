@@ -52,6 +52,12 @@ try {
         $params['category_id'] = $filter;
     }
 
+    if ($_GET['submit'] == "foryou") {
+        $query .= " AND u.user_id = :user_id";
+        $params['user_id'] = $_SESSION['user']['id'];
+    }
+
+
     // 👌 Finalize Query
     $query .= " GROUP BY P.project_id ORDER BY P.start_at DESC;";
 
@@ -70,7 +76,7 @@ try {
 // $charity_projects = $db->query("SELECT * from charity_projects ;")->fetchAll();
 
 
-require "views/pages/charity_projects/index_view.php";
+require "views/pages/charity_projects/manage_view.php";
 
 
 ?>
