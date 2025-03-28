@@ -1,4 +1,6 @@
 <!-- تذيلة الصفحه -->
+<script src="views/javascrept/scrept.js"></script>
+
 </body>
 <footer class="item">
 <!-- <h1>footer</h1> -->
@@ -59,5 +61,7 @@
     <p class="end_foter">جميع الحقوق محفوظة لمنصة بادر الخيرية &#169; 2025</p>
 
 </footer>
+
+
 
 </html>

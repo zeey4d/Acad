@@ -182,12 +182,27 @@ footer {
     padding: 0em 1em;
     position: fixed;
     width: 100%;
+    height: 5em;
     top: 0;
     z-index: 1000;
     direction: rtl;
     border-bottom: 1px solid #dadada;
 
 
+
+
+}
+
+.box_link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 .logo-menu{
@@ -197,9 +212,15 @@ footer {
     
 
     & .menu{
-        width: 30px;
-        height: 30px;
+
         display: none;
+        cursor: pointer;
+
+
+        & img {
+            width: 30px;
+            height: 30px;
+        }
 
     }
 
@@ -314,40 +335,56 @@ gap: 10px;
 }
 .close{
     display: none;
+    cursor: pointer;
+    & img {
+        width: 30px;
+        height: 30px;
+    }
+
+    & :hover {
+        background-color: var(--bgcolor-light);
+    }
+
 }
 #menulist{
     transition: all 0.5s;
 }
 @media (max-width:900px) {
+
+
     .nav-links{
         position: absolute;
-        top: 0;
+        top: 80px;
         left: 0;
         right: 0;
         flex-direction: column;
         background-color: var(--bgcolor-white);
-        padding: var(--padding-m);
+        padding: var(--padding-s);
         border-left: var(--bg-border-l);
         border-radius: var(--button-radius);
-        width: 40em;
-        height: 50em;
-        overflow: hidden;
+        width: 30em;
+        height: 40em;
+        display: none;
 
-        & a{
-            padding: var(--padding-s);
-        }
-        & .close{
-            display: block;
+        & .box_link{
+            display: flex;
+            justify-content: right;
+
         }
 
-        & .menu{
-            width: 30px;
-            height: 30px;
-            display: none;
-    
-        }
 
     }
+ 
+
+
+
+    .logo-menu .menu{
+
+            display: block;
+    
+    }
+    
+ 
 }
 
 
@@ -961,7 +998,6 @@ gap: 10px;
     text-align: center;
     padding-bottom: 20px;
     transition: transform 0.3s ease-in-out;
-    background-color: var(--border-color);
     padding: 0.5em;
 
     & img {
@@ -1033,15 +1069,24 @@ gap: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 5px;
     margin-top: 15px;
     & .donate_cart{
-        height: auto;
-        width: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 2.7em;
+        width: 2.5em;
         background-color: #ffffff;
-        border: var(--bg-border);
-        border-radius: var(--border-radius);
-        padding: var(--padding-m);
+        border: var(--bg-border-l);
+        border-radius: var(--border-radius-s);
+        padding: var(--padding-s);
+        margin-top: 1.2em ;
+
+        & :hover{
+            background-color: var(--bgcolor-light);
+
+        }
 
         & img {
             width: 20px;
@@ -1050,7 +1095,8 @@ gap: 10px;
     }
 }
 .donate-section input {
-    padding: 8px;
+    height: auto;
+    padding: var(--padding-s);
     border: 1px solid #ccc;
     border-radius: 6px;
     text-align: right;
@@ -1063,17 +1109,23 @@ gap: 10px;
     border-top:solid beige 1px;
     padding-top: 10px;
 
+    & a {
+        color: rgb(128, 128, 128);
+        text-decoration: none;
+    }
+
 
 }
 .donate-btn {
     background: var(--button-bg-h);
     color: white;
     border: none;
-    padding: 10px 22px;
+    padding: var(--padding-s);
     border-radius: 6px;
     cursor: pointer;
-    width: 140px;
-    font-size: 16px;
+    width: 60%;
+    height: 3em;
+    font-size: var(--font-size-s);
     font-weight: bold;
     transition: background 0.3s ease-in-out;
 }

@@ -1,25 +1,21 @@
 // menu bar 
 
-// let menulist = document.getElementById('menulist')
-// menulist.style.display("none");
+let menulist = document.getElementById('menulist');
+let menubut = document.querySelector('.menu') ;
 
-function togglemenu(){
-    if(menulist.style.maxHeight=="0px")
-    {
-        menulist.style.maxHeight= "300px";
-    }
-    else {
-        menulist.style.maxHeight= "0px";
-    }
+let closebut = document.querySelector('.close') ;
+
+
+function openMenu(){
+    menulist.style.display= 'flex';
+    menubut.style.display= 'none';
+    closebut.style.display = 'block';
+
 }
 
-const button = document.getElementById("toggleBtn");
-const closee = document.getElementById("close");
+function closeMenu(){
+    menulist.style.display= 'none';
+    menubut.style.display= 'block';
+    closebut.style.display = 'none';
 
-button.addEventListener("click", () => {
-    content.style.display = "block"; 
-});
-
-closee.addEventListener("click", () => {
-    content.style.display = "4444"; 
-});
+}

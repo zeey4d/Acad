@@ -13,6 +13,5 @@
 
 </head>
 <body>
-<script src="views/javascrept/scrept.js"></script>
 
 <!-- <div> -->

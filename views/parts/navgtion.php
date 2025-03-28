@@ -15,11 +15,15 @@
             <li><a href="/charity_projects_index">المشاريع</a></li>
             <li><a href="/charity_campaigns_index">الحملات الخيرية</a></li>
 ======= -->
-        <div>
+        <div class="logo-menu">
+            <a class="menu" onclick="openMenu()"><img src="views/media/images/list.png" alt=""></a>
+            <a class="close" onclick="closeMenu()"><img src="views/media/images/close.png" alt=""></a>
+
             <a href="/"> <img class="logo_image" src="views/media/images/bader.png"></a>
+
         </div>
 
-        <ul class="nav-links">
+        <ul id="menulist" class="nav-links">
             <li><div class="box_link"><a href="/">الرئيسية</a></div></li>
             <li><div class="box_link"><a href="/islamic_endowments_index">الأوقاف</a></div></li>
             <li><div class="box_link"><a href="/charity_projects_index">المشاريع</a></div></li>
