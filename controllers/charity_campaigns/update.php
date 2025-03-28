@@ -9,13 +9,13 @@ use core\Database;
 
 $db = App::resolve(Database::class);
 
-$userID = 1;
+// $userID = 1;
 
 // $note = $db->query("SELECT * from charity_campaigns where id = :id ", [
 //   'id' => $_POST['id'],
 // ])->findOrFail();
 
-authorize($note['other_id'] == $userID);
+// authorize($note['other_id'] == $userID);
 
 $errors = [];
 
@@ -27,11 +27,11 @@ $errors = [];
 // }
 
 
-if (! empty($errors)) {
+// if (! empty($errors)) {
   
-    require "views/pages/charity_campaigns/edit_view.php";
-    die();
-}
+//     require "views/pages/charity_campaigns/edit_view.php";
+//     die();
+// }
  
 
 // $db->query("UPDATE charity_campaigns set name = :name  " , [

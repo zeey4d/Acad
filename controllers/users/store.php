@@ -84,10 +84,8 @@ $errors = [];
 
 // التحقق مما إذا كان البريد الإلكتروني موجودًا مسبقًا
 $user = $db->query('SELECT * FROM users WHERE email = :email', [
-  'email' => filter_var($_POST['email'], FILTER_SANITIZE_EMAIL)
+   'email' => filter_var($_POST['email'], FILTER_SANITIZE_EMAIL)
 ])->fetch();
-
-
 
 
 if ($user) {
@@ -134,15 +132,13 @@ if ($user) {
       );
       $user = $db->query('SELECT * FROM users WHERE email = :email', [
          'email' => filter_var($_POST['email'], FILTER_SANITIZE_EMAIL)
-       ])->fetch();
-
+      ])->fetch();
    } catch (PDOException $e) {
       error_log($e->getMessage());
       $_SESSION['error'] = "حدث خطأ أثناء حفظ البعانات";
       header("Location: /charity_projects_create");
       exit();
    }
-   
 }
 // توجيه المستخدم إلى الصفحة الرئيسية بعد التسجيل الناجح
 
