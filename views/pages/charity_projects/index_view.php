@@ -33,8 +33,9 @@
       <?php foreach ($projects as $project): ?>
 
         <div class="donation-card">
-
+        <a href="/charity_projects_show?project_id=<?= htmlspecialchars($project['project_id']) ?>">
           <img src="views/media/images/<?= htmlspecialchars($project['photo'] ?? "11.png") ?>" alt="مشروع نور السعودية" loading="lazy">
+        </a>
           <div class="donation-info">
             <div class="aghtha">
               <h6><?= htmlspecialchars($project['type']) ?></h6>

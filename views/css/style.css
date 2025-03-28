@@ -126,6 +126,7 @@ nav {
 main {
     background-color: rgb(255, 255, 255);
     min-height: 60vh;
+    min-width: 250px;
 }
 
 footer {
@@ -542,7 +543,7 @@ gap: 10px;
     align-items: center;
     justify-content: center;
     gap: 10px;
-    width: 100%;
+    width: 90%;
   }
   
   .form-search {
@@ -550,6 +551,7 @@ gap: 10px;
     align-items: center;
     justify-content: center;
     gap: 10px;
+    width: 100%;
   }
   
   .search-input {
@@ -560,7 +562,7 @@ gap: 10px;
     outline: none;
     transition: border-color 0.3s ease;
     height: 3.5em;
-    width: 60em;
+    width: 100% ;
   }
   
   .filter-select {
@@ -888,7 +890,7 @@ gap: 10px;
     margin: var(--margin-s);
     direction: rtl;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(6, 1fr);;
     justify-items:center;
     gap: 1rem;
 }
@@ -2724,30 +2726,35 @@ table input[type="text"]:focus, table select:focus {
 /*   التحكم بي الموقع عند اختلاف المقاسات الشاشة*/
 
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1440px) {
     .container_card {
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+@media screen and (max-width: 1280px) {
+    .container_card {
+        grid-template-columns: repeat(4, 1fr);
     }
 }
 
 /* Medium screens (tablets) */
-@media screen and (max-width: 992px) {
+@media screen and (max-width:  1024px) {
     .container_card {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
 /* Small screens (phones) */
 @media screen and (max-width: 768px) {
     .container_card {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 /* Extra small screens */
 @media screen and (max-width: 480px) {
     .container_card {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(1, 1fr);
         gap: 0.5rem;
         margin: var(--margin-xs);
     }

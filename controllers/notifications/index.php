@@ -6,10 +6,40 @@ use core\Database;
 $db = App::resolve(Database::class);
 
 
-$heading = "All My tests";
-$notifications = $db->query(
-    "SELECT * from notifications;"
-)->fetchAll();
+$page = "notifications_index" ;
+
+
+try {
+    // Get search and sorting inputs from $_GET
+    $search = $_GET['search'] ?? '';
+    $sort = $_GET['sort'] ?? 'latest'; // Default: show latest notifications
+
+    // Base Query
+    $query = "SELECT * FROM notifications WHERE 1=1";
+    $params = [];
+
+    // 🔎 Add Search Filter (Full-Text Search)
+    if (!empty($search)) {
+        $query .= " AND MATCH(title, content) AGAINST (:search IN NATURAL LANGUAGE MODE)";
+        $params['search'] = $search;
+    }
+
+    // 📌 Add Sorting Option
+    if ($sort === 'oldest') {
+        $query .= " ORDER BY send_at ASC";
+    } else { 
+        $query .= " ORDER BY send_at DESC"; // Default: Latest notifications first
+    }
+
+    // Execute the query
+    $notifications = $db->query($query, $params)->fetchAll();
+
+} catch (PDOException $e) {
+    error_log($e->getMessage());
+    $_SESSION['error'] = "حدث خطأ أثناء جلب البيانات";
+    header("Location: /notifications");
+    exit();
+}
 
 
 // $notifications = $db->query(

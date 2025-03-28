@@ -6,12 +6,21 @@ use core\Database;
 $db = App::resolve(Database::class);
 
 
+$page = "charity_campaigns_manage" ;
+
 $heading = "All My tests";
 
-
 try {
-    $campaigns = $db->query(
-        "SELECT 
+    // Fetch categories for the dropdown
+    $categories = $db->query("SELECT category_id, name FROM categories")->fetchAll();
+
+    // Get search and filter inputs
+    $search = $_GET['search'] ?? '';
+    $filter = $_Get['filter'] ?? 'all';
+
+    // Base Query
+    $query = "
+        SELECT 
             g.campaign_id, 
             g.category_id, 
             g.partner_id, 
@@ -26,16 +35,38 @@ try {
             g.stop_at, 
             g.end_at
         FROM campaigns g  
-        LEFT JOIN users_donate_campaigns u ON g.campaign_id = u.campaign_id  
-        GROUP BY g.campaign_id
-        ORDER BY g.start_at;"
-        )->fetchAll();
+        LEFT JOIN users_donate_campaigns u ON g.campaign_id = u.campaign_id 
+        WHERE 1=1 
+    ";
+
+    $params = [];
+
+    // 🔎 Add Search Filter
+    if (!empty($search)) {
+        $query .= " AND MATCH(g.name, g.short_description, g.full_description) AGAINST (:search IN NATURAL LANGUAGE MODE)";
+        $params['search'] = $search;
+    }
+
+    // 🎯 Add Category Filter (if a valid category is selected)
+    if ($filter !== 'all' && is_numeric($filter)) {
+        $query .= " AND g.category_id = :category_id";
+        $params['category_id'] = $filter;
+    }
+
+    // 👌 Finalize Query
+    $query .= " GROUP BY g.campaign_id ORDER BY g.start_at;";
+
+    // Execute the query
+    $campaigns = $db->query($query, $params)->fetchAll();
+
 } catch (PDOException $e) {
     error_log($e->getMessage());
-    $_SESSION['error'] = "حدث خطأ أثناء حفظ البعانات";
+    $_SESSION['error'] = "حدث خطأ أثناء جلب البيانات";
     header("Location: /charity_campaigns_create");
     exit();
 }
+
+
 
 
 require "views/pages/charity_campaigns/manage_view.php";
