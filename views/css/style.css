@@ -240,6 +240,8 @@ footer {
     gap: 0.5em;
     height: auto;
     align-self: stretch;
+    animation: moveRight 2s ease-in-out infinite alternate;
+
 }
 .nav-links li {
     display: inline;
@@ -349,6 +351,10 @@ gap: 10px;
 #menulist{
     transition: all 0.5s;
 }
+
+/* .animate {
+    transform: translateX(300px);
+  } */
 @media (max-width:900px) {
 
 
@@ -364,6 +370,7 @@ gap: 10px;
         border-radius: var(--button-radius);
         width: 30em;
         height: 40em;
+        transition: transform 2s ease-in-out;
         display: none;
 
         & .box_link{
@@ -371,6 +378,7 @@ gap: 10px;
             justify-content: right;
 
         }
+
 
 
     }

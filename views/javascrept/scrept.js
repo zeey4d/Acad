@@ -10,6 +10,7 @@ function openMenu(){
     menulist.style.display= 'flex';
     menubut.style.display= 'none';
     closebut.style.display = 'block';
+    // document.querySelector('.menu').classList.toggle('animate');
 
 }
 
