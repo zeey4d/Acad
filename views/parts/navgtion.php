@@ -2,7 +2,7 @@
 <nav>
     <!-- <h1>navgation</h1> -->
     <div class="main_nav">
-<<<<<<< HEAD
+<!-- <<<<<<< HEAD
         <div class="logo-menu">
         <a href="" onclick="togglemenu()"><img class="menu" src="views/media/images/list.png" alt=""></a>
             <a href="/"> <img class="logo_image" src="views/media/images/bader.png" alt=""></a>
@@ -14,7 +14,7 @@
             <li><a href="/islamic_endowments_index">الأوقاف</a></li>
             <li><a href="/charity_projects_index">المشاريع</a></li>
             <li><a href="/charity_campaigns_index">الحملات الخيرية</a></li>
-=======
+======= -->
         <div>
             <a href="/"> <img class="logo_image" src="views/media/images/bader.png"></a>
         </div>
@@ -27,7 +27,7 @@
             <li><div class="box_link"><a href="/islamic_payments_index">المصارف الاسلامية</a></div></li>
             <li><div class="box_link"><a href="/notifications_index">الإشعارات</a></div></li>
             <li><div class="box_link"><a href="/contact">اتصل بنا</a></div></li>
->>>>>>> ef135f2029314f088deaacb8c2fb8c484fedb803
+<!-- >>>>>>> ef135f2029314f088deaacb8c2fb8c484fedb803 -->
             <!-- <li><a href="#">الماهمات</a></li> -->
             <!-- <li><a href="#">الاخبار</a></li> -->
             <!-- <li><a href="#">التقييمات</a></li> -->
