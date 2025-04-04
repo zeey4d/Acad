@@ -237,3 +237,11 @@ $router->put('/users_update', 'controllers/users/update.php');
 $router->get('/sessions_create', 'controllers/sessions/create.php')->only('guest');
 $router->delete('/sessions_destroy', 'controllers/sessions/destroy.php')->only('registered');
 $router->post('/sessions_store', 'controllers/sessions/store.php')->only('guest');
+
+
+
+
+
+//$router->get('/robots.txt', '/robots.txt');
+
+
