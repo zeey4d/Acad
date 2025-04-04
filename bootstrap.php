@@ -12,5 +12,6 @@ $container->bind('core\Database', function(){
     return new Database($config['database'],$config['database']['username'],$config['database']['password']);
     
 });
+//nothing
 
 App::setContainer($container);

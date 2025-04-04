@@ -4,4 +4,6 @@
 logOut();
 
 
-header('location:/');
+
+header("Location: " . $_SERVER["HTTP_REFERER"]);
+die();

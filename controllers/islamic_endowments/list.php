@@ -45,6 +45,6 @@ $endowments = $db->query(
     ",[
         'user_id' => $_GET['user_id']
     ]
-);
+)->fetchAll();
 
 require "views/pages/charity_campaigns/list_view.php";

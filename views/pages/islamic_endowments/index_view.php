@@ -3,43 +3,56 @@
 <?php require('views/parts/navgtion.php') ?>
 <?php require('views/parts/header.php') ?>
 
+<?php //dd($islamic_endowments) 
+?>
+
 <main>
-  <!-- الفلتره -->
-  <section class="bar_felter">
-    <form action="" method="">
-      <label for="gender_baby">  نوع الوقف</label>
-        <select name="gender_baby" id="gender_baby">
-          <option value="disabled selected">كل الأوقاف</option>
-          <option value="charity">الوقف الخيري</option>
-          <option value="atomic">الوقف الذري (الاهلي)</option>
-          <option value="joint">الوقف المشترك</option>
-          <option value="cash">الوقف النقدي</option>
-          <option value="production">الوقف الانتاجي</option>
-          <option value="timer">الوقف المؤقت</option>
-          <option value="technological_and_scientific">الوقف التكنولوجي و العلمي</option>
-        </select>
-    </form>
+ 
+  <section class="Carousel_card">
+    <!-- حاوية البطاقات -->
+
+    <main class="main_cart" >
+      <section class="container_card"  >
+        <?php foreach ($islamic_endowments as $islamic_endowment): ?>
+          <div class="donation-card" >
+            <a href="/islamic_endowments_show?endowment_id=<?= htmlspecialchars($islamic_endowment['endowment_id']) ?>">
+              <img src="views/media/images/<?= htmlspecialchars($islamic_endowment['photo'] ?? "11.png") ?>" alt=" " loading="lazy">
+            </a>
+            <div class="donation-info">
+              <div class="aghtha">
+                <h6>بادر</h6>
+                <h5>رقم الحملة : <?= htmlspecialchars($islamic_endowment['endowment_id']) ?></h5>
+                <a href=""><img src="" alt=""></a>
+              </div>
+              <h3><?= htmlspecialchars($islamic_endowment['name']) ?></h3>
+              <div class="donate-section">
+                <form action="/islamic_endowments_donate" method="post" class="donate-section">
+                  <input class="inp" type="number" name="cost" placeholder="$" required>
+                  <input type="hidden" name="endowment_id" value="<?= htmlspecialchars($islamic_endowment['endowment_id']) ?>">
+                  <button type="submit" class="donate-btn">تبرع الأن</button>
+                </form>
+                <form action="/islamic_endowments_addcart" method="post">
+                  <input type="hidden" name="endowment_id" value="<?= htmlspecialchars($islamic_endowment['endowment_id']) ?>">
+                  <button type="submit" class="donate_cart"><img src="views/media/images/cart.png" alt=""></button>
+                </form>
+              </div>
+              <div class="details">
+                <a href="/islamic_endowments_show?endowment_id=<?= htmlspecialchars($islamic_endowment['endowment_id']) ?>">عرض التفاصيل</a>
+              </div>
+            </div>
+          </div>
+        <?php endforeach; ?>
+      </section>
+
+      <section class="bar_action">
+
+      </section>
+    </main>
 
 
-  </section>
-  <!-- كرت الاوقاف -->
-  <section class="container">
 
-    <div class="card_islamic_endowments">
-      <img src="" alt="">
-      <h2>وقف بناء مسجد</h2>
-      <p>بناء مسجد في منطقة لا يوجد فيها مسجد</p>
-      <form action="" method="">
-        <label for="donation"><h3>مبلغ التبرع</h3></label><br>
-        <input id="donation" type="number" name="donation" placeholder="ريال">
-        <button class="donation" type="submit" name="donation">تبرع</button>
-        <button class="add" name="add">إضافة الى السلة <img src="" alt=""></button>
-        <button class="share" name="share">مشاركة المشروع <img src="" alt=""></button>
-      </form>
-      <p>ينتهي في 30 ديسمبر 2025</p><br>
-      <a class="more_details" href="">تفاصيل أكثر</a>
 
-    </div>
+
   </section>
 
 

@@ -1,5 +1,5 @@
 <?php
-$heading = "Edit test";
+$heading = "Create ";
 
 use core\App ;
 use core\Database ;
@@ -8,39 +8,23 @@ use core\Database ;
 $db = App::resolve(Database::class);
 
 
-$userID = 1;
+try {
+    $categories = $db->query(
+        "SELECT * FROM categories"
+    )->fetchAll(); // Fetch all rows from the query result 
+    $partners = $db->query(
+        "SELECT * FROM partners"
+    )->fetchAll(); // Fetch all rows from the query result
+    $payment = $db->query("SELECT * FROM islamic_payments where islamic_payment_id = :islamic_payment_id",[
+        'islamic_payment_id' => $_GET['islamic_payment_id']
+    ])->findOrFail();
 
-$IslamicPayments = $db->query("SELECT * FROM islamic_payments where islamic_payment_id = :islamic_payment_id",[
-    'islamic_payment_id' => $_POST['islamic_payment_id']
-])->findOrFail();
-
-// $item = $db->query("SELECT * from islamic_payments where id = :id ", [
-//   'id' => $_GET['id'],
-// ])->findOrFail();
-
-//authorize($item['other_id'] == $userID);
-$db->query("UPDATE islamic_payments SET
-(
-    type = :type, 
-    count = :count, 
-    cost = :cost, 
-    paid_cost = :paid_cost, 
-    paid_for = :paid_for, 
-    payment_date = :payment_date, 
-    user_id = :user_id
-)WHERE islamic_payment_id = :islamic_payment_id",[
-    'type' => $_POST['type'],
-    'count' => $_POST['count'],
-    'cost' => $_POST['cost'],
-    'paid_cost' => $_POST['paid_cost'],
-    'paid_for' => $_POST['paid_for'],
-    'payment_date' => $_POST['payment_date'],
-    'user_id' => $_POST['user_id'],
-    'islamic_payment_id' => $_POST['islamic_payment_id']
-]);
-//EXAMPLE: (type:'Zakat', COUNT: 1, COST: 1500.00,PAID_COST 1500.00,PAID_FOR: 'Water project - Receipt: ZK2024-001 AT: 2024-03-17',PAYMENT_DATE: '2024-03-15', USER_ID: 3),
-
-
+} catch (PDOException $e) {
+    error_log($e->getMessage());
+    $_SESSION['error'] = "حدث خطأ أثناء حفظ البعانات";
+    header("Location: /charity_campaigns_create");
+    exit();
+}
 
 
 

@@ -9,7 +9,6 @@ spl_autoload_register(function ($class) {
 });
 
 
-
 //يستدعي كلاسات التحقق
 require 'core\\' . "Validator.php";
 //يستدعي الدوال المساعده
@@ -37,6 +36,8 @@ $router->route($uri,$methode);
 
 
 //يطعبع كل خصائص السرفر اسفل الصفحه
-//dd($_SERVER);
 
 
+if($_SESSION['user']){
+dd($_SESSION['user']);
+}

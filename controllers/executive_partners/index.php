@@ -3,10 +3,41 @@ use core\App ;
 use core\Database ;
 $db = App::resolve(Database::class);
 
+$page = "executive_partners_index" ;
 
-$heading = "All My tests";
 
-// $partners = $db->query("SELECT * from partners where partner_id = :partner_id")->findOrFail();
+try {
+    // Get search input
+    $search = $_GET['search'] ?? '';
+
+    // Base Query
+    $query = "SELECT * FROM partners WHERE 1=1";
+    $params = [];
+
+    // 🔎 Add Search Filter
+    if (!empty($search)) {
+        $query .= " AND MATCH(name, description, more_information) AGAINST (:search IN NATURAL LANGUAGE MODE)";
+        $params['search'] = $search;
+    }
+    if ($_GET['submit'] == "foryou") {
+        $query .= " AND u.user_id = :user_id";
+        $params['user_id'] = $_SESSION['user']['id'];
+    }
+
+
+    // 👌 Finalize Query
+    $query .= " ORDER BY name ASC;";
+
+    // Execute the query
+    $partners = $db->query($query, $params)->fetchAll();
+
+} catch (PDOException $e) {
+    error_log($e->getMessage());
+    $_SESSION['error'] = "حدث خطأ أثناء جلب البيانات";
+    header("Location: /partners");
+    exit();
+}
+
 // foreach($partners as $key => $value){
 //     $partners[$key]['phones'] = $db->query(
 //         "SELECT phone, type from partners_phones

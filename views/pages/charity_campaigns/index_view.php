@@ -5,52 +5,52 @@
 
 <?php //dd($campaigns) ?>
 
-<main>
-  <section class="bar_search">
-    <form action="" method="">
-      <input id="search" type="search" name="search" placeholder="Search">
-      <select name="project_type" id="project_type">
-        <option value="">نوع المشروع</option>
-        <option value="رجوع"> رجوع </option>
-        <option value="محتاجيين"> محتاجيين</option>
-        <option value="عمليات"> عمليات</option>
-        <option value="بناء مسكن"> بناء مسكن</option>
-      </select>
-      <select name="region" id="region">
-        <option value="">المنطقة</option>
-      </select>
 
-    </form>
-  
-  </section>
-  <h1>حملات التبرع المتاحة</h1>
+  <h1 style="  text-align: center;
+    color: var(--font-color-bh);
+    margin: var(--margin-xl);">حملات التبرع المتاحة</h1>
 
-  <section class="container">
-  <?php foreach($campaigns as $campaign): ?>
+  <section class="container_card">
+  <?php foreach ($campaigns as $campaign): ?>
+          <div class="donation-card">
+            <a href="/charity_campaigns_show?campaign_id=<?= htmlspecialchars($campaign['campaign_id']) ?>">
+              <img src="views/media/images/<?= htmlspecialchars($campaign['photo'] ?? "11.png") ?>" alt="مشروع نور السعودية" loading="lazy">
+            </a>
+            <div class="donation-info">
+              <div class="aghtha">
+                <h6>بادر</h6>
+                <h5>رقم الحملة : <?= htmlspecialchars($campaign['campaign_id']) ?></h5>
+                <a href=""><img src="" alt=""></a>
+              </div>
+              <h3><?= htmlspecialchars($campaign['name']) ?></h3>
+              <div class="progress-bar">
+                <div class="progress" style="width:<?= htmlspecialchars(($campaign['collected_money'] / $campaign['cost']) * 100) ?>% "></div>
+              </div>
+              <div class="donation-details">
+                <div>
+                  <p><strong style="display: inline;">$ <?= htmlspecialchars($campaign['collected_money']) ?>/</strong><?= htmlspecialchars($campaign['cost']) ?></p>
+                </div>
+              </div>
+              <div class="donate-section">
+                <form action="/charity_campaigns_donate" method="post" class="donate-section">
+                  <input class="inp" type="number" name="cost" placeholder="$" required >
+                  <input type="hidden" name="campaign_id" value="<?= htmlspecialchars($campaign['campaign_id']) ?>">
+                  <button type="submit" class="donate-btn">تبرع الأن</button>
+                </form>
+                <form action="/charity_campaigns_addcart" method="post" >
+                  <input type="hidden" name="campaign_id" value="<?= htmlspecialchars($campaign['campaign_id']) ?>">
+                  <button type="submit" class="donate_cart"><img src="views/media/images/cart.png" alt="" ></button>
+                </form>
+              </div>
+              <div class="details">
+                <a href="/charity_campaigns_show?campaign_id=<?= htmlspecialchars($campaign['campaign_id']) ?>">عرض التفاصيل</a>
+              </div>
+            </div>
+          </div>
+        <?php endforeach; ?>
+      </section>
+      <section class="bar_action">
 
-    <div class="donation-card">
-      <img src="views/media/images/<?= htmlspecialchars($campaign['photo'] ?? "11.png") ?>" alt=" " loading="lazy">
-      <strong>بادر</strong>
-      <p><img src="" alt=""> <strong>رقم الحملة : <?= htmlspecialchars($campaign['campaign_id']) ?></strong></p>
-      <p><img src="" alt=""> <strong>المنطقة تعز</strong></p>
-      <h3>مشروع مساعدة المحتاجين</h3>
-      <p>
-        <span><?= htmlspecialchars(($campaign['collected_money']/$campaign['cost'])*100) ?>%</span>
-        <strong></strong>
-        <?= htmlspecialchars($campaign['cost']) ?>/<?= htmlspecialchars($campaign['collected_money']) ?> ريال
-      </p>
-
-      <form action="" method="">
-        <label for="donation_amount">مبلغ التبرع</label>
-        <input id="donation_amount" type="number" name="donation_amount" placeholder="ريال">
-        <button id="btn_donation" type="submit" name="btn_donation">تبرع</button>
-        <button id="btn_basket" type="submit" name="btn_basket"><img src="" alt=""></button>
-
-      </form>
-      <a class="view_details" href="">عرض التفاصيل</a>
-      
-    </div>
-    <?php endforeach; ?>
-    </section>
+      </section>
 </main>
 <?php require('views/parts/footer.php') ?>

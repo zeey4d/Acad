@@ -4,99 +4,72 @@
 <?php require('views/parts/header.php') ?>
 
 <main class="main_create_chatity">
-  <h1>تقديم حملة تبرع</h1>
-    <div class="div_tbr3"> 
+    <div class="div_tbr3">
         <section class="donation-form">
-            <h2>نموذج تقديم طلب التبرع</h2>
-            <form id="donationForm" action="/charity_projects_store" method="POST" enctype="multipart/form-data">
-                <!-- نوع الحالة -->
-                <div class="form-group">
-                    <label for="caseType">نوع الحالة:</label>
-                    <select id="caseType" name="caseType" required>
-                        <option value="">اختر نوع الحالة</option>
-                        <option value="سجين">سجين</option>
-                        <option value="أرملة">أرملة</option>
-                        <option value="مريض">مريض</option>
-                        <option value="كفالة يتيم">كفالة يتيم</option>
-                        <option value="مشرد">مشرد</option>
-                    </select>
-                </div>
+            <div class="modal-content">
+                <h2>إضافة مشروع جديد</h2>
+                <form id="add-project-form" action="/charity_projects_store" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="partner_id">الشريك:</label>
+                        <select id="partner_id" name="partner_id" required>
+                            <!-- Dynamic Partner List -->
+                            <!-- Example: -->
+                            <option value="1">Partner 1</option>
+                            <option value="2">Partner 2</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="category_id">الفئة:</label>
+                        <select id="category_id" name="category_id" required>
+                            <!-- Dynamic Category List -->
+                            <!-- Example: -->
+                            <option value="1">Category 1</option>
+                            <option value="2">Category 2</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">اسم المشروع:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="short_description">وصف قصير:</label>
+                        <textarea id="short_description" name="short_description" rows="3" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="full_description">الوصف الكامل:</label>
+                        <textarea id="full_description" name="full_description" rows="5" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="cost">التكلفة:</label>
+                        <input type="number" step="0.01" id="cost" name="cost" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="country">الدولة:</label>
+                        <input type="text" id="country" name="country" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="city">المدينة:</label>
+                        <input type="text" id="city" name="city" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="street">الشارع:</label>
+                        <input type="text" id="street" name="street" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="photo">صورة المشروع:</label>
+                        <input type="file" id="photo" name="photo" accept="image/*">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" name="submit">إضافة المشروع</button>
+                    </div>
+                </form>
+            </div>
 
-                   <!--  اضافة حقول مخفيه كي تظابق قاعدة البيانات  -->
-                   <input type="hidden" name="category_id" value="0">
-                   <input type="hidden" name="partner_id" value="0">
-                    <input type="hidden" name="state" value="0">
-  
-                <!-- الاسم الكامل -->
-                <div class="form-group">
-                    <label for="fullName">الاسم الكامل:</label>
-                    <input type="text" id="fullName" name="fullName" required>
-                </div>
-
-                <!-- العمر -->
-                <div class="form-group">
-                    <label for="age">العمر:</label>
-                    <input type="number" id="age" name="age" min="1" max="120" required>
-                </div>
-
-                <!-- الظروف -->
-                <div class="form-group">
-                    <label for="circumstances">الظروف:</label>
-                    <textarea id="circumstances" name="circumstances" rows="4" required></textarea>
-                </div>
-
-                <!-- المبلغ المطلوب -->
-                <div class="form-group">
-                    <label for="amount">المبلغ المطلوب:</label>
-                    <input type="number" id="amount" name="amount" min="1" required>
-                </div>
-
-                <!-- المستندات الداعمة -->
-                <div class="form-group">
-                    <label for="documents">المستندات الداعمة:</label>
-                    <input type="file" id="documents" name="documents" multiple required>
-                </div>
-
-                <!-- صور البطاقة الشخصية -->
-                <div class="form-group">
-                    <label for="idFront">صورة البطاقة الشخصية (من الأمام):</label>
-                    <input type="file" id="idFront" name="idFront" accept="image/*" required>
-                </div>
-                <div class="form-group">
-                    <label for="idBack">صورة البطاقة الشخصية (من الخلف):</label>
-                    <input type="file" id="idBack" name="idBack" accept="image/*" required>
-                </div>
-
-                <!-- معلومات الحساب -->
-                <div class="form-group">
-                    <label for="accountNumber">رقم الحساب:</label>
-                    <input type="text" id="accountNumber" name="accountNumber" required>
-                </div>
-                <div class="form-group">
-                    <label for="bankName">اسم البنك:</label>
-                    <input type="text" id="bankName" name="bankName" required>
-                </div>
-                <div class="form-group">
-                    <label for="accountType">نوع الحساب:</label>
-                    <input type="text" id="accountType" name="accountType" required>
-                </div>
-
-                <!-- زر التأكيد -->
-                <div class="form-group">
-                    <button type="submit">تقديم الطلب</button>
-                </div>
-            </form>
         </section>
 
         <!-- عرض حالة الطلب -->
-        </div>
-   
-   <section class="request-status">
-    <div>
-            <h2>حالة الطلب</h2>
-            <p id="statusMessage" style=" color: var(--font-color-bl);">حالة الطلب: قيد الانتظار</p>
-            <button id="editButton" disabled>تعديل البيانات (الوقت المتبقي: <span id="timer">24:00:00</span>)</button>
-        </section>
-        </div>
-        </main>
+    </div>
+
+    </div>
+</main>
 <?php require('views/parts/footer.php') ?>
