@@ -5,4 +5,4 @@ $heading = "Create test";
 
 
 
-require "views/pages/users/create_view.php";
+require "views/pages/users/verification_view.php";

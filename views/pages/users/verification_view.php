@@ -4,7 +4,7 @@
 <main class="main_user">
   <!--  التحقق من الحساب   -->
   <section class="user" id="show_user">
-
+<h1>verification</h1>
   </section>
 </main>
 
