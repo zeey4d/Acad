@@ -131,6 +131,7 @@ The following individuals have contributed to the Bader Charity Association Plat
 - **Zyad Faisal**
 - **Ahmed Abdullah**
 - **Mubarak Ashraf Alqadasi** [(@MubarakAshrafAlrawy)](https://github.com/MubarakAshrafAlrawy)
+- **Ismail Saeed Alsharehi** [(@Ismailalsharehi)](https://github.com/Ismailalsharehi)
 
 ---
 
@@ -153,6 +154,7 @@ The following individuals are part of the development team:
 - **Zyad Faisal**
 - **Ahmed Abdullah**
 - **Mubarak Ashraf Alqadasi** [(@MubarakAshrafAlrawy)](https://github.com/MubarakAshrafAlrawy)
+- **Ismail Saeed Alsharehi** [(@Ismailalsharehi)](https://github.com/Ismailalsharehi)
 
 
 Mohammed Ali  Mahyoob
