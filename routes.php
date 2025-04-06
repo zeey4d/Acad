@@ -71,6 +71,10 @@ $router->get('/islamic_payments_edit_view', 'views/pages/islamic_payments/edit_v
 $router->get('/islamic_payments_index_view', 'views/pages/islamic_payments/index_view.php');
 $router->get('/islamic_payments_show_view', 'views/pages/islamic_payments/show_view.php');
 $router->get('/islamic_payments_zakat_view', 'views/pages/islamic_payments/zakat_view.php');
+$router->get('/islamic_payments_sadaqah_view', 'views/pages/islamic_payments/sadaqah_view.php');
+$router->get('/islamic_payments_kaffara_view', 'views/pages/islamic_payments/kaffara_view.php');
+$router->get('/islamic_payments_fidya_view', 'views/pages/islamic_payments/fidya_view.php');
+$router->get('/islamic_payments_aqiqah_view', 'views/pages/islamic_payments/aqiqah_view.php');
 $router->get('/islamic_payments_list_view', 'views/pages/islamic_payments/list_view.php');
 $router->get('/islamic_payments_store_view', 'views/pages/islamic_payments/store_view.php');
 $router->get('/islamic_payments_update_view', 'views/pages/islamic_payments/update_view.php');
@@ -182,6 +186,10 @@ $router->get('/islamic_payments_index', 'controllers/islamic_payments/index.php'
 $router->get('/islamic_payments_manage', 'controllers/islamic_payments/manage.php')->only('admin');
 $router->get('/islamic_payments_show', 'controllers/islamic_payments/show.php');
 $router->get('/islamic_payments_zakat', 'controllers/islamic_payments/zakat.php');
+$router->get('/islamic_payments_sadaqah', 'controllers/islamic_payments/sadaqah.php');
+$router->get('/islamic_payments_kaffara', 'controllers/islamic_payments/kaffara.php');
+$router->get('/islamic_payments_fidya', 'controllers/islamic_payments/fidya.php');
+$router->get('/islamic_payments_aqiqah', 'controllers/islamic_payments/aqiqah.php');
 $router->get('/islamic_payments_list', 'controllers/islamic_payments/list.php');
 $router->post('/islamic_payments_store', 'controllers/islamic_payments/store.php')->only('admin');
 $router->put('/islamic_payments_update', 'controllers/islamic_payments/update.php')->only('admin');
