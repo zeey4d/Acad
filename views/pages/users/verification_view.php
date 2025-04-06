@@ -9,7 +9,7 @@
     <form action="/users_store" method="POST">
     <div>
       <label for="verification_code">أدخل كود التحقق:</label>
-      <input type="number" id="" class="" required name="verification_code" >
+      <input type="number" id="" class="" required name="verification_code" minlength="6" maxlength="6" placeholder="أدخل كود التحقق" oninput="this.value = this.value.slice(0, 6)">
     </div>
     
     <div>
@@ -22,5 +22,6 @@
     </div>
   </section>
 </main>
+
 
 <?php require('views/parts/footer.php') ?>

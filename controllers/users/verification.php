@@ -19,7 +19,6 @@ $address = htmlspecialchars($_POST['address'] ?? '');
 $message = htmlspecialchars($_POST['descripe_problem'] ?? '');
 $email = filter_var($_POST['email'] ?? '', FILTER_SANITIZE_EMAIL);
 
-
 $db = App::resolve(Database::class);
 
 // if (isset($_POST["submit"])) {
@@ -76,13 +75,13 @@ $db = App::resolve(Database::class);
 // }
 // }
 
-// $user = $db->query('SELECT * FROM users WHERE email = :email', ['email' => $email])->fetch();
+ $user = $db->query('SELECT * FROM users WHERE email = :email', ['email' => $email])->fetch();
 
-// if ($user) {
-//   $error = urlencode("البريد الإلكتروني مسجل بالفعل");
-//   header("Location:/users_create_view?error={$error}");
-//   exit();
-// }
+if ($user) {
+  $error = urlencode("البريد الإلكتروني مسجل بالفعل");
+  header("Location:/users_create_view?error={$error}");
+  exit();
+}
 
 try {
   // إنشاء كود التحقق
@@ -106,40 +105,129 @@ try {
   $mail->addAddress($email);
   $mail->isHTML(true);
   $mail->Subject = "تفعيل حسابك في منصة بادر";
-
+  $mail->CharSet = 'UTF-8'; //UTF-8
   $mail->Body = "
-        <html>
-        <head>
-            <style>
-                body { font-family: Arial, sans-serif; background-color: #f4f4f4; color: #333; }
-                .email-container { background: #fff; padding: 20px; max-width: 600px; margin: auto; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-                .email-header img { max-width: 150px; }
-                .email-footer { text-align: center; font-size: 12px; color: #777; margin-top: 20px; }
-            </style>
-        </head>
-        <body>
-        <div class='email-container'>
-            <div class='email-header'>
-                <img src='https://i.postimg.cc/prkHm9JK/badir-logo.jpg' alt='Badir Charity Logo'>
-                <h3>رسالة جديدة من بادر الخيرية</h3>
-            </div>
-            <div class='email-content'>
-                <p><strong>العنوان:</strong> {$address}</p>
-                <p><strong>الرسالة:</strong><br>" . nl2br($message) . "</p>
-                <hr>
-                <p>رمز التحقق الخاص بك هو: <strong>{$verification_code}</strong></p>
-            </div>
-            <div class='email-footer'>
-                <p>&copy; " . date('Y') . " Badir Charity</p>
-            </div>
+<html>
+<head>
+    <title>رسالة من بادر الخيرية</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .email-container {
+            background: #ffffff;
+            padding: 30px;
+            max-width: 600px;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            border-top: 5px solid #00A7B5;
+        }
+
+        .email-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .email-header img {
+            max-width: 140px;
+            margin-bottom: 10px;
+        }
+
+        .email-header h3 {
+            color: #00A7B5;
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .email-content {
+            font-size: 16px;
+            line-height: 1.7;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .email-content p {
+            margin: 12px 0;
+            text-align: right;
+        }
+
+        .email-content strong {
+            color: #00A7B5;
+        }
+
+        .verification-code {
+            background-color: #e2f8fa;
+            padding: 12px;
+            border-radius: 6px;
+            color: #00A7B5;
+            font-weight: bold;
+            font-size: 18px;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .email-footer {
+            text-align: center;
+            font-size: 12px;
+            color: #A0A0A0;
+            margin-top: 30px;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+
+        .email-footer p {
+            margin: 5px 0;
+        }
+
+        .email-footer a {
+            color: #00A7B5;
+            text-decoration: none;
+        }
+            .vcode{
+            text-align: center;
+            
+            }
+
+    </style>
+</head>
+<body>
+    <div class='email-container'>
+        <div class='email-header'>
+            <img src='https://i.postimg.cc/kMV8zNyC/bader.png' alt='Badir Charity Logo'>
+            <h3>رسالة جديدة من بادر الخيرية</h3>
         </div>
-        </body>
-        </html>
-    ";
+        <div class='email-content'>
+            <p> $email <strong>:مرحباً بك عزيزي المستخدم</strong></p>
+            <p><strong> أنت على بعد خطوة واحدة من تفعيل حسابك في منصة بادر الخيرية</strong><br>" . nl2br($message) . "</p>
+            <hr>
+            <p class='vcode'><strong>:رمز التحقق الخاص بك</strong></p>
+            <div class='verification-code'>$verification_code</div>
+        </div>
+        <div class='email-footer'>
+            <p>&copy; " . date('Y') . " بادر الخيرية - جميع الحقوق محفوظة</p>
+            <p>:تواصل معنا <br><a href='mailto:badir.charity.org@gmail.com'>support@badir.org</a></p>
+        </div>
+    </div>
+</body>
+</html>
+";
+
+  
+
+  
+
 
   if ($mail->send()) {
-    $_SESSION['success'] = "تم إرسال الكود بنجاح، تحقق من بريدك.";
-    header("Location: /users_verification_view");
+    
+    // $_SESSION['success'] = "تم إرسال الكود بنجاح، تحقق من بريدك.";
+    
+    
+    header("Location: /users_verification_view?sent=success");
     exit();
   } else {
     die("فشل في إرسال البريد: " . $mail->ErrorInfo);
