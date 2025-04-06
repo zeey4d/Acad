@@ -16,9 +16,9 @@
                  آمنة وفعالة لإدارة التبرعات وتوجيهها الى مكانها الصحيح
             </p><br><br>
             <div class="icon_foter">
-                <a id="whats_icon" class="whats_icon" href=""><img src="views/media/images/whatsapp.png" alt=""></a>
-                <a id="email_icon" class="email_icon" href=""><img src="views/media/images/mail.png" alt=""></a>
-                <a id="insta_icon" class="insta_icon" href=""><img src="views/media/images/instagram.png" alt=""></a>
+                <a id="whats_icon" class="whats_icon" href="https://wa.me/+967775432120"><img src="views/media/images/whatsapp.png" alt=""></a>
+                <a id="email_icon" class="email_icon" href="mailto:badir.charity.org@gmail.com"><img src="views/media/images/mail.png" alt=""></a>
+                <a id="insta_icon" class="insta_icon" href="https://instagram.com/ismail_alsharehi"><img src="views/media/images/instagram.png" alt=""></a>
             </div>
 
 
