@@ -1,8 +1,6 @@
 <?php
 
-if (session_status() === PHP_SESSION_NONE) {
-  session_start();
-}
+
 use core\Validator;
 use core\Authenticator;
 use core\App;
@@ -24,67 +22,67 @@ $email = filter_var($_POST['email'] ?? '', FILTER_SANITIZE_EMAIL);
 
 $db = App::resolve(Database::class);
 
-if (isset($_POST["submit"])) {
+// if (isset($_POST["submit"])) {
   $_SESSION['user_data'] = $_POST;
+  $_SESSION['file'] = $_FILES['photo'] ;
+//   // التحقق من رفع الصورة
+//   if (!isset($_FILES['photo'])) {
+//     $_SESSION['error'] = "لم يتم تحميل الصورة.";
+//     header("Location: /");
+//     exit();
+//   }
+//   else {
+//   $file = $_FILES['photo']['name'];
+//   $tmp = $_FILES['photo']['tmp_name'];
+//   $size = $_FILES['photo']['size'];
+//   $type = $_FILES['photo']['type'];
+//   $error = $_FILES['photo']['error'];
 
-  // التحقق من رفع الصورة
-  if (!isset($_FILES['photo'])) {
-    $_SESSION['error'] = "لم يتم تحميل الصورة.";
-    header("Location: /");
-    exit();
-  }
-  else {
-  $file = $_FILES['photo']['name'];
-  $tmp = $_FILES['photo']['tmp_name'];
-  $size = $_FILES['photo']['size'];
-  $type = $_FILES['photo']['type'];
-  $error = $_FILES['photo']['error'];
+//   $fileExt = explode('.', $file);
+//   $fileActual = strtolower(end($fileExt));
+//   $allowed = array('jpg', 'jpeg', 'png', 'pdf');
 
-  $fileExt = explode('.', $file);
-  $fileActual = strtolower(end($fileExt));
-  $allowed = array('jpg', 'jpeg', 'png', 'pdf');
+//   if (in_array($fileActual, $allowed)) {
+//     if ($error === 0) {
+//       if ($size < 10000000) {
+//         $filenamenew = uniqid('', true) . "." . $fileActual;
+//         $fileDestination = __DIR__ . '/../../views/media/images/' . $filenamenew;
 
-  if (in_array($fileActual, $allowed)) {
-    if ($error === 0) {
-      if ($size < 10000000) {
-        $filenamenew = uniqid('', true) . "." . $fileActual;
-        $fileDestination = __DIR__ . '/../../views/media/images/' . $filenamenew;
+//         if (move_uploaded_file($tmp, $fileDestination)) {
 
-        if (move_uploaded_file($tmp, $fileDestination)) {
+//           // الملف تم نقله بنجاح
+//           $_SESSION['photo'] = $filenamenew; // حفظ اسم الملف في الجلسة
 
-          // الملف تم نقله بنجاح
-          $_SESSION['photo'] = $filenamenew; // حفظ اسم الملف في الجلسة
+//         } else {
+//           $_SESSION['error'] = "حدث خطأ أثناء نقل الملف.";
+//           header("Location: /");
+//           exit();
+//         }
+//       } else {
+//         $_SESSION['error'] = "حجم الملف كبير جدًا.";
+//         header("Location: /");
+//         exit();
+//       }
+//     } else {
+//       $_SESSION['error'] = "حدث خطأ أثناء تحميل الملف.";
+//       header("Location: /");
+//       exit();
+//     }
+//   } else {
+//     $_SESSION['error'] = "نوع الملف غير مدعوم. الرجاء رفع صورة بصيغة (jpg, jpeg, png, pdf)";
+//     header("Location: /");
+//     exit();
+//   }
+// }
+// }
 
-        } else {
-          $_SESSION['error'] = "حدث خطأ أثناء نقل الملف.";
-          header("Location: /");
-          exit();
-        }
-      } else {
-        $_SESSION['error'] = "حجم الملف كبير جدًا.";
-        header("Location: /");
-        exit();
-      }
-    } else {
-      $_SESSION['error'] = "حدث خطأ أثناء تحميل الملف.";
-      header("Location: /");
-      exit();
-    }
-  } else {
-    $_SESSION['error'] = "نوع الملف غير مدعوم. الرجاء رفع صورة بصيغة (jpg, jpeg, png, pdf)";
-    header("Location: /");
-    exit();
-  }
-}
-}
+// $user = $db->query('SELECT * FROM users WHERE email = :email', ['email' => $email])->fetch();
 
-$user = $db->query('SELECT * FROM users WHERE email = :email', ['email' => $email])->fetch();
-
-if ($user) {
-  $error = urlencode("البريد الإلكتروني مسجل بالفعل");
-  header("Location:/users_create_view?error={$error}");
-  exit();
-}
+// if ($user) {
+//   $error = urlencode("البريد الإلكتروني مسجل بالفعل");
+//   header("Location:/users_create_view?error={$error}");
+//   exit();
+// }
 
 try {
   // إنشاء كود التحقق
@@ -151,3 +149,4 @@ try {
 } catch (PDOException $e) {
   die("حدث خطأ أثناء الحفظ: " . $e->getMessage());
 }
+

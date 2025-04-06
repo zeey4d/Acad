@@ -9,7 +9,7 @@
     <form action="/users_store" method="POST">
     <div>
       <label for="verification_code">أدخل كود التحقق:</label>
-      <input type="text" id="" class="" required name="verification_code">
+      <input type="number" id="" class="" required name="verification_code" >
     </div>
     
     <div>
