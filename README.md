@@ -145,8 +145,8 @@ You can contact **Mohammed Mogeab** via X (Twitter): [@MohammedMogeab](https://t
 
 The following individuals are part of the development team:
 
--- **Ismail Saeed Alsharehi (IS-4-PM)** [(@Ismailalsharehi)](https://github.com/Ismailalsharehi),  **(Project Manager)**
--  **Ahmed Anwar (A2)**, **Head of this team** 
+- **Ismail Saeed Alsharehi (IS-4-PM)** [(@Ismailalsharehi)](https://github.com/Ismailalsharehi),  **(Project Manager)**
+- **Ahmed Anwar (A2)**, **Head of this team** 
 - **Mohammed Mogeab Ahmed Al-Hajj (M37)** [(@MohammedMogeab)](https://github.com/MohammedMogeab)
 - **Hafeez Shaheed (H17)**
 - **Ali Abdulsalam Mohammed Ali (A30)**
@@ -251,8 +251,7 @@ The Foloing individuals are part of Feasibility Team :
 - **Mithaq Abdulqader (M40)**
 - **Ahlam Ali Ghaleb (A1)**
 - **Rawan ALhaj (R23)**
-- **Raghed Tariq (R22)**
-- 
+- **Raghed Tariq (R22)** 
 
 
  ---
@@ -269,4 +268,4 @@ The Foloing individuals are part of Documentation Team :
 - **Mohammed Radwan (M35)**
 - **Wala'a Nasser (W48)**
 - **Manar Ossamah (M39)**
-  ----
+  ---
