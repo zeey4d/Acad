@@ -27,7 +27,7 @@
 <div class="donation-box">
         <h2>مبلغ التبرع</h2>
         <div class="donation-min-box">
-        <input type="number" id="customAmount" placeholder="قيمة المبلغ" oninput="updateDonateButton()">
+        <input type="number" id="customAmount" placeholder="قيمة المبلغ" oninput="updateDonateButton()" required min="0" max="<?= htmlspecialchars($endowments['0']['cost'] - $endowments['0']['donate_cost']) ?> >
         <a class="icon_cart" id="icon_nav_search" href=""><img class="icon_img" src="views/media/images/cart.png" alt=""></a>
         </div>
         <button id="donate">تبرع الآن</button>

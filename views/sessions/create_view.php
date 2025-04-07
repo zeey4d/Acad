@@ -1,5 +1,5 @@
-<?php require('views/partials/head.php') ?>
-  <?php require('views/partials/nav.php') ?>
+<?php require('views/parts/head.php') ?>
+  <?php require('views/parts/navgtion.php') ?>
 
 
   <main>
@@ -7,4 +7,4 @@
   </main>
 
 
-  <?php require('views/partials/footer.php') ?>
+  <?php require('views/parts/footer.php') ?>

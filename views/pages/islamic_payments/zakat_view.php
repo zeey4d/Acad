@@ -5,7 +5,7 @@
 
 <main class="main_islamic_payments_zakat">
   <section class="form_zakat">
-    <h1>حاسبة الزكاة</h1>
+    <!-- <h1>حاسبة الزكاة</h1>
     <img src="views/media/images/zkat.png" alt="">
     <p>"تجب الزكاة على المال إذا حال عليه الحول، 
       أي مر عليه عامٌ كامل وفق التقويم الهجري،
@@ -85,10 +85,14 @@
       </tbody>
     </table>
 
-    <!-- زر الحساب -->
+  
     <button class="calc-button" type="submit" nmae="calc_zakat">احسب الزكاة</button>
   </div>
-  
+   -->
+  </section>
+
+  <section >
+  <!-- تعريف عام  -->
   </section>
 </main>
 <?php require('views/parts/footer.php') ?>
