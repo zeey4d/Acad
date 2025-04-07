@@ -42,9 +42,9 @@ $users_statistics['donates_sum'] =
     $projects_statistics['donates_sum']['donates_sum']+
     $islamic_payments_statistics['users_paid_count']['users_paid_count']; // اجمالي تبرعات المستخدمين
 $users_statistics['donates_count'] =
-    $campaigns_statistics['users_donates_count']['users_donates_count']+
-    $endowments_statistics['users_donates_count']['users_donates_count']+
-    $projects_statistics['users_donates_count']['users_donates_count']+
+    $campaigns_statistics['users_donates_count']['users_donates_count'] +
+    $endowments_statistics['users_donates_count']['users_donates_count'] +
+    $projects_statistics['users_donates_count']['users_donates_count'] +
     $islamic_payments_statistics['users_paid_count']['users_paid_count'];// اجمالي عدد المستخدمين الذين تبرعوا للمشاريع والحملات والمدفوعات الاسلامية
 
     $partners_statistics['count'] = $db->query("SELECT count(*) as count FROM partners;")->fetch(); // عدد الشركاء
