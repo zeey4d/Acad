@@ -503,14 +503,15 @@ gap: 10px;
     gap: 1em;
 
 & img{
-    width: 30px;
+    width: 25px;
     height: auto;
 }
 }
 
 .service_and_privacy_policy_agreement{
     & a {
-    color: #fff;
+    color: var(--font-color-gl);
+
     }
 }
 
@@ -518,6 +519,49 @@ gap: 10px;
     background-color: #003337;
     text-align: center;
     color: white;
+}
+
+@media (max-width:750px) {
+    .main_foter{
+        height: 350px;
+    
+        & hr{
+            border: #e0e0e0 0.5px solid;
+        }
+        & div {
+            width: 25%;
+            margin: 20px 10px 0 10px;
+        }
+        & .photo_padi{
+            width: 10%;
+        }
+        & h1{
+            font-size: var(--font-size-l);
+            margin-bottom: 10px;
+    
+        }
+        & p{
+            font-size: var(--font-size-m);
+            font-weight:100;
+            margin-top: 10px;
+            display: none;
+            
+        }
+        .icon_foter {
+            height: 12em;
+            width: auto;
+            display: flex;
+            align-items: end;
+            gap: 1em;
+        
+        & img{
+            width: 25px;
+            height: auto;
+        }
+        }
+
+    }
+
 }
 
 /* admin Bar */
@@ -718,7 +762,7 @@ gap: 10px;
 .user{
     margin: 0 auto;
     padding: var(--padding-xl);
-    width: 60%;
+    width: 80%;
     background-color: var(--bgcolor-white);
     text-align: center;
   
@@ -1301,7 +1345,7 @@ gap: 10px;
     border-radius: 8px;
     cursor: pointer;
     transition: background 0.3s;
-    width: 75px;
+    width: 60px;
     height: auto;
 
     &:hover {
@@ -1312,14 +1356,11 @@ gap: 10px;
     
   }
 
-  /* .btn:hover {
-    background: rgba(255,255,255,0.4);
-  } */
-
-
 .Carousel_card{
 
 }
+
+
 .tbr3 {    
     background-color: rgba(0, 167, 181, 0.3);
 
@@ -1391,8 +1432,9 @@ gap: 10px;
     }
     & .login_tbr3{
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-between;
         direction: rtl;
+        margin: 0 auto;
         width: 100%;
     }
 
@@ -1430,8 +1472,13 @@ gap: 10px;
     }
 
 }
+@media (max-width:750px) {
+    .login_tbr3{
+        display: block;
+    }
+}
 
-/* cart_view */
+/* cart_view...................... */
 .main_cart_view{
     text-align: right;
     direction: rtl;
@@ -2998,7 +3045,7 @@ table input[type="text"]:focus, table select:focus {
 
 }
 
-/* ................................ fidya and aqiqah and sadaqah  حيمع صفحات  */
+/* ................................ zakat and fidya and aqiqah and sadaqah  حيمع صفحات  */
 
 .main_islamic_payments_zakat {
     max-width: 1200px;
@@ -3023,11 +3070,40 @@ table input[type="text"]:focus, table select:focus {
     width: 100%;
     box-shadow: 0 6px 12px rgba(0,0,0,0.1);
 
+    & img {
+        max-width: 100%;
+        width: 100%;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        width: 100%;
+        height: 300px;
+        max-width: none; /* يسمح للصورة بالزيادة إذا لزم الأمر */
+         object-fit: cover;
+    }
+
+    & .donate-btn{
+        height: 2.3em;
+        width: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
   }
-  
-  .form_zakat:hover {
-    transform: translateY(-3px);
-  }
+  .donate_cart{
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    height: 10px;
+    margin-bottom: 20px;
+    & img{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
   
   .form_zakat form {
     display: flex;
@@ -3237,4 +3313,4 @@ table input[type="text"]:focus, table select:focus {
     background: var(--button-bg-h);
 }
 
-
+  
