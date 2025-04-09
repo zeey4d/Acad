@@ -6,7 +6,7 @@
   <div class="div_tbr3"> 
     <section class="donation-form">
       <div class="modal-content">
-        <h2>إضافة دفعة إسلامية جديدة</h2>
+        <h2>تعديل المصرف الاسلامي</h2>
         <form id="add-payment-form" action="/islamic_payments_update" method="post" enctype="multipart/form-data">
         <input type="hidden" name="_method" value="PUT">
         <input type="hidden" name="islamic_payment_id" value="<?= htmlspecialchars($payment['islamic_payment_id']) ?>">
