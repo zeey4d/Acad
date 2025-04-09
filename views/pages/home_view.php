@@ -121,16 +121,19 @@
           <p>خطواتك الأولى نحو العطاء تبدأ من هنا.
             انشئ حساباَ واستكشف الفرص للمساهمة في الخير.<br>
           </p>
-          <button href="">إنشاء حساب</button>
-
+          <a href="/users_create">
+           <button type="button">إنشاء حساب</button>
+          </a>
         </div>
         <div class="login_for_home_and_tbr3">
           <p>
             تبرعك اليوم يصنع فرقاً، غداً كن جزءاً من الخير.<br>
             لا تتردد، تبرعك اليوم قد يغير حياة شخصاً، كن سبباً في سعادته.
           </p>
-          <button href="">تبرع الان</button>
-          <!-- <a href="/charity_campaigns_donate">تبرع الان</a> -->
+          
+           <a href="/charity_campaigns_donate">
+            <button>تبرع الان</button>
+          </a> 
         </div>
 
       </div>
