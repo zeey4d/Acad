@@ -89,35 +89,35 @@
     <button class="calc-button" type="submit" nmae="calc_zakat">احسب الزكاة</button>
   </div>
    -->
-  </section>
+ 
 
   <img src="views/media/images/zkat.png" alt="">
    <h1>حاسبة الزكاة </h1>
-   <div>
+   <div class="input-group">
       <label >المال :</label> 
       <input type="number" placeholder="المبلغ">
       <span>ريال</span>
    </div><br>
 
-   <div>
+   <div class="input-group">
       <label>الفضة:</label>
       <input type="number" placeholder="وزن الفضة">
       <span>جرام</span>
   </div><br>
 
-  <div>
+  <div class="input-group">
       <label>الذهب:</label>
       <input type="number" placeholder="وزن الذهب">
       <span>جرام</span>
   </div><br>
 
-  <div>
+  <div class="input-group">
    <label>زكاة الابل:</label>
    <input type="number" placeholder="العدد">
    <span>رأس</span>
   </div><br>
 
-  <div>
+  <div class="input-group">
    <label>زكاة البقر:</label>
    <input type="number" placeholder="العدد">
    <span>رأس</span>
@@ -131,12 +131,12 @@
   </section>
   
   
-  <section >
+  <section class="info-section" >
   <!-- تعريف عام  -->
 
   <div>
     <p>
-     <strong>قال الله تعالى :</strong>
+     <strong style="    color: var(--font-color-gl); ">قال الله تعالى :</strong>
      (خُذْ مِنْ أَمْوَالِهِمْ صَدَقَةً تُطَهِّرُهُمْ وَتُزَكِّيهِم بِهَا وَصَلِّ عَلَيْهِمْ إِنَّ صَلَاتَكَ سَكَنٌ لَّهُمْ) [التوبة: 103]
     </p>
     
@@ -147,10 +147,10 @@
 
   <div>
     <p>
-      <strong> الزكاة وأحكامها:</strong><br>
+      <strong style="    color: var(--font-color-gl); "> الزكاة وأحكامها:</strong><br>
       الزكاة هي الركن الثالث من أركان الإسلام، فرضها الله على المسلمين 
       القادرين تطهيرا لأموالهم، وتحقيقًا للتكافل الاجتماعي.
-      <br>أحكام الزكاة:<br>
+      <br><strong style="    color: var(--font-color-gl); ">أحكام الزكاة:</strong><br>
       1.حكمها:فرض عين على كل مسلم يملك النصاب ومر عليه الحول .<br>
       2.النصاب:مقدار معين من المال تجب فيه الزكاة, وهو يعادل85 جراما من الذهب .<br>
       3.الأنواع:تشمل زكاة المال ,الذهب والفضة ,الزروع والثمار ,عروضالتجارة ,الأنعام ,وزكاة الفطر .<br>
