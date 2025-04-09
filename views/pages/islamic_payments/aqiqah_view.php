@@ -11,7 +11,7 @@
       <h2>احسب العقيقة</h2>
 
       <!-- اختيار نوع المولود -->
-      <label>نوع المولود:</label>
+      <label>نوع المولود :</label>
       <div class="type-options">
         <div class="option-box" data-type="ذكر">ذكر</div>
         <div class="option-box" data-type="أنثى">أنثى</div>
