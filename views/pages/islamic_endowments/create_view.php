@@ -10,7 +10,7 @@
   <section class="donation-form">
   <div class="modal-content">
     <h2>إضافة وقف جديد</h2>
-    <form id="add-endowment-form" action="/endowments_store" method="post" enctype="multipart/form-data">
+    <form id="add-endowment-form" action="/islamic_endowments_store" method="post" enctype="multipart/form-data">
         <div class="form-group">
             <label for="category_id">الفئة:</label>
             <select id="category_id" name="category_id" required>
