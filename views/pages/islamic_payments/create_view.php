@@ -7,7 +7,8 @@
     <div class="div_tbr3"> 
   <section class="donation-form">
   <div class="modal-content">
-    <h2>إضافة دفعة إسلامية جديدة</h2>
+    <h1>إضافة دفعة إسلامية جديدة</h1>
+    <div id="group">
     <form id="add-payment-form" action="/islamic_payments_store" method="post" enctype="multipart/form-data">
         <div class="form-group">
             <label for="type">نوع الدفعة:</label>
@@ -45,6 +46,7 @@
             <button type="submit" name="submit">إضافة دفعة</button>
         </div>
     </form>
+    </div>
 </div>
 
   </section>

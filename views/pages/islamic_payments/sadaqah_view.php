@@ -23,7 +23,7 @@
 
 
 
-  <section >
+  <section class="info-section">
   <!-- تعريف عام  -->
   <form>
       <h2>عن الصدقة</h2>
