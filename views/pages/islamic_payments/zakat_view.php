@@ -88,12 +88,13 @@
   
     <button class="calc-button" type="submit" nmae="calc_zakat">احسب الزكاة</button>
   </div>
-   -->
+
  
 
   <img src="views/media/images/zkat.png" alt="">
    <h1 style="    color: var(--font-color-bh);">حاسبة الزكاة </h1>
    <div class="input-group">
+
       <label >المال :</label> 
       <input type="number" placeholder="المبلغ">
       <span>ريال</span>
@@ -135,14 +136,15 @@
   <!-- تعريف عام  -->
 
   <div>
+
     <p>
      <strong style="    color: var(--font-color-gl); ">قال الله تعالى :</strong>
      (خُذْ مِنْ أَمْوَالِهِمْ صَدَقَةً تُطَهِّرُهُمْ وَتُزَكِّيهِم بِهَا وَصَلِّ عَلَيْهِمْ إِنَّ صَلَاتَكَ سَكَنٌ لَّهُمْ) [التوبة: 103]
     </p>
+
     
-    <p>
-      قال رسول الله صلى الله عليه وسلم:<strong>"اتقوا النار ولو بشقِّ تمرةٍ".</strong>رواه البخاري ومسلم.
-    </p>
+    <li>
+      قال رسول الله صلى الله عليه وسلم:<strong>"اتقوا النار ولو بشقِّ تمرةٍ".</strong>رواه البخاري ومسلم.</li>
 </div>
 
   <div>
@@ -158,8 +160,7 @@
       .المؤلفة قلوبهم,في الرقاب,الغارمين,في سبيل الله,وبن السبيل
     </p>
   </div>
-  <section >
-  <!-- تعريف عام  -->
+  
   </section>
 </main>
 <?php require('views/parts/footer.php') ?>
