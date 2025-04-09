@@ -18,7 +18,6 @@ if (empty($_POST['password'])) {
 }
 
 
-
 if (! Validator::email($_POST['email'])) {
     $erorrs['email'] = "not a valid email ";
 }
