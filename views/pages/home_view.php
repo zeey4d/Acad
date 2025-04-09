@@ -119,7 +119,7 @@
   </section>
 
 
-  <h1 style=" margin: 110px;    text-align: center;    color: var(--font-color-bh); ">الصَّدَقَةُ لَا تَنْقُصُ الْمَالَ، بَلْ تَزِيدُهُ بَرَكَةً وَطُهْرًا</h1>
+  <h1 style="         margin: var(--margin-xl); text-align: center;    color: var(--font-color-bh); ">الصَّدَقَةُ لَا تَنْقُصُ الْمَالَ، بَلْ تَزِيدُهُ بَرَكَةً وَطُهْرًا</h1>
 
   <section class="Carousel_card box ">
     <!-- حاوية البطاقات -->
