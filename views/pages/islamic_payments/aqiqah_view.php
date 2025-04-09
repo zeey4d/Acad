@@ -30,6 +30,18 @@
 
       <!-- النتيجة -->
       <input type="text" placeholder="ناتج العقيقه ">
+      <div class="donate-section">
+                  <form action="/islamic_payments_donate" method="post" class="donate-section" required>
+                    <input class="inp" type="number" name="cost" placeholder="$" required min="0" max="<?= htmlspecialchars($islamic_payment['cost'] - $islamic_payment['paid_cost']) ?> ">
+                    <input type="hidden" name="islamic_payment_id" value="<?= htmlspecialchars($islamic_payment['islamic_payment_id']) ?>">
+                    <button type="submit" class="donate-btn">تبرع الأن</button>
+                  </form>
+                  <form action="/islamic_payments_addcart" method="post">
+                    <input type="hidden" name="islamic_payment_id" value="<?= htmlspecialchars($islamic_payment['islamic_payment_id']) ?>">
+                    <button type="submit" class="donate_cart"><img src="views/media/images/cart.png" alt=""></button>
+                  </form>
+                </div>
+
     </form>
   </section>
     
