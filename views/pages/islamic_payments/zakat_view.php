@@ -87,7 +87,7 @@
 
   
     <button class="calc-button" type="submit" nmae="calc_zakat">احسب الزكاة</button>
-  </div>
+  </div> -->
 
  
 
@@ -133,7 +133,7 @@
   
   
   <section class="info-section" >
-  <!-- تعريف عام  -->
+  
 
   <div>
 
@@ -143,7 +143,7 @@
     </p>
 
     
-    <li>
+    <li style="    color: white; ">
       قال رسول الله صلى الله عليه وسلم:<strong>"اتقوا النار ولو بشقِّ تمرةٍ".</strong>رواه البخاري ومسلم.</li>
 </div>
 
