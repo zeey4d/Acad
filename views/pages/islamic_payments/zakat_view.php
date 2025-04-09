@@ -92,7 +92,7 @@
  
 
   <img src="views/media/images/zkat.png" alt="">
-   <h1>حاسبة الزكاة </h1>
+   <h1 style="    color: var(--font-color-bh);">حاسبة الزكاة </h1>
    <div class="input-group">
       <label >المال :</label> 
       <input type="number" placeholder="المبلغ">
