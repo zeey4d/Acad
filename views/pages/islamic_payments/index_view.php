@@ -6,11 +6,11 @@
 <main>
   <section class="islamic_payments_index">
     <div class="nav_links_islamic_payments">
-      <a class="zakat" href="">الزكاة</a>
-      <a class="charity" href="">الصدقة</a>
-      <a class="ransom" href="">الفدية</a>
-      <a class="atonement" href="">الكفارة و النذور</a>
-      <a class="aqeeqah" href="">العقيقة</a>
+      <a class="zakat" href="/islamic_payments_zakat">الزكاة</a>
+      <a class="charity" href="/islamic_payments_sadaqah">الصدقة</a>
+      <a class="ransom" href="/islamic_payments_fidya">الفدية</a>
+      <a class="atonement" href="/islamic_payments_kaffara">الكفارة و النذور</a>
+      <a class="aqeeqah" href="/islamic_payments_aqiqah">العقيقة</a>
     </div>
     <!-- الصدقه -->
     <section class="Carousel_card">
