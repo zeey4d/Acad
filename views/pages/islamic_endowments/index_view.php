@@ -26,7 +26,7 @@
               </div>
               <h3><?= htmlspecialchars($islamic_endowment['name']) ?></h3>
               <div class="donate-section">
-                <form action="/islamic_endowments_donate" method="post" class="donate-section">
+                <form action="/islamic_endowments_checkout" method="get" class="donate-section">
                   <input class="inp" type="number" name="cost" placeholder="$" required  >
                   <input type="hidden" name="endowment_id" value="<?= htmlspecialchars($islamic_endowment['endowment_id']) ?>">
                   <button type="submit" class="donate-btn">تبرع الأن</button>

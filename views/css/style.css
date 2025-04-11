@@ -310,7 +310,7 @@ gap: 10px;
     align-items: center;
     width: 8rem;
     height: 35px ;
-    background-color:var(--button-bgcolor) ;
+    background-color:var(--button-bg-l) ;
     border-radius: 0.3em;
     border: none;
     color: #ffffff;
@@ -623,10 +623,21 @@ gap: 10px;
   .bar_admin ul li button {
     font-weight: bold;
   }
+  .bar_divide{
+    display: flex;
+   }
   
   @media (max-width: 768px) {
 
   
+    .bar_admin {
+        display: block;
+        height: 6em;
+        
+    }
+    .bar_divide{
+        display: block;
+       }
     .bar_admin ul li {
       margin: 5px 5px;
     }
@@ -641,6 +652,10 @@ gap: 10px;
  
       }
   }
+
+  
+
+  
 
 /* header */
 .bg-white_shadow {
@@ -891,7 +906,90 @@ gap: 10px;
 
     }
 }
+/* user ves */
+.MUV{
+    background-color: var(--bgcolor-white);
+  }
+  .container {
+    margin: var(--margin-xl);
+    background-color: var(--bgcolor-white);
+    border: 3px solid var(--bgcolor-N);
+    border-radius: var(--border-radius);
+    padding: 40px 30px;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+  .container label {
+    display: block;
+    font-size:var(--font-size-xl);
+    color: var(--font-color-bh);
+    font-weight: bold;
+    padding: var(--padding-s);
+  }
+  .container p {
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: var(--font-color-bl);
+  }
 
+  .code-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 25px;
+  }
+  .code {
+    width: 60px;
+    height: 80px;
+    font-size: 2.5em;
+    text-align: center;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    caret-color: transparent;
+    font-weight: 300;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  .code:focus {
+    outline: none;
+    border-color: var(--bgcolor-N);
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+  }
+  .code::-webkit-inner-spin-button,
+  .code::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  .submitUV {
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-bottom: var(--margin-l);
+    width: 50%;
+    height: 35px ;
+    background-color:var(--button-bgcolor) ;
+    border-radius: 1em;
+    border: none;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: var(--font-size-m);
+  }
+
+  .submitUV:hover {
+    transform: translateY(-2px);
+    background-color:   var(--button-bg-l);
+    border: var(--bg-border);
+  }
+
+  @media (max-width: 600px) {
+    .code {
+      width: 50px;
+      height: 70px;
+      font-size: 2em;
+    }
+  }
 
 
 
@@ -1689,7 +1787,7 @@ gap: 10px;
 }
 
 
-/* charity_projects */
+/* charity_projects......................... */
 
 /* create */ 
 /* تنسيق عام */
@@ -1847,7 +1945,7 @@ gap: 10px;
      }
 }
 
-/* manage */
+/* manage ......................... جيمع صفحات الادراة*/
 
   
   .main_manage {
@@ -1906,13 +2004,6 @@ gap: 10px;
       }
   }  
   
-  #delete-selected {
-    background-color: #f44336;
-  }
-  
-  #delete-selected:hover {
-    background-color: #e53935;
-  }
   
   .bar_action_manage {
     display: flex;
@@ -1934,46 +2025,42 @@ gap: 10px;
     background-color: var(--button-bg-l);
   }
   
+/* التنسيق العام للجدول */
+.campaigns-table-container {
+    width: 100%;
+    overflow-x: auto; 
+    -webkit-overflow-scrolling: touch; 
+    margin-bottom: 20px;
+    border: var(--bg-border-l);
+  }
+  
   .campaigns-table {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 20px;
-
-
-    & .campaigns-table td {
-        padding: 12px;
-        background-color: white;
-        text-align: center;
-        border-bottom: 1px solid #ddd;
-        text-align: right;
-
-      }
-
-      & .show_color_green{
-        background-color: var(--button-bg-h);
-        color: white;
-        padding: 10px var(--padding-l);
-        border-radius: 5px;
-        border: none;
-      }
-
-      & td {
-        text-align: right;
-        
-    
-
-      }
-
-
-      
-
+    min-width: 600px; 
   }
-
+  
+  .campaigns-table td {
+    padding: 12px;
+    background-color: white;
+    text-align: right;
+    border-bottom: 1px solid #ddd;
+    margin: var(--margin-s);
+  }
+  
+  .campaigns-table .show_color_green {
+    background-color: var(--button-bg-h);
+    color: white;
+    padding: 10px var(--padding-l);
+    border-radius: 5px;
+    border: none;
+  }
   
   .campaigns-table th {
     padding: 12px;
     border-bottom: 1px solid #ddd;
     background-color: var(--bgcolor-H);
+    color: white;
     font-weight: bold;
     text-align: right;
   }
@@ -1983,7 +2070,20 @@ gap: 10px;
     height: 50px;
     border-radius: 50%;
   }
-
+  
+  /* تحسينات للجوال (اختياري) */
+  @media (max-width: 768px) {
+    .campaigns-table td, 
+    .campaigns-table th {
+      padding: 8px; /* تقليل padding لزيادة المساحة */
+      font-size: 14px; /* تصغير الخط قليلًا */
+    }
+    
+    .campaigns-table img {
+      width: 40px;
+      height: 40px; /* تصغير الصور على الجوال */
+    }
+  }
 
 /* executive_partners */
 
@@ -2256,7 +2356,7 @@ gap: 10px;
 .card_islamic_endowments{
     border: var(--bg-border-l);
     background-color: var(--bgcolor-white);
-    width: 100%;
+    width: 40em;
     margin: var(--margin-xl);
     padding: var(--padding-m);
     border-radius: var(--border-radius);
@@ -2308,27 +2408,19 @@ gap: 10px;
         padding: var(--padding-l);
         border-radius: var(--border-radius-s);
         width: 100%;
+        & h5 {
+            color: var(--font-color-gl);
+        }
         & p {
             font-size: var(--font-size-l);
             padding: 0;
+            color: white;
 
         }
 
     }
 
-    & .details_show_ch{
-        margin-top: var(--margin-s);
-        background-color: var(--bgcolor-light);
-        padding: 20px;
-        border-radius: var(--border-radius-s);
-        width: 100%;
 
-        & p{
-            padding: 0;
-            font-size: var(--font-size-l);
-
-        }
-    }
 
 
     & img {
@@ -2341,6 +2433,32 @@ gap: 10px;
 
 
 
+}
+
+.CIE2 {
+    background-color: var(--bgcolor-dark);
+
+    & .details_show_ch{
+        margin-top: var(--margin-s);
+        background-color: rgba(0, 167, 181,0.2);
+        padding: 20px;
+        border-radius: var(--border-radius-s);
+        width: 100%;
+
+        & p{
+            padding: 0;
+            font-size: var(--font-size-l);
+            color: white;
+
+        }
+        & h5 {
+            font-size: var(--font-size-xl);
+            padding: var(--padding-s) 0;
+            color: var(--font-color-gh);
+            width: 100%;
+    
+        }
+    }
 }
 .time {
 background-color: var(--bgcolor-light);
@@ -2368,6 +2486,7 @@ margin-bottom: var(--margin-s) ;
         width: 100%;
         font-size: var(--font-size-xl);
         padding: var(--padding-m) 0 var(--padding-s) var(--padding-xl);
+        color: var(--font-color-gl);
 
 
     }
@@ -2375,6 +2494,10 @@ margin-bottom: var(--margin-s) ;
         width: 100%;
         font-size: var(--font-size-l);
         padding: 0;
+        color: white;
+    }
+    & h5 {
+        color: var(--font-color-gl);
     }
 
 
@@ -2392,7 +2515,10 @@ margin-bottom: var(--margin-s) ;
     width: 100%;
     padding: var(--padding-xl);
     border-radius: var(--border-radius);
-    border: var(--bg-border-l);
+
+    .donation-box{
+        width: 100%;
+    }
     
     & p {
         text-align: center;
@@ -2407,8 +2533,9 @@ margin-bottom: var(--margin-s) ;
         height: var(--button-height);
         border-radius:var(--button-radius) ;
         color: white;
-        margin: var(--margin-m);
+        margin-top: var(--margin-m);
         font-weight: bold;
+        text-align: center;
         
         border: none;
 
@@ -2422,13 +2549,13 @@ margin-bottom: var(--margin-s) ;
     & .icon_cart{
         background-color: #ffffff;
         border: var(--button-border);
-        border-radius: 10px;
-        width: 3em;
-        height: 3em;
+        border-radius:var(--button-radius) ;
+        width: 40px;
+        height: 38px;
         display: flex;
         align-items: center;
         justify-content: center;
-        margin:var(--margin-s) var(--margin-s) 0 0 ;
+        margin: 10px var(--margin-s) 0 0 ;
     }
 
     &  input[type="number"] {
@@ -3313,4 +3440,10 @@ table input[type="text"]:focus, table select:focus {
     background: var(--button-bg-h);
 }
 
+
+
+  
+
+
+  
   
