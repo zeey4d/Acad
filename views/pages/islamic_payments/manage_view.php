@@ -16,6 +16,8 @@
         <button class="btn_filter" name="btn_filter">فلترة</button>
         <button class="btn_search" name="btn_search">بحث</button>
       </section> -->
+      <div class="campaigns-table-container">
+
     <table class="campaigns-table">
       <thead>
         <tr>
@@ -76,7 +78,7 @@
 
 
     </table>
-
+      </div>
   </section>
 </main>
 <?php require('views/parts/footer.php') ?>
