@@ -19,7 +19,7 @@
             <a class="menu" onclick="openMenu()"><img src="views/media/images/list.png" alt=""></a>
             <a class="close" onclick="closeMenu()"><img src="views/media/images/close.png" alt=""></a>
 
-            <a href="/"> <img class="logo_image" src="views/media/images/bader.png"></a>
+            <a href="/"> <img class="logo_image" src="views/media/images/badir_logo.jpg"></a>
 
         </div>
 

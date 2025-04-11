@@ -52,9 +52,10 @@
                     <button type="submit" class="donate_cart"><img src="views/media/images/cart.png" alt=""></button>
                   </form>
                 </div>
-                <a href="/islamic_payments_zakat">
-                  <div class="details">عرض التفاصيل</div>
-                </a>
+                <div class="details">
+                <a href="/islamic_payments_show?islamic_payment_id=<?= htmlspecialchars($islamic_payment['islamic_payment_id'])  ?>">
+                  عرض التفاصيل</a>
+                </div>
               </div>
             </div>
           <?php endforeach; ?>

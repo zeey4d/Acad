@@ -18,7 +18,7 @@
         </form>
         
         <a class="link_forgot_password" id="link_forgot_password" href="">هل نسيت كلمةالمرور ؟</a>
-        <a class="link_log_in" id="link_log_in" href="">انشاءحساب</a>
+        <a class="link_log_in" id="link_log_in" href="/users_create">انشاءحساب</a>
   
   </section>
 </main>
