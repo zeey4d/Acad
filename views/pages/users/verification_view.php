@@ -1,9 +1,9 @@
 <?php require('views/parts/head.php') ?>
 <?php require('views/parts/adminbar.php') ?>
 <?php require('views/parts/navgtion.php') ?>
-<main class="main_user">
+<main class="main_user MUV">
   <!--  التحقق من الحساب   -->
-  <section class="user" id="show_user">
+  <!-- <section class="user" id="show_user">
     <h1>verification</h1>
 
     <form action="/users_store" method="POST">
@@ -20,7 +20,50 @@
     <div>
       <a href="/users_verification" >إعادة إرسال الكود </a>
     </div>
-  </section>
+  </section> -->
+
+  <div class="container">
+  <label for="verification_code">أدخل كود التحقق:</label>
+  <p>
+  لقد أرسلنا إليك رمزاً مكوناً من ستة أرقام على البريد الإلكتروني<br />
+  cool_guy@email.com، الرجاء إدخال الرمز أدناه لتأكيد عنوان بريدك الإلكتروني.
+</p>
+
+      <div class="code-container">
+        <input type="number" class="code" placeholder="0" min="0" max="9" required />
+        <input type="number" class="code" placeholder="0" min="0" max="9" required />
+        <input type="number" class="code" placeholder="0" min="0" max="9" required />
+        <input type="number" class="code" placeholder="0" min="0" max="9" required />
+        <input type="number" class="code" placeholder="0" min="0" max="9" required />
+        <input type="number" class="code" placeholder="0" min="0" max="9" required />
+      </div>
+      
+      <button type="submit" class="submitUV">ارسال</button>
+      <br />
+    </div>
+
+    <script>
+    
+    const codes = document.querySelectorAll('.code');
+codes[0].focus();
+codes.forEach((code, idx) => {
+  code.addEventListener('keydown', (e) => {
+    if (e.key >= 0 && e.key <= 9) {
+      code.value = '';
+      setTimeout(() => {
+        if (idx < codes.length - 1) {
+          codes[idx + 1].focus();
+        }
+      }, 10);
+    } else if (e.key === 'Backspace') {
+      setTimeout(() => {
+        if (idx > 0) {
+          codes[idx - 1].focus();
+        }
+      }, 10);
+    }
+  });
+});</script>
 </main>
 
 
