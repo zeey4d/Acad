@@ -14,7 +14,7 @@
             <h5> <?php  echo $projects['0']['name'] ?> </h5>
             <p class="details_p"><?php  echo $projects['0']['short_description'] ?></p>
         </div>
-            <h5>رقم الحملة : <?php  echo $projects['0']['campaign_id'] ?></h5>
+            <!-- <h5>رقم الحملة : <?php  echo $projects['0']['campaign_id'] ?></h5> -->
             <div class="progress-bar">
                 <div class="progress" style="width:<?= htmlspecialchars(($projects['0']['collected_money']/$projects['0']['cost'])*100) ?>% " ></div>
               </div>
@@ -27,7 +27,7 @@
 <div class="donation-box">
         <h2>مبلغ التبرع</h2>
         <div class="donation-min-box">
-        <input type="number" id="customAmount" placeholder="قيمة المبلغ" oninput="updateDonateButton()" required min="0" max="<?= htmlspecialchars($project['0']['cost'] - $project['0']['collected_money']) ?> >
+        <input type="number" id="customAmount" placeholder="قيمة المبلغ" oninput="updateDonateButton()" required min="0" max="<?= htmlspecialchars($project['0']['cost'] - $project['0']['collected_money']) ?>" >
         <a class="icon_cart" id="icon_nav_search" href=""><img class="icon_img" src="views/media/images/cart.png" alt=""></a>
         </div>
         <button id="donate">تبرع الآن</button>

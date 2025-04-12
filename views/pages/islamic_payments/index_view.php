@@ -23,7 +23,7 @@
           <?php foreach ($islamic_payments as $islamic_payment): ?>
 
             <div class="donation-card">
-              <a href="/islamic_payments_zakat">
+              <a href="/islamic_payments_show?islamic_payment_id=<?= htmlspecialchars($islamic_payment['islamic_payment_id']) ?>">
                 <img src="views/media/images/<?= htmlspecialchars($islamic_payment['photo'] ?? "11.png") ?>" alt="مشروع نور السعودية">
               </a>
               <div class="donation-info">
@@ -52,9 +52,10 @@
                     <button type="submit" class="donate_cart"  aria-label="السله"><img src="views/media/images/cart.png" alt=""></button>
                   </form>
                 </div>
-                <a href="/islamic_payments_zakat">
-                  <div class="details">عرض التفاصيل</div>
-                </a>
+                <div class="details">
+                <a href="/islamic_payments_show?islamic_payment_id=<?= htmlspecialchars($islamic_payment['islamic_payment_id'])  ?>">
+                  عرض التفاصيل</a>
+                </div>
               </div>
             </div>
           <?php endforeach; ?>

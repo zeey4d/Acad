@@ -4,7 +4,11 @@
 <main class="main_user">
 
   <!-- انشاء حساب جديد -->
+<<<<<<< HEAD
    <section class="user" >
+=======
+   <section class="user"> 
+>>>>>>> 1e0afff959b90ada63719e72f66bfab63e8a8420
     
   <div class="modal-content">
     <h2>تسجيل مستخدم جديد</h2>
