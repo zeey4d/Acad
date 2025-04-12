@@ -53,7 +53,7 @@
         <div class="card_insid" id="card_insid">
         <div>
         <h6>نوع المشروع</h6>
-        <p>علاجي</p>
+        <p><?php  echo $projects['0']['type'] ?></p>
         <h6>المبلغ المستهدف</h6>
         <p>  <?php  echo $projects['0']['cost'] ?>  ر.س</p>
 
@@ -68,7 +68,7 @@
         <h6>المبلغ الذي تم جمعة</h6>
         <p> <?php  echo $projects['0']['collected_money'] ?>  ر.س</p>
         <h6>عدد المتبرعين</h6>
-        <p>8000</p>
+        <p><?php  echo $projects['0']['number_of_donores'] ?> </p>
         </div>
     </div>
     <div class="card_insid" id="card_insid2">
