@@ -9,7 +9,7 @@
         
 
         <div class="imgs">
-        <img id="product-image" src="views/media/images/<?= $donation['image'] ?>" alt="Product Image" width="200" height="200" >
+        <img id="product-image" src="views/media/images/<?= $donation['image'] ?>" alt="Product Image" width="200" height="200" alt="item image">
         </div>
         <div>
             <h5 id="product-description"><?= $donation['description'] ?></h5>

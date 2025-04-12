@@ -79,20 +79,20 @@
   
   <div class="slider">
     <div class="slide active">
-      <img src="views/media/images/andrewSmall.jpg">
+      <img src="views/media/images/andrewSmall.jpg" alt="hero imge">
       <h1>"إن تُقرضوا الله قرضًا حسنًا يُضاعفه لكم ويغفر لكم" – التغابن: 17
       </h1>
     </div>
     <div class="slide">
-    <img src="views/media/images/ali.jpg" alt="">
+    <img src="views/media/images/ali.jpg" alt="hero imge">
     <h1>مَّثَلُ الَّذِينَ يُنفِقُونَ أَمْوَالَهُمْ فِي سَبِيلِ اللَّهِ كَمَثَلِ حَبَّةٍ أَنبَتَتْ سَبْعَ سَنَابِلَ" – البقرة: 261</h1>
     </div>
     <div class="slide">
-    <img src="views/media/images/almwald.jpg" alt="">
+    <img src="views/media/images/almwald.jpg"  alt="hero imge">
     <h1>"لن تنالوا البر حتى تنفقوا مما تحبون" – آل عمران: 92</h1>
     </div>
     <div class="slide">
-      <img src="https://placehold.co/800x400/ffff44/000?text=Slide+4">
+      <img src="https://placehold.co/800x400/ffff44/000?text=Slide+4"  alt="hero imge">
       <h1>"كل امرئٍ في ظل صدقته يوم القيامة" – رواه أحمد
       </h1>
     </div>
@@ -106,8 +106,8 @@
     </div>
 
     <div class="btns">
-    <img class="btn prev-btn" src="views/media/images/left.png" alt="">
-    <img class="btn " src="views/media/images/next.png" alt="">
+    <img class="btn prev-btn" src="views/media/images/left.png" alt="preves button">
+    <img class="btn " src="views/media/images/next.png" alt="next button">
 
       <!-- <button class="btn prev-btn">⏮️ السابق</button>
       <button class="btn next-btn">التالي ⏭️</button> -->
@@ -154,7 +154,7 @@
                 </form>
                 <form action="/charity_campaigns_addcart" method="post">
                   <input type="hidden" name="campaign_id" value="<?= htmlspecialchars($campaign['campaign_id']) ?>">
-                  <button type="submit" class="donate_cart"><img src="views/media/images/cart.png" alt=""></button>
+                  <button type="submit" class="donate_cart"><img src="views/media/images/cart.png" alt="cart"></button>
                 </form>
               </div>
               <div class="details">
