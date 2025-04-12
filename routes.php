@@ -116,6 +116,7 @@ $router->get('/users_show_view', 'views/pages/users/show_view.php');
 $router->get('/users_store_view', 'views/pages/users/store_view.php');
 $router->get('/users_update_view', 'views/pages/users/update_view.php');
 $router->get('/users_verification_view', 'views/pages/users/verification_view.php');
+$router->get('/users_changepassword_view', 'views/pages/users/changepassword_view.php');
 
 
 
@@ -246,6 +247,7 @@ $router->post('/users_verification', 'controllers/users/verification.php');
 $router->get('/users_manage', 'controllers/users/manage.php')->only('manager');
 $router->post('/users_store', 'controllers/users/store.php');
 $router->put('/users_update', 'controllers/users/update.php');
+$router->put('/users_changepassword', 'controllers/users/changepassword.php');
 
 
 
