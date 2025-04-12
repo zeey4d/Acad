@@ -23,7 +23,7 @@
           <?php foreach ($islamic_payments as $islamic_payment): ?>
 
             <div class="donation-card">
-              <a href="/islamic_payments_zakat">
+              <a href="/islamic_payments_show?islamic_payment_id=<?= htmlspecialchars($islamic_payment['islamic_payment_id']) ?>">
                 <img src="views/media/images/<?= htmlspecialchars($islamic_payment['photo'] ?? "11.png") ?>" alt="مشروع نور السعودية">
               </a>
               <div class="donation-info">

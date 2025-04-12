@@ -4,7 +4,7 @@
 <main class="main_user">
 
   <!-- انشاء حساب جديد -->
-   <section class="user" 
+   <section class="user"> 
     
   <div class="modal-content">
     <h2>تسجيل مستخدم جديد</h2>

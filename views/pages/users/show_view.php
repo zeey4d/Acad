@@ -24,10 +24,10 @@
         <button class="btn_image" id="btn_image" name="btn_image">إختياري</button>
         </div>
         
-    <div class="links">
+    <!-- <div class="links">
       <a class="donations" href="">إدارةالتبرعات</a>
       <a class="notifications" href="">إدارة الإشعارات</a>
-      <a class="basket" href="">السلة<img src="" alt=""></a>
+      <a class="basket" href="">السلة<img src="" alt=""></a> -->
       
     </div>
     </div>
