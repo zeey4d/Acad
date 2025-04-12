@@ -16,7 +16,7 @@
             <h5> <?php  echo $campaigns['0']['name'] ?></h5>
             <p class="details_p"><?php  echo $campaigns['0']['short_description'] ?></p>
         </div>
-            <h5>رقم الحملة : <?php  echo $campaigns['0']['campaign_id'] ?></h5>
+            <h5>رقم الحملة : <?php  echo $campaigns['0']['category_id'] ?></h5>
             <div class="progress-bar">
                 <div class="progress" style="width:<?= htmlspecialchars(($campaigns['0']['collected_money']/$campaigns['0']['cost'])*100) ?>% " ></div>
               </div>
