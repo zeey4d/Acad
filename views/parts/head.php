@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="views/css/style.css"> 
     <title>Badir</title>
-    <link rel="icon" type="image/png" href="views/media/images/bader.png">
+    <link rel="icon" type="image/png" href="views/media/images/badir.png">
 
 </head>
 <body>

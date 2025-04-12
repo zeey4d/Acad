@@ -42,8 +42,8 @@
                   </div>
                 </div>
                 <div class="donate-section">
-                  <form action="/islamic_payments_donate" method="post" class="donate-section" required>
-                    <input class="inp" type="number" name="cost" placeholder="$" required min="0" max="<?= htmlspecialchars($islamic_payment['cost'] - $islamic_payment['paid_cost']) ?> >
+                  <form action="/islamic_payments_checkout" method="get" class="donate-section" required>
+                    <input class="inp" type="number" name="cost" placeholder="$" required min="0" max="<?= htmlspecialchars($islamic_payment['cost'] - $islamic_payment['paid_cost']) ?> ">
                     <input type="hidden" name="islamic_payment_id" value="<?= htmlspecialchars($islamic_payment['islamic_payment_id']) ?>">
                     <button type="submit" class="donate-btn">تبرع الأن</button>
                   </form>
@@ -52,9 +52,10 @@
                     <button type="submit" class="donate_cart"><img src="views/media/images/cart.png" alt=""></button>
                   </form>
                 </div>
-                <a href="/islamic_payments_zakat">
-                  <div class="details">عرض التفاصيل</div>
-                </a>
+                <div class="details">
+                <a href="/islamic_payments_show?islamic_payment_id=<?= htmlspecialchars($islamic_payment['islamic_payment_id'])  ?>">
+                  عرض التفاصيل</a>
+                </div>
               </div>
             </div>
           <?php endforeach; ?>

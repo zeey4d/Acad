@@ -15,7 +15,8 @@
                 <label for="type">:النوع</label><br>
 
                 <div class="group_type">
-                  <select name="" id=""></select>
+                  <!-- <select name="" id=""></select> -->
+                   <input type="text">
                 </div>
                 <label for="address">:العنوان</label>
                 <input id="address" type="text" name="address">

@@ -52,8 +52,10 @@
               </div>
             </div>
             <div class="donate-section">
-              <form action="/charity_projects_donate" method="post" class="donate-section">
-                <input class="inp" type="number" name="cost" placeholder="$" required min="0" max="<?= htmlspecialchars($project['cost'] - $project['collected_money']) ?> >
+
+              <form action="/charity_projects_checkout" method="get" class="donate-section">
+
+                <input class="inp" type="number" name="cost" placeholder="$" required min="0" max="<?= htmlspecialchars($project['cost'] - $project['collected_money']) ?>" >
                 <input type="hidden" name="project_id" value="<?= htmlspecialchars($project['project_id']) ?>">
                 <button type="submit" class="donate-btn">تبرع الأن</button>
               </form>
