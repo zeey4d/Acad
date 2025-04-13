@@ -212,11 +212,9 @@
                         <!-- حقل مخفي لتخزين البيانات -->
                         <input type="hidden" id="phasesData" name="levels">
                     </div>
-                    
                     <div class="form-group">
                         <label for="level">المرحلة الحالية:</label>
                         <select id="levelselect" name="level">
-                            
                         </select>
                     </div>
 
