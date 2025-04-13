@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // عرض المراحل في الواجهة
     function renderPhases() {
-        if (phases.length === 0 && empty(phasesList.innerHTML)) {
+        if (phases.length === 0) {
             phasesList.innerHTML = '<div class="no-phases">لا توجد مراحل مضافة بعد</div>';
             phasesData.value = "[\"جمع التبرعات\"]";
             levelInput.add(new Option('جمع التبرعات',"0"));
