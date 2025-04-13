@@ -91,7 +91,7 @@
 
  
 
-  <img src="views/media/images/zkat.png" alt="">
+  <img src="views/media/images/zkat.png" alt="صورة الزكاة" loading="lazy">
    <h1 style="    color: var(--font-color-bh);">حاسبة الزكاة </h1>
    <div class="input-group">
 
@@ -125,8 +125,8 @@
   </div><br> 
 
     <div>
-    <button>حساب</button>  
-    <button>إضافة إلى السلة</button>
+    <button aria-label="حساب">حساب</button>  
+    <button aria-label="اضافة الى السلة">إضافة إلى السلة</button>
     </div> 
      
   </section>

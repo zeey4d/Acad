@@ -54,7 +54,7 @@
             <input type="checkbox" id="notifications" name="notifications" checked>
         </div>
         <div class="form-group">
-            <button type="submit" name="submit">تسجيل مستخدم</button>
+            <button type="submit" name="submit" aria-label="تسجيل مستخدم">تسجيل مستخدم</button>
         </div>
     </form>
 </div>
