@@ -60,7 +60,7 @@
                         <input type="file" id="photo" name="photo" accept="image/*">
                     </div>
                     <div class="form-group">
-                        <button type="submit" name="submit">إضافة المشروع</button>
+                        <button type="submit" name="submit" aria-label="اضافة">إضافة المشروع</button>
                     </div>
                 </form>
             </div>

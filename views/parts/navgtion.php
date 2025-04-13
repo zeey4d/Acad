@@ -48,7 +48,7 @@
             <a class="icon_nav_search" id="icon_nav_search" href="/cart"><img class="icon_img" src="views/media/images/cart.png" alt="السله"></a>
             <form action="/sessions_destroy" class="but_sgin" method="post">
                 <input type="hidden" name="_method" value="DELETE">
-                <button type="submit"  aria-label="تسجيل الدخول">تسجيل الخروج</button>
+                <button type="submit"  aria-label="تسجيل الخروج">تسجيل الخروج</button>
             </form>
             <?php else : ?>
                 <a class="but_sgin" href="/users_create"> انشاء حساب </a>
