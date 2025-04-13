@@ -30,7 +30,7 @@
                 <div class="aghtha">
 
                   <h5>رقم الحملة : <?= htmlspecialchars($islamic_payment['islamic_payment_id']) ?></h5>
-                  <a href=""><img src="" alt=""></a>
+                  <!-- <a href=""><img src="" alt=""></a> -->
                 </div>
                 <h3> <?= htmlspecialchars($islamic_payment['type']) ?> </h3>
                 <div class="progress-bar">
@@ -49,7 +49,7 @@
                   </form>
                   <form action="/islamic_payments_addcart" method="post">
                     <input type="hidden" name="islamic_payment_id" value="<?= htmlspecialchars($islamic_payment['islamic_payment_id']) ?>">
-                    <button type="submit" class="donate_cart" aria-label="السله"><img src="views/media/images/cart.png" alt=""></button>
+                    <button type="submit" class="donate_cart"  aria-label="السله"><img src="views/media/images/cart.png" alt="السلة" loading="lazy"></button>
                   </form>
                 </div>
                 <div class="details">

@@ -10,7 +10,7 @@
             <!-- <h3 style="color: var(--font-color-bh);
         font-size: var(--font-size-xl);">التفاصيل</h3> -->
             <div class="imgs">
-            <img src="views/media/images/<?php  echo $campaigns['0']['photo'] ?? "11.png" ?>" alt=" " loading="lazy"></div>
+            <img src="views/media/images/<?php  echo $campaigns['0']['photo'] ?? "11.png" ?>" alt="صورة الحملة المستهدفة" loading="lazy"></div>
             <p class="localshin">المنطقة تعز</p>
             <div>
             <h5> <?php  echo $campaigns['0']['name'] ?></h5>
@@ -30,9 +30,9 @@
         <h2>مبلغ التبرع</h2>
         <div class="donation-min-box">
         <input type="number" id="customAmount" placeholder="قيمة المبلغ" oninput="updateDonateButton()" required min="0" max="<?= htmlspecialchars($campaign['0']['cost'] - $campaign['0']['collected_money']) ?>" >
-        <a class="icon_cart" id="icon_nav_search" href=""><img class="icon_img" src="views/media/images/cart.png" alt=""></a>
+        <a class="icon_cart" id="icon_nav_search" href=""><img class="icon_img" src="views/media/images/cart.png" alt="السلة" loading="lazy"></a>
         </div>
-        <button id="donate">تبرع الآن</button>
+        <button id="donate" aria-label="التبرع">تبرع الآن</button>
     </div>
 </section>
 

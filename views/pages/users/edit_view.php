@@ -72,7 +72,7 @@
       </div>
 
       <div class="form-group">
-        <button type="submit" name="submit">حفظ التحديثات</button>
+        <button type="submit" name="submit" aria-label="حفظ التحديثات">حفظ التحديثات</button>
       </div>
     </form>
 

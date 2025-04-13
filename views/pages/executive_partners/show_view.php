@@ -12,7 +12,7 @@ use models\Partner;
   <section class="card_islamic_endowments">
     <!-- Partner Image -->
     <div class="img">
-      <img src="views/media/images/<?php echo $partners['0']['photo'] ?? "default.png" ?>" alt=" " loading="lazy">
+      <img src="views/media/images/<?php echo $partners['0']['photo'] ?? "default.png" ?>" alt=" شعار الشريك" loading="lazy">
     </div>
     <div>
       <!-- Partner Name -->
