@@ -58,7 +58,7 @@ try {
     }
 
     // 👌 Finalize Query
-    $query .= " GROUP BY g.campaign_id ORDER BY g.start_at;";
+    $query .= " GROUP BY g.campaign_id ORDER BY RAND();";
 
     // Execute the query
     $campaigns = $db->query($query, $params)->fetchAll();
