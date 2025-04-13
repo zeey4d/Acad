@@ -152,10 +152,6 @@
                   <input type="hidden" name="campaign_id" value="<?= htmlspecialchars($campaign['campaign_id']) ?>">
                   <button type="submit" class="donate-btn">تبرع الأن</button>
                 </form>
-                <form action="/charity_campaigns_addcart" method="post">
-                  <input type="hidden" name="campaign_id" value="<?= htmlspecialchars($campaign['campaign_id']) ?>">
-                  <button type="submit" class="donate_cart"><img src="views/media/images/cart.png" alt="cart"></button>
-                </form>
               </div>
               <div class="details">
                 <a href="/charity_campaigns_show?campaign_id=<?= htmlspecialchars($campaign['campaign_id']) ?>">عرض التفاصيل</a>

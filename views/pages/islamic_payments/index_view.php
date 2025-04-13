@@ -49,12 +49,12 @@
                   </form>
                   <form action="/islamic_payments_addcart" method="post">
                     <input type="hidden" name="islamic_payment_id" value="<?= htmlspecialchars($islamic_payment['islamic_payment_id']) ?>">
-                    <button type="submit" class="donate_cart"  aria-label="السله"><img src="views/media/images/cart.png" alt=""></button>
+                    <button type="submit" class="donate_cart" aria-label="السله"><img src="views/media/images/cart.png" alt=""></button>
                   </form>
                 </div>
                 <div class="details">
-                <a href="/islamic_payments_show?islamic_payment_id=<?= htmlspecialchars($islamic_payment['islamic_payment_id'])  ?>">
-                  عرض التفاصيل</a>
+                  <a href="/islamic_payments_show?islamic_payment_id=<?= htmlspecialchars($islamic_payment['islamic_payment_id'])  ?>">
+                    عرض التفاصيل</a>
                 </div>
               </div>
             </div>
