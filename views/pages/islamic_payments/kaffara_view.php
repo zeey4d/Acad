@@ -26,7 +26,7 @@
       <label for="count">كم مرة وجبت عليك الكفارة؟</label>
       <input type="number" id="count" name="count" required min="1">
 
-      <button type="submit">احسب</button>
+      <button type="submit" aria-label="احسب">احسب</button>
 
       <input type="text" placeholder="ناتج الكفارة التي عليك">
     </form>

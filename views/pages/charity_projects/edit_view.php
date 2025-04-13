@@ -99,7 +99,7 @@
                     </div>
 
                     <div class="form-group">
-                        <button type="submit" name="submit"><?= isset($project) ? "تحديث المشروع" : "إضافة المشروع" ?></button>
+                        <button type="submit" name="submit" aria-label="اضافة"><?= isset($project) ? "تحديث المشروع" : "إضافة المشروع" ?></button>
                     </div>
                 </form>
             </div>

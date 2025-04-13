@@ -22,7 +22,7 @@
                 <input id="address" type="text" name="address">
                 <label for="descripe_problem">:وصف المشكلة</label>
                 <textarea name="descripe_problem"  id="descripe_problem"></textarea><br>
-                <button class="button_send" id="button_send" type="submit">إرسال</button>
+                <button class="button_send" id="button_send" type="submit" aria-label="ارسال">إرسال</button>
               </form>
             </div>
           

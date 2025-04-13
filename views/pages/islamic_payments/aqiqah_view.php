@@ -26,7 +26,7 @@
       </div>
 
       <!-- زر الحساب -->
-      <button type="button">احسب العقيقة</button>
+      <button type="button" aria-label="احسب">احسب العقيقة</button>
 
       <!-- النتيجة -->
       <input type="text" placeholder="ناتج العقيقه ">
@@ -34,11 +34,11 @@
                   <form action="/islamic_payments_donate" method="post" class="donate-section" required>
                     <input class="inp" type="number" name="cost" placeholder="$" required min="0" max="<?= htmlspecialchars($islamic_payment['cost'] - $islamic_payment['paid_cost']) ?> ">
                     <input type="hidden" name="islamic_payment_id" value="<?= htmlspecialchars($islamic_payment['islamic_payment_id']) ?>">
-                    <button type="submit" class="donate-btn">تبرع الأن</button>
+                    <button type="submit" class="donate-btn" aria-label="التبرع">تبرع الأن</button>
                   </form>
                   <form action="/islamic_payments_addcart" method="post">
                     <input type="hidden" name="islamic_payment_id" value="<?= htmlspecialchars($islamic_payment['islamic_payment_id']) ?>">
-                    <button type="submit" class="donate_cart"><img src="views/media/images/cart.png" alt=""></button>
+                    <button type="submit" class="donate_cart" aria-label="السلة"><img src="views/media/images/cart.png" alt="السلة" loading="lazy"></button>
                   </form>
                 </div>
 
