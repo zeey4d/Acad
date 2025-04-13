@@ -53,8 +53,8 @@ try {
         $params['category_id'] = $filter;
     }
 
-    if ($_GET['submit'] == "foryou") {
-        $query .= " AND u.user_id = :user_id";
+    if (isset($_GET['submit']) && $_GET['submit'] == "foryou") {
+        $query .= " AND B.user_id = :user_id";
         $params['user_id'] = $_SESSION['user']['id'];
     }
 
