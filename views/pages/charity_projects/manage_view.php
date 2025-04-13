@@ -72,7 +72,7 @@
                       </form>
                   </li>
                 </ul>
-              </nav>                            
+              </nav>
               </td>
               <td><?= htmlspecialchars($project['short_description']) ?></td>
               <td>إغاثة</td>
@@ -84,8 +84,7 @@
 
           </tbody>
         </table>
-      
-   
+
         </section>
       </main>
 <?php require('views/parts/footer.php') ?>

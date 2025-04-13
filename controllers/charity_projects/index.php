@@ -28,6 +28,7 @@ try {
             P.cost, 
             COALESCE(SUM(B.cost), 0) AS collected_money, 
             P.start_at, 
+            P.beneficiaries_count,
             P.end_at, 
             P.state, 
             P.directorate
