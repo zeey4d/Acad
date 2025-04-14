@@ -4,7 +4,9 @@
 <?php require('views/parts/header.php') ?>
 
 <main class="main_islamic_payments_zakat">
-  <section class="form_zakat">
+<label for="sadaqah-calculator" class="section-label visually-hidden">حاسبة الصدقة</label>
+
+  <section id="sadaqah-calculator" class="form_zakat">
   <!-- حسابة  الصدقه-->
   <form >
       <h2>حاسبة الصدقة</h2>
@@ -33,8 +35,9 @@
   </section>
 
 
+  <label for="sadaqah-info" class="section-label visually-hidden">معلومات عن الصدقة</label>
 
-  <section class="info-section">
+  <section id="sadaqah-info" class="info-section">
   <!-- تعريف عام  -->
   <form>
       <h2>عن الصدقة</h2>

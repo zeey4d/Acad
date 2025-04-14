@@ -4,7 +4,9 @@
 <?php require('views/parts/header.php') ?>
 
 <main class="main_show_ch">
-            <section class="card_islamic_endowments">
+<label for="main-endowment-section" class="section-label visually-hidden">تفاصيل الوقف الرئيسية</label>
+
+            <section id="main-endowment-section" class="card_islamic_endowments">
             <!-- <h3 style="color: var(--font-color-bh);
         font-size: var(--font-size-xl);">التفاصيل</h3> -->
             <div class="imgs">
@@ -23,7 +25,9 @@
                   <p><strong style="display: inline;">SR <?= htmlspecialchars($endowments['0']['donate_cost']) ?>/</strong><?= htmlspecialchars($endowments['0']['cost']) ?></p>
   
               </div>  
-              <section class="bar_actions">
+              <label for="donation-section" class="section-label visually-hidden">خيارات التبرع</label>
+
+              <section id="donation-section" class="bar_actions">
 <div class="donation-box">
         <h2>مبلغ التبرع</h2>
         <div class="donation-min-box">
@@ -40,6 +44,8 @@
 
 </section>
 <!-- باقي البينات -->
+<label for="card_islamic_endowments" class="section-label visually-hidden">تفاصيل إضافية</label>
+
 <section class="card_islamic_endowments" id="card_islamic_endowments">
 
 

@@ -4,7 +4,9 @@
 <?php require('views/parts/header.php') ?>
 
 <main>
-  <section class="islamic_payments_index">
+<label for="islamic-payments-section" class="section-label visually-hidden">قسم التبرعات الإسلامية</label>
+
+  <section id="islamic-payments-section" class="islamic_payments_index">
     <div class="nav_links_islamic_payments">
       <a class="zakat" href="/islamic_payments_zakat">الزكاة</a>
       <a class="charity" href="/islamic_payments_sadaqah">الصدقة</a>
@@ -13,12 +15,16 @@
       <a class="aqeeqah" href="/islamic_payments_aqiqah">العقيقة</a>
     </div>
     <!-- الصدقه -->
-    <section class="Carousel_card">
+    <label for="payments-carousel" class="section-label visually-hidden">عرض التبرعات الإسلامية</label>
+
+    <section id="payments-carousel" class="Carousel_card">
       <!-- حاوية البطاقات -->
 
 
       <main class="main_cart">
-        <section class="container_card">
+      <label for="payments-list" class="section-label visually-hidden">بطاقات التبرعات</label>
+
+        <section id="payments-list" class="container_card">
 
           <?php foreach ($islamic_payments as $islamic_payment): ?>
 
@@ -60,7 +66,10 @@
             </div>
           <?php endforeach; ?>
         </section>
-        <section class="bar_action">
+        
+        <label for="action-tools" class="section-label visually-hidden">أدوات إضافية</label>
+
+        <section id="action-tools" class="bar_action">
 
         </section>
       </main>

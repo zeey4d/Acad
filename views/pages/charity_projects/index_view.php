@@ -27,9 +27,11 @@
 
   <!-- حاوية البطاقات -->
 
+  <main  class="main_cart">
+  <meta name="viewport" content="widtth=device-width, initial-scale=1.0">
+  <label for="projects-cards" class="section-label visually-hidden">بطاقات المشاريع</label>
 
-  <main class="main_cart">
-    <section class="container_card">
+    <section id="projects-cards" class="container_card">
       <?php foreach ($projects as $project): ?>
 
         <div class="donation-card">
@@ -72,7 +74,9 @@
       <?php endforeach; ?>
 
     </section>
-    <section class="bar_action">
+    <label for="action-tools" class="section-label visually-hidden">أدوات إضافية</label>
+
+    <section id="action-tools" class="bar_action">
 
     </section>
   </main>

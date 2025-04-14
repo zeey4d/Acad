@@ -4,7 +4,9 @@
 <?php require('views/parts/header.php') ?>
 
 <main class="main_islamic_payments_zakat">
-  <section class="form_zakat">
+<label for="kaffarah-calculator" class="section-label visually-hidden">حاسبة الكفارة</label>
+
+  <section id="kaffarah-calculator" class="form_zakat">
   <!-- حسابة الكفاره-->
 
   
@@ -35,8 +37,9 @@
   </section>
 
 
+  <label for="kaffarah-info" class="section-label visually-hidden">معلومات عن الكفارة</label>
 
-  <section >
+  <section id="kaffarah-info" >
   <!-- تعريف عام  -->
    
     <!-- معلومات حول الكفارة -->

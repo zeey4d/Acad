@@ -4,7 +4,9 @@
 <?php require('views/parts/header.php') ?>
 
 <main class="main_islamic_payments_zakat">
-  <section class="form_zakat">
+<label for="aqeeqah-calculator" class="section-label visually-hidden">حاسبة العقيقة</label>
+
+  <section id="aqeeqah-calculator" class="form_zakat">
   <!-- لحسابة  العقيعه-->
    <!-- Form Section -->
    <form action="">
@@ -44,8 +46,10 @@
 
     </form>
   </section>
-    
-  <section >
+
+  <label for="aqeeqah-info" class="section-label visually-hidden">معلومات عن العقيقة</label>
+
+  <section id="aqeeqah-info" >
   <!-- تعريف عام  -->
   <div class="info-section">
       <h2>ما هي العقيقة؟</h2>

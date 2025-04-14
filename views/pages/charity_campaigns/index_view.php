@@ -10,7 +10,12 @@
     color: var(--font-color-bh);
     margin: var(--margin-xl);">حملات التبرع المتاحة</h1>
 
-  <section class="container_card">
+   
+
+   
+    <label for="campaigns-section" class="section-label">قائمة الحملات الخيرية</label>
+
+  <section id="campaigns-section" class="container_card">
   <?php foreach ($campaigns as $campaign): ?>
           <div class="donation-card">
             <a href="/charity_campaigns_show?campaign_id=<?= htmlspecialchars($campaign['campaign_id']) ?>">
@@ -65,7 +70,9 @@
           </div>
         <?php endforeach; ?>
       </section>
-      <section class="bar_action">
+      <label for="actions-section" class="section-label">أدوات التحكم</label>
+
+      <section id="actions-section" class="bar_action">
 
       </section>
 </main>

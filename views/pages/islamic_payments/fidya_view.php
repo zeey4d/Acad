@@ -4,7 +4,9 @@
 <?php require('views/parts/header.php') ?>
 
 <main class="main_islamic_payments_zakat">
-  <section class="form_zakat">
+<label for="fidya-calculator" class="section-label visually-hidden">حاسبة الفدية</label>
+
+  <section id="fidya-calculator" class="form_zakat">
   <!-- حسابة الفديه-->
      <!-- فورم حساب الفدية -->
      <form >
@@ -43,8 +45,9 @@
   </section>
 
      
+  <label for="fidya-info" class="section-label visually-hidden">معلومات عن الفدية</label>
 
-  <section >
+  <section id="fidya-info" >
   <!-- تعريف عام  -->
      <!-- معلومات حول الفدية -->
      <div class="info-box info-section">
