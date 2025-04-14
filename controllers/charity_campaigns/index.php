@@ -17,7 +17,6 @@ if(isset($_SESSION['campaigns_pages']) && isset($_SESSION['campaigns_pages'][$_G
     $_SESSION['campaigns_count_all'] = $db->query(
         "select count(*) as count from campaigns;"
         )->fetchAll()['0']['count'];
-     echo "I am calcuting the count of campaigns :".$_SESSION['campaigns_count_all'];
 }
 
 $pages_count['campaigns'] = $_SESSION['campaigns_count_all']/10 + 1;
