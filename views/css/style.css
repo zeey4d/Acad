@@ -12,6 +12,10 @@
     --font-color-black: #000000;
     --font-color-bl: #00A7B5;
     --font-color-bh: #00575F;
+    --font-color-gh: #cbaa67;
+    --font-color-gl: #d0c599;
+
+    
     --font-hover-color: #ffffff;
     --card-bgcolor: #ffffff;
     --card-hover-bgcolor: #ffffff;
@@ -20,7 +24,7 @@
     --link-color: #ffffff;
     --link-hover-color: #ffffff;
     --border-color: #dadada;
-    --bgcolor-Hh:#003337;
+    --bgcolor-Hh:#004449;
     --bgcolor-H:#00646E;
     --bgcolor-N:#00A7B5;
     /* --bgcolor-light:#f0f0f0; */
@@ -54,7 +58,7 @@
 
     /* المسافات الخارجية  */
     --padding-xs: 0.25em;
-    --padding-s: 0.5em;
+    --padding-s: 0.65em;
     --padding-m: 1em;
     --padding-l: 1.5em;
     --padding-xl: 2em;
@@ -99,6 +103,17 @@
     --button-hover-color: #00575F;
     --button-hover-bg: white;
 
+
+    /*  */
+    --primary-color: #00796b;
+    --primary-light: #e0f2f1;
+    --accent-color: #9a7c72;
+    --accent-dark: #3e2723;
+    --text-color: #424242;
+    --bg-color: #f4f4f9;
+    --white-color: #fff;
+    --font-family: 'Arial', sans-serif;
+    --border-radius: 10px;
 }
 
 
@@ -178,7 +193,6 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: white;
     padding: 0em 1em;
     position: fixed;
     width: 100%;
@@ -187,6 +201,9 @@ footer {
     z-index: 1000;
     direction: rtl;
     border-bottom: 1px solid #dadada;
+    background: rgba(255, 255, 255,0.9);
+    backdrop-filter:blur(5px);
+
 
 
 
@@ -314,7 +331,9 @@ gap: 10px;
     align-items: center;
     width: 8rem;
     height: 35px ;
-    background-color:var(--bgcolor-white) ;
+    /* background-color:var(--bgcolor-white) ; */
+    background-color: rgba(255, 255, 255,0.5);
+    backdrop-filter:blur(5px);
     border-radius: 0.3em;
     color: var(--font-color-bh);
     border: var(--bg-border);
@@ -355,7 +374,7 @@ gap: 10px;
 /* .animate {
     transform: translateX(300px);
   } */
-@media (max-width:900px) {
+@media (max-width:750px) {
 
 
     .nav-links{
@@ -364,12 +383,14 @@ gap: 10px;
         left: 0;
         right: 0;
         flex-direction: column;
-        background-color: var(--bgcolor-white);
+        background: rgba(255, 255, 255,0.8);
+        backdrop-filter:blur(5px);
+
         padding: var(--padding-s);
         border-left: var(--bg-border-l);
         border-radius: var(--button-radius);
         width: 30em;
-        height: 40em;
+        height: 43em;
         transition: transform 2s ease-in-out;
         display: none;
 
@@ -482,14 +503,15 @@ gap: 10px;
     gap: 1em;
 
 & img{
-    width: 30px;
+    width: 25px;
     height: auto;
 }
 }
 
 .service_and_privacy_policy_agreement{
     & a {
-    color: #fff;
+    color: var(--font-color-gl);
+
     }
 }
 
@@ -497,6 +519,49 @@ gap: 10px;
     background-color: #003337;
     text-align: center;
     color: white;
+}
+
+@media (max-width:750px) {
+    .main_foter{
+        height: 350px;
+    
+        & hr{
+            border: #e0e0e0 0.5px solid;
+        }
+        & div {
+            width: 25%;
+            margin: 20px 10px 0 10px;
+        }
+        & .photo_padi{
+            width: 10%;
+        }
+        & h1{
+            font-size: var(--font-size-l);
+            margin-bottom: 10px;
+    
+        }
+        & p{
+            font-size: var(--font-size-m);
+            font-weight:100;
+            margin-top: 10px;
+            display: none;
+            
+        }
+        .icon_foter {
+            height: 12em;
+            width: auto;
+            display: flex;
+            align-items: end;
+            gap: 1em;
+        
+        & img{
+            width: 25px;
+            height: auto;
+        }
+        }
+
+    }
+
 }
 
 /* admin Bar */
@@ -510,6 +575,8 @@ gap: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
+    background: rgba(255, 255, 255,0.8);
+    backdrop-filter:blur(20px);
     
   }
   
@@ -534,14 +601,14 @@ gap: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--button-bg-h); /* لون خلفية الأزرار */
+    background-color:var(--button-bg-h); /* لون خلفية الأزرار */
     color: white; /* لون النص */
     padding: 10px 30px;
     height: var(--button-height);
     border: none;
     border-radius: var(--button-radius);
     cursor: pointer;
-    font-size: 16px;
+    font-size: var(--font-size-m);
     transition: background-color 0.3s ease;
   }
   
@@ -550,7 +617,7 @@ gap: 10px;
   }
   
   .bar_admin ul li button:active {
-    background-color: #1c5980;
+    background-color: #083d4b;
   }
   
   .bar_admin ul li button {
@@ -558,19 +625,21 @@ gap: 10px;
   }
   
   @media (max-width: 768px) {
-    .bar_admin ul {
-      flex-direction: column;
-      align-items: flex-start;
-    }
+
   
     .bar_admin ul li {
-      margin: 5px 0;
+      margin: 5px 5px;
     }
   
     .bar_admin ul li button {
-      width: 100%;
-      text-align: right;
-    }
+        padding: 5px 15px;
+        height: var(--button-height);
+        font-size: var(--font-size-s);
+        width: 100%;
+        text-align: center;
+        margin: var(--margin-xs);
+ 
+      }
   }
 
 /* header */
@@ -693,7 +762,7 @@ gap: 10px;
 .user{
     margin: 0 auto;
     padding: var(--padding-xl);
-    width: 60%;
+    width: 80%;
     background-color: var(--bgcolor-white);
     text-align: center;
   
@@ -815,12 +884,12 @@ gap: 10px;
         color: var(--font-color-bl);
 
     }
-    & .notifications{
+    /* & .notifications{
 
     }
     & .basket{
 
-    }
+    } */
 }
 
 
@@ -1155,6 +1224,19 @@ gap: 10px;
 
 /* home */
 
+.box {
+    transform: translateY(100px);      /* التحرك من الأسفل */
+    opacity: 0;                        /* تبدأ شفافة تماماً */
+    transition: transform 0.7s ease, opacity 0.7s ease;
+  }
+  
+  .box.show {
+    transform: translateY(0);          /* ترجع لمكانها */
+    opacity: 1;                      /* تكون أقل شفافية */
+  }
+  
+
+
 .main_home{
      & h1{
         text-align: center;
@@ -1164,33 +1246,121 @@ gap: 10px;
 }
 .hero{
     position: relative;
-
-    & .h1 {
-        text-align: right;
-        color: white;
-    }
-
-    & img {
-        width: 100%;
-        height: 32em;
-        max-width: none; /* يسمح للصورة بالزيادة إذا لزم الأمر */
-        object-fit: cover; 
-
-
-    }
-
-    
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    width: 100%;
 }
-.Carousel_card{
-    
-    & h1 {
-        color: var(--font-color-bh);
-        font-size: var(--font-size-xl);
-        padding: var(--padding-xl);
+
+  .slider {
+    position: relative;
+    width: 100%;
+    height: 35em;
+    overflow: hidden;
+  }
+
+  .slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease;
+  }
+
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .slide.active {
+    opacity: 1;
+    z-index: 2;
+  }
+
+  .slide h1 {
+    position: absolute;
+    /* top: 50%; */
+    text-align: right;
+    bottom: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%) translateY(20px);
+    color: white;
+    /* background: rgba(0, 0, 0, 0.5); */
+    background: rgba(0, 167, 181,0.1);
+
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-size: 2rem;
+    opacity: 0;
+    transition: opacity 1s ease, transform 1s ease;
+    pointer-events: none;
+    backdrop-filter:blur(5px);
+  }
+
+  .slide.active h1 {
+    opacity: 1;
+    transform: translate(-50%, -50%) translateY(0);
+  }
+
+  .dots {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 3;
+  }
+
+  .dot {
+    width: 12px;
+    height: 12px;
+    background: rgba(255,255,255,0.4);
+    border-radius: 50%;
+    transition: background 0.3s ease;
+  }
+
+  .dot.active {
+    background: white;
+  }
+
+  .btns {
+    position: absolute;
+    /* bottom: 20px;
+    right: 20px;
+    top: 90px; */
+    width: 100%;
+    top: 50%;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    z-index: 4;
+  }
+
+  .btn {
+    padding: 8px 14px;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+    width: 60px;
+    height: auto;
+
+    &:hover {
+     background: rgba(255,255,255,0.4);
+
+
     }
     
+  }
 
-}
+/* .Carousel_card{
+
+} */
+
+
 .tbr3 {    
     background-color: rgba(0, 167, 181, 0.3);
 
@@ -1215,6 +1385,9 @@ gap: 10px;
 
     & .pt {
         background-color: #00575F;
+       background: rgba(0, 87, 95, 0.9);
+       backdrop-filter:blur(100px);
+
         color: #ffffff;
         width: 40em;
         border-radius: 20px;
@@ -1241,11 +1414,14 @@ gap: 10px;
 
 .login_home{
     background-color: #ffffff;
+    margin-bottom: var(--margin-xl);
     & h1 {
         padding-top: var(--padding-xl);
         text-align: center;
         font-weight: bold;
+        font-size: var(--font-size-ll);
         color: var(--font-color-bh);
+        margin-top: var(--margin-s);
     }
     & #plogin {
         text-align: center;
@@ -1256,8 +1432,9 @@ gap: 10px;
     }
     & .login_tbr3{
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-between;
         direction: rtl;
+        margin: 0 auto;
         width: 100%;
     }
 
@@ -1295,8 +1472,13 @@ gap: 10px;
     }
 
 }
+@media (max-width:750px) {
+    .login_tbr3{
+        display: block;
+    }
+}
 
-/* cart_view */
+/* cart_view...................... */
 .main_cart_view{
     text-align: right;
     direction: rtl;
@@ -1813,15 +1995,21 @@ gap: 10px;
     display: flex;
     background-color: var(--bgcolor-dark);
     justify-content: center;
+    
 
 }
 
 .modal-content {
     background-color: var(--bgcolor-white);
     padding: var(--padding-xl);
-    width: 80%;
-    & h2 {
+    width: 100%;
+
+    & h1 {
         color: var(--font-color-bh);
+        text-align: center;
+        font-size: var(--font-size-xl);
+        margin-bottom: var(--margin-l);
+        margin-top: var(--margin-s);
     }
     & button{
         background-color: var(--button-bg-h);
@@ -1849,10 +2037,17 @@ gap: 10px;
     }
 
 }
+#group{
+    width: 70%;
+    margin: 0 auto;
+    
+}
 
 
 .form-group {
     margin-bottom: 15px;
+    width: 100%;
+
 
     & label {
         display: block;
@@ -1870,8 +2065,8 @@ gap: 10px;
 
 
 .form-group input, .form-group textarea {
-    width: 80%;
-    padding: 10px;
+    width: 100%;
+    padding: var(--padding-s);
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
@@ -1954,7 +2149,7 @@ gap: 10px;
     & img {
         width: 50px;
         height: 50px;
-        border-radius: 4px;
+        border-radius: 5px;
     }
     & tr{
         background-color: #000;
@@ -2046,7 +2241,9 @@ gap: 10px;
 } */
 
 
-/* charity_campaigns */
+/* charity_campaigns.................................. */
+
+
 
 /* show */
 
@@ -2059,6 +2256,7 @@ gap: 10px;
 }
 
 .card_islamic_endowments{
+    border: var(--bg-border-l);
     background-color: var(--bgcolor-white);
     width: 100%;
     margin: var(--margin-xl);
@@ -2119,6 +2317,7 @@ gap: 10px;
         }
 
     }
+
 
     & .details_show_ch{
         margin-top: var(--margin-s);
@@ -2187,9 +2386,7 @@ margin-bottom: var(--margin-s) ;
     display: flex;
     justify-content: space-between;
 }
-#card_insid2{
-    
-}
+
 .bar_actions{
     margin-top: var(--margin-s);
     justify-content: center;
@@ -2278,6 +2475,25 @@ margin-bottom: var(--margin-s) ;
     
 }
 
+@media (max-width:900px) {
+    .main_show_ch{
+        display: block;
+        display: grid;
+        grid-template-columns: repeat(1fr); /* 3 أعمدة متساوية */
+
+        justify-items: center; /* محاذاة أفقية للعناصر */
+        align-items: center;
+        margin:  auto 0;
+        width: 100%;
+
+    }
+
+    .card_islamic_endowments{
+        width: 70%;
+        border: var(--bg-border-l);
+
+    }
+}
 
 /* index */
 
@@ -2628,7 +2844,7 @@ margin-bottom: var(--margin-s) ;
 /* islamic payments */
 /* zalat */
 /* تنسيق عام للصفحة */
-.main_islamic_payments_zakat {
+/* .main_islamic_payments_zakat {
     background-color: var(--bgcolor-light);
     padding: 20px;
     text-align: center;
@@ -2661,7 +2877,7 @@ margin-bottom: var(--margin-s) ;
         width: 100%;
         height: 300px;
         max-width: none; /* يسمح للصورة بالزيادة إذا لزم الأمر */
-        object-fit: cover;
+        /* object-fit: cover;
     }
 
     &  p {
@@ -2732,7 +2948,7 @@ table input[type="text"]:focus, table select:focus {
 
 .calc-button:hover {
     background-color: #218838;
-}
+} */ 
 
 /* show */
 
@@ -2832,6 +3048,217 @@ table input[type="text"]:focus, table select:focus {
 
 }
 
+/* ................................ zakat and fidya and aqiqah and sadaqah  حيمع صفحات  */
+
+.main_islamic_payments_zakat {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    text-align: right;
+    background-color: var(--bgcolor-white);
+    direction: rtl;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .form_zakat {
+    background-color: var(--bgcolor-white);
+    padding: 30px;
+    border-radius: var(--border-radius-s);
+    border: var(--bg-border-l);
+    margin-bottom: 30px;
+    transition: transform 0.3s ease;
+    margin: 0 auto;
+    width: 100%;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+
+    & img {
+        max-width: 100%;
+        width: 100%;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        width: 100%;
+        height: 300px;
+        max-width: none; /* يسمح للصورة بالزيادة إذا لزم الأمر */
+         object-fit: cover;
+    }
+
+    & .donate-btn{
+        height: 2.3em;
+        width: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+  }
+  .donate_cart{
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    height: 10px;
+    margin-bottom: 20px;
+    & img{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+  
+  .form_zakat form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .form_zakat h2 {
+    text-align: center;
+    color: var(--font-color-bh);
+    margin-bottom: 10px;
+    font-size: 1.8em;
+  }
+  
+  /* تنسيق خيارات نوع المولود */
+  .type-options {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 10px;
+  }
+  
+  .type-options .option-box {
+    padding: 12px 25px;
+    background-color: var(--primary-light);
+    border: 2px solid var(--bgcolor-H);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .type-options .option-box:hover,
+  .type-options .option-box.active {
+    background-color: var(--bgcolor-H);
+    color: var(--white-color);
+    transform: scale(1.05);
+  }
+  
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .form_zakat label {
+    font-weight: bold;
+    color: var(--primary-color);
+  }
+  
+  .form_zakat input[type="number"],
+  .form_zakat input[type="text"] {
+    padding: var(--padding-s);
+    border: 1px solid #ccc;
+    border-radius: var(--button-radius);
+    font-size: 16px;
+    text-align: right;
+  }
+  
+  .form_zakat input[type="number"]:focus,
+  .form_zakat input[type="text"]:focus {
+    outline: none;
+    border-color: var(--primary-color);
+  }
+  
+  .form_zakat button {
+    padding: var(--padding-s);
+    border: none;
+    border-radius: var(--button-radius);
+    background-color: var(--button-bg-h);
+    color: var(--white-color);
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .form_zakat button:hover {
+    background-color: var(--button-bg-l);
+    transform: translateY(-2px);
+  }
+  
+  /* تنسيق قسم المعلومات التعريفية */
+  .info-section {
+    background-color: var(--white-color);
+    background-color: var(--bgcolor-Hh);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    line-height: 1.8;
+    border: var(--bg-border-l);
+    width: 100%;
+    margin: var(--margin-s) ;
+    
+  }
+  
+  .info-section h2 {
+    color: var(--font-color-gl);
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 1.75em;
+  }
+  
+  .info-section h3 {
+    color: var(--font-color-gh);
+    margin-bottom: 10px;
+    font-size: 1.25em;
+  }
+  
+  .info-section p,
+  .info-section ul {
+    font-size: var(--font-size-m);
+    color: white;
+  }
+  
+  /* تنسيق القائمة داخل قسم المعلومات */
+  .info-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .info-section ul li {
+    margin-bottom: 8px;
+    padding-right: 20px;
+    position: relative;
+  }
+  
+  .info-section ul li::before {
+    content: "•";
+    position: absolute;
+    right: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+  }
+  
+  /* استجابة الشاشة */
+  @media (max-width: 768px) {
+    .main_islamic_payments_zakat {
+      display: block;
+    }
+    
+    .form_zakat,
+    .info-section {
+      margin: 0 10px;
+      padding: 20px;
+    }
+    
+    .type-options {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+  
+
 
 
 /*   التحكم بي الموقع عند اختلاف المقاسات الشاشة*/
@@ -2887,4 +3314,14 @@ table input[type="text"]:focus, table select:focus {
 
 ::-webkit-scrollbar-thumb:hover {
     background: var(--button-bg-h);
+}
+
+.img img {
+    display: block;
+    width: 50%;
+    height: 500px;
+    aspect-ratio: 16 / 9;
+  
+    object-fit: cover;
+    border-radius: 0.5em;
 }

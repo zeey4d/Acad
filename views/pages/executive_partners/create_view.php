@@ -9,8 +9,9 @@
             <div id="add-partner-modal" class="modal">
 
                 <div class="modal-content">
-                    <h2>إضافة شريك جديد</h2>
+                    <h1>إضافة شريك جديد</h1>
 
+                    <div id="group">
                     <form id="add-partner-form" action="/executive_partners_store" method="post" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="name">اسم الشريك:</label>
@@ -24,7 +25,7 @@
                         <label for="more_information">معلومات إضافية:</label>
                         <textarea id="more_information" name="more_information" rows="2"></textarea>
                         </div>
-                        </div>
+                        
                         <div class="form-group">
                         <label for="email">البريد الإلكتروني:</label>
                         <input type="email" id="email" name="email" required>
@@ -54,9 +55,11 @@
                         <input type="file" id="photo" name="photo" accept="image/*" required>
                         </div>
                         <div class="form-group">
-                        <button type="submit" name="submit">إضافة شريك</button>
+                        <button type="submit" name="submit" aria-label="اضافة">إضافة شريك</button>
                         </div>
                     </form>
+                    </div>
+</div>
 </div>
     </section>
 </main>

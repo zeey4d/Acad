@@ -7,10 +7,10 @@
   <div class="div_tbr3"> 
     <section class="donation-form">
       <div class="modal-content">
-        <h2>إضافة وقف جديد</h2>
+        <h2>تعديل الوقف</h2>
         <form id="add-endowment-form" action="/islamic_endowments_update" method="post" enctype="multipart/form-data">
         <input type="hidden" name="_method" value="PUT">
-        <input type="hidden" name="notification_id" value="<?= htmlspecialchars($endowment['notification_id']) ?>">
+        <input type="hidden" name="endowment_id" value="<?= htmlspecialchars($endowment['endowment_id']) ?>">
           <div class="form-group">
             <label for="category_id">الفئة:</label>
             <select id="category_id" name="category_id" required>
@@ -57,7 +57,7 @@
             <?php endif; ?>
           </div>
           <div class="form-group">
-            <button type="submit" name="submit">إضافة الوقف</button>
+            <button type="submit" name="submit" aria-label="اضافة">إضافة الوقف</button>
           </div>
         </form>
       </div>
