@@ -200,7 +200,7 @@
         <p>بفضل الله ثم بدعمكم السخي، وصلنا إلى هذاالعدد
           من المستفيدين وغيرنا حياتهم للأفضل
         </p>
-        <p class="pt">عدد المستفيدين<br><span>25,7ألف</span><br>مستفيد</p>
+        <p class="pt">عدد المستفيدين<br><span><?php echo $beneficiaries_project_campain['beneficiaries_count']?></span><br>مستفيد</p>
       </div>
     </div>
 
