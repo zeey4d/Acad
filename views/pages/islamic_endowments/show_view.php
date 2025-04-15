@@ -59,7 +59,7 @@
         <div class="card_insid" id="card_insid">
         <div>
         <h6>نوع المشروع</h6>
-        <p>علاجي</p>
+        <p> </p>
         <h6>المبلغ المستهدف</h6>
         <p> ر.س</p>
 

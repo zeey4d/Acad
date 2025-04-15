@@ -59,8 +59,8 @@
                   </form>
                 </div>
                 <div class="details">
-                <a href="/islamic_payments_show?islamic_payment_id=<?= htmlspecialchars($islamic_payment['islamic_payment_id'])  ?>">
-                  عرض التفاصيل</a>
+                  <a href="/islamic_payments_show?islamic_payment_id=<?= htmlspecialchars($islamic_payment['islamic_payment_id'])  ?>">
+                    عرض التفاصيل</a>
                 </div>
               </div>
             </div>

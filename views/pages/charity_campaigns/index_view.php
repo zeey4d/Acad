@@ -17,6 +17,8 @@
 
   <section id="campaigns-section" class="container_card">
   <?php foreach ($campaigns as $campaign): ?>
+  <section class="container_card">
+  <?php if(isset($campaigns)): foreach ($campaigns as $campaign): ?>
           <div class="donation-card">
             <a href="/charity_campaigns_show?campaign_id=<?= htmlspecialchars($campaign['campaign_id']) ?>">
               <img src="views/media/images/<?= htmlspecialchars($campaign['photo'] ?? "11.png") ?>" alt="مشروع نور السعودية" loading="lazy">
@@ -68,11 +70,20 @@
               </div>
             </div>
           </div>
+        <?php endforeach; endif; ?>
         <?php endforeach; ?>
       </section>
-      <label for="actions-section" class="section-label">أدوات التحكم</label>
-
-      <section id="actions-section" class="bar_action">
+          <a href="/charity_campaigns_index?page_number=<?= isset($_GET['page_number']) ? $_GET['page_number'] - 1 : 1 ?>" style="<?php echo  $_GET['page_number'] - 1 <= 0 ? 'pointer-events: none; cursor: default;opacity: 0.3;' : 'pointer-events: auto; cursor: pointer' ?>"><img src="views/media/images/previous.png" alt="previous" loading="lazy"></a>
+          <div style="height: inherit; width: auto; font-size: larger; font-family: 'Times New Roman', Times, serif;" >
+            <div style="display: flex; flex-direction: row; justify-content: space-around; width: 100%;">
+              <div style="width: fit-content;"><?php echo (isset($_GET['page_number'])? $_GET['page_number'] - 1 : 0) . " . . . " ; ?></div>
+              <div style="color: blue; width: fit-content;"><?php echo "   " . isset($_GET['page_number'])? $_GET['page_number'] : 1 . "   "; ?></div>
+              <div style="width: fit-content;"><?php echo " . . . " . (isset($_GET['page_number'])? $_GET['page_number'] + 1: 2 ); ?></div>
+            </div>
+          </div>
+          <a href="/charity_campaigns_index?page_number=<?= isset($_GET['page_number']) ? $_GET['page_number'] + 1 : 2 ?>"style="<?php echo  $_GET['page_number'] + 1 > $pages_count['campaigns']? 'pointer-events: none; cursor: default;opacity: 0.3; ' : 'pointer-events: auto; cursor: pointer' ?>"><img src="views/media/images/next.png" alt="next" loading="lazy" heigh= "50px" width= "50px" ></a>
+        </div>
+      <section class="bar_action">
 
       </section>
 </main>

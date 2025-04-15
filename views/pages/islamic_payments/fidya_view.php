@@ -2,6 +2,8 @@
 <?php require('views/parts/adminbar.php') ?>
 <?php require('views/parts/navgtion.php') ?>
 <?php require('views/parts/header.php') ?>
+<script src="views/javascrept/fidya.js"></script>
+
 
 <main class="main_islamic_payments_zakat">
 <label for="fidya-calculator" class="section-label visually-hidden">حاسبة الفدية</label>
@@ -14,34 +16,35 @@
 
       <label>سبب الفدية:</label>
       <div class="type-options">
-        <div class="option-box" data-type="مرض">مرض مزمن</div>
-        <div class="option-box" data-type="حمل">حمل أو إرضاع</div>
-        <div class="option-box" data-type="كبير_سن">كِبر سن وعدم قدرة على الصيام</div>
-        <div class="option-box" data-type="تأخير">تأخير قضاء رمضان بدون عذر</div>
+        <div class="option-box" onclick="calculate('alsiyam')">فدية الصيام للعاجز </div>
+        <div class="option-box" onclick="calculate('adhaa')">الأذى في الحج</div>
+        <div class="option-box" onclick="calculate('jimae')">فدية الجماع في نهار رمضان</div>
+        <div class="option-box" onclick="calculate('najasa')">الجهل بالنجاسة في الصلاة</div>
+        <div class="option-box" onclick="calculate('nadhar')">التخلّي عن نذر أو شرط شرعي</div>
+        <div class="option-box" onclick="calculate('sayd')">التطيب أو حلق الشعر أو تقليم الأظافر أثناء الإحرام</div>
       </div>
 
       <input type="hidden" id="type" name="type">
 
-      <label for="days">عدد الأيام غير المصامة</label>
-      <input type="number" id="days" name="days" required min="1">
+      <label for="days">عدد المرات</label>
+      <input type="number" id="count" name="days" required min="1">
 
-      <button type="submit" aria-label="احسب">احسب</button>
 
-      <input type="text" placeholder="ناتج الفدسه">
-      <div class="donate-section">
-                  <form action="/islamic_payments_donate" method="post" class="donate-section" required>
-                    <input class="inp" type="number" name="cost" placeholder="$" required min="0" max="<?= htmlspecialchars($islamic_payment['cost'] - $islamic_payment['paid_cost']) ?> ">
-                    <input type="hidden" name="islamic_payment_id" value="<?= htmlspecialchars($islamic_payment['islamic_payment_id']) ?>">
-                    <button type="submit" class="donate-btn" aria-label="التبرع">تبرع الأن</button>
-                  </form>
-                  <form action="/islamic_payments_addcart" method="post">
-                    <input type="hidden" name="islamic_payment_id" value="<?= htmlspecialchars($islamic_payment['islamic_payment_id']) ?>">
-                    <button type="submit" class="donate_cart" aria-label="السلة"><img src="views/media/images/cart.png" alt="السلة" loading="lazy"></button>
-                  </form>
-                </div>
-       </form>
+    </form>
 
-  
+
+    <div class="donate-section">
+      <form action="/islamic_payments_checkout" method="get" class="donate-section" required>
+        <input class="inp" type="number" name="cost" placeholder="$" required id="result">
+        <input type="hidden" name="islamic_payment_id" value="5">
+        <button type="submit" class="donate-btn" aria-label="تبرع الأن">تبرع الأن</button>
+      </form>
+      <form action="/islamic_payments_addcart" method="post">
+        <input type="hidden" name="islamic_payment_id" value="5">
+        <button type="submit" class="donate_cart" aria-label="السله"><img src="views/media/images/cart.png" alt=""></button>
+      </form>
+    </div>
+
   </section>
 
      
