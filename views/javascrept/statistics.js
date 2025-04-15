@@ -76,12 +76,35 @@ document.addEventListener('DOMContentLoaded', function() {
         // Apply to element
         element.style.background = gradient;
         element2.style.background = gradient2;
+        summaryValue.innerHTML = statisticss[categoryFilter].sum;
       }
-      categoryFilter.addEventListener("change", function() {
+      categoryFilter.parentElement.addEventListener("change", function() {
         drawChart(items_count_charts,payments_sum_chart, statisticss,colors, categoryFilter.value);
-        summaryValue.innerHTML = statisticss[categoryFilter.value].sum;
       });
-      
+      color_box_campaigns.parentElement.addEventListener("mouseenter", function() {
+          drawChart(items_count_charts,payments_sum_chart, statisticss, colors, "campaigns");
+      });
+      color_box_campaigns.parentElement.addEventListener("mouseleave", function() {
+          drawChart(items_count_charts,payments_sum_chart, statisticss, colors, categoryFilter.value);
+      });
+      color_box_endowments.parentElement.addEventListener("mouseenter", function() {
+          drawChart(items_count_charts,payments_sum_chart, statisticss, colors, "endowments");
+      });
+      color_box_endowments.parentElement.addEventListener("mouseleave", function() {
+          drawChart(items_count_charts,payments_sum_chart, statisticss, colors, categoryFilter.value);
+      });
+      color_box_islamic_payments.parentElement.addEventListener("mouseenter", function() {
+          drawChart(items_count_charts,payments_sum_chart, statisticss, colors, "islamic_payments");
+      });
+      color_box_islamic_payments.parentElement.addEventListener("mouseleave", function() {
+          drawChart(items_count_charts,payments_sum_chart, statisticss, colors, categoryFilter.value);
+      });
+      color_box_projects.parentElement.addEventListener("mouseenter", function() {
+          drawChart(items_count_charts,payments_sum_chart, statisticss, colors, "projects");
+      });
+      color_box_projects.parentElement.addEventListener("mouseleave", function() {
+          drawChart(items_count_charts,payments_sum_chart, statisticss, colors, categoryFilter.value);
+      });
       
       drawChart(items_count_charts,payments_sum_chart, statisticss, colors, categoryFilter.value);
 
