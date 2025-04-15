@@ -121,6 +121,7 @@ $router->get('/users_verification_view', 'views/pages/users/verification_view.ph
 
 
 
+
 // ------------------------------
 
 
@@ -246,6 +247,7 @@ $router->post('/users_verification', 'controllers/users/verification.php');
 $router->get('/users_manage', 'controllers/users/manage.php')->only('manager');
 $router->post('/users_store', 'controllers/users/store.php');
 $router->put('/users_update', 'controllers/users/update.php');
+
 
 
 

@@ -17,7 +17,7 @@
     </div>
     <form action="" method="">
       <input id="search" type="text" name="search">
-      <button id="btn_search" type="submit" name="btn_search"><img src="views/media/images/search.png" alt=""></button>
+      <button id="btn_search" type="submit" name="btn_search"><img src="views/media/images/search.png" alt="البحث" loading="lazy"></button>
     </form>
     <p>انضموا الينا في تقديم فرص تبرع تؤثر بشكل واسع وتدعم المجتمعات المحتاجة مع ضمان تحقيق نتائج طويلة الأمد</p>
   
@@ -34,13 +34,13 @@
 
         <div class="donation-card">
         <a href="/charity_projects_show?project_id=<?= htmlspecialchars($project['project_id']) ?>">
-          <img src="views/media/images/<?= htmlspecialchars($project['photo'] ?? "11.png") ?>" alt="مشروع نور السعودية" loading="lazy">
+          <img src="views/media/images/<?= htmlspecialchars($project['photo'] ?? "11.png") ?>" alt="مشروع نور اليمن" loading="lazy">
         </a>
           <div class="donation-info">
             <div class="aghtha">
               <h6><?= htmlspecialchars($project['type']) ?></h6>
               <h5>رقم الحملة : <?= htmlspecialchars($project['project_id']) ?></h5>
-              <a href=""><img src="" alt=""></a>
+              <!-- <a href=""><img src="" alt=""></a> -->
             </div>
             <h3> <?= htmlspecialchars($project['name']) ?> </h3>
             <div class="progress-bar">
@@ -57,11 +57,11 @@
 
                 <input class="inp" type="number" name="cost" placeholder="$" required min="0" max="<?= htmlspecialchars($project['cost'] - $project['collected_money']) ?>" >
                 <input type="hidden" name="project_id" value="<?= htmlspecialchars($project['project_id']) ?>">
-                <button type="submit" class="donate-btn">تبرع الأن</button>
+                <button type="submit" class="donate-btn" aria-label="التبرع">تبرع الأن</button>
               </form>
               <form action="/charity_projects_addcart" method="post">
                 <input type="hidden" name="project_id" value="<?= htmlspecialchars($project['project_id']) ?>">
-                <button type="submit" class="donate_cart"><img src="views/media/images/cart.png" alt=""></button>
+                <button type="submit" class="donate_cart" aria-label="السلة"><img src="views/media/images/cart.png" alt="السلة" loading="lazy"></button>
               </form>
             </div>
             <div class="details">
@@ -72,8 +72,20 @@
       <?php endforeach; ?>
 
     </section>
+    <!-- شريط التنقل -->
+    <div style="display: flex; width: 50%; justify-content: space-around; border-radius: 5px; height:20px; padding: 40px; border: 2px solid blue; align-self:center; align-items: center; text-align: center;">
+          <a href="/charity_projects_index?page_number=<?= isset($_GET['page_number']) ? $_GET['page_number'] - 1 : 1 ?>" style="<?php echo !isset($_GET['page_number']) || $_GET['page_number'] - 1 <= 0 ? 'pointer-events: none; cursor: default; opacity: 0.3; ' : 'pointer-events: auto; cursor: pointer' ?>"><img src="views/media/images/left.png" alt="previous" loading="lazy" heigh= "50px" width= "50px"></a>
+          <div style="height: inherit; width: auto; font-size: larger; font-family: 'Times New Roman', Times, serif;" >
+            <div style="display: flex; flex-direction: row; justify-content: space-around; width: 100%;">
+              <div style="width: fit-content;"><?php echo (isset($_GET['page_number'])? $_GET['page_number'] - 1 : 0) . " . . . " ; ?></div>
+              <div style="color: blue; width: fit-content;"><?php echo "   " . isset($_GET['page_number'])? $_GET['page_number'] : 1 . "   "; ?></div>
+              <div style="width: fit-content;"><?php echo " . . . " . (isset($_GET['page_number'])? $_GET['page_number'] + 1: 2 ); ?></div>
+            </div>
+          </div>
+          <a href="/charity_projects_index?page_number=<?= isset($_GET['page_number']) ? $_GET['page_number'] + 1 : 2 ?>"style="<?php echo !isset($_GET['page_number']) || $_GET['page_number'] + 1 > $pages_count['projects'] ? 'pointer-events: none; cursor: default; opacity: 0.3;  ' : 'pointer-events: auto; cursor: pointer' ?>"><img src="views/media/images/next.png" alt="next" loading="lazy" heigh= "50px" width= "50px" ></a>
+        </div>
     <section class="bar_action">
-
+    <!-- نهاية شريط التنقل -->
     </section>
   </main>
 
