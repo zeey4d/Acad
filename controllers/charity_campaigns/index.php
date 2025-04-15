@@ -5,21 +5,36 @@ use core\Database;
 
 $db = App::resolve(Database::class);
 $page = "charity_campaigns_index" ;
-
+start_page:
 $page_campaigns_ids = [];
 $heading = "All My tests";
 if(!isset($_GET['page_number'])) $_GET['page_number'] = 1; // if page_number not set in $_GET
 
 if(isset($_SESSION['campaigns_pages']) && isset($_SESSION['campaigns_pages'][$_GET['page_number']])){
     $page_campaigns_ids = $_SESSION['campaigns_pages'][$_GET['page_number']];
-}else if(!isset($_SESSION['campaigns_count_all'])){
-    $page_campaigns_ids = [];
-    $_SESSION['campaigns_count_all'] = $db->query(
-        "select count(*) as count from campaigns;"
-        )->fetchAll()['0']['count'];
 }
 
+if(!isset($_SESSION['campaigns_count_all'])){
+    $page_campaigns_ids = [];
+    $_SESSION['campaigns_count_all'] = $db->query(
+        "select count(*) as count from campaigns where state = 'active';"
+    )->fetchAll()['0']['count'];
+}else{
+    $campaigns_current_count = $db->query( "select count(*) as count from campaigns where state = 'active';")->fetchAll()['0']['count'];
+    if($campaigns_current_count != $_SESSION['campaigns_count_all']){
+        if($campaigns_current_count > $_SESSION['campaigns_count_all']){
+            if(count($_SESSION['campaigns_pages'][$_GET['page_number']]) < '10'){
+                $_SESSION['capmaigns_pages'][$_GET['page_number']] = [];
+                goto start_page;
+            }
+        }else{
+            $_SESSION['capmaigns_pages'] = [];
+            goto start_page;
+        }
+    }
+}
 $pages_count['campaigns'] = $_SESSION['campaigns_count_all']/10 + 1;
+
 try {
     // Fetch categories for the dropdown
     $categories = $db->query("SELECT category_id, name FROM categories")->fetchAll();
@@ -45,7 +60,7 @@ try {
         FROM campaigns g  
         LEFT JOIN users_donate_campaigns u ON g.campaign_id = u.campaign_id 
         GROUP BY g.campaign_id
-        HAVING g.campaign_id > 0
+        HAVING g.state ='active' 
     ";
     if(!empty($search) || ($filter !== 'all') || (isset($_GET['submit']) && $_GET['submit'] == "foryou") ){
         $params = [];
