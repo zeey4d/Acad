@@ -85,11 +85,13 @@
   .summary-icon {
     font-size: 24px;
     margin-left: 10px;
+    background-color: rgba(65, 6, 6, 0.36);
   }
 </style>
 
 <main>
   <section>
+    <input type="hidden" id="statistics-from-php" value="<?= htmlspecialchars(json_encode(json_encode($statisticsAll)),ENT_QUOTES , 'UTF-8') ?>">
     <div class="container">
       <div class="header">إحصاءات عامة</div>
       <div class="filters">
@@ -98,24 +100,24 @@
           <option value="projects">المشاريع</option>
           <option value="endowments">الاوقاف</option>
           <option value="campaigns">الحملات الخيريه</option>
-          <option value="islamic">المصاريف الاسلامية</option>
+          <option value="islamic_payments">المصاريف الاسلامية</option>
         </select>
       </div>
       <div style="display: flex; width: 100%; justify-content: space-around;">
         <div>
           <h3>العدد الاجمالي</h3>
-          <div class="pie-chart item-count"></div>
+          <div id="items-count-chart" class="pie-chart"></div>
         </div>
         <div>
           <h3>اجمالي التبرعات</h3>
-          <div class="pie-chart payments-count"></div>
+          <div id="payments-sum-chart" class="pie-chart"></div>
         </div>
       </div>
       <div class="legend">
-        <div class="legend-item"><div class="color-box" style="background:#80cbc4;"></div>المشاريع </div>
-        <div class="legend-item"><div class="color-box" style="background:#1a237e;"></div> الاوقاف</div>
-        <div class="legend-item"><div class="color-box" style="background:#3949ab;"></div> الحملات الخيريه</div>
-        <div class="legend-item"><div class="color-box" style="background:#cfd8dc;"></div> المصاريف الاسلامية</div>
+        <div class="legend-item"><div class="color-box" id="color-box-projects" style="background:#80cbc4;"></div>المشاريع </div>
+        <div class="legend-item"><div class="color-box" id="color-box-endowments"style="background:#1a237e;"></div> الاوقاف</div>
+        <div class="legend-item"><div class="color-box" id="color-box-campaigns"style="background:#3949ab;"></div> الحملات الخيريه</div>
+        <div class="legend-item"><div class="color-box" id="color-box-islamic-payments"style="background:rgb(143, 156, 132);"></div> المصاريف الاسلامية</div>
       </div>
 
       
@@ -124,55 +126,13 @@
       <div class="summary" id="summaryBox">
         <span class="summary-icon">📊</span>
         <div id="summaryTitle">أجمالي عدد التبرعات</div>
-        <div id="summaryValue"><?= $users_statistics['donates_sum'] ?></div>
+        <div id="summaryValue"><?= $statisticsAll['all']['sum'] ?></div>
       </div>
     </div>
   </section>
 </main>
+<script src="views/javascrept/statistics.js"></script>
 
-<script>
-  const statistics = {
-    all: {
-      title: "أجمالي عدد التبرعات",
-      value: "<?= $users_statistics['donates_sum'] ?>",
-      chart: "rgba(128, 203, 195, 0.46) 0% 40%, #b2dfdb 40% 65%, #cfd8dc 65% 78%, #3949ab 78% 88%, #1a237e 88% 96%, #00838f 96% 100%"
-    },
-    projects: {
-      title: "إجمالي تبرعات المشاريع (عدد: <?= $projects_statistics['count']['count'] ?>)",
-      value: "<?= $projects_statistics['donates_sum']['donates_sum'] ?>",
-      chart: "#80cbc4 0% 100%"
-    },
-    endowments: {
-      title: "إجمالي تبرعات الأوقاف (عدد: <?= $endowments_statistics['count']['count'] ?>)",
-      value: "<?= $endowments_statistics['donates_sum']['donates_sum'] ?>",
-      chart: "#1a237e 0% 100%"
-    },
-    campaigns: {
-      title: "إجمالي تبرعات الحملات (عدد: <?= $campaigns_statistics['count']['count'] ?>)",
-      value: "<?= $campaigns_statistics['donates_sum']['donates_sum'] ?>",
-      chart: "#3949ab 0% 100%"
-    },
-    islamic: {
-      title: "تبرعات المصاريف الإسلامية",
-      value: "<?= $islamic_payments_statistics['users_paid_count']['users_paid_count'] ?>",
-      chart: "#cfd8dc 0% 100%"
-    }
-  };
-
-  const select = document.getElementById("categoryFilter");
-  const summaryTitle = document.getElementById("summaryTitle");
-  const summaryValue = document.getElementById("summaryValue");
-  const pieChart = document.querySelector(".pie-chart");
-
-  select.addEventListener("change", function () {
-    const selected = select.value;
-    const data = statistics[selected];
-
-    summaryTitle.textContent = data.title;
-    summaryValue.textContent = data.value;
-    pieChart.style.background = `conic-gradient(${data.chart})`;
-  });
-</script>
 
 
 
