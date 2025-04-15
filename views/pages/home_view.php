@@ -79,12 +79,12 @@
   
   <div class="slider">
     <div class="slide active">
-      <img src="views/media/images/andrewSmall.jpg" alt="شجرة دم الأخوين" loading="lazy">
+    <img src="views/media/images/ali.jpg" alt=" منازل قديمة" loading="lazy">
       <h1>"إن تُقرضوا الله قرضًا حسنًا يُضاعفه لكم ويغفر لكم" – التغابن: 17
       </h1>
     </div>
     <div class="slide">
-    <img src="views/media/images/ali.jpg" alt=" منازل قديمة" loading="lazy">
+    <img src="views/media/images/andrewSmall.jpg" alt="شجرة دم الأخوين" loading="lazy">
     <h1>مَّثَلُ الَّذِينَ يُنفِقُونَ أَمْوَالَهُمْ فِي سَبِيلِ اللَّهِ كَمَثَلِ حَبَّةٍ أَنبَتَتْ سَبْعَ سَنَابِلَ" – البقرة: 261</h1>
     </div>
     <div class="slide">
@@ -92,8 +92,8 @@
     <h1>"لن تنالوا البر حتى تنفقوا مما تحبون" – آل عمران: 92</h1>
     </div>
     <div class="slide">
-      <img src="https://placehold.co/800x400/ffff44/000?text=Slide+4"  alt="شريحة رقم4" loading="lazy">
-      <h1>"كل امرئٍ في ظل صدقته يوم القيامة" – رواه أحمد
+    <img src="views/media/images/gah.png" alt="القاهرة" loading="lazy">
+    <h1>"كل امرئٍ في ظل صدقته يوم القيامة" – رواه أحمد
       </h1>
     </div>
 
