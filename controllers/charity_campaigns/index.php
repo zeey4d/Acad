@@ -2,6 +2,7 @@
 
 use core\App;
 use core\Database;
+use models\Campaign;
 
 $db = App::resolve(Database::class);
 $page = "charity_campaigns_index" ;
@@ -22,15 +23,18 @@ if(!isset($_SESSION['campaigns_count_all'])){
 }else{
     $campaigns_current_count = $db->query( "select count(*) as count from campaigns where state = 'active';")->fetchAll()['0']['count'];
     if($campaigns_current_count != $_SESSION['campaigns_count_all']){
-        if($campaigns_current_count > $_SESSION['campaigns_count_all']){
-            if(count($_SESSION['campaigns_pages'][$_GET['page_number']]) < '10'){
-                $_SESSION['capmaigns_pages'][$_GET['page_number']] = [];
-                goto start_page;
+        if($campaigns_current_count > $_SESSION['campaigns_count_all']){// changes are adding
+            if(count($_SESSION['campaigns_pages'][$_GET['page_number']]) < '10'){ // there is an empty place for the added value
+                $_SESSION['campaigns_pages'][$_GET['page_number']] = [];
+            }else{// no empty place for the new item added
+                $latest_page = intval($_SESSION['campaigns_count_all']/10 + 1);
+                $_SESSION['campaigns_pages'][$latest_page] = [];
             }
-        }else{
-            $_SESSION['capmaigns_pages'] = [];
-            goto start_page;
+        }else{// changes are deleting
+            $_SESSION['campaigns_pages'] = [];
         }
+        $_SESSION['campaigns_count_all'] = $campaigns_current_count;
+        goto start_page;
     }
 }
 $pages_count['campaigns'] = $_SESSION['campaigns_count_all']/10 + 1;

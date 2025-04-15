@@ -26,7 +26,6 @@ try {
     $search = $_GET['search'] ?? '';
     $filter = $_GET['filter'] ?? 'all';
     
-    $current_items_count = $db->query("select count(*) from islamic payments")
 
     // Base Query
     $query = "SELECT * FROM endowments WHERE 1=1";
