@@ -42,7 +42,7 @@
 
 </section>
 <!-- باقي البينات -->
-<section class="card_islamic_endowments" id="card_islamic_endowments">
+<section class="card_islamic_endowments CIE2" id="card_islamic_endowments">
 
 
 <div class="details_show_ch">
