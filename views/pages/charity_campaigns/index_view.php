@@ -65,9 +65,9 @@
           </div>
         <?php endforeach; endif; ?>
       </section>
-      <div style=" width: 100%;align-items: center; text-align: center; border: 2px solid blue; align-content: center; align-self: center;">
-        <div style="display: flex; width: 50%; justify-content: space-around; border-radius: 5px; height:20px; padding: 40px; border: 2px solid blue; align-self:center; align-items: center; text-align: center;">
-            <a href="/charity_campaigns_index?page_number=<?= isset($_GET['page_number']) ? $_GET['page_number'] - 1 : 1 ?>" style="<?php echo  $_GET['page_number'] - 1 <= 0 ? 'pointer-events: none; cursor: default;opacity: 0.3;' : 'pointer-events: auto; cursor: pointer' ?>"><img src="views/media/images/left.png" alt="previous" loading="lazy" heigh= "50px" width= "50px"></a>
+      <section style="display: flex; justify-content: center; ">
+      <div style="display: flex; width: 50%; justify-content: space-around; border-radius: 15px; height:20px; padding: 30px; border: 2px solid var(--button-bg-h); align-self:center; align-items: center; text-align: center;    margin: var(--margin-s);">
+      <a href="/charity_campaigns_index?page_number=<?= isset($_GET['page_number']) ? $_GET['page_number'] - 1 : 1 ?>" style="<?php echo  $_GET['page_number'] - 1 <= 0 ? 'pointer-events: none; cursor: default;opacity: 0.3;' : 'pointer-events: auto; cursor: pointer' ?>"><img src="views/media/images/left.png" alt="previous" loading="lazy" heigh= "50px" width= "50px"></a>
             <div style="height: inherit; width: auto; font-size: larger; font-family: 'Times New Roman', Times, serif;" >
               <div style="display: flex; flex-direction: row; justify-content: space-around; width: 100%;">
                 <div style="width: fit-content;"><?php echo (isset($_GET['page_number'])? $_GET['page_number'] - 1 : 0) . " . . . " ; ?></div>
@@ -77,8 +77,6 @@
             </div>
             <a href="/charity_campaigns_index?page_number=<?= isset($_GET['page_number']) ? $_GET['page_number'] + 1 : 2 ?>"style="<?php echo  $_GET['page_number'] + 1 > $pages_count['campaigns']? 'pointer-events: none; cursor: default;opacity: 0.3; ' : 'pointer-events: auto; cursor: pointer' ?>"><img src="views/media/images/next.png" alt="next" loading="lazy" heigh= "50px" width= "50px" ></a>
           </div>
-      </div>
-      <section class="bar_action">
 
       </section>
 </main>

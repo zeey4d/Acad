@@ -33,9 +33,9 @@
       <form action="/islamic_payments_checkout" method="get" class="donate-section" required>
         <input class="inp" type="number" name="cost" placeholder="$" required id="result">
         <input type="hidden" name="islamic_payment_id" value="4">
-        <button type="submit" class="donate-btn" aria-label="تبرع الأن">تبرع الأن</button>
+        <button type="submit" class="donate-btn3" aria-label="تبرع الأن">تبرع الأن</button>
       </form>
-      <form action="/islamic_payments_addcart" method="post">
+      <form class="fromCart" action="/islamic_payments_addcart" method="post">
         <input type="hidden" name="islamic_payment_id" value="4">
         <button type="submit" class="donate_cart" aria-label="السله"><img src="views/media/images/cart.png" alt=""></button>
       </form>
@@ -49,7 +49,7 @@
     <!-- تعريف عام  -->
 
     <!-- معلومات حول الكفارة -->
-    <div class="info-box">
+    <div class="info-box info-section">
       <h2>ما هي الكفارة؟</h2>
       <p>
         الكفارة هي ما يُؤدى لتكفير ذنب أو مخالفة شرعية. فرضها الله في بعض الحالات للتوبة ولتطهير النفس، وهي تختلف حسب نوع المخالفة.
