@@ -11,10 +11,6 @@ $page_campaigns_ids = [];
 $heading = "All My tests";
 if(!isset($_GET['page_number'])) $_GET['page_number'] = 1; // if page_number not set in $_GET
 
-if(isset($_SESSION['campaigns_pages']) && isset($_SESSION['campaigns_pages'][$_GET['page_number']])){
-    $page_campaigns_ids = $_SESSION['campaigns_pages'][$_GET['page_number']];
-}
-
 if(!isset($_SESSION['campaigns_count_all'])){
     $page_campaigns_ids = [];
     $_SESSION['campaigns_count_all'] = $db->query(
