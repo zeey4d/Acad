@@ -21,6 +21,9 @@
                 <li>
                     <form action="/islamic_payments_manage" method="get"><input type="hidden" name="" value=""><button type="submit" aria-label="المصارف الاسلاميه"> المصارف الاسلاميه</button></form>
                 </li>
+                <li>
+                    <form action="/users_manage" method="get"><input type="hidden" name="" value=""><button type="submit" aria-label="المصارف الاسلاميه"> المستخدمين </button></form>
+                </li>
 
             </ul>
         </nav>
