@@ -38,10 +38,9 @@ try {
         P.directorate
     FROM projects P
     LEFT JOIN users_donate_projects B ON P.project_id = B.project_id
-    WHERE P.project_id = :project_id
-    GROUP BY P.project_id, P.partner_id, P.category_id, P.level, P.name, P.photo,
-             P.short_description, P.full_description, P.type, P.cost, P.start_at,
-             P.end_at, P.state, P.directorate
+    GROUP BY P.project_id
+    HAVING P.project_id = :project_id
+    
 ", [
     'project_id' => $_GET['project_id'] ]
     )->fetchAll();
