@@ -1336,7 +1336,6 @@ gap: 10px;
 
 
 }
-
 .donate-btn {
     background: var(--button-bg-h);
     color: white;
@@ -1832,7 +1831,7 @@ gap: 10px;
 }
 
 
-/* charity_projects......................... */
+/* charity_projects */
 
 /* create */ 
 /* تنسيق عام */
@@ -1990,7 +1989,7 @@ gap: 10px;
      }
 }
 
-/* manage ......................... جيمع صفحات الادراة*/
+/* manage */
 
   
   .main_manage {
@@ -2475,6 +2474,12 @@ gap: 10px;
         width: 100%;
     }
 
+        & p{
+            padding: 0;
+            font-size: var(--font-size-l);
+
+        }
+    }
 
 
     & img {
