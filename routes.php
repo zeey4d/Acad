@@ -116,6 +116,7 @@ $router->get('/users_show_view', 'views/pages/users/show_view.php');
 $router->get('/users_store_view', 'views/pages/users/store_view.php');
 $router->get('/users_update_view', 'views/pages/users/update_view.php');
 $router->get('/users_verification_view', 'views/pages/users/verification_view.php');
+$router->get('/user_blocked_view', 'views/pages/users/blocked_view.php');
 
 
 

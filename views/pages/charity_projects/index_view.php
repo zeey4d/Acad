@@ -74,12 +74,9 @@
       <?php endforeach; ?>
 
     </section>
-<<<<<<< HEAD
-    <label for="action-tools" class="section-label visually-hidden">أدوات إضافية</label>
-
-    <section id="action-tools" class="bar_action">
-=======
-    <div style="display: flex; width: 50%; justify-content: space-around; border-radius: 5px; height:20px; padding: 40px; border: 2px solid blue; align-self:center; align-items: center; text-align: center;">
+    <!-- شريط التنقل -->
+     <section style="display: flex; justify-content: center; ">
+    <div style="display: flex; width: 50%; justify-content: space-around; border-radius: 15px; height:20px; padding: 30px; border: 2px solid var(--button-bg-h); align-self:center; align-items: center; text-align: center;    margin: var(--margin-s);">
           <a href="/charity_projects_index?page_number=<?= isset($_GET['page_number']) ? $_GET['page_number'] - 1 : 1 ?>" style="<?php echo !isset($_GET['page_number']) || $_GET['page_number'] - 1 <= 0 ? 'pointer-events: none; cursor: default; opacity: 0.3; ' : 'pointer-events: auto; cursor: pointer' ?>"><img src="views/media/images/left.png" alt="previous" loading="lazy" heigh= "50px" width= "50px"></a>
           <div style="height: inherit; width: auto; font-size: larger; font-family: 'Times New Roman', Times, serif;" >
             <div style="display: flex; flex-direction: row; justify-content: space-around; width: 100%;">
@@ -90,6 +87,7 @@
           </div>
           <a href="/charity_projects_index?page_number=<?= isset($_GET['page_number']) ? $_GET['page_number'] + 1 : 2 ?>"style="<?php echo !isset($_GET['page_number']) || $_GET['page_number'] + 1 > $pages_count['projects'] ? 'pointer-events: none; cursor: default; opacity: 0.3;  ' : 'pointer-events: auto; cursor: pointer' ?>"><img src="views/media/images/next.png" alt="next" loading="lazy" heigh= "50px" width= "50px" ></a>
         </div>
+        </section>
     <section class="bar_action">
 >>>>>>> 43f29e1a1c2cd0b28b07d291f3d7f7bec8767d38
 

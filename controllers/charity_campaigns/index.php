@@ -2,6 +2,7 @@
 
 use core\App;
 use core\Database;
+use models\Campaign;
 
 $db = App::resolve(Database::class);
 $page = "charity_campaigns_index" ;

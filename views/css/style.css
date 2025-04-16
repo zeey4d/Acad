@@ -406,8 +406,7 @@ gap: 10px;
         right: 0;
         flex-direction: column;
         background: rgba(255, 255, 255,0.8);
-        backdrop-filter:blur(5px);
-
+        backdrop-filter: blur(20px);
         padding: var(--padding-s);
         border-left: var(--bg-border-l);
         border-radius: var(--button-radius);
@@ -445,15 +444,16 @@ gap: 10px;
 
 .photo_padir{
     height: auto;
-    background-color: #003337;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
     & img {
         width: auto;
-        height: 180px;
         border-radius: 20px;
-        opacity: 0;
+        opacity: 1;
+        width: auto;
+        height: 100%;
 
     }
 
@@ -1340,12 +1340,11 @@ gap: 10px;
     background: var(--button-bg-h);
     color: white;
     border: none;
-    padding: var(--padding-s);
     border-radius: 6px;
     cursor: pointer;
     width: 60%;
-    height: 3em;
-    font-size: var(--font-size-s);
+    height: 2.7em;
+    font-size: var(--font-size-m);
     font-weight: bold;
     transition: background 0.3s ease-in-out;
 }
@@ -1832,7 +1831,7 @@ gap: 10px;
 }
 
 
-/* charity_projects......................... */
+/* charity_projects */
 
 /* create */ 
 /* تنسيق عام */
@@ -1990,7 +1989,7 @@ gap: 10px;
      }
 }
 
-/* manage ......................... جيمع صفحات الادراة*/
+/* manage */
 
   
   .main_manage {
@@ -2395,7 +2394,7 @@ gap: 10px;
 .main_show_ch{
     display: flex;
     justify-content: center;
-    background-color: var(--bgcolor-white);
+    background-color: rgba(0, 167, 181,0.05);
     direction: rtl;
     width: 100%;
 }
@@ -2451,7 +2450,7 @@ gap: 10px;
   
 
     .news {
-        background-color: var(--bgcolor-light);
+        background-color: rgba(0, 167, 181,0.1);
         padding: var(--padding-l);
         border-radius: var(--border-radius-s);
         width: 100%;
@@ -2475,6 +2474,12 @@ gap: 10px;
         width: 100%;
     }
 
+        & p{
+            padding: 0;
+            font-size: var(--font-size-l);
+
+        }
+    }
 
 
     & img {
@@ -2490,11 +2495,11 @@ gap: 10px;
 }
 
 .CIE2 {
-    background-color: var(--bgcolor-dark);
+    background-color: var(--bgcolor-Hh);
 
     & .details_show_ch{
         margin-top: var(--margin-s);
-        background-color: rgba(0, 167, 181,0.2);
+        background-color: var(--bgcolor-dark);
         padding: 20px;
         border-radius: var(--border-radius-s);
         width: 100%;
@@ -2515,15 +2520,15 @@ gap: 10px;
     }
 }
 .time {
-background-color: var(--bgcolor-light);
-padding: var(--padding-l);
+    background-color: rgba(0, 167, 181,0.1);
+    padding: var(--padding-l);
 border-radius: var(--border-radius);
 margin-bottom: var(--margin-s) ;
 
 & p{
     font-size: var(--font-size-l);
     padding: 0;
-    color: var(--font-color-bl);
+    color: white;
 
 }
 }
@@ -2667,7 +2672,7 @@ margin-bottom: var(--margin-s) ;
     }
 
     .card_islamic_endowments{
-        width: 70%;
+        width: 80%;
         border: var(--bg-border-l);
 
     }
@@ -3364,6 +3369,14 @@ table input[type="text"]:focus, table select:focus {
     background-color: var(--button-bg-l);
     transform: translateY(-2px);
   }
+  /* تبرع */
+  .fromCart{
+    margin-bottom: 70px;
+  }
+  .donate-btn3{
+    width: 100%;
+  }
+
   
   /* تنسيق قسم المعلومات التعريفية */
   .info-section {
@@ -3440,7 +3453,7 @@ table input[type="text"]:focus, table select:focus {
   .main_ZS{
     display: block;
 
-    & table{
+    & table {
         color: white;
     }
     
@@ -3522,3 +3535,6 @@ table input[type="text"]:focus, table select:focus {
     object-fit: cover;
     border-radius: 0.5em;
 }
+
+
+
