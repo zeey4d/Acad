@@ -27,9 +27,11 @@
 
   <!-- حاوية البطاقات -->
 
+  <main  class="main_cart">
+  <meta name="viewport" content="widtth=device-width, initial-scale=1.0">
+  <label for="projects-cards" class="section-label visually-hidden">بطاقات المشاريع</label>
 
-  <main class="main_cart">
-    <section class="container_card">
+    <section id="projects-cards" class="container_card">
       <?php foreach ($projects as $project): ?>
 
         <div class="donation-card">
@@ -73,6 +75,7 @@
 
     </section>
     <!-- شريط التنقل -->
+
      <div style="display: flex; justify-content: space-around; width: 100%;">
        <div style="display: flex; width: 50%; justify-content: space-around; ; height:20px; padding: 40px; align-self:center; align-items: center; text-align: center;">
            <a href="/charity_projects_index?page_number=<?= isset($_GET['page_number']) ? $_GET['page_number'] - 1 : 1 ?>" style="<?php echo !isset($_GET['page_number']) || $_GET['page_number'] - 1 <= 0 ? 'pointer-events: none; cursor: default; opacity: 0.3; ' : 'pointer-events: auto; cursor: pointer' ?>"><img src="views/media/images/left.png" alt="previous" loading="lazy" heigh= "50px" width= "50px"></a>
@@ -86,8 +89,10 @@
            <a href="/charity_projects_index?page_number=<?= isset($_GET['page_number']) ? $_GET['page_number'] + 1 : 2 ?>"style="<?php echo !isset($_GET['page_number']) || $_GET['page_number'] + 1 > $pages_count['projects'] ? 'pointer-events: none; cursor: default; opacity: 0.3;  ' : 'pointer-events: auto; cursor: pointer' ?>"><img src="views/media/images/next.png" alt="next" loading="lazy" heigh= "50px" width= "50px" ></a>
          </div>
      </div>
+
     <section class="bar_action">
-    <!-- نهاية شريط التنقل -->
+
+
     </section>
   </main>
 

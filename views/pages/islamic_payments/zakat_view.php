@@ -4,7 +4,7 @@
 <?php require('views/parts/header.php') ?>
 <script src="views/javascrept/zakat.js"></script>
 
-<main class="main_islamic_payments_zakat">
+<main class="main_islamic_payments_zakat main_ZS">
   <section class="form_zakat">
     <!-- <h1>حاسبة الزكاة</h1>
     <img src="views/media/images/zkat.png" alt="">
@@ -126,7 +126,7 @@
     <br>
 
 
-    <button onclick="calculate()">حساب الزكاة </button>
+    <button onclick="calculate()" aria-label="حساب الزكاة">حساب الزكاة </button>
 
 
 
@@ -134,9 +134,9 @@
     <form action="/islamic_payments_checkout" method="get" class="donate-section" required>
       <input class="inp" type="number" name="cost" placeholder="$" required id="result">
       <input type="hidden" name="islamic_payment_id" value="2">
-      <button type="submit" class="donate-btn" aria-label="تبرع الأن">تبرع الأن</button>
+      <button type="submit" class="donate-btn3" aria-label="تبرع الأن">تبرع الأن</button>
     </form>
-    <form action="/islamic_payments_addcart" method="post">
+    <form class="fromCart" action="/islamic_payments_addcart" method="post">
       <input type="hidden" name="islamic_payment_id" value="2">
       <button type="submit" class="donate_cart" aria-label="السله"><img src="views/media/images/cart.png" alt=""></button>
     </form>
@@ -146,8 +146,9 @@
 
   </section>
 
+  <label for="zakat-info" class="section-label visually-hidden">معلومات عن الزكاة</label>
 
-  <section class="info-section">
+  <section id="zakat-info" class="info-section">
 
 
     <div>
@@ -179,8 +180,9 @@
   </section>
 
 
+  <label for="zakat-info" class="section-label visually-hidden">شروط زكاة بهيمة الانعام</label>
 
-  <section class="info-section">
+  <section id="zakat-info" class="info-section">
     <div>
       <p>
         <strong style="color: var(--font-color-gl);">شروط زكاة بهيمة الأنعام:</strong><br>
@@ -190,7 +192,7 @@
       </p>
 
       <p><strong style="color: var(--font-color-gl);">زكاة الغنم:</strong></p>
-      <table>
+      <table style="color: white;">
         <thead>
           <tr>
             <th>عدد الغنم</th>
@@ -222,7 +224,7 @@
       </table>
 
       <p><strong style="color: var(--font-color-gl);">زكاة البقر:</strong></p>
-      <table>
+      <table style="color: white;">
         <thead>
           <tr>
             <th>عدد البقر</th>
@@ -270,7 +272,7 @@
       </table>
 
       <p><strong style="color: var(--font-color-gl);">زكاة الإبل:</strong></p>
-      <table>
+      <table style="color: white;">
         <thead>
           <tr>
             <th>عدد الإبل</th>
@@ -326,7 +328,10 @@
       </table>
     </div>
   </section>
-  <section class="info-section">
+
+  <label for="zakat-info" class="section-label visually-hidden">معلزمات عن زكاة الزروع والثمار</label>
+
+  <section id="zakat-info" class="info-section">
     <div>
       <p>
         <strong style="color: var(--font-color-gl);">زكاة الزروع والثمار:</strong><br><br>
@@ -336,21 +341,21 @@
         - الثمار: التمر، الزبيب، الرطب، إلخ.<br>
         ❌ لا زكاة في الخضروات والفواكه (مثل التفاح، البرتقال...).<br><br>
 
-        <strong>نصاب الزروع:</strong><br>
+        <strong style="    color: var(--font-color-gh);">نصاب الزروع:</strong><br>
         - 5 أوسق = 60 صاع × 5 = تقريبًا 612 كجم إلى 653 كجم.<br>
         ✅ إذا كان المحصول أقل من ذلك → لا تجب الزكاة.<br><br>
 
-        <strong>ملاحظات هامة:</strong><br>
+        <strong style="    color: var(--font-color-gh);">ملاحظات هامة:</strong><br>
         - لا يُشترط مرور الحول، بل تُخرج الزكاة عند الحصاد.<br>
         - قال الله تعالى: <i>"وآتوا حقه يوم حصاده"</i> [الأنعام: 141].<br>
         - الزكاة من نفس نوع المحصول إلا إذا دُفعت نقدًا.<br>
         - النصاب يُحسب على نصيب كل شريك إن وُجد.<br>
         - إذا تلف قبل الحصاد، فلا زكاة فيه.<br><br>
 
-        <strong>نسبة الزكاة حسب طريقة السقي:</strong>
+        <strong style="    color: var(--font-color-gh);">نسبة الزكاة حسب طريقة السقي:</strong>
       </p>
 
-      <table>
+      <table style="color: white;">
         <thead>
           <tr>
             <th>طريقة السقي</th>

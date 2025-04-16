@@ -10,6 +10,13 @@
     color: var(--font-color-bh);
     margin: var(--margin-xl);">حملات التبرع المتاحة</h1>
 
+   
+
+   
+    <label for="campaigns-section" class="section-label">قائمة الحملات الخيرية</label>
+
+  <section id="campaigns-section" class="container_card">
+  <?php foreach ($campaigns as $campaign): ?>
   <section class="container_card">
   <?php if(isset($campaigns)): foreach ($campaigns as $campaign): ?>
           <div class="donation-card">
@@ -64,7 +71,9 @@
             </div>
           </div>
         <?php endforeach; endif; ?>
+        <?php endforeach; ?>
       </section>
+
       <div style="display: flex; justify-content: space-around; width: 100%;">
         <div style="display: flex; width: 50%; justify-content: space-around; ; height:20px; padding: 40px; align-self:center; align-items: center; text-align: center;">
           <a href="/charity_campaigns_index?page_number=<?= isset($_GET['page_number']) ? $_GET['page_number'] - 1 : 1 ?>" style="<?php echo  $_GET['page_number'] - 1 <= 0 ? 'pointer-events: none; cursor: default;opacity: 0.3;' : 'pointer-events: auto; cursor: pointer' ?>"><img src="views/media/images/left.png" alt="previous" loading="lazy" heigh= "50px" width= "50px"></a>
@@ -73,12 +82,15 @@
               <div style="width: fit-content;"><?php echo (isset($_GET['page_number'])? $_GET['page_number'] - 1 : 0) . " . . . " ; ?></div>
               <div style="color: blue; width: fit-content;"><?php echo "   " . isset($_GET['page_number'])? $_GET['page_number'] : 1 . "   "; ?></div>
               <div style="width: fit-content;"><?php echo " . . . " . (isset($_GET['page_number'])? $_GET['page_number'] + 1: 2 ); ?></div>
+
             </div>
           </div>
+
           <a href="/charity_campaigns_index?page_number=<?= isset($_GET['page_number']) ? $_GET['page_number'] + 1 : 2 ?>"style="<?php echo  $_GET['page_number'] + 1 > $pages_count['campaigns']? 'pointer-events: none; cursor: default;opacity: 0.3; ' : 'pointer-events: auto; cursor: pointer' ?>"><img src="views/media/images/next.png" alt="next" loading="lazy" heigh= "50px" width= "50px" ></a>
         </div>
       </div>
       <section class="bar_action">
+
 
       </section>
 </main>

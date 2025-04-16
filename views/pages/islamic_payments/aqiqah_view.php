@@ -6,10 +6,16 @@
 
 
 <main class="main_islamic_payments_zakat">
-  <section class="form_zakat">
+<label for="aqeeqah-calculator" class="section-label visually-hidden">حاسبة العقيقة</label>
 
-    <h2>احسب العقيقة</h2>
-    <label>نوع المولود :</label>
+  <section id="aqeeqah-calculator" class="form_zakat">
+  <!-- لحسابة  العقيعه-->
+   <!-- Form Section -->
+   <form action="">
+      <h2>احسب العقيقة</h2>
+
+      <!-- اختيار نوع المولود -->
+      <label>نوع المولود :</label>
       <div class="type-options">
         <div class="option-box" onclick="calculate('male')">ذكر</div>
         <div class="option-box" onclick="calculate('female')">انثى</div>
@@ -25,9 +31,9 @@
       <form action="/islamic_payments_checkout" method="get" class="donate-section" required>
         <input class="inp" type="number" name="cost" placeholder="$" required id="result">
         <input type="hidden" name="islamic_payment_id" value="3">
-        <button type="submit" class="donate-btn" aria-label="تبرع الأن">تبرع الأن</button>
+        <button type="submit" class="donate-btn3" aria-label="تبرع الأن">تبرع الأن</button>
       </form>
-      <form action="/islamic_payments_addcart" method="post">
+      <form class="fromCart" action="/islamic_payments_addcart" method="post">
         <input type="hidden" name="islamic_payment_id" value="3">
         <button type="submit" class="donate_cart" aria-label="السله"><img src="views/media/images/cart.png" alt=""></button>
       </form>
@@ -36,16 +42,11 @@
 
   </section>
 
+  <label for="aqeeqah-info" class="section-label visually-hidden">معلومات عن العقيقة</label>
 
-
-
-
-
-
-
-  <section>
-    <!-- تعريف عام  -->
-    <div class="info-section">
+  <section id="aqeeqah-info" >
+  <!-- تعريف عام  -->
+  <div class="info-section">
       <h2>ما هي العقيقة؟</h2>
       <p>
         العقيقة هي ذبح شاة أو أكثر عن المولود في اليوم السابع من ولادته. وهي سنة مؤكدة، ولها العديد من الفوائد.
