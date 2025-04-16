@@ -26,6 +26,7 @@ $colors = [
     'info' => '#00529B',
 ];
 
+
 foreach ($messages as $type => $msgs):
     if (!empty($msgs)):
 ?>
@@ -87,7 +88,7 @@ foreach ($messages as $type => $msgs):
 endforeach;
 ?>
 
-<!-- مربع التحقق -->
+<!-- مربع التحقق 
 <div class="otp-box" style="background-color: #fff; padding: 25px 30px; border-radius: 12px; box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2); max-width: 400px; text-align: center; margin-top: 30px;">
     <div style="font-size: 22px; font-weight: bold; margin-bottom: 10px;">تسجيل الدخول</div>
     <p style="font-size: 14px; color: #555;">تم إرسال رمز التحقق لإكمال العملية. لقد تم إرسال رمز التحقق في رسالة لكم</p>
@@ -106,7 +107,9 @@ endforeach;
         <div style="margin-top: 10px; font-size: 13px; color: #999;">يمكنك إعادة الإرسال بعد <span id="resend-timer">00:30</span></div>
     </form>
 </div>
-
+*/ 
+-->
+<!--
 <script>
     function moveToNext(elem, index) {
         const inputs = document.querySelectorAll("input[name='otp[]']");
@@ -129,6 +132,7 @@ endforeach;
         }
     }, 1000);
 </script>
+-->
 
 </main>
 

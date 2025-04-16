@@ -7,6 +7,7 @@ use models\User;
 $db  = App::resolve(Database::class);
 
 
+
 $erorrs = [];
 
 
@@ -34,9 +35,6 @@ $user = $db->query("select * from users where email = :email ; ", [
     "email" => $_POST['email']
 ])->fetch();
 
-if (empty($_POST['code']) || $_POST['code'] !== '1234') {
-    $errors['code'] = "رمز التحقق غير صحيح";
-} 
 
 if ($user) {
     if (password_verify($_POST['password'], $user['password'])) {
