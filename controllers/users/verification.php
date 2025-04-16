@@ -234,8 +234,9 @@ function blockUser()
   if ($ban_time > $now) {
 
     $remaining = ceil(($ban_time - $now) / 60); // waiting time in minutes
-    header("Location: /user_blocked_view");
-    exit();
+    // header("Location: /user_blocked_view");
+    // exit();
+    die("🚫 تم حظرك مؤقتًا<br>⏳ حاول مرة أخرى بعد: $remaining دقيقة.");
   }
 
   // check if the user has exceeded the allowed attempts
@@ -250,7 +251,8 @@ function blockUser()
   $wait_time = 30 * pow(2, $attempts);
   if (($now - $last_sent_time) < $wait_time) {
     $remaining = $wait_time - ($now - $last_sent_time);  // الوقت المتبقي
-    header("Location: /user_blocked_view");
+    // header("Location: /user_blocked_view");
+    die("🚫 تم حظرك مؤقتًا<br>⏳ حاول مرة أخرى بعد: " .$remaining . " ثانية.");
     exit();
   }
 
@@ -259,8 +261,8 @@ function blockUser()
   $_SESSION['last_sent_time'] = $now;
 
   // reset the ban time if it has expired
-  if ($ban_time <= $now) {
-    $_SESSION['send_attempts'] = 0;
-    $_SESSION['ban_time'] = 0;
-  }
+  // if ($ban_time <= $now) {
+  //   $_SESSION['send_attempts'] = 0;
+  //   $_SESSION['ban_time'] = 0;
+  // }
 }
