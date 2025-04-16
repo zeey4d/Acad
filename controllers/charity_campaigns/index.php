@@ -17,10 +17,9 @@ if(isset($_SESSION['campaigns_pages']) && isset($_SESSION['campaigns_pages'][$_G
     $_SESSION['campaigns_count_all'] = $db->query(
         "select count(*) as count from campaigns;"
         )->fetchAll()['0']['count'];
-     echo "I am calcuting the count of campaigns :".$_SESSION['campaigns_count_all'];
 }
 
-$pages_count['campaigns'] = $_SESSION['campaigns_count_all'] + 1;
+$pages_count['campaigns'] = $_SESSION['campaigns_count_all']/10 + 1;
 try {
     // Fetch categories for the dropdown
     $categories = $db->query("SELECT category_id, name FROM categories")->fetchAll();
@@ -48,8 +47,8 @@ try {
         GROUP BY g.campaign_id
         HAVING g.campaign_id > 0
     ";
-    $params = [];
     if(!empty($search) || ($filter !== 'all') || (isset($_GET['submit']) && $_GET['submit'] == "foryou") ){
+        $params = [];
         if (!empty($search)) {
             $query .= " AND MATCH(g.name, g.short_description, g.full_description) AGAINST (:search IN NATURAL LANGUAGE MODE)";
             $params['search'] = $search;
@@ -64,26 +63,23 @@ try {
             $params['user_id'] = $_SESSION['user']['id'];
         }
         $campaigns = $db->query($query, $params)->fetchAll();
-    }else if(isset($_SESSION['campaigns_pages']) && isset($_SESSION['campaigns_pages'][$_GET['page_number']]) && count($_SESSION['campaigns_pages'][$_GET['page_number']]) > 0){
+    }elseif/*ides are stored in session */(isset($_SESSION['campaigns_pages']) && isset($_SESSION['campaigns_pages'][$_GET['page_number']]) && count($_SESSION['campaigns_pages'][$_GET['page_number']]) > 0){
         $query .= " AND g.campaign_id IN (".implode(separator: ",",array: $_SESSION['campaigns_pages'][$_GET['page_number']]).") order by g.campaign_id;";
-        $campaigns = $db->query($query, $params)->fetchAll();
-    }else{
+        $campaigns = $db->query($query)->fetchAll();
+    }else{// list of items arent stored yet in session
         if(isset($_SESSION['campaigns_pages'])){
             $query .= " AND g.campaign_id NOT IN (-1,-2 ";
             foreach($_SESSION['campaigns_pages'] as $key => $value){
-                if(isset($value) && count($value) > 0){
-                    $query .= ",".implode(",", $value);
-                }
+                    if(isset($value) && count($value) > 0){
+                        $query .= ",".implode(",", $value);
+                    }
                 }
                 $query .= ")";
             }
             $query.= " ORDER BY RAND() limit 10;";
-            echo " <br><be><br><be><br><be><br><be>second : " . $query;
-        $campaigns = $db->query($query, $params)->fetchAll();
+        $campaigns = $db->query($query)->fetchAll();
         foreach($campaigns as $campaign){
             $page_campaigns_ids[] = $campaign['campaign_id'];
-
-            echo $campaign['campaign_id']. "  implode for page_campaigns_ids: ". implode(",", $page_campaigns_ids). "<br>";
         }
         $_SESSION['campaigns_pages'][$_GET['page_number']] = $page_campaigns_ids;
     }

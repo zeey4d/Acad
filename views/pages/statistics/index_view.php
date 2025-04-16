@@ -18,7 +18,7 @@
       <img src="" alt="">
       <p>
         العدد الكلي للمستفيدين <br>
-        <?php echo $users_statistics['count'] ?> مستفيد
+        <?php echo $beneficiaries_project_campain['beneficiaries_count'] ?> مستفيد
       </p>
 
     </article>

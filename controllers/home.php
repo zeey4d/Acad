@@ -72,6 +72,11 @@ try {
             $islamic_payments_statistics['users_paid_count']['users_paid_count'];// اجمالي عدد المستخدمين الذين تبرعوا للمشاريع والحملات والمدفوعات الاسلامية
         
             $partners_statistics['count'] = $db->query("SELECT count(*) as count FROM partners;")->fetch(); // عدد الشركاء
+            $campaigns_statistics['complete'] = $db->query("SELECT count(*) as complete from campaigns where state='end' ;")->fetch();// اجمالي الحملات المكتملة وتشمل ايضا عدد المستفيدين لانه الحملة لمستفدين واحد
+            $projects_statistics['beneficiaries_count'] = $db->query("SELECT sum(beneficiaries_count) as beneficiaries_count  from projects where state='end' ;")->fetch();// عدد المستفيدين من المشروع
+            $beneficiaries_project_campain['beneficiaries_count'] =  
+            $campaigns_statistics['complete']['complete'] +
+            $projects_statistics['beneficiaries_count']['beneficiaries_count']; // اجمالي عدد المستفيدين من الحملات والمشاريغ
 } catch (PDOException $e) {
     error_log($e->getMessage());
     $_SESSION['error'] = "حدث خطأ أثناء حفظ البعانات";

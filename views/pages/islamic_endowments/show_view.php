@@ -44,9 +44,13 @@
 
 </section>
 <!-- باقي البينات -->
+<<<<<<< HEAD
 <label for="card_islamic_endowments" class="section-label visually-hidden">تفاصيل إضافية</label>
 
 <section class="card_islamic_endowments" id="card_islamic_endowments">
+=======
+<section class="card_islamic_endowments CIE2" id="card_islamic_endowments">
+>>>>>>> 5347c97eee38230f27b764f7f14255cbcab92332
 
 
 <div class="details_show_ch">

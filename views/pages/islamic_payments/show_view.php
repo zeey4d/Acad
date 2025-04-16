@@ -41,7 +41,7 @@
     
     <label for="card_islamic_endowments" class="section-label visually-hidden">تفاصيل إضافية عن الدفعة</label>
 
-    <section class="card_islamic_endowments" id="card_islamic_endowments">
+    <section class="card_islamic_endowments CIE2" id="card_islamic_endowments">
         <div class="details_show_ch">
             <h5>تفاصيل المدفوعات</h5>
             <p>نوع المدفوعات: <?php echo $IslamicPayments['0']['type']; ?></p>

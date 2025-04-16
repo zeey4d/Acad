@@ -15,7 +15,10 @@
 
 
   <!-- الصوره الكبير الي بل البدايه -->
-  <section class="hero">
+
+  <label for="hero-section" class="section-label">القسم الرئيسي</label>
+
+  <section id="hero-section" class="hero">
     <!-- <img src="views/media/images/andrewSmall.jpg" alt="">
     <h1  style="         font-size: var(--font-size-ll);  color : white;  margin: -110px 10px 0 0; text-align: right;">بِفَضْلِ تَبَرُّعاتِكُمْ، نَصْنَعُ فَرْقًا حَقِيقِيًّا فِي حَياةِ الْمُحْتاجِين</h1> -->
     <!-- <div class="slider">
@@ -121,7 +124,9 @@
 
   <h1 style="         margin: var(--margin-xl); text-align: center;    color: var(--font-color-bh); ">الصَّدَقَةُ لَا تَنْقُصُ الْمَالَ، بَلْ تَزِيدُهُ بَرَكَةً وَطُهْرًا</h1>
 
-  <section class="Carousel_card box ">
+  <label for="campaigns-section" class="section-label">حملات التبرع</label>
+
+  <section id="campaigns-section" class="Carousel_card box ">
     <!-- حاوية البطاقات -->
 
     <main class="main_cart">
@@ -177,7 +182,9 @@
   <!-- الاحداث السريعه -->
   <h1 style="background-color: white; color: var(--font-color-bh);text-align: center;         margin: var(--margin-xl); " >بِتَكاتُفِنا، نَسْتَطِيعُ تَحْقِيقَ الْمُسْتَحِيل </h1>
 
-  <section  class="Fast-acting" >
+  <label for="stats-section" class="section-label">الإحصائيات</label>
+
+  <section id="stats-section" class="Fast-acting" >
     <div class="tbr3">
 
 
@@ -200,7 +207,7 @@
         <p>بفضل الله ثم بدعمكم السخي، وصلنا إلى هذاالعدد
           من المستفيدين وغيرنا حياتهم للأفضل
         </p>
-        <p class="pt">عدد المستفيدين<br><span>25,7ألف</span><br>مستفيد</p>
+        <p class="pt">عدد المستفيدين<br><span><?php echo $beneficiaries_project_campain['beneficiaries_count']?></span><br>مستفيد</p>
       </div>
     </div>
 
