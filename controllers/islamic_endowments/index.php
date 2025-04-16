@@ -25,6 +25,7 @@ try {
     // Get search and filter inputs from $_GET
     $search = $_GET['search'] ?? '';
     $filter = $_GET['filter'] ?? 'all';
+    
 
     // Base Query
     $query = "SELECT * FROM endowments WHERE 1=1";

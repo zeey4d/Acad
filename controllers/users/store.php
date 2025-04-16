@@ -17,16 +17,7 @@ $errors = [];
 
 
 if (isset($_POST["submit"])) {
-  // if (!isset($_SESSION['verification_code'], $_SESSION['code_expiry'])) {
-
-  //   $_SESSION['error'] = "لا يوجد كود تحقق في الجلسة. أعد المحاولة.";
-
-  //     header("Location: /users_verification_view");
-
-
-  // }
-
-
+  // validate the data
   $entered_code = $_POST['verification_code'];
   $saved_code = $_SESSION['verification_code'];
   $code_expiry = $_SESSION['code_expiry'];
@@ -50,19 +41,7 @@ if (isset($_POST["submit"])) {
   //  get the user data from the sessionn
   $data = $_SESSION['user_data'];
 
-  // $name = htmlspecialchars($data['username']);
-  //$email = filter_var($data['email'], FILTER_SANITIZE_EMAIL);
-  // $password = password_hash($data['password'], PASSWORD_BCRYPT);
-  // $type = 'normal';
-  // $country = htmlspecialchars($data['country']);
-  // $city = htmlspecialchars($data['city']);
-  // $street = htmlspecialchars($data['street']);
-  // $phone = filter_var($data['phone'], FILTER_SANITIZE_STRING);
-  // $notifications = isset($data['notifications']) ? 1 : 0;
-  // $verification_code = $_SESSION['verification_code'];
-  // $code_expiry = $_SESSION['code_expiry'];
-  // $photo = $_SESSION['photo'];
-
+  // $data['photo'] = $_SESSION['file'];
 
   // cheak if the email is already used
   $query = $db->query('SELECT * FROM users WHERE email = :email', [
@@ -122,7 +101,9 @@ if (isset($_POST["submit"])) {
                 city,
                 street,
                 phone,
-                notifications
+                notifications,
+                verification_code,
+                code_expiry
             ) VALUES (
                 :username,
                 :password,
@@ -133,7 +114,10 @@ if (isset($_POST["submit"])) {
                 :city,
                 :street,
                 :phone,
-                :notifications
+                :notifications,
+                :verification_code,
+                :code_expiry
+
             )",
         [
           'username' => htmlspecialchars($data['username']),
@@ -146,6 +130,8 @@ if (isset($_POST["submit"])) {
           'street' => htmlspecialchars($data['street']),
           'phone' => filter_var($data['phone'], FILTER_SANITIZE_STRING),
           'notifications' => isset($data['notifications']) ? 1 : 0,
+          'verification_code' => $_SESSION['verification_code'],
+          'code_expiry' => $_SESSION['code_expiry'],
         ]
       );
 
