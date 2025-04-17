@@ -10,7 +10,7 @@ start_page:
 if(!isset($_SESSION['endowments_count_all'])){
     $page_endowments_ids = [];
     $_SESSION['endowments_count_all'] = $db->query(
-        "select count(*) as count from endowments where atate = 'active';"
+        "select count(*) as count from endowments where state = 'active';"
         )->fetchAll()['0']['count'];
 }else{
     $endowments_current_count = $db->query( "select count(*) as count from endowments where state = 'active';")->fetchAll()['0']['count'];

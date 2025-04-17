@@ -4,47 +4,6 @@
 <?php require('views/parts/header.php') ?>
 
 <main class="main_show_ch">
-<<<<<<< HEAD
-<label for="main-project-section" class="section-label visually-hidden">تفاصيل المشروع الرئيسية</label>
-
-            <section id="main-project-section" class="card_islamic_endowments">
-            <!-- <h3 style="color: var(--font-color-bh);
-        font-size: var(--font-size-xl);">التفاصيل</h3> -->
-            <div class="imgs">
-            <img src="views/media/images/<?php  echo $projects['0']['photo'] ?? "11.png" ?>" alt=" صورة المشروع المستهدف" loading="lazy"></div>
-            <p class="localshin">المنطقة تعز</p>
-            <div>
-            <h5> <?php  echo $projects['0']['name'] ?> </h5>
-            <p class="details_p"><?php  echo $projects['0']['short_description'] ?></p>
-        </div>
-            <!-- <h5>رقم الحملة : <?php  echo $projects['0']['campaign_id'] ?></h5> -->
-            <div class="progress-bar">
-                <div class="progress" style="width:<?= htmlspecialchars(($projects['0']['collected_money']/$projects['0']['cost'])*100) ?>% " ></div>
-              </div>
-              <div class="donation-details">
-                
-                  <p><strong style="display: inline;">SR <?= htmlspecialchars($projects['0']['collected_money']) ?>/</strong><?= htmlspecialchars($projects['0']['cost']) ?> </p>
-  
-              </div>  
-              <label for="donation-section" class="section-label visually-hidden">خيارات التبرع</label>
-
-              <section id="donation-section" class="bar_actions">
-<div class="donation-box">
-        <h2>مبلغ التبرع</h2>
-        <div class="donation-min-box">
-        <input type="number" id="customAmount" placeholder="قيمة المبلغ" oninput="updateDonateButton()" required min="0" max="<?= htmlspecialchars($project['0']['cost'] - $project['0']['collected_money']) ?>" >
-        <a class="icon_cart" id="icon_nav_search" href=""><img class="icon_img" src="views/media/images/cart.png" alt="السلة" loading="lazy"></a>
-        </div>
-        <button id="donate" aria-label="التبرع">تبرع الآن</button>
-    </div>
-</section>
-
-
-
-
-
-</section>
-=======
     <section class="card_islamic_endowments">
         <!-- <h3 style="color: var(--font-color-bh);
     font-size: var(--font-size-xl);">التفاصيل</h3> -->
@@ -74,7 +33,6 @@
             </div>
         </section>
     </section>
->>>>>>> 43f29e1a1c2cd0b28b07d291f3d7f7bec8767d38
 <!-- باقي البينات -->
 <label for="card_islamic_endowments" class="section-label visually-hidden">تفاصيل المشروع</label>
 
