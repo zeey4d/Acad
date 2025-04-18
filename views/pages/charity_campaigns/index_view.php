@@ -13,25 +13,24 @@
    
 
    
-    <label for="campaigns-section" class="section-label">قائمة الحملات الخيرية</label>
-
+  <label for="campaigns-section" class="section-label"></label>
   <section id="campaigns-section" class="container_card">
   <?php foreach ($campaigns as $campaign): ?>
   <section class="container_card">
   <?php if(isset($campaigns)): foreach ($campaigns as $campaign): ?>
           <div class="donation-card">
             <a href="/charity_campaigns_show?campaign_id=<?= htmlspecialchars($campaign['campaign_id']) ?>">
-              <img src="views/media/images/<?= htmlspecialchars($campaign['photo'] ?? "11.png") ?>" alt="مشروع نور السعودية" loading="lazy">
+              <img src="views/media/images/<?= htmlspecialchars($campaign['photo'] ?? "11.png") ?>" alt="مشروع نور اليمن" loading="lazy">
             </a>
             <div class="donation-info">
               <div class="aghtha">
-                <h6>بادر</h6>
+                <h6><?= htmlspecialchars($categories[$campaign['category_id']]['name']) ?></h6>
                 <h5>رقم الحملة : <?= htmlspecialchars($campaign['campaign_id']) ?></h5>
                 <!-- <a href=""><img src="" alt=""></a> -->
               </div>
               <h3><?= htmlspecialchars($campaign['name']) ?></h3>
               <div class="progress-bar">
-                <div class="progress" style="width:<?= htmlspecialchars(($campaign['collected_money'] / $campaign['cost']) * 100) ?>% "></div>
+                <div class="progress" style="text-align: left; width:<?= htmlspecialchars(($campaign['collected_money'] / $campaign['cost']) * 100) ?>% ">%<?=htmlspecialchars(intval($campaign['collected_money'] / $campaign['cost']) * 100) ?></div>
               </div>
               <div class="donation-details">
                 <div>
@@ -62,8 +61,6 @@
                   <button type="submit" class="donate_cart"><img src="views/media/images/cart.png" alt="السلة" loading="lazy" aria-label="التبرع"></button>
                 </form>
                 <?php endif; ?>
-
-
               </div>
               <div class="details">
                 <a href="/charity_campaigns_show?campaign_id=<?= htmlspecialchars($campaign['campaign_id']) ?>">عرض التفاصيل</a>
@@ -82,10 +79,8 @@
               <div style="width: fit-content;"><?php echo (isset($_GET['page_number'])? $_GET['page_number'] - 1 : 0) . " . . . " ; ?></div>
               <div style="color: blue; width: fit-content;"><?php echo "   " . isset($_GET['page_number'])? $_GET['page_number'] : 1 . "   "; ?></div>
               <div style="width: fit-content;"><?php echo " . . . " . (isset($_GET['page_number'])? $_GET['page_number'] + 1: 2 ); ?></div>
-
             </div>
           </div>
-
           <a href="/charity_campaigns_index?page_number=<?= isset($_GET['page_number']) ? $_GET['page_number'] + 1 : 2 ?>"style="<?php echo  $_GET['page_number'] + 1 > $pages_count['campaigns']? 'pointer-events: none; cursor: default;opacity: 0.3; ' : 'pointer-events: auto; cursor: pointer' ?>"><img src="views/media/images/next.png" alt="next" loading="lazy" heigh= "50px" width= "50px" ></a>
         </div>
       </div>

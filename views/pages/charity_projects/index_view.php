@@ -22,14 +22,11 @@
     <p>انضموا الينا في تقديم فرص تبرع تؤثر بشكل واسع وتدعم المجتمعات المحتاجة مع ضمان تحقيق نتائج طويلة الأمد</p>
   
   </section> -->
-
   <!-- حاوية الكروت -->
-
   <!-- حاوية البطاقات -->
-
   <main  class="main_cart">
   <meta name="viewport" content="widtth=device-width, initial-scale=1.0">
-  <label for="projects-cards" class="section-label visually-hidden">بطاقات المشاريع</label>
+  <label for="projects-cards" class="section-label visually-hidden"></label>
 
     <section id="projects-cards" class="container_card">
       <?php foreach ($projects as $project): ?>
@@ -46,11 +43,11 @@
             </div>
             <h3> <?= htmlspecialchars($project['name']) ?> </h3>
             <div class="progress-bar">
-              <div class="progress" style="width:<?= htmlspecialchars(($project['collected_money'] / $project['cost']) * 100) ?>% "></div>
+              <div class="progress" style="text-align: left; width:<?= htmlspecialchars(($project['collected_money'] / $project['cost']) * 100) ?>% ">%<?=htmlspecialchars(string:(int) ($project['collected_money'] / $project['cost'] * 100)) ?></div>
             </div>
             <div class="donation-details">
               <div>
-                <p><strong style="display: inline;">SR <?= htmlspecialchars($project['cost']) ?>/</strong><?= htmlspecialchars($project['collected_money']) ?></p>
+                <p><strong style="display: inline;">SR <?= htmlspecialchars($project['cost']) ?>/</strong><?= htmlspecialchars(string: $project['collected_money']) ?></p>
               </div>
             </div>
             <div class="donate-section">

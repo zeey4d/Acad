@@ -4,7 +4,7 @@
 <?php require('views/parts/header.php') ?>
 
 <main>
-<label for="islamic-payments-section" class="section-label visually-hidden">قسم التبرعات الإسلامية</label>
+<!-- <label for="islamic-payments-section" class="section-label visually-hidden">قسم التبرعات الإسلامية</label> -->
 
   <section id="islamic-payments-section" class="islamic_payments_index">
     <div class="nav_links_islamic_payments">
@@ -15,22 +15,17 @@
       <a class="aqeeqah" href="/islamic_payments_aqiqah">العقيقة</a>
     </div>
     <!-- الصدقه -->
-    <label for="payments-carousel" class="section-label visually-hidden">عرض التبرعات الإسلامية</label>
-
+    <!-- <label for="payments-carousel" class="section-label visually-hidden">عرض التبرعات الإسلامية</label> -->
     <section id="payments-carousel" class="Carousel_card">
-      <!-- حاوية البطاقات -->
-
-
       <main class="main_cart">
-      <label for="payments-list" class="section-label visually-hidden">بطاقات التبرعات</label>
-
+      <!-- <label for="payments-list" class="section-label visually-hidden">بطاقات التبرعات</label> -->
         <section id="payments-list" class="container_card">
 
           <?php foreach ($islamic_payments as $islamic_payment): ?>
 
             <div class="donation-card">
               <a href="/islamic_payments_show?islamic_payment_id=<?= htmlspecialchars($islamic_payment['islamic_payment_id']) ?>">
-                <img src="views/media/images/<?= htmlspecialchars($islamic_payment['photo'] ?? "11.png") ?>" alt="مشروع نور السعودية">
+                <img src="views/media/images/<?= htmlspecialchars($islamic_payment['photo'] ?? "11.png") ?>" alt="مشروع نور اليمن">
               </a>
               <div class="donation-info">
                 <div class="aghtha">
@@ -40,7 +35,7 @@
                 </div>
                 <h3> <?= htmlspecialchars($islamic_payment['type']) ?> </h3>
                 <div class="progress-bar">
-                  <div class="progress" style="width: <?= htmlspecialchars(($islamic_payment['paid_cost'] / $islamic_payment['cost']) * 100) ?>%;"></div>
+                  <div class="progress" style="text-align: left; width: <?= htmlspecialchars(($islamic_payment['paid_cost'] / $islamic_payment['cost']) * 100) ?>%;">%<?= htmlspecialchars((int)($islamic_payment['paid_cost'] / $islamic_payment['cost']) * 100) ?></div>
                 </div>
                 <div class="donation-details">
                   <div>
@@ -75,15 +70,12 @@
                 <div style="color: blue; width: fit-content;"><?php echo "   " . isset($_GET['page_number'])? $_GET['page_number'] : 1 . "   "; ?></div>
                 <div style="width: fit-content;"><?php echo " . . . " . (isset($_GET['page_number'])? $_GET['page_number'] + 1: 2 ); ?></div>
               </div>
-
             </div>
             <a href="/islamic_payments_index?page_number=<?= isset($_GET['page_number']) ? $_GET['page_number'] + 1 : 2 ?>"style="<?php echo !isset($_GET['page_number']) || $_GET['page_number'] + 1 > $pages_count['islamic_payments']? 'pointer-events: none; cursor: default; opacity: 0.3;  ' : 'pointer-events: auto; cursor: pointer; ' ?>"><img src="views/media/images/next.png" alt="next" loading="lazy" heigh= "50px" width= "50px" ></a>
           </div>
         </div>
-
         </section>
       </main>
-
     </section>
   </section>
 </main>

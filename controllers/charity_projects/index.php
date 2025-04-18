@@ -51,8 +51,8 @@ try {
     $filter = $_GET['filter'] ?? 'all';
 
     // Base Query
-    $query = "
-        SELECT 
+    $query = 
+    "   SELECT 
             P.project_id, 
             P.partner_id, 
             P.category_id, 
@@ -74,9 +74,7 @@ try {
         LEFT JOIN 
             users_donate_projects B ON P.project_id = B.project_id 
         Group by P.project_id 
-
         HAVING P.state = 'active'
-
     ";
     if(!empty($search) || ($filter !== 'all') || (isset($_GET['submit']) && $_GET['submit'] == "foryou") ){
         $params = [];
