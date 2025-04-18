@@ -142,6 +142,10 @@ main {
     background-color: rgb(255, 255, 255);
     min-height: 60vh;
     min-width: 250px;
+
+    & button{
+        cursor: pointer;
+    }
 }
 
 footer {
@@ -793,6 +797,7 @@ gap: 10px;
     background-color: #003337;
 
 }
+
 .user{
     margin: 0 auto;
     padding: var(--padding-xl);
@@ -823,12 +828,10 @@ gap: 10px;
     }
     & label {
         width: 80%;
-        opacity: 0.7;
-
         display: block;
         font-size: var(--font-size-l);
-        color: var(--font-color-black);
-        padding: var(--padding-s) 0 var(--padding-s) 0;
+        padding: var(--padding-s) 0 var(--padding-s) 0; 
+        color: #000;
     }
 
  
