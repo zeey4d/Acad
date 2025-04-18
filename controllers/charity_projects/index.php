@@ -2,12 +2,12 @@
 use core\App ;
 use core\Database ;
 $db = App::resolve(Database::class);
-
 //$page_projects_ids = $pages_count = $_SESSION['projects_pages'] = $_SESSION['projects_pages'][$_GET['page_number']] = array(); // [];
 
 $page = "charity_projects_index" ;
 if(!isset($_GET['page_number'])) $_GET['page_number'] = 1; // if page_number not set in $_GET
 start_page:
+// $_SESSION['projects_pages'] = [];
 
 if(isset($_SESSION['projects_pages']) && isset($_SESSION['projects_pages'][$_GET['page_number']])){
     $page_projects_ids = $_SESSION['projects_pages'][$_GET['page_number']];
