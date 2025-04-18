@@ -15,7 +15,6 @@
    
   <label for="campaigns-section" class="section-label"></label>
   <section id="campaigns-section" class="container_card">
-  <?php foreach ($campaigns as $campaign): ?>
   <section class="container_card">
   <?php if(isset($campaigns)): foreach ($campaigns as $campaign): ?>
           <div class="donation-card">
@@ -30,7 +29,7 @@
               </div>
               <h3><?= htmlspecialchars($campaign['name']) ?></h3>
               <div class="progress-bar">
-                <div class="progress" style="text-align: left; width:<?= htmlspecialchars(($campaign['collected_money'] / $campaign['cost']) * 100) ?>% ">%<?=htmlspecialchars(intval($campaign['collected_money'] / $campaign['cost']) * 100) ?></div>
+                <div class="progress" style="text-align: left; width:<?= htmlspecialchars(($campaign['collected_money'] / $campaign['cost']) * 100) ?>% ">%<?=htmlspecialchars((int)(($campaign['collected_money'] / $campaign['cost']) * 100)) ?></div>
               </div>
               <div class="donation-details">
                 <div>
@@ -68,8 +67,8 @@
             </div>
           </div>
         <?php endforeach; endif; ?>
-        <?php endforeach; ?>
       </section>
+    </section>
 
       <div style="display: flex; justify-content: space-around; width: 100%;">
         <div style="display: flex; width: 50%; justify-content: space-around; ; height:20px; padding: 40px; align-self:center; align-items: center; text-align: center;">
@@ -88,5 +87,6 @@
 
 
       </section>
+      
 </main>
 <?php require('views/parts/footer.php') ?>
