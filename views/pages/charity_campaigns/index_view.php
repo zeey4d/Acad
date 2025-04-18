@@ -8,14 +8,10 @@
 
   <h1 style="  text-align: center;
     color: var(--font-color-bh);
-    margin: var(--margin-xl);">حملات التبرع المتاحة</h1>
-
-   
-
-   
-  <label for="campaigns-section" class="section-label"></label>
+    margin: var(--margin-xl);">حملات التبرع المتاحة</h1>   
+  <label style="display: none;" for="campaigns-section" class="section-label"></label>
   <section id="campaigns-section" class="container_card">
-  <section class="container_card">
+  <!-- <section class="container_card"> -->
   <?php if(isset($campaigns)): foreach ($campaigns as $campaign): ?>
           <div class="donation-card">
             <a href="/charity_campaigns_show?campaign_id=<?= htmlspecialchars($campaign['campaign_id']) ?>">
@@ -67,7 +63,7 @@
             </div>
           </div>
         <?php endforeach; endif; ?>
-      </section>
+      <!-- </section> -->
     </section>
 
       <div style="display: flex; justify-content: space-around; width: 100%;">
