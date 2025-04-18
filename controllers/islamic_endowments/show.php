@@ -16,6 +16,7 @@ try {
             A.cost,
             sum(B.cost) as donate_cost,
             max(B.donate_date) as donate_date,
+            count(*) as donate_count,
             A.state,
             A.directorate,
             A.city,

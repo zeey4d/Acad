@@ -17,7 +17,7 @@
           </div>
         </form>
         
-        <a class="link_forgot_password" id="link_forgot_password" href="/users_changepassword">هل نسيت كلمةالمرور ؟</a>
+        <a class="link_forgot_password" id="link_forgot_password" href="/users_show">هل نسيت كلمةالمرور ؟</a>
         <a class="link_log_in" id="link_log_in" href="/users_create">انشاءحساب</a>
   
   </section>
