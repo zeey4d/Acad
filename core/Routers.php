@@ -78,7 +78,16 @@ class Routers
 
 
 
+    //     function routeToControler($uri,$routes)
+    // {
+    //     if (array_key_exists($uri, $routes)) {
+    //         http_response_code(200);
 
+    //         require $routes[$uri];
+    //     } else {
+    //         abort(404);
+    //     }
+    // }
 
 
 }

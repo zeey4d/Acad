@@ -2,8 +2,6 @@
 
 namespace core ;
 
-//يعمل على تحميل الصفات بي شكل تلقائي
-
 class App{
     protected static $container;
 
@@ -26,6 +24,8 @@ class App{
     }
 
 
+    
+ 
 
 }
 

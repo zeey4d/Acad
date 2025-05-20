@@ -6,12 +6,9 @@ use core\App ;
 $container = new Container();
 
 $container->bind('core\Database', function(){
-
-    
     $config = require "config.php";
-    return new Database($config['database'],$config['database']['username'],$config['database']['password']);
+    return new Database($config['database']);
     
 });
-//nothing
 
 App::setContainer($container);

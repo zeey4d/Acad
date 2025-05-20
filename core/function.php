@@ -1,6 +1,4 @@
 <?php
-//دوال مهمه تستخدم بي كثره
-
 function dd($value)
 {
     echo "<pre>";
@@ -27,7 +25,7 @@ function routeToControler($uri, $routes)
 function abort($code = 404)
 {
     http_response_code($code);
-    require "views/errors/{$code}.php";
+    require "views/{$code}.php";
     die();
 }
 
@@ -45,9 +43,7 @@ function logIn($user)
 {
 
     $_SESSION['user'] =  [
-        'email' => $user['email'],
-        'id' => $user['user_id'],
-        'type' => $user['type']
+        'email' => $user['email']
     ];
     session_regenerate_id(true);
 }
@@ -58,8 +54,6 @@ function logOut()
 {
     $_SESSION = [];
     $user['email']  = null;
-    $user['user_id'] = null;
-    $user['type'] = null;
     session_destroy();
 
     $params =  session_get_cookie_params();

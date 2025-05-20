@@ -1,5 +1,5 @@
 <?php
-// الرمز التي يرجعها السرفر لي العميل 
+
 class Response
 {
     const HTTP_OK = 200;
