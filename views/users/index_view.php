@@ -1,5 +1,6 @@
 <?php require('views/partials/head.php') ?>
 <?php require('views/partials/nav.php') ?>
+
 <section class="auth-section">
         <div class="container">
             <div class="auth-container">

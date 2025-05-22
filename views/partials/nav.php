@@ -7,11 +7,11 @@
             <nav>
                 <ul>
                     <li><a href="/" class="active">الرئيسية</a></li>
-                    <li><a href="#">الأبحاث</a></li>
-                    <li><a href="#">المجلات</a></li>
-                    <li><a href="#">المؤتمرات</a></li>
-                    <li><a href="#">عن المنصة</a></li>
-                    <li><a href="#">اتصل بنا</a></li>
+                    <li><a href="/research">الأبحاث</a></li>
+                    <!-- <li><a href="/contact">المجلات</a></li> -->
+                    <!-- <li><a href="">المؤتمرات</a></li> -->
+                    <li><a href="/about">عن المنصة</a></li>
+                    <li><a href="/contact">اتصل بنا</a></li>
                 </ul>
             </nav>
             <?php if ($_SESSION['user'] ?? false) : ?>
