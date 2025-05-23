@@ -23,11 +23,6 @@
                                 <input type="text" id="first_name" name="first_name" required placeholder="أدخل الاسم الأول">
                                 <i class="fas fa-user"></i>
                             </div>
-                            <div class="form-group">
-                                <label for="last_name">الاسم الأخير</label>
-                                <input type="text" id="last_name" name="last_name" required placeholder="أدخل الاسم الأخير">
-                                <i class="fas fa-user"></i>
-                            </div>
                         </div>
                         
                         <div class="form-group">
@@ -72,14 +67,6 @@
                         </div>
                         
                         <button type="submit" class="btn primary">إنشاء حساب</button>
-                        
-                        <div class="social-login">
-                            <p>أو سجل باستخدام</p>
-                            <div class="social-buttons">
-                                <a href="#" class="btn google"><i class="fab fa-google"></i> جوجل</a>
-                                <a href="#" class="btn facebook"><i class="fab fa-facebook-f"></i> فيسبوك</a>
-                            </div>
-                        </div>
                     </form>
                 </div>
             </div>

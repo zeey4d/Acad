@@ -2,7 +2,7 @@
 
 use core\App;
 use core\Database;
-
+use models\User;
 
 $db  = App::resolve(Database::class);
 
