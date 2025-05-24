@@ -2,7 +2,30 @@
   <?php require('views/partials/nav.php') ?>
 
 
-  <main>
+  <?php
+$messages = [
+    'error' => $errors ?? ["البريد الالكتروني أو كلمة المرور غير صحيحة"],
+    'success' => $success ?? ["تم التسجيل بنجاح. يمكنك الان تسجيل الدخول"], 
+    'warning' => $warning ?? ["كلمة المرور وتأكيد كلمة المرور غير متطابقين يرجى التحقق"], 
+    'info' => $info ?? ["يرجى قبول الشروط والاحكام قبل التسجيل"],    
+];
+
+$icons = [
+    'error' => '❌',
+    'success' => '✅',
+    'warning' => '⚠️',
+    'info' => 'ℹ️',
+];
+
+$colors = [
+    'error' => '#d8000c',
+    'success' => '#4BB543',
+    'warning' => '#ff9b00',
+    'info' => '#00529B',
+];
+?>
+  
+  <!-- <main>
     <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
       <div class="sm:mx-auto sm:w-full sm:max-w-sm">
         <img class="mx-auto h-10 w-auto" src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600" alt="Your Company">
@@ -39,7 +62,7 @@
 
       </div>
     </div>
-  </main>
+  </main> -->
 
 
   <?php require('views/partials/footer.php') ?>

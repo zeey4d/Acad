@@ -63,6 +63,9 @@
         </div>
     </section>
 
+
+    <!-- حاوية البطاقات -->
+
     <section class="latest-research">
     <div class="container">
         <div class="section-header">
@@ -70,20 +73,22 @@
             <a href="research-list.html" class="view-all">عرض الكل <i class="fas fa-arrow-left"></i></a>
         </div>
         <div class="research-grid">
+             <?php foreach ($researches as $researche): ?>
             <div class="research-card">
+                 <a href="/Show?research_id=<?= htmlspecialchars($researche['research_id']) ?>">
                 <div class="research-badge">
                     <span class="research-category">علوم الحاسب</span>
                     <span class="research-status new">جديد</span>
                 </div>
                 <div class="research-thumbnail">
-                    <img src="https://via.placeholder.com/300x200" alt="صورة البحث">
+                    <img src="views/media/images/<?= htmlspecialchars($researche['photo'] ?? "mg.png") ?>"  alt="صورة البحث">
                     <div class="research-overlay">
                         <a href="research-details.html" class="quick-view"><i class="fas fa-eye"></i> معاينة سريعة</a>
                     </div>
                 </div>
                 <div class="research-content">
                     <h3 class="research-title">
-                        <a href="research-details.html">تطوير خوارزميات التعلم العميق لتحليل الصور الطبية</a>
+                        <a href="research-details.html"><?= htmlspecialchars($researche['title']) ?></a>
                     </h3>
                     <p class="research-author">
                         <a href="author-profile.html"><i class="fas fa-user"></i> د. أحمد محمد</a> - 
@@ -96,10 +101,10 @@
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star-half-alt"></i>
-                            <span>(12 تقييم)</span>
+                            <h4><?= htmlspecialchars($researche['research_id']) ?></h4>
                         </div>
                     </div>
-                    <p class="research-abstract">دراسة تقدم نموذجًا جديدًا لتحليل الصور الطبية باستخدام شبكات عصبية متطورة لتحسين دقة التشخيص الطبي بنسبة 35% مقارنة بالطرق التقليدية...</p>
+                    <p class="research-abstract"><?= htmlspecialchars($researche['full_text']) ?></p>
                     <div class="research-meta">
                         <span><i class="far fa-calendar-alt"></i> 15 مايو 2023</span>
                         <span><i class="far fa-eye"></i> 1,245</span>
@@ -107,14 +112,16 @@
                         <span><i class="fas fa-quote-right"></i> 42</span>
                     </div>
                     <div class="research-actions">
-                        <a href="/show" class="btn read-more">قراءة البحث</a>
+                        <a href="/Show?research_id=<?= htmlspecialchars($researche['research_id']) ?>" class="btn read-more">قراءة البحث</a>
                         <button class="btn-icon save-research" title="حفظ في المفضلة"><i class="far fa-bookmark"></i></button>
                         <button class="btn-icon share-research" title="مشاركة"><i class="fas fa-share-alt"></i></button>
                     </div>
                 </div>
             </div>
+            <?php endforeach; ?>
+
             
-            <div class="research-card featured">
+            <!-- <div class="research-card featured">
                 <div class="research-badge">
                     <span class="research-category">العلوم الطبية</span>
                     <span class="research-status featured">مميز</span>
@@ -200,9 +207,9 @@
                         <button class="btn-icon share-research" title="مشاركة"><i class="fas fa-share-alt"></i></button>
                     </div>
                 </div>
-            </div>
+            </div>-->
         </div>
-    </div>
+    </div> 
 </section>
 
 

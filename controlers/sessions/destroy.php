@@ -1,7 +1,11 @@
 <?php
 
+session_destroy();
 
 logOut();
 
 
-header('location:/');
+header("Location: " . $_SERVER["HTTP_REFERER"]);
+exit;
+
+die();

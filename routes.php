@@ -64,3 +64,8 @@ $router->get('/login','controlers/sessions/create.php')->only('guest');
 $router->delete('/logout','controlers/sessions/destroy.php')->only('auth');
 $router->post('/login','controlers/sessions/store.php');
 
+$router->get('/sessions_create', 'controlers/sessions/create.php')->only('guest');
+$router->delete('/sessions_destroy', 'controlers/sessions/destroy.php')->only('registered');
+$router->post('/sessions_store', 'controlers/sessions/store.php')->only('guest');
+
+

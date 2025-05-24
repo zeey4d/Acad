@@ -3,7 +3,9 @@ namespace core\Middleware ;
 class Middleware {
     public const MAP =[
         "guest" => Guest::class ,
+        "registered" => Registered::class,
         "auth" => Auth::class
+
     ];
     public static function resolve ($key){
         if (! $key){

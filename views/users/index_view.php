@@ -16,7 +16,7 @@
                     <h2>تسجيل الدخول</h2>
                     <p>ادخل بياناتك للوصول إلى حسابك</p>
                     
-                    <form action="#" method="POST">
+                    <form action="/sessions_store" method="POST">
                         <div class="form-group">
                             <label for="email">البريد الإلكتروني</label>
                             <input type="email" id="email" name="email" required placeholder="أدخل بريدك الإلكتروني">
@@ -35,15 +35,10 @@
                             <label for="remember">تذكرني</label>
                         </div>
                         
-                        <a  href="/users_index" type="submit" class="btn primary">تسجيل الدخول</a>
+                        <button class="btn_log_in" id="btn_log_in" aria-label="تسجيل دخول" >تسجيل دخول</button>
+
+                        <!-- <a  href="/users_index" type="submit" class="btn primary">تسجيل الدخول</a> -->
                         
-                        <div class="social-login">
-                            <p>أو سجل الدخول باستخدام</p>
-                            <div class="social-buttons">
-                                <a href="#" class="btn google"><i class="fab fa-google"></i> جوجل</a>
-                                <a href="#" class="btn facebook"><i class="fab fa-facebook-f"></i> فيسبوك</a>
-                            </div>
-                        </div>
                     </form>
                 </div>
             </div>

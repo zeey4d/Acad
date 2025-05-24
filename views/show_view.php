@@ -9,7 +9,7 @@
                     </div>
                     <div class="research-header-info">
                         <span class="research-category">علوم الحاسب</span>
-                        <h1 class="research-title-large">تطوير خوارزميات التعلم العميق لتحليل الصور الطبية</h1>
+                        <h1 class="research-title-large"><?php echo $categorys[$researches['0']['title']] ?></h1>
                         
                         <div class="research-authors">
                             <h3>المؤلفون:</h3>
@@ -63,7 +63,8 @@
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star-half-alt"></i>
-                                <span>4.5 (12 تقييم)</span>
+                                <!-- <span>4.5 (12 تقييم)</span> -->
+                                <P><?= htmlspecialchars($researche['research_id']) ?></P>
                             </div>
                         </div>
                         
@@ -88,7 +89,7 @@
             <div id="abstract" class="tab-content active">
                 <div class="abstract-content">
                     <h2>ملخص البحث</h2>
-                    <p>تهدف هذه الدراسة إلى تطوير نموذج جديد للتعلم العميق لتحليل الصور الطبية بشكل أكثر دقة وكفاءة. تم استخدام شبكات عصبية تلافيفية متطورة (CNN) مع إضافة طبقات انتباه (Attention Layers) لتحسين أداء النموذج في تشخيص الأمراض من خلال الصور الشعاعية.</p>
+                    <p><?= htmlspecialchars($researche['full_text']) ?></p>
                     
                     <h3>الأهداف</h3>
                     <ul>

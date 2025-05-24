@@ -16,11 +16,11 @@
                     <h2>إنشاء حساب جديد</h2>
                     <p>املأ النموذج لإنشاء حساب جديد</p>
                     
-                    <form action="#" method="POST">
+                    <form action="/users_create" method="POST">
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="first_name">الاسم الأول</label>
-                                <input type="text" id="first_name" name="first_name" required placeholder="أدخل الاسم الأول">
+                                <label for="first_name">الاسم المستخدم</label>
+                                <input type="text" id="first_name" name="username" required placeholder="أدخل الاسم الأول">
                                 <i class="fas fa-user"></i>
                             </div>
                         </div>
@@ -43,20 +43,19 @@
                             </div>
                         </div>
                         
-                        <div class="form-group">
-                            <label for="confirm_password">تأكيد كلمة المرور</label>
-                            <input type="password" id="confirm_password" name="confirm_password" required placeholder="أعد إدخال كلمة المرور">
-                            <i class="fas fa-lock"></i>
-                        </div>
+                    
                         
                         <div class="form-group">
                             <label for="user_type">نوع المستخدم</label>
                             <select id="user_type" name="user_type" required>
-                                <option value="">اختر نوع المستخدم</option>
+                                <!-- <option value="">اختر نوع المستخدم</option>
                                 <option value="researcher">باحث</option>
                                 <option value="reviewer">محكم</option>
                                 <option value="editor">محرر</option>
-                                <option value="institution">مؤسسة</option>
+                                <option value="institution">مؤسسة</option> -->
+                                            <option value="normal">عادي</option>
+            <option value="admin">مسؤول</option>
+            <option value="manager">مدير</option>
                             </select>
                             <i class="fas fa-user-tag"></i>
                         </div>
@@ -66,7 +65,7 @@
                             <label for="terms">أوافق على <a href="#">شروط الاستخدام</a> و <a href="#">سياسة الخصوصية</a></label>
                         </div>
                         
-                        <button type="submit" class="btn primary">إنشاء حساب</button>
+                        <button  class="btn primary">إنشاء حساب</button>
                     </form>
                 </div>
             </div>
