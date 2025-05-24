@@ -5,11 +5,11 @@
             <div class="research-header">
                 <div class="research-header-content">
                     <div class="research-header-image">
-                        <img src="https://via.placeholder.com/300x400" alt="صورة البحث">
+                        <img src="views/media/images/<?php echo $researche['0']['thumbnail_url'] ?? "mg.png" ?>" alt="صورة البحث">
                     </div>
                     <div class="research-header-info">
                         <span class="research-category">علوم الحاسب</span>
-                        <h1 class="research-title-large"><?php echo $categorys[$researches['0']['title']] ?></h1>
+                        <h1 class="research-title-large"><?php echo $researches['0']['title'] ?></h1>
                         
                         <div class="research-authors">
                             <h3>المؤلفون:</h3>
@@ -36,7 +36,7 @@
                             </div>
                             <div class="meta-item">
                                 <i class="far fa-calendar-alt"></i>
-                                <span>تاريخ النشر: 15 مايو 2023</span>
+                                <span><?php  echo $researches['0']['publication_date'] ?></span>
                             </div>
                             <div class="meta-item">
                                 <i class="fas fa-book-open"></i>
@@ -63,8 +63,8 @@
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star-half-alt"></i>
-                                <!-- <span>4.5 (12 تقييم)</span> -->
-                                <P><?= htmlspecialchars($researche['research_id']) ?></P>
+                                <span>4.5 (12 تقييم)</span>
+                                <p><?php  echo $researches['0']['category_id'] ?></p>
                             </div>
                         </div>
                         

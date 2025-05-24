@@ -81,7 +81,7 @@
                     <span class="research-status new">جديد</span>
                 </div>
                 <div class="research-thumbnail">
-                    <img src="views/media/images/<?= htmlspecialchars($researche['photo'] ?? "mg.png") ?>"  alt="صورة البحث">
+                    <img src="views/media/images/<?= htmlspecialchars($researche['thumbnail_url'] ?? "mg.png") ?>"  alt="صورة البحث">
                     <div class="research-overlay">
                         <a href="research-details.html" class="quick-view"><i class="fas fa-eye"></i> معاينة سريعة</a>
                     </div>
@@ -104,9 +104,9 @@
                             <h4><?= htmlspecialchars($researche['research_id']) ?></h4>
                         </div>
                     </div>
-                    <p class="research-abstract"><?= htmlspecialchars($researche['full_text']) ?></p>
+                    <p class="research-abstract"><?= htmlspecialchars($researche['abstract']) ?></p>
                     <div class="research-meta">
-                        <span><i class="far fa-calendar-alt"></i> 15 مايو 2023</span>
+                        <span><i class="far fa-calendar-alt"></i><?= htmlspecialchars($researche['publication_date']) ?>  </span>
                         <span><i class="far fa-eye"></i> 1,245</span>
                         <span><i class="fas fa-download"></i> 328</span>
                         <span><i class="fas fa-quote-right"></i> 42</span>
@@ -117,6 +117,7 @@
                         <button class="btn-icon share-research" title="مشاركة"><i class="fas fa-share-alt"></i></button>
                     </div>
                 </div>
+                </a>
             </div>
             <?php endforeach; ?>
 

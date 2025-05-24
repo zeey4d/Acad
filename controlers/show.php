@@ -12,6 +12,7 @@ $researches = $db->query("SELECT
     r.research_id,
     r.category_id,
     r.title,
+    r.abstract,
     r.full_text,
     r.pdf_url,
     r.thumbnail_url,
@@ -29,6 +30,31 @@ $researches = $db->query("SELECT
 FROM researches r;" , [
     'research_id' => $_GET['research_id'],
 ])->fetchAll();
+
+// $researches = $db->query(
+//     "SELECT 
+//     r.research_id,
+//     r.category_id,
+//     r.title,
+//     r.abstract,
+//     r.full_text,
+//     r.pdf_url,
+//     r.thumbnail_url,
+//     r.publication_date,
+//     r.page_count,
+//     r.doi,
+//     r.views_count,
+//     r.downloads_count,
+//     r.citations_count,
+//     r.volume,
+//     r.issue,
+//     r.is_published,
+//     r.created_at,
+//     r.updated_at
+// FROM researches r;
+
+// "
+// )->fetchAll();
 
 
 

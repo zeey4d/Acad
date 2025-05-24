@@ -16,6 +16,7 @@ $researches = $db->query(
     r.research_id,
     r.category_id,
     r.title,
+    r.abstract,
     r.full_text,
     r.pdf_url,
     r.thumbnail_url,
