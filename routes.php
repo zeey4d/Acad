@@ -36,10 +36,13 @@ $router->get('/show', 'controlers/research/show.php');
 
 $router->get('/cart', 'controlers/cart.php');
 
-$router->get('/create', 'controlers/research/create.php')->only('guest');
+// $router->get('/create', 'controlers/research/create.php')->only('guest');
 
-$router->get('/research', 'controlers/research.php');
+// $router->get('/research', 'controlers/research.php');
 
+
+$router->get('/create', 'controlers/create.php');
+$router->post('/create', 'controlers/create.php');
 
 // $router->get('/research', 'controlers/research/create.php')->only('guest');
 
