@@ -32,7 +32,7 @@
         
             </div>
 
-            <form id="researchForm" class="research-form">
+            <form id="researchForm" class="research-form" action="/create" method="POST">
                 <!-- الخطوة 1: المعلومات الأساسية -->
                 <div class="form-step active" data-step="1">
                     <h2>المعلومات الأساسية</h2>
@@ -146,8 +146,9 @@
                     </div>
                     </div>
                         <div class="form-actions">
-                        <button type="button" class="btn prev-step" data-prev="2"><i class="fas fa-arrow-right"></i> السابق</button>
+                        <!-- <button type="button" class="btn prev-step" data-prev="2"><i class="fas fa-arrow-right"></i> السابق</button> -->
                         <button type="submit" class="btn primary"><i class="fas fa-paper-plane"></i> إرسال البحث</button>
+                    
                     </div>
       
                 </div>
@@ -303,7 +304,7 @@
         const researchForm = document.getElementById('researchForm');
         
         researchForm.addEventListener('submit', function(e) {
-            e.preventDefault();
+            // e.preventDefault();
             
             // هنا يمكنك إضافة كود إرسال النموذج
             alert('تم إرسال البحث بنجاح وسيتم مراجعته من قبل فريق التحرير. شكراً لمساهمتك!');

@@ -34,7 +34,8 @@ $router->get('/show', 'controlers/show.php');
 
 $router->get('/cart', 'controlers/cart.php');
 
-$router->get('/create', 'controlers/create.php')->only('guest');
+$router->get('/create', 'controlers/create.php');
+$router->post('/create', 'controlers/create.php');
 
 // $router->get('/research', 'controlers/research/create.php')->only('guest');
 
