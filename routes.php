@@ -34,8 +34,8 @@ $router->get('/show', 'controlers/show.php');
 
 $router->get('/cart', 'controlers/cart.php');
 
-$router->get('/create', 'controlers/create.php');
-$router->post('/create', 'controlers/create.php');
+$router->get('/create', 'controlers/create.php')->only('');
+$router->post('/create', 'controlers/create.php')->only('');
 
 // $router->get('/research', 'controlers/research/create.php')->only('guest');
 
@@ -43,18 +43,14 @@ $router->post('/create', 'controlers/create.php');
 
 
 
-
 $router->get('/users_index','controlers/users/index.php');
 $router->get('/users_create','controlers/users/create.php')->only('guest');
-$router->post('/users_store','controlers/users/store.php');
-
 
 $router->post('/register','controlers/registertion/store.php');
 
 $router->get('/login','controlers/sessions/create.php')->only('guest');
 $router->delete('/logout','controlers/sessions/destroy.php')->only('auth');
 $router->post('/login','controlers/sessions/store.php');
-
 
 $router->get('/sessions_create', 'controlers/sessions/create.php')->only('guest');
 $router->delete('/sessions_destroy', 'controlers/sessions/destroy.php')->only('registered');
