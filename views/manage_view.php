@@ -132,7 +132,7 @@
                 </table>
             </div>
 
-            <!-- نموذج حذف البحث (مخفى بشكل افتراضي) 
+             نموذج حذف البحث (مخفى بشكل افتراضي) 
             <div id="deleteModal" class="modal">
                 <div class="modal-content">
                     <div class="modal-header">
