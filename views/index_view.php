@@ -3,6 +3,7 @@
   <?php require('partials/header.php') ?>
     <?php require('partials/adminBar.php') ?>
 
+
   <main>
 
     <section class="hero">
@@ -30,8 +31,12 @@
                 </div>
             </div>
             <div class="hero-image">
-                <img src="https://via.placeholder.com/500x400" alt="البحث العلمي">
+                <img src="views/media/images/acad.png" alt="البحث العلمي">
             </div>
+
+            <div class="pdf-container">
+            <iframe src="views/media/pdf/sciimm.pdf" width="100%" height="100%" style="border:1px solid #ddd;"></iframe>
+        </div>
         </div>
     </section>
 
