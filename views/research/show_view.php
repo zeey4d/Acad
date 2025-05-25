@@ -71,7 +71,7 @@
                         
                         <div class="research-actions-large">
                             <a href="#" class="btn btn-large download-btn"><i class="fas fa-download"></i> تحميل البحث</a>
-                            <a href="#" class="btn btn-large cite-btn"><i class="fas fa-quote-right"></i> كيفية الاستشهاد</a>
+                            <a href="#" class="btn btn-large cite-btn"><i class="fas fa-quote-right"></i> قراءةالبحث </a>
                             <button class="btn-icon save-research" title="حفظ في المفضلة"><i class="far fa-bookmark"></i></button>
                             <button class="btn-icon share-research" title="مشاركة"><i class="fas fa-share-alt"></i></button>
                         </div>
