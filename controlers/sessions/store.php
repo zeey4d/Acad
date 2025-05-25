@@ -95,6 +95,8 @@ if ($user) {
     }
 }
 
+
+
 var_dump($_POST);
 
 $user = $db->query("SELECT * FROM users WHERE email = :email", [
@@ -108,10 +110,6 @@ if (!$user) {
 if (!password_verify($_POST['password'], $user['password'])) {
     die("Wrong password.");
 }
-
-logIn($user);
-header("Location: /");
-exit();
 
 
 $erorrs['email'] = "There No Matching Email Or Password Like this";

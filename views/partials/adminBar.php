@@ -1,5 +1,3 @@
-<?php if ($_SESSION['user'] ?? false) : ?>
- <?php else : ?>
 <div class="admin-bar">
   <div class="container">
     <a href="/admin/users">المستخدمون</a>
@@ -8,7 +6,7 @@
 
   </div>
 </div>
-            <?php endif ?>
+
 
 <style>
 .admin-bar {

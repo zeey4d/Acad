@@ -6,8 +6,11 @@ use core\Database;
 $db  = App::resolve(Database::class);
 
 
+$username   = $_POST['username'];
 $email = $_POST['email'];
-$password = $_POST['password'];
+$password   = $_POST['password']   ;
+ $university = $_POST['university'] ;
+ $department = $_POST['department'];
 
 $erorrs = [] ;
 
@@ -30,18 +33,18 @@ $user =  $db->query('select * from users where email = :email',
 ['email' => $email])->fetch();
 
 
-if( $user){
+if($user){
     header("Location: /");
 }else{
    
-    $db->query('INSERT INTO users (username , email , password ,admin ) VALUES (:username ,:email , :password , :admin);',[
-        'username' => 'guo',
+    $db->query('INSERT INTO users (username , email , password,university,department ) VALUES (:username ,:email , :password ,:university, :department );',[
+        'username' => $username,
         'email' => $email,
         'password' =>password_hash($password ,PASSWORD_BCRYPT ) ,
-        'admin' => 0 
+        'university' => $university,
+        'department' => $department,
     ]
 );
-
 
 logIn($user);
 
@@ -51,6 +54,7 @@ header("Location: /");
 die();
 
 }
+
 
 // if (isset($_POST["submit"])) {
 //   // validate the data

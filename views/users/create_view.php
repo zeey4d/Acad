@@ -16,7 +16,7 @@
                     <h2>إنشاء حساب جديد</h2>
                     <p>املأ النموذج لإنشاء حساب جديد</p>
                     
-                    <form action="/users_create" method="POST">
+                    <form action="/users_store" method="POST">
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="first_name">الاسم المستخدم</label>
@@ -58,6 +58,18 @@
             <option value="manager">مدير</option>
                             </select>
                             <i class="fas fa-user-tag"></i>
+                        </div>
+
+                                    <div class="form-group">
+                            <label for="university">الجامعة  </label>
+                            <input type="text" id="email" name="university" required placeholder="أدخل اسم الجامعة">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+
+                                    <div class="form-group">
+                            <label for="department"> قسم</label>
+                            <input type="text" id="email" name="department" required placeholder="أدخل اسم القسم">
+                            <i class="fas fa-envelope"></i>
                         </div>
                         
                         <div class="form-group terms">

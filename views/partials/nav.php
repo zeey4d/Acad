@@ -14,16 +14,21 @@
                     <li><a href="/contact">اتصل بنا</a></li>
                 </ul>
             </nav>
+             <?php if ($_SESSION['user'] ?? false) : ?>
 
-            <form action="/" method="post">
+            <form action="/" method="post" >
+
              <input type="submit" name="logout" value="logout">
              </form>
-             
+            <?php else : ?>
+
              <div class="auth-buttons">
                 <a href="/cart_view" class="active">المفضلة</a>
                 <a class="btn login"  href="/users_index">تسجيل الدخول</a>
                 <a class="btn register" href="/users_create">تسجيل جديد</a>
             </div>
+                        <?php endif ?>
+
 
 
         </div>
