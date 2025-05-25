@@ -1,5 +1,7 @@
 <?php require('views/partials/head.php') ?>
 <?php require('views/partials/nav.php') ?>
+<?php require('views/partials/adminBar.php') ?>
+
 <section class="research-details" style="margin-top: 100px;">
         <div class="container">
             <div class="research-header">

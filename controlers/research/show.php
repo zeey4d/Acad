@@ -106,7 +106,7 @@ $researches = $db->query("
 // exit;
 
  
-require "views/show_view.php";
+require "views/research/show_view.php";
 
 
 

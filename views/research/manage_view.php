@@ -1,7 +1,7 @@
-   <?php require('partials/head.php') ?>
-  <?php require('partials/nav.php') ?>
-  <?php require('partials/header.php') ?>
-    <?php require('partials/adminBar.php') ?>
+   <?php require('views/partials/head.php') ?>
+  <?php require('views/partials/nav.php') ?>
+  <?php require('views/partials/header.php') ?>
+    <?php require('views/partials/adminBar.php') ?>
     <!-- <section class="manage-research" style="margin-top: 100px;">
         <div class="container">
             <div class="page-header">

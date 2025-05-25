@@ -1,5 +1,5 @@
 <?php 
 
-require "views/research_view.php";
+require "views/research/research_view.php";
 
 ?>
