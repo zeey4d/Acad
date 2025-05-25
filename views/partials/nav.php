@@ -12,6 +12,7 @@
                     <!-- <li><a href="">المؤتمرات</a></li> -->
                     <li><a href="/about">عن المنصة</a></li>
                     <li><a href="/contact">اتصل بنا</a></li>
+                    <li><a href="/show">عرض </a></li>
                 </ul>
             </nav>
 

@@ -75,7 +75,7 @@
         <div class="research-grid">
              <?php foreach ($researches as $researche): ?>
             <div class="research-card">
-                 <a href="/Show?research_id=<?= htmlspecialchars($researche['research_id']) ?>">
+                 <a href="/show?research_id=<?= htmlspecialchars($researche['research_id']) ?>">
                 <div class="research-badge">
                     <span class="research-category">علوم الحاسب</span>
                     <span class="research-status new">جديد</span>
@@ -112,7 +112,7 @@
                         <span><i class="fas fa-quote-right"></i> 42</span>
                     </div>
                     <div class="research-actions">
-                        <a href="/Show?research_id=<?= htmlspecialchars($researche['research_id']) ?>" class="btn read-more">قراءة البحث</a>
+                        <a href="/show?research_id=<?= htmlspecialchars($researche['research_id']) ?>" class="btn read-more">قراءة البحث</a>
                         <button class="btn-icon save-research" title="حفظ في المفضلة"><i class="far fa-bookmark"></i></button>
                         <button class="btn-icon share-research" title="مشاركة"><i class="fas fa-share-alt"></i></button>
                     </div>

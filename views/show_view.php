@@ -64,7 +64,6 @@
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star-half-alt"></i>
                                 <span>4.5 (12 تقييم)</span>
-                                <p><?php  echo $researches['0']['category_id'] ?></p>
                             </div>
                         </div>
                         
@@ -89,7 +88,7 @@
             <div id="abstract" class="tab-content active">
                 <div class="abstract-content">
                     <h2>ملخص البحث</h2>
-                    <p><?= htmlspecialchars($researche['full_text']) ?></p>
+                    <p><?php  echo $researches['0']['abstract'] ?></p>
                     
                     <h3>الأهداف</h3>
                     <ul>
