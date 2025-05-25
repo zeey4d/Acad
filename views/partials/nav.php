@@ -12,23 +12,27 @@
                     <!-- <li><a href="">المؤتمرات</a></li> -->
                     <li><a href="/about">عن المنصة</a></li>
                     <li><a href="/contact">اتصل بنا</a></li>
-                    <li><a href="/show">عرض </a></li>
                 </ul>
             </nav>
 
-            <form action="/sessions_destroy" class="but_sgin" method="post">
-
-            <?php if ($_SESSION['user'] ?? false) : ?>
-             <button class="btn register" >تسجيل الخروج</button>
-            </form>
-              <?php else : ?>
+            <form action="/" method="post">
+             <input type="submit" name="logout" value="logout">
+             </form>
+             
              <div class="auth-buttons">
                 <a href="/cart_view" class="active">المفضلة</a>
                 <a class="btn login"  href="/users_index">تسجيل الدخول</a>
                 <a class="btn register" href="/users_create">تسجيل جديد</a>
             </div>
-            <?php endif ?>
 
 
         </div>
 </header>
+
+<?php 
+
+if(isset($_POST["logout"])){
+    session_destroy();
+header("Location: " . $_SERVER["HTTP_REFERER"]);
+}
+?>

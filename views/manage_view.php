@@ -2,7 +2,7 @@
   <?php require('partials/nav.php') ?>
   <?php require('partials/header.php') ?>
     <?php require('partials/adminBar.php') ?>
-    <section class="manage-research" style="margin-top: 100px;">
+    <!-- <section class="manage-research" style="margin-top: 100px;">
         <div class="container">
             <div class="page-header">
                 <h1><i class="fas fa-tasks"></i> إدارة الأبحاث</h1>
@@ -132,7 +132,7 @@
                 </table>
             </div>
 
-            <!-- نموذج حذف البحث (مخفى بشكل افتراضي) -->
+            <!-- نموذج حذف البحث (مخفى بشكل افتراضي) 
             <div id="deleteModal" class="modal">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -150,11 +150,74 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
+<section class="manage-research" style="margin-top: 100px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+  <div class="container">
+    <div class="page-header" style="margin-bottom: 30px;">
+      <h1 style="font-size: 28px; color: #333;"><i class="fas fa-tasks"></i> إدارة الأبحاث</h1>
+      <nav class="breadcrumb" style="color: #888; font-size: 14px;">
+        <a href="index.html">الرئيسية</a> <span>/</span>
+        <a href="profile.html">حسابي</a> <span>/</span>
+        <span>إدارة الأبحاث</span>
+      </nav>
+    </div>
 
-    <footer>
-        <!-- نفس الفوتر السابق -->
-    </footer>
+    <div class="research-actions" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+      <a href="/create" class="btn primary" style="background-color: #007bff; color: white; padding: 8px 15px; border-radius: 5px; text-decoration: none;">
+        <i class="fas fa-plus"></i> إضافة بحث جديد
+      </a>
+      <div class="search-filter" style="display: flex; gap: 10px;">
+        <input type="text" id="searchResearch" placeholder="ابحث في أبحاثك..." style="padding: 6px 10px; border: 1px solid #ccc; border-radius: 4px;">
+        <select id="filterStatus" style="padding: 6px 10px; border: 1px solid #ccc; border-radius: 4px;">
+          <option value="">كل الحالات</option>
+          <option value="published">منشور</option>
+          <option value="under_review">قيد التحكيم</option>
+          <option value="draft">مسودة</option>
+          <option value="rejected">مرفوض</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="research-table-container" style="overflow-x: auto;">
+      <table id="researchTable" class="display" style="width: 100%; border-collapse: collapse;">
+        <thead>
+          <tr style="background-color: #f1f1f1;">
+            <th>عنوان البحث</th>
+            <th>المجلة</th>
+            <th>الحالة</th>
+            <th>تاريخ الإضافة</th>
+            <th>المشاهدات</th>
+            <th>التحميلات</th>
+            <th>الإجراءات</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- البيانات كما هي... (بإمكانك تحسين كل <tr> إن رغبت) -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- نموذج حذف البحث -->
+    <div id="deleteModal" class="modal" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.6); justify-content: center; align-items: center;">
+      <div class="modal-content" style="background: white; padding: 20px; border-radius: 8px; width: 90%; max-width: 500px;">
+        <div class="modal-header" style="display: flex; justify-content: space-between; align-items: center;">
+          <h3 style="margin: 0;">تأكيد الحذف</h3>
+          <button class="close-modal" style="background: transparent; border: none; font-size: 20px;">&times;</button>
+        </div>
+        <div class="modal-body" style="margin-top: 15px;">
+          <p>هل أنت متأكد أنك تريد حذف هذا البحث؟ هذا الإجراء لا يمكن التراجع عنه.</p>
+          <p><strong>عنوان البحث:</strong> <span id="researchToDelete" style="color: red;"></span></p>
+        </div>
+        <div class="modal-footer" style="margin-top: 20px; display: flex; justify-content: flex-end; gap: 10px;">
+          <button class="btn cancel-btn" style="padding: 6px 12px; background: #ccc; border: none; border-radius: 4px;">إلغاء</button>
+          <button class="btn danger-btn" style="padding: 6px 12px; background: #dc3545; color: white; border: none; border-radius: 4px;">حذف البحث</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
